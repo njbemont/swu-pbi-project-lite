@@ -231,3 +231,15 @@ let
 in
     #"Removed Duplicates"
 ```
+
+### Table Relationships
+| ID | Name | Relationship | Model | IsActive | CrossFilteringBehavior | RelyOnReferentialIntegrity | FromTable | FromColumn | FromCardinality | ToTable | ToColumn | ToCardinality | State | SecurityFilteringBehavior |
+|----|------|-------------|-------|----------|------------------------|----------------------------|-----------|------------|----------------|--------|----------|---------------|-------|--------------------------|
+| 43 | f9a00a22-fb23-0afd-db9e-d1c475e5bbd9 | 'Cards Fact'[arenas.data.id] *[<->]1 'Arenas'[id] | 9d34e8bc-5268-4a8c-ab36-79656a9bdff2 | true | BothDirections | false | Cards Fact | arenas.data.id | Many | Arenas | id | One | Ready | Single |
+| 44 | 9d5b7c52-4021-9574-2e26-de4fd47ac5e4 | 'Cards Fact'[aspects.data.id] *[<->]1 'Aspects'[id] | 9d34e8bc-5268-4a8c-ab36-79656a9bdff2 | true | BothDirections | false | Cards Fact | aspects.data.id | Many | Aspects | id | One | Ready | Single |
+| 45 | 14d759a8-e43e-2c77-f861-371551d865db | 'Cards Fact'[cardUid] *[<->]1 'Cards'[cardUid] | 9d34e8bc-5268-4a8c-ab36-79656a9bdff2 | true | BothDirections | false | Cards Fact | cardUid | Many | Cards | cardUid | One | Ready | Single |
+| 46 | 5dab5f92-2f18-5d29-2b40-11d8ffa6b6b9 | 'Cards Fact'[keywords.data.id] *[<->]1 'Keywords'[id] | 9d34e8bc-5268-4a8c-ab36-79656a9bdff2 | true | BothDirections | false | Cards Fact | keywords.data.id | Many | Keywords | id | One | Ready | Single |
+| 47 | 023ec232-5024-54d7-0e19-46d3639872ae | 'Cards Fact'[traits.data.id] *[<->]1 'Traits'[id] | 9d34e8bc-5268-4a8c-ab36-79656a9bdff2 | true | BothDirections | false | Cards Fact | traits.data.id | Many | Traits | id | One | Ready | Single |
+| 48 | 627873dd-7ac0-bae2-fa47-8542021f189b | 'Cards Fact'[variantTypes.data.id] *[<->]1 'Variants'[id] | 9d34e8bc-5268-4a8c-ab36-79656a9bdff2 | true | BothDirections | false | Cards Fact | variantTypes.data.id | Many | Variants | id | One | Ready | Single |
+| 50 | 17e1da67-c7a0-79bd-7745-672eecdff521 | 'Cards Fact'[cardUid] [<->] 'Rules'[cardUid] | 9d34e8bc-5268-4a8c-ab36-79656a9bdff2 | true | BothDirections | false | Cards Fact | cardUid | Many | Rules | cardUid | Many | Ready | Single |
+| 49 | 4f38265f-390e-486b-87af-b82a37f9fd3a | 'Rules'[date] *[<-]1 'LocalDateTable_e3d70a23-d04e-4c99-bf90-293b16bed457'[Date] | 9d34e8bc-5268-4a8c-ab36-79656a9bdff2 | true | OneDirection | false | Rules | date | Many | LocalDateTable_e3d70a23-d04e-4c99-bf90-293b16bed457 | Date | One | Ready | Single |
