@@ -1,0 +1,41 @@
+relationship f9a00a22-fb23-0afd-db9e-d1c475e5bbd9
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Cards Fact'.'arenas.data.id'
+	toColumn: Arenas.id
+
+relationship 9d5b7c52-4021-9574-2e26-de4fd47ac5e4
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Cards Fact'.'aspects.data.id'
+	toColumn: Aspects.id
+
+relationship 14d759a8-e43e-2c77-f861-371551d865db
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Cards Fact'.cardUid
+	toColumn: Cards.cardUid
+
+relationship 5dab5f92-2f18-5d29-2b40-11d8ffa6b6b9
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Cards Fact'.'keywords.data.id'
+	toColumn: Keywords.id
+
+relationship 023ec232-5024-54d7-0e19-46d3639872ae
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Cards Fact'.'traits.data.id'
+	toColumn: Traits.id
+
+relationship 627873dd-7ac0-bae2-fa47-8542021f189b
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Cards Fact'.'variantTypes.data.id'
+	toColumn: Variants.id
+
+relationship 4f38265f-390e-486b-87af-b82a37f9fd3a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Rules.date
+	toColumn: LocalDateTable_e3d70a23-d04e-4c99-bf90-293b16bed457.Date
+
+relationship 17e1da67-c7a0-79bd-7745-672eecdff521
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'Cards Fact'.cardUid
+	toColumn: Rules.cardUid
+

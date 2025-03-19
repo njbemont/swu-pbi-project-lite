@@ -1,0 +1,333 @@
+table Cards
+	lineageTag: 8584efd8-e680-4e73-80e1-663419ce2e18
+
+	column title
+		dataType: string
+		lineageTag: 0e499ef6-0ad3-408b-8818-a81d538abe86
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = Automatic
+
+	column subtitle
+		dataType: string
+		lineageTag: 9d442cd2-433c-42fb-a751-5ba6e0b2f1d9
+		summarizeBy: none
+		sourceColumn: subtitle
+
+		annotation SummarizationSetBy = Automatic
+
+	column cardNumber
+		dataType: string
+		lineageTag: 98daf917-1337-4630-9ed6-64cc780ac5ae
+		summarizeBy: none
+		sourceColumn: cardNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column cardCount
+		dataType: string
+		lineageTag: d3679f69-2448-4683-a9f7-b605156b4f8e
+		summarizeBy: none
+		sourceColumn: cardCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column artist
+		dataType: string
+		lineageTag: 711d0daf-f35c-49e9-a777-2491348d9e6a
+		summarizeBy: none
+		sourceColumn: artist
+
+		annotation SummarizationSetBy = Automatic
+
+	column artFrontHorizontal
+		dataType: string
+		lineageTag: edc00b22-2b5d-469e-b9b9-7b549f98f5e5
+		summarizeBy: none
+		sourceColumn: artFrontHorizontal
+
+		annotation SummarizationSetBy = Automatic
+
+	column artBackHorizontal
+		dataType: string
+		lineageTag: f3956aca-13d3-46a8-9964-867753be162b
+		summarizeBy: none
+		sourceColumn: artBackHorizontal
+
+		annotation SummarizationSetBy = Automatic
+
+	column hasFoil
+		dataType: string
+		lineageTag: 1908260e-eb2d-44fb-8ad9-72bce21fcc22
+		summarizeBy: none
+		sourceColumn: hasFoil
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost
+		dataType: string
+		lineageTag: 129cab99-4e67-4986-9fbd-47ca7c9aa322
+		summarizeBy: none
+		sourceColumn: cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column hp
+		dataType: string
+		lineageTag: aaf4e286-eb31-45b7-848e-1ba4d42af75a
+		summarizeBy: none
+		sourceColumn: hp
+
+		annotation SummarizationSetBy = Automatic
+
+	column power
+		dataType: string
+		lineageTag: ac67809a-9143-4250-a715-eb5cc3b4f60e
+		summarizeBy: none
+		sourceColumn: power
+
+		annotation SummarizationSetBy = Automatic
+
+	column text
+		dataType: string
+		lineageTag: 06bf37ea-91ad-4a4e-b030-557a93ef0901
+		summarizeBy: none
+		sourceColumn: text
+
+		annotation SummarizationSetBy = Automatic
+
+	column deployBox
+		dataType: string
+		lineageTag: cedf94f6-fa6f-44aa-91ad-19da62e0d1d4
+		summarizeBy: none
+		sourceColumn: deployBox
+
+		annotation SummarizationSetBy = Automatic
+
+	column epicAction
+		dataType: string
+		lineageTag: 8f69976c-1524-43b8-a031-0770cd7d04ed
+		summarizeBy: none
+		sourceColumn: epicAction
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdAt
+		dataType: string
+		lineageTag: 6e1554b6-f858-429d-925e-6ecfa2c7e494
+		summarizeBy: none
+		sourceColumn: createdAt
+
+		annotation SummarizationSetBy = Automatic
+
+	column updatedAt
+		dataType: string
+		lineageTag: 17a96609-c56b-4fe6-beff-ec24b59f1cc9
+		summarizeBy: none
+		sourceColumn: updatedAt
+
+		annotation SummarizationSetBy = Automatic
+
+	column publishedAt
+		dataType: string
+		lineageTag: 7e894b8a-d173-4e16-89ec-78189e3a6d93
+		summarizeBy: none
+		sourceColumn: publishedAt
+
+		annotation SummarizationSetBy = Automatic
+
+	column locale
+		dataType: string
+		lineageTag: c48b1125-7807-431f-b4c2-1f34c8c45c22
+		summarizeBy: none
+		sourceColumn: locale
+
+		annotation SummarizationSetBy = Automatic
+
+	column hyperspace
+		dataType: string
+		lineageTag: 2cd1388b-7723-4d5c-b473-0cad78ef495a
+		summarizeBy: none
+		sourceColumn: hyperspace
+
+		annotation SummarizationSetBy = Automatic
+
+	column unique
+		dataType: string
+		lineageTag: 2096b70c-befd-4a67-b787-8e54df90a5ba
+		summarizeBy: none
+		sourceColumn: unique
+
+		annotation SummarizationSetBy = Automatic
+
+	column showcase
+		dataType: string
+		lineageTag: 205c37a7-990d-4160-98b6-5bd73578375f
+		summarizeBy: none
+		sourceColumn: showcase
+
+		annotation SummarizationSetBy = Automatic
+
+	column cardUid
+		dataType: string
+		lineageTag: 5e39839a-6679-4f5c-94e1-95b1f407ed34
+		summarizeBy: none
+		sourceColumn: cardUid
+
+		annotation SummarizationSetBy = Automatic
+
+	column serialCode
+		dataType: string
+		lineageTag: 29565a32-0667-477a-b41e-fba8b5092297
+		summarizeBy: none
+		sourceColumn: serialCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column upgradeHp
+		dataType: string
+		lineageTag: f0cecd78-8ed7-48c2-afc2-f6e352fe1307
+		summarizeBy: none
+		sourceColumn: upgradeHp
+
+		annotation SummarizationSetBy = Automatic
+
+	column upgradePower
+		dataType: string
+		lineageTag: fa6c8a7b-c3df-4b23-932d-1cf6c28a6536
+		summarizeBy: none
+		sourceColumn: upgradePower
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'artFront.data.attributes.url'
+		dataType: string
+		lineageTag: 9db1d363-a763-4e04-8721-9d51455feae9
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: artFront.data.attributes.url
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'artBack.data.attributes.url'
+		dataType: string
+		lineageTag: 8b609ddd-828a-4c76-a466-4e8888f43ddc
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: artBack.data.attributes.url
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'artThumbnail.data.attributes.url'
+		dataType: string
+		lineageTag: 31cfb9c9-0572-448b-9943-ff4560fca4b9
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: artThumbnail.data.attributes.url
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'type.data.attributes.name'
+		dataType: string
+		lineageTag: b310b9c8-df2b-4017-bf24-662867d82a8f
+		summarizeBy: none
+		sourceColumn: type.data.attributes.name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'type2.data.attributes.name'
+		dataType: string
+		lineageTag: 7c85b053-b648-4046-a0a0-225ec7409df9
+		summarizeBy: none
+		sourceColumn: type2.data.attributes.name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'rarity.data.attributes.name'
+		dataType: string
+		lineageTag: 1449457a-4828-46f3-9962-7dd92180d9f1
+		summarizeBy: none
+		sourceColumn: rarity.data.attributes.name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'expansion.data.attributes.name'
+		dataType: string
+		lineageTag: a6e436b9-3bb8-4e01-b200-9ab2b7edd521
+		summarizeBy: none
+		sourceColumn: expansion.data.attributes.name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'expansion.data.attributes.code'
+		dataType: string
+		lineageTag: 113e23c7-227c-4932-9c0e-3c929ec35584
+		summarizeBy: none
+		sourceColumn: expansion.data.attributes.code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'title + subtitle' = Cards[title] & " - " & Cards[subtitle]
+		lineageTag: ca949078-fae2-42ed-b5f6-dc03e646e45b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'reprintOf.data.id'
+		dataType: string
+		lineageTag: db0da562-86ac-4481-a685-b4a083f5d96e
+		summarizeBy: none
+		sourceColumn: reprintOf.data.id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'title + subtitle + set' = Cards[title] & " - " & Cards[subtitle] & " - " & Cards[reprintOf.data.id]
+		lineageTag: 56190dc5-eb32-4a77-a2f8-7fde9dd40078
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reprints? = IF(ISBLANK(Cards[reprintOf.data.id]), "No", "Yes")
+		lineageTag: 90a4664a-fbc6-4d2d-80bf-f4b188099ce0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Cards = m
+		mode: import
+		queryGroup: Table
+		source =
+				let
+				    Source = Base,
+				    #"Expanded artFront" = Table.ExpandRecordColumn(Source, "artFront", {"data"}, {"artFront.data"}),
+				    #"Expanded artFront.data" = Table.ExpandRecordColumn(#"Expanded artFront", "artFront.data", {"attributes"}, {"artFront.data.attributes"}),
+				    #"Expanded artFront.data.attributes" = Table.ExpandRecordColumn(#"Expanded artFront.data", "artFront.data.attributes", {"url"}, {"artFront.data.attributes.url"}),
+				    #"Expanded artBack" = Table.ExpandRecordColumn(#"Expanded artFront.data.attributes", "artBack", {"data"}, {"artBack.data"}),
+				    #"Expanded artBack.data" = Table.ExpandRecordColumn(#"Expanded artBack", "artBack.data", {"attributes"}, {"artBack.data.attributes"}),
+				    #"Expanded artBack.data.attributes" = Table.ExpandRecordColumn(#"Expanded artBack.data", "artBack.data.attributes", {"url"}, {"artBack.data.attributes.url"}),
+				    #"Expanded artThumbnail" = Table.ExpandRecordColumn(#"Expanded artBack.data.attributes", "artThumbnail", {"data"}, {"artThumbnail.data"}),
+				    #"Expanded artThumbnail.data" = Table.ExpandRecordColumn(#"Expanded artThumbnail", "artThumbnail.data", {"attributes"}, {"artThumbnail.data.attributes"}),
+				    #"Expanded artThumbnail.data.attributes" = Table.ExpandRecordColumn(#"Expanded artThumbnail.data", "artThumbnail.data.attributes", {"url"}, {"artThumbnail.data.attributes.url"}),
+				    #"Expanded type" = Table.ExpandRecordColumn(#"Expanded artThumbnail.data.attributes", "type", {"data"}, {"type.data"}),
+				    #"Expanded type.data" = Table.ExpandRecordColumn(#"Expanded type", "type.data", {"attributes"}, {"type.data.attributes"}),
+				    #"Expanded type.data.attributes" = Table.ExpandRecordColumn(#"Expanded type.data", "type.data.attributes", {"name"}, {"type.data.attributes.name"}),
+				    #"Expanded type2" = Table.ExpandRecordColumn(#"Expanded type.data.attributes", "type2", {"data"}, {"type2.data"}),
+				    #"Expanded type2.data" = Table.ExpandRecordColumn(#"Expanded type2", "type2.data", {"attributes"}, {"type2.data.attributes"}),
+				    #"Expanded type2.data.attributes" = Table.ExpandRecordColumn(#"Expanded type2.data", "type2.data.attributes", {"name"}, {"type2.data.attributes.name"}),
+				    #"Expanded rarity" = Table.ExpandRecordColumn(#"Expanded type2.data.attributes", "rarity", {"data"}, {"rarity.data"}),
+				    #"Expanded rarity.data" = Table.ExpandRecordColumn(#"Expanded rarity", "rarity.data", {"attributes"}, {"rarity.data.attributes"}),
+				    #"Expanded rarity.data.attributes" = Table.ExpandRecordColumn(#"Expanded rarity.data", "rarity.data.attributes", {"name"}, {"rarity.data.attributes.name"}),
+				    #"Expanded expansion" = Table.ExpandRecordColumn(#"Expanded rarity.data.attributes", "expansion", {"data"}, {"expansion.data"}),
+				    #"Expanded expansion.data" = Table.ExpandRecordColumn(#"Expanded expansion", "expansion.data", {"attributes"}, {"expansion.data.attributes"}),
+				    #"Expanded expansion.data.attributes" = Table.ExpandRecordColumn(#"Expanded expansion.data", "expansion.data.attributes", {"name", "code"}, {"expansion.data.attributes.name", "expansion.data.attributes.code"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Expanded expansion.data.attributes",{"textStyled", "deployBoxStyled", "epicActionStyled", "linkHtml", "localizations", "aspects", "traits", "arenas", "keywords", "variantTypes", "variantOf", "validationId", "cardId", "aspectDuplicates", "rulesStyled", "rules"}),
+				    #"Expanded reprintOf" = Table.ExpandRecordColumn(#"Removed Columns", "reprintOf", {"data"}, {"reprintOf.data"}),
+				    #"Expanded reprintOf.data" = Table.ExpandRecordColumn(#"Expanded reprintOf", "reprintOf.data", {"id"}, {"reprintOf.data.id"})
+				in
+				    #"Expanded reprintOf.data"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

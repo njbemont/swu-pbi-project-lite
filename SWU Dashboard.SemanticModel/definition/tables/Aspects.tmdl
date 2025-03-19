@@ -1,0 +1,103 @@
+table Aspects
+	lineageTag: 0153c9f8-0a76-4f42-9fb6-a954db7c9115
+
+	column id
+		dataType: string
+		lineageTag: b226e4f9-d113-4d88-9b29-3da46098b584
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 8f54f179-fa52-4bac-862c-ed91cb558898
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: bcf66051-105d-4240-b649-0745d706237c
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column color
+		dataType: string
+		lineageTag: c6663ae4-9f96-4d4a-a9a9-e48a4f941abc
+		summarizeBy: none
+		sourceColumn: color
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdAt
+		dataType: string
+		lineageTag: e27eb793-7dbc-4fe5-ab94-25575409b504
+		summarizeBy: none
+		sourceColumn: createdAt
+
+		annotation SummarizationSetBy = Automatic
+
+	column updatedAt
+		dataType: string
+		lineageTag: d43fff28-35f2-4737-8b0c-1264ccf3b8b0
+		summarizeBy: none
+		sourceColumn: updatedAt
+
+		annotation SummarizationSetBy = Automatic
+
+	column publishedAt
+		dataType: string
+		lineageTag: 72336132-284b-4ef6-87a8-6ce31dca61ef
+		summarizeBy: none
+		sourceColumn: publishedAt
+
+		annotation SummarizationSetBy = Automatic
+
+	column locale
+		dataType: string
+		lineageTag: 721b84a5-89af-4db2-8f3c-31e7de279ab7
+		summarizeBy: none
+		sourceColumn: locale
+
+		annotation SummarizationSetBy = Automatic
+
+	column englishName
+		dataType: string
+		lineageTag: ba6685e8-49da-499b-8220-ffe62bd8b76f
+		summarizeBy: none
+		sourceColumn: englishName
+
+		annotation SummarizationSetBy = Automatic
+
+	column sortValue
+		dataType: string
+		lineageTag: 75f99558-29f4-45da-9876-398e815bb859
+		summarizeBy: none
+		sourceColumn: sortValue
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Aspects = m
+		mode: import
+		queryGroup: Table
+		source =
+				let
+				    Source = Base,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"aspects"}),
+				    #"Expanded aspects" = Table.ExpandRecordColumn(#"Removed Other Columns", "aspects", {"data"}, {"data"}),
+				    #"Expanded data" = Table.ExpandListColumn(#"Expanded aspects", "data"),
+				    #"Expanded data1" = Table.ExpandRecordColumn(#"Expanded data", "data", {"id", "attributes"}, {"id", "attributes"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Expanded data1", each [id] <> null and [id] <> ""),
+				    #"Expanded attributes" = Table.ExpandRecordColumn(#"Filtered Rows", "attributes", {"name", "description", "color", "createdAt", "updatedAt", "publishedAt", "locale", "englishName", "sortValue"}, {"name", "description", "color", "createdAt", "updatedAt", "publishedAt", "locale", "englishName", "sortValue"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Expanded attributes", {"id"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

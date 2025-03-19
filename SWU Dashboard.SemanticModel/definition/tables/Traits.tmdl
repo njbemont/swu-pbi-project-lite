@@ -1,0 +1,79 @@
+table Traits
+	lineageTag: db73ea23-7376-4935-aa97-4c6152218161
+
+	column id
+		dataType: string
+		lineageTag: 9498aaef-440a-473e-8423-e31af498d965
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: d526d114-bc1c-41b1-9337-4f8eb0d06dcc
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: f25d55e8-be3a-445a-931b-d2688ab56f47
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdAt
+		dataType: string
+		lineageTag: 0b4dc48c-f73c-4caa-b5f6-1aa3c5471c15
+		summarizeBy: none
+		sourceColumn: createdAt
+
+		annotation SummarizationSetBy = Automatic
+
+	column updatedAt
+		dataType: string
+		lineageTag: e3205f79-dc7e-4303-baf9-ad60b7d755f9
+		summarizeBy: none
+		sourceColumn: updatedAt
+
+		annotation SummarizationSetBy = Automatic
+
+	column publishedAt
+		dataType: string
+		lineageTag: 6b68ca60-96c9-423e-8e05-7a437c0ff323
+		summarizeBy: none
+		sourceColumn: publishedAt
+
+		annotation SummarizationSetBy = Automatic
+
+	column locale
+		dataType: string
+		lineageTag: 485b766d-010d-49de-840c-e00649b48ccb
+		summarizeBy: none
+		sourceColumn: locale
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Traits = m
+		mode: import
+		queryGroup: Table
+		source =
+				let
+				    Source = Base,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"traits"}),
+				    #"Expanded traits" = Table.ExpandRecordColumn(#"Removed Other Columns", "traits", {"data"}, {"data"}),
+				    #"Expanded data" = Table.ExpandListColumn(#"Expanded traits", "data"),
+				    #"Expanded data1" = Table.ExpandRecordColumn(#"Expanded data", "data", {"id", "attributes"}, {"id", "attributes"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Expanded data1", each [id] <> null and [id] <> ""),
+				    #"Expanded attributes" = Table.ExpandRecordColumn(#"Filtered Rows", "attributes", {"name", "description", "createdAt", "updatedAt", "publishedAt", "locale"}, {"name", "description", "createdAt", "updatedAt", "publishedAt", "locale"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Expanded attributes", {"id"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

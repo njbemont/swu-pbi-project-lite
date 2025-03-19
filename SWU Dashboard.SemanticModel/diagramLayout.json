@@ -1,0 +1,175 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 852.38305001469382,
+            "y": 51
+          },
+          "nodeIndex": "Arenas",
+          "nodeLineageTag": "9037a05c-ebe6-475b-bad8-9e49d80b01be",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1136.3830500146937,
+            "y": 25
+          },
+          "nodeIndex": "Aspects",
+          "nodeLineageTag": "0153c9f8-0a76-4f42-9fb6-a954db7c9115",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 618.38305001469382,
+            "y": -41.422348979922475
+          },
+          "nodeIndex": "Base",
+          "nodeLineageTag": "cfa3681b-85bf-4777-b381-edcc82874357",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 334.20156119318534,
+            "y": -8.5776510200774112
+          },
+          "nodeIndex": "Cards",
+          "nodeLineageTag": "8584efd8-e680-4e73-80e1-663419ce2e18",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": -11.4372382003246
+          },
+          "nodeIndex": "Cards Fact",
+          "nodeLineageTag": "f5ccf8cf-4182-4e72-af8b-f6dabc9b7f8c",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1420.3830500146937,
+            "y": 51
+          },
+          "nodeIndex": "Keywords",
+          "nodeLineageTag": "22626e72-4b4b-49a6-ba5f-7ea9b0854e20",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1704.3830500146937,
+            "y": 51
+          },
+          "nodeIndex": "Traits",
+          "nodeLineageTag": "db73ea23-7376-4935-aa97-4c6152218161",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1988.3830500146937,
+            "y": 111
+          },
+          "nodeIndex": "Variants",
+          "nodeLineageTag": "bd5dcb25-4563-427b-92a8-208690893b1c",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2222.3830500146937,
+            "y": 83.211174489961252
+          },
+          "nodeIndex": "Rules",
+          "nodeLineageTag": "19c40b99-5df2-4016-9d0d-38fabceb7826",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2456.3830500146937,
+            "y": 107.21117448996125
+          },
+          "nodeIndex": "Y-Axis",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2690.3830500146937,
+            "y": 107.21117448996125
+          },
+          "nodeIndex": "Legend",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2924.3830500146937,
+            "y": 83.211174489961252
+          },
+          "nodeIndex": "Measure Table",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

@@ -1,0 +1,33 @@
+table 'Measure Table'
+	lineageTag: 36844c73-a776-467d-abf1-c500aad03540
+
+	measure 'Card Count - Distinct' = DISTINCTCOUNTNOBLANK(Cards[title + subtitle])
+		formatString: 0
+		lineageTag: 8d030d25-0fc2-467d-9289-225ddf30118f
+
+	measure 'Card Count - All Variants' = DISTINCTCOUNT(Cards[cardUid])
+		formatString: 0
+		lineageTag: 4f9fa2ea-5f45-4f52-abc1-a91026a92d9c
+
+	measure 'Card Count - Set' = DISTINCTCOUNTNOBLANK(Cards[title + subtitle + set])
+		formatString: 0
+		lineageTag: 33601163-1f04-4877-8efb-6c42b6333104
+
+	column Column
+		isHidden
+		formatString: 0
+		lineageTag: 0d4347ed-8fbb-4801-9614-d27c9779739e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Measure Table' = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = b74392a275e94050a0d8fa80c9e5c0af
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

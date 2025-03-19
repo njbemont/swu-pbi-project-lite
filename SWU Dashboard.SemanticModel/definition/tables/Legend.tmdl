@@ -1,0 +1,53 @@
+table Legend
+	lineageTag: 24d13d89-0bbf-4081-8cdf-402887cb73fb
+
+	column Parameter
+		lineageTag: 9e961009-d677-4d35-b223-b9af349d701a
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Fields'
+		isHidden
+		lineageTag: 96db0924-992c-4772-a71c-d6e694fd7b80
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: 1669426b-d516-4e8c-8189-5cd2f6e38917
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Legend = calculated
+		mode: import
+		source =
+				{
+				    ("Arenas", NAMEOF('Arenas'[name]), 0),
+				    ("Aspects", NAMEOF('Aspects'[name]), 1),
+				    ("Cost", NAMEOF(Cards[cost]), 2),
+				    ("Keywords", NAMEOF('Keywords'[name]), 3),
+				    ("Set", NAMEOF(Cards[expansion.data.attributes.name]), 4),
+				    ("Type", NAMEOF(Cards[type.data.attributes.name]), 5),
+				    ("Variants", NAMEOF('Variants'[name]), 6)
+				}
+
+	annotation PBI_Id = 1e0fd2da3ddc405fb31b1e03662ef379
+

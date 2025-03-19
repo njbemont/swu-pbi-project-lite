@@ -1,0 +1,39 @@
+table Variants
+	lineageTag: bd5dcb25-4563-427b-92a8-208690893b1c
+
+	column id
+		dataType: string
+		lineageTag: bf862dce-4084-4d48-b652-bf194c3ad321
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: e6d7cdc4-fa62-4106-a4d8-e04f1af1c86b
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Variants = m
+		mode: import
+		queryGroup: Table
+		source =
+				let
+				    Source = Base,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"variantTypes"}),
+				    #"Expanded variantTypes" = Table.ExpandRecordColumn(#"Removed Other Columns", "variantTypes", {"data"}, {"data"}),
+				    #"Expanded data" = Table.ExpandListColumn(#"Expanded variantTypes", "data"),
+				    #"Expanded data1" = Table.ExpandRecordColumn(#"Expanded data", "data", {"id", "attributes"}, {"id", "attributes"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Expanded data1", each [id] <> null and [id] <> ""),
+				    #"Expanded attributes" = Table.ExpandRecordColumn(#"Filtered Rows", "attributes", {"name"}, {"name"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Expanded attributes", {"id"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

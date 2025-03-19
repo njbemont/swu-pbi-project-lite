@@ -1,0 +1,30 @@
+expression Page = 1 meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	lineageTag: 14c5a33f-a195-49a7-8f49-e2528ef7b586
+	queryGroup: Parameter
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Number
+
+expression Rows = 25 meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	lineageTag: 42cb74ab-469d-45b9-a023-3220681a6120
+	queryGroup: Parameter
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Number
+
+expression Dynamic =
+		(page as number) =>
+		let
+		     Source = Json.Document(Web.Contents("https://admin.starwarsunlimited.com/api/card-list?locale=en&pagination[page]=" & Number.ToText(page) & "&pagination[pageSize]=" & Number.ToText(#"Rows") & "")),
+		     data = Source[data]
+		in
+		     data
+	lineageTag: f3500b2c-bc7b-43ed-ad35-60ef15409c00
+	queryGroup: Function
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Function
+

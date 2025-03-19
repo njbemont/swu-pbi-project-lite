@@ -1,0 +1,67 @@
+table Rules
+	lineageTag: 19c40b99-5df2-4016-9d0d-38fabceb7826
+
+	column cardUid
+		dataType: string
+		lineageTag: 601a58b0-5ee7-4aac-8006-4e5f1de1972a
+		summarizeBy: none
+		sourceColumn: cardUid
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attribute
+		dataType: string
+		lineageTag: 304a77d7-f64b-4854-9b74-9daa02e636da
+		summarizeBy: none
+		sourceColumn: Attribute
+
+		annotation SummarizationSetBy = Automatic
+
+	column date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 9c797e57-1240-4a63-acce-6803edd741a4
+		summarizeBy: none
+		sourceColumn: date
+
+		variation Variation
+			isDefault
+			relationship: 4f38265f-390e-486b-87af-b82a37f9fd3a
+			defaultHierarchy: LocalDateTable_e3d70a23-d04e-4c99-bf90-293b16bed457.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ruling
+		dataType: string
+		lineageTag: 8d6019e3-395d-47e5-88da-137e5ebd4e3a
+		summarizeBy: none
+		sourceColumn: ruling
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Rules = m
+		mode: import
+		queryGroup: Table
+		source =
+				let
+				    Source = Base,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"cardUid", "rulesStyled"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Other Columns", each [rulesStyled] <> null and [rulesStyled] <> ""),
+				    #"Replaced Value" = Table.ReplaceValue(#"Filtered Rows","</td></tr></tbody></table></figure>","",Replacer.ReplaceText,{"rulesStyled"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","<figure class=""table""><table><tbody><tr><td>","",Replacer.ReplaceText,{"rulesStyled"}),
+				    #"Trimmed Text" = Table.TransformColumns(#"Replaced Value1",{{"rulesStyled", Text.Trim, type text}}),
+				    #"Split Column by Delimiter" = Table.SplitColumn(#"Trimmed Text", "rulesStyled", Splitter.SplitTextByDelimiter("</td></tr><tr><td>", QuoteStyle.Csv), {"rulesStyled.1", "rulesStyled.2", "rulesStyled.3", "rulesStyled.4", "rulesStyled.5", "rulesStyled.6"}),
+				    #"Unpivoted Other Columns" = Table.UnpivotOtherColumns(#"Split Column by Delimiter", {"cardUid"}, "Attribute", "Value"),
+				    #"Split Column by Delimiter1" = Table.SplitColumn(#"Unpivoted Other Columns", "Value", Splitter.SplitTextByDelimiter("</td><td>", QuoteStyle.Csv), {"Value.1", "Value.2", "Value.3"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Split Column by Delimiter1",{{"Value.1", type date}, {"Value.2", type text}, {"Value.3", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Value.3"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"Value.1", "date"}, {"Value.2", "ruling"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

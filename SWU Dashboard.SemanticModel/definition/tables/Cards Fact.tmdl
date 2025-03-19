@@ -1,0 +1,80 @@
+table 'Cards Fact'
+	lineageTag: f5ccf8cf-4182-4e72-af8b-f6dabc9b7f8c
+
+	column cardUid
+		dataType: string
+		lineageTag: 3084462d-f0e1-4e85-8c2d-6702d279014a
+		summarizeBy: none
+		sourceColumn: cardUid
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'aspects.data.id'
+		dataType: string
+		lineageTag: 993168b7-8681-4d40-89aa-799807753bfb
+		summarizeBy: none
+		sourceColumn: aspects.data.id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'traits.data.id'
+		dataType: string
+		lineageTag: 1f79a19a-3c01-4d00-a1e1-2460901209e0
+		summarizeBy: none
+		sourceColumn: traits.data.id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'arenas.data.id'
+		dataType: string
+		lineageTag: e2d3d4d1-c2f6-4437-b7b0-6729619bdd9e
+		summarizeBy: none
+		sourceColumn: arenas.data.id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'keywords.data.id'
+		dataType: string
+		lineageTag: 61ba63e2-0a3c-4f75-84af-b6ce4696f2ae
+		summarizeBy: none
+		sourceColumn: keywords.data.id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'variantTypes.data.id'
+		dataType: string
+		lineageTag: eb6a698a-51f4-425d-bd60-ec7c2c16c408
+		summarizeBy: none
+		sourceColumn: variantTypes.data.id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Cards Fact' = m
+		mode: import
+		queryGroup: Table
+		source =
+				let
+				    Source = Base,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"cardUid", "aspects", "traits", "arenas", "keywords", "variantTypes"}),
+				    #"Expanded aspects" = Table.ExpandRecordColumn(#"Removed Other Columns", "aspects", {"data"}, {"aspects.data"}),
+				    #"Expanded aspects.data" = Table.ExpandListColumn(#"Expanded aspects", "aspects.data"),
+				    #"Expanded aspects.data1" = Table.ExpandRecordColumn(#"Expanded aspects.data", "aspects.data", {"id"}, {"aspects.data.id"}),
+				    #"Expanded traits" = Table.ExpandRecordColumn(#"Expanded aspects.data1", "traits", {"data"}, {"traits.data"}),
+				    #"Expanded traits.data" = Table.ExpandListColumn(#"Expanded traits", "traits.data"),
+				    #"Expanded traits.data1" = Table.ExpandRecordColumn(#"Expanded traits.data", "traits.data", {"id"}, {"traits.data.id"}),
+				    #"Expanded arenas" = Table.ExpandRecordColumn(#"Expanded traits.data1", "arenas", {"data"}, {"arenas.data"}),
+				    #"Expanded arenas.data" = Table.ExpandListColumn(#"Expanded arenas", "arenas.data"),
+				    #"Expanded arenas.data1" = Table.ExpandRecordColumn(#"Expanded arenas.data", "arenas.data", {"id"}, {"arenas.data.id"}),
+				    #"Expanded keywords" = Table.ExpandRecordColumn(#"Expanded arenas.data1", "keywords", {"data"}, {"keywords.data"}),
+				    #"Expanded keywords.data" = Table.ExpandListColumn(#"Expanded keywords", "keywords.data"),
+				    #"Expanded keywords.data1" = Table.ExpandRecordColumn(#"Expanded keywords.data", "keywords.data", {"id"}, {"keywords.data.id"}),
+				    #"Expanded variantTypes" = Table.ExpandRecordColumn(#"Expanded keywords.data1", "variantTypes", {"data"}, {"variantTypes.data"}),
+				    #"Expanded variantTypes.data" = Table.ExpandListColumn(#"Expanded variantTypes", "variantTypes.data"),
+				    #"Expanded variantTypes.data1" = Table.ExpandRecordColumn(#"Expanded variantTypes.data", "variantTypes.data", {"id"}, {"variantTypes.data.id"})
+				in
+				    #"Expanded variantTypes.data1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

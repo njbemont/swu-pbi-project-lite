@@ -1,0 +1,54 @@
+table Y-Axis
+	lineageTag: e72a3bb7-758b-4b8c-931e-7bf2988e2fa6
+
+	column Parameter
+		lineageTag: 0ed8664f-6506-4045-994f-c9eb50f4bf8b
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Fields'
+		isHidden
+		lineageTag: 6f38439e-746f-40eb-a373-e238912d140a
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: bb0e9fe7-d492-4074-bb89-e724c6e5590e
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Y-Axis = calculated
+		mode: import
+		source =
+				{
+				    ("Arenas", NAMEOF('Arenas'[name]), 0),
+				    ("Artist", NAMEOF(Cards[artist]), 1),
+				    ("Aspects", NAMEOF('Aspects'[name]), 2),
+				    ("Keywords", NAMEOF('Keywords'[name]), 3),
+				    ("Set", NAMEOF(Cards[expansion.data.attributes.name]), 4),
+				    ("Traits", NAMEOF('Traits'[name]), 5),
+				    ("Type", NAMEOF(Cards[type.data.attributes.name]), 6),
+				    ("Variants", NAMEOF('Variants'[name]), 7)
+				}
+
+	annotation PBI_Id = d55996e7c89b4a0b81cff85abc0726d7
+

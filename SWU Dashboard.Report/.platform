@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "SWU Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "70348acc-c2d3-41be-8577-fbc86070993b"
+  }
+}
