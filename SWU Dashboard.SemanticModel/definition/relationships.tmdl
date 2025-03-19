@@ -39,3 +39,18 @@ relationship 17e1da67-c7a0-79bd-7745-672eecdff521
 	fromColumn: 'Cards Fact'.cardUid
 	toColumn: Rules.cardUid
 
+relationship f4bbddc9-2e82-438c-afd0-c5a63e1b5fcb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Cards.createdAt
+	toColumn: LocalDateTable_2df995b1-3503-4eee-82e1-4ecd9fcf9151.Date
+
+relationship 60be586e-f774-47f2-a0b0-1f1ce02b06ab
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Cards.updatedAt
+	toColumn: LocalDateTable_f2d3c612-927f-4c67-8ce4-4d18e28f301d.Date
+
+relationship 95f7840c-9fea-4af5-8943-1fd93d88d0eb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Cards.publishedAt
+	toColumn: LocalDateTable_8aecdfd4-668e-46b3-ad90-0b8e8ca7c033.Date
+

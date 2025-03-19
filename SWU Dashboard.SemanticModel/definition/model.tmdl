@@ -40,6 +40,9 @@ ref table LocalDateTable_e3d70a23-d04e-4c99-bf90-293b16bed457
 ref table Y-Axis
 ref table Legend
 ref table 'Measure Table'
+ref table LocalDateTable_2df995b1-3503-4eee-82e1-4ecd9fcf9151
+ref table LocalDateTable_f2d3c612-927f-4c67-8ce4-4d18e28f301d
+ref table LocalDateTable_8aecdfd4-668e-46b3-ad90-0b8e8ca7c033
 
 ref cultureInfo en-US
 

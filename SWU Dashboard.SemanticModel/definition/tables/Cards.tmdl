@@ -18,17 +18,19 @@ table Cards
 		annotation SummarizationSetBy = Automatic
 
 	column cardNumber
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 98daf917-1337-4630-9ed6-64cc780ac5ae
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: cardNumber
 
 		annotation SummarizationSetBy = Automatic
 
 	column cardCount
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: d3679f69-2448-4683-a9f7-b605156b4f8e
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: cardCount
 
 		annotation SummarizationSetBy = Automatic
@@ -66,25 +68,28 @@ table Cards
 		annotation SummarizationSetBy = Automatic
 
 	column cost
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 129cab99-4e67-4986-9fbd-47ca7c9aa322
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: cost
 
 		annotation SummarizationSetBy = Automatic
 
 	column hp
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: aaf4e286-eb31-45b7-848e-1ba4d42af75a
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: hp
 
 		annotation SummarizationSetBy = Automatic
 
 	column power
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: ac67809a-9143-4250-a715-eb5cc3b4f60e
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: power
 
 		annotation SummarizationSetBy = Automatic
@@ -114,26 +119,44 @@ table Cards
 		annotation SummarizationSetBy = Automatic
 
 	column createdAt
-		dataType: string
+		dataType: dateTime
+		formatString: General Date
 		lineageTag: 6e1554b6-f858-429d-925e-6ecfa2c7e494
 		summarizeBy: none
 		sourceColumn: createdAt
 
+		variation Variation
+			isDefault
+			relationship: f4bbddc9-2e82-438c-afd0-c5a63e1b5fcb
+			defaultHierarchy: LocalDateTable_2df995b1-3503-4eee-82e1-4ecd9fcf9151.'Date Hierarchy'
+
 		annotation SummarizationSetBy = Automatic
 
 	column updatedAt
-		dataType: string
+		dataType: dateTime
+		formatString: General Date
 		lineageTag: 17a96609-c56b-4fe6-beff-ec24b59f1cc9
 		summarizeBy: none
 		sourceColumn: updatedAt
 
+		variation Variation
+			isDefault
+			relationship: 60be586e-f774-47f2-a0b0-1f1ce02b06ab
+			defaultHierarchy: LocalDateTable_f2d3c612-927f-4c67-8ce4-4d18e28f301d.'Date Hierarchy'
+
 		annotation SummarizationSetBy = Automatic
 
 	column publishedAt
-		dataType: string
+		dataType: dateTime
+		formatString: General Date
 		lineageTag: 7e894b8a-d173-4e16-89ec-78189e3a6d93
 		summarizeBy: none
 		sourceColumn: publishedAt
+
+		variation Variation
+			isDefault
+			relationship: 95f7840c-9fea-4af5-8943-1fd93d88d0eb
+			defaultHierarchy: LocalDateTable_8aecdfd4-668e-46b3-ad90-0b8e8ca7c033.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -275,9 +298,10 @@ table Cards
 		annotation SummarizationSetBy = Automatic
 
 	column 'reprintOf.data.id'
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: db0da562-86ac-4481-a685-b4a083f5d96e
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: reprintOf.data.id
 
 		annotation SummarizationSetBy = Automatic
@@ -323,9 +347,10 @@ table Cards
 				    #"Expanded expansion.data.attributes" = Table.ExpandRecordColumn(#"Expanded expansion.data", "expansion.data.attributes", {"name", "code"}, {"expansion.data.attributes.name", "expansion.data.attributes.code"}),
 				    #"Removed Columns" = Table.RemoveColumns(#"Expanded expansion.data.attributes",{"textStyled", "deployBoxStyled", "epicActionStyled", "linkHtml", "localizations", "aspects", "traits", "arenas", "keywords", "variantTypes", "variantOf", "validationId", "cardId", "aspectDuplicates", "rulesStyled", "rules"}),
 				    #"Expanded reprintOf" = Table.ExpandRecordColumn(#"Removed Columns", "reprintOf", {"data"}, {"reprintOf.data"}),
-				    #"Expanded reprintOf.data" = Table.ExpandRecordColumn(#"Expanded reprintOf", "reprintOf.data", {"id"}, {"reprintOf.data.id"})
+				    #"Expanded reprintOf.data" = Table.ExpandRecordColumn(#"Expanded reprintOf", "reprintOf.data", {"id"}, {"reprintOf.data.id"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded reprintOf.data",{{"cardNumber", Int64.Type}, {"cardCount", Int64.Type}, {"cost", Int64.Type}, {"hp", Int64.Type}, {"power", Int64.Type}, {"reprintOf.data.id", Int64.Type}, {"publishedAt", type datetime}, {"updatedAt", type datetime}, {"createdAt", type datetime}})
 				in
-				    #"Expanded reprintOf.data"
+				    #"Changed Type"
 
 	annotation PBI_NavigationStepName = Navigation
 
