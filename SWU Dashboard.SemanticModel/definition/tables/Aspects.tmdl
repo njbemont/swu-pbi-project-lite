@@ -14,6 +14,9 @@ table Aspects
 		lineageTag: 8f54f179-fa52-4bac-862c-ed91cb558898
 		summarizeBy: none
 		sourceColumn: name
+		sortByColumn: sortValue
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
@@ -74,7 +77,8 @@ table Aspects
 		annotation SummarizationSetBy = Automatic
 
 	column sortValue
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 75f99558-29f4-45da-9876-398e815bb859
 		summarizeBy: none
 		sourceColumn: sortValue
@@ -93,9 +97,10 @@ table Aspects
 				    #"Expanded data1" = Table.ExpandRecordColumn(#"Expanded data", "data", {"id", "attributes"}, {"id", "attributes"}),
 				    #"Filtered Rows" = Table.SelectRows(#"Expanded data1", each [id] <> null and [id] <> ""),
 				    #"Expanded attributes" = Table.ExpandRecordColumn(#"Filtered Rows", "attributes", {"name", "description", "color", "createdAt", "updatedAt", "publishedAt", "locale", "englishName", "sortValue"}, {"name", "description", "color", "createdAt", "updatedAt", "publishedAt", "locale", "englishName", "sortValue"}),
-				    #"Removed Duplicates" = Table.Distinct(#"Expanded attributes", {"id"})
+				    #"Removed Duplicates" = Table.Distinct(#"Expanded attributes", {"id"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Duplicates",{{"sortValue", Int64.Type}})
 				in
-				    #"Removed Duplicates"
+				    #"Changed Type"
 
 	annotation PBI_NavigationStepName = Navigation
 

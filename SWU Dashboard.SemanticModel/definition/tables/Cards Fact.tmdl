@@ -1,51 +1,70 @@
 table 'Cards Fact'
+	isHidden
 	lineageTag: f5ccf8cf-4182-4e72-af8b-f6dabc9b7f8c
 
 	column cardUid
 		dataType: string
+		isHidden
 		lineageTag: 3084462d-f0e1-4e85-8c2d-6702d279014a
 		summarizeBy: none
 		sourceColumn: cardUid
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'aspects.data.id'
 		dataType: string
+		isHidden
 		lineageTag: 993168b7-8681-4d40-89aa-799807753bfb
 		summarizeBy: none
 		sourceColumn: aspects.data.id
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'traits.data.id'
 		dataType: string
+		isHidden
 		lineageTag: 1f79a19a-3c01-4d00-a1e1-2460901209e0
 		summarizeBy: none
 		sourceColumn: traits.data.id
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'arenas.data.id'
 		dataType: string
+		isHidden
 		lineageTag: e2d3d4d1-c2f6-4437-b7b0-6729619bdd9e
 		summarizeBy: none
 		sourceColumn: arenas.data.id
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'keywords.data.id'
 		dataType: string
+		isHidden
 		lineageTag: 61ba63e2-0a3c-4f75-84af-b6ce4696f2ae
 		summarizeBy: none
 		sourceColumn: keywords.data.id
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'variantTypes.data.id'
 		dataType: string
+		isHidden
 		lineageTag: eb6a698a-51f4-425d-bd60-ec7c2c16c408
 		summarizeBy: none
 		sourceColumn: variantTypes.data.id
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -73,6 +92,8 @@ table 'Cards Fact'
 				    #"Expanded variantTypes.data1" = Table.ExpandRecordColumn(#"Expanded variantTypes.data", "variantTypes.data", {"id"}, {"variantTypes.data.id"})
 				in
 				    #"Expanded variantTypes.data1"
+
+	changedProperty = IsHidden
 
 	annotation PBI_NavigationStepName = Navigation
 
