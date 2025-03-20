@@ -2156,16 +2156,6 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.714
 			          }
-			        },
-			        {
-			          "Card Back": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -13879,75 +13869,363 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "card.artBack_data_attributes_url_cardBack": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Cards",
+			          "ConceptualProperty": "artBack.data.attributes.url.cardBack"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "artBack.data.attributes.url.cardBack": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Back": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "measure_table.card_image_switcher": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure Table",
+			          "ConceptualProperty": "Card Image Switcher"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "card image switcher": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "switcher": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "image switcher": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "hover_selector": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "HoverSelector"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "hover selector": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "HoverSelector": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "selector": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "hover chooser": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "hover picker": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "chooser": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "picker": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "hover_selector.view": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "HoverSelector",
+			          "ConceptualProperty": "View"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "view": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "opinion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "interpretation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "understanding": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "outlook": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "observation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "examination": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "scrutiny": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "analysis": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "inspection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "hover_selector.sort": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "HoverSelector",
+			          "ConceptualProperty": "Sort"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sort": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "genus": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "species": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "variety": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "nature": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "kind": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "ilk": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "person": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "character": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "link_has_hyperlink": {
-			      "Binding": {
-			        "ConceptualEntity": "Judge Program Links"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "link": {
-			          "Target": {
-			            "Entity": "link"
-			          }
-			        },
-			        "link.hyperlink": {
-			          "Target": {
-			            "Entity": "link.hyperlink"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "link"
-			            },
-			            "Object": {
-			              "Role": "link.hyperlink"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "judge_program_links_have_hyperlinks"
-			        }
-			      ]
-			    },
-			    "rule_has_measure_table_rulings_check": {
-			      "Binding": {
-			        "ConceptualEntity": "Rules"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "rule": {
-			          "Target": {
-			            "Entity": "rule"
-			          }
-			        },
-			        "measure_table.rulings_check": {
-			          "Target": {
-			            "Entity": "measure_table.rulings_check"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "rule"
-			            },
-			            "Object": {
-			              "Role": "measure_table.rulings_check"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "rules_have_rulings_check"
-			        }
-			      ]
-			    },
 			    "card_has_reprints": {
 			      "Binding": {
 			        "ConceptualEntity": "Cards"
@@ -17288,6 +17566,170 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
+			    "hover_selector_select": {
+			      "Binding": {
+			        "ConceptualEntity": "HoverSelector"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "hover_selector": {
+			          "Target": {
+			            "Entity": "hover_selector"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "hover_selector"
+			            },
+			            "Verbs": [
+			              {
+			                "select": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.75,
+			          "ID": "hover_selectors_select"
+			        }
+			      ]
+			    },
+			    "measure_table_card_image_switcher_switch_measure_table": {
+			      "Binding": {
+			        "ConceptualEntity": "Measure Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure_table.card_image_switcher": {
+			          "Target": {
+			            "Entity": "measure_table.card_image_switcher"
+			          }
+			        },
+			        "measure_table": {
+			          "Target": {
+			            "Entity": "measure_table"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "measure_table.card_image_switcher"
+			            },
+			            "Verbs": [
+			              {
+			                "switch": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "measure_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.75,
+			          "ID": "card_image_switcher_switch_measure_tables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure_table.card_image_switcher"
+			            },
+			            "Object": {
+			              "Role": "measure_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "card_image_switcher_have_measure_tables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure_table"
+			            },
+			            "Object": {
+			              "Role": "measure_table.card_image_switcher"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "measure_tables_have_card_image_switcher"
+			        }
+			      ]
+			    },
+			    "rule_has_measure_table_rulings_check": {
+			      "Binding": {
+			        "ConceptualEntity": "Rules"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "rule": {
+			          "Target": {
+			            "Entity": "rule"
+			          }
+			        },
+			        "measure_table.rulings_check": {
+			          "Target": {
+			            "Entity": "measure_table.rulings_check"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "rule"
+			            },
+			            "Object": {
+			              "Role": "measure_table.rulings_check"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "rules_have_rulings_check"
+			        }
+			      ]
+			    },
+			    "link_has_hyperlink": {
+			      "Binding": {
+			        "ConceptualEntity": "Judge Program Links"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "link": {
+			          "Target": {
+			            "Entity": "link"
+			          }
+			        },
+			        "link.hyperlink": {
+			          "Target": {
+			            "Entity": "link.hyperlink"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "link"
+			            },
+			            "Object": {
+			              "Role": "link.hyperlink"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "judge_program_links_have_hyperlinks"
+			        }
+			      ]
+			    },
 			    "link_has_link_text": {
 			      "Binding": {
 			        "ConceptualEntity": "Judge Program Links"
@@ -17351,6 +17793,105 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "judge_program_links_have_web_links"
+			        }
+			      ]
+			    },
+			    "card_has_artBack_data_attributes_url_cardBack": {
+			      "Binding": {
+			        "ConceptualEntity": "Cards"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "card": {
+			          "Target": {
+			            "Entity": "card"
+			          }
+			        },
+			        "card.artBack_data_attributes_url_cardBack": {
+			          "Target": {
+			            "Entity": "card.artBack_data_attributes_url_cardBack"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "card"
+			            },
+			            "Object": {
+			              "Role": "card.artBack_data_attributes_url_cardBack"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cards_have_artBack_data_attributes_url_cardBacks"
+			        }
+			      ]
+			    },
+			    "hover_selector_has_view": {
+			      "Binding": {
+			        "ConceptualEntity": "HoverSelector"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "hover_selector": {
+			          "Target": {
+			            "Entity": "hover_selector"
+			          }
+			        },
+			        "hover_selector.view": {
+			          "Target": {
+			            "Entity": "hover_selector.view"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "hover_selector"
+			            },
+			            "Object": {
+			              "Role": "hover_selector.view"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hover_selectors_have_views"
+			        }
+			      ]
+			    },
+			    "hover_selector_has_sort": {
+			      "Binding": {
+			        "ConceptualEntity": "HoverSelector"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "hover_selector": {
+			          "Target": {
+			            "Entity": "hover_selector"
+			          }
+			        },
+			        "hover_selector.sort": {
+			          "Target": {
+			            "Entity": "hover_selector.sort"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "hover_selector"
+			            },
+			            "Object": {
+			              "Role": "hover_selector.sort"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hover_selectors_have_sorts"
 			        }
 			      ]
 			    },
