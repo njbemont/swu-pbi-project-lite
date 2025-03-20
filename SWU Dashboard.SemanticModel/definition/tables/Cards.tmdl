@@ -306,7 +306,7 @@ table Cards
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'title + subtitle + set' = Cards[title] & " - " & Cards[subtitle] & " - " & Cards[reprintOf.data.id]
+	column 'title + subtitle + set' = Cards[title + subtitle] & IF(ISBLANK(Cards[reprintOf.data.id]), BLANK(), " - " & Cards[reprintOf.data.id])
 		lineageTag: 56190dc5-eb32-4a77-a2f8-7fde9dd40078
 		summarizeBy: none
 
