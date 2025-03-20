@@ -291,7 +291,7 @@ table Cards
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'title + subtitle' = Cards[title] & " - " & Cards[subtitle]
+	column 'title + subtitle' = Cards[title] & IF(OR(ISBLANK(Cards[subtitle]), Cards[subtitle] = ""), BLANK(), " - " & Cards[subtitle])
 		lineageTag: ca949078-fae2-42ed-b5f6-dc03e646e45b
 		summarizeBy: none
 
