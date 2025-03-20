@@ -13,6 +13,9 @@ table 'Measure Table'
 		formatString: 0
 		lineageTag: 33601163-1f04-4877-8efb-6c42b6333104
 
+	measure 'Rulings Check' = IF(ISBLANK(MAX(Rules[ruling])), "No additional rulings available for this card", BLANK())
+		lineageTag: ff25b9f0-6246-485e-a5b3-510122291b07
+
 	column Column
 		isHidden
 		formatString: 0
