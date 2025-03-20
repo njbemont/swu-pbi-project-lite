@@ -59,7 +59,7 @@ table Keywords
 
 	partition Keywords = m
 		mode: import
-		queryGroup: Table
+		queryGroup: 'API Tables'
 		source =
 				let
 				    Source = Base,

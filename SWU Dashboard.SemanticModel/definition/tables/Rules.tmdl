@@ -43,7 +43,7 @@ table Rules
 
 	partition Rules = m
 		mode: import
-		queryGroup: Table
+		queryGroup: 'API Tables'
 		source =
 				let
 				    Source = Base,

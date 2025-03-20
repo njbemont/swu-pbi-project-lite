@@ -70,7 +70,7 @@ table 'Cards Fact'
 
 	partition 'Cards Fact' = m
 		mode: import
-		queryGroup: Table
+		queryGroup: 'API Tables'
 		source =
 				let
 				    Source = Base,

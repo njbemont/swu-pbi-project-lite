@@ -1,0 +1,43 @@
+table 'Judge Program Links'
+	lineageTag: 227a45c2-131a-4fa2-a8db-c789ed5b1542
+
+	column Hyperlink
+		dataType: string
+		lineageTag: 0ecc579b-cfa7-45f6-b4ef-d4a8c181b3a1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Hyperlink
+
+		annotation SummarizationSetBy = Automatic
+
+	column LinkText
+		dataType: string
+		lineageTag: 25837467-4f0f-46cd-96df-626530ed96ad
+		summarizeBy: none
+		sourceColumn: LinkText
+
+		annotation SummarizationSetBy = Automatic
+
+	column WebLink
+		dataType: string
+		lineageTag: 61e39d57-f498-4c39-8ca9-f93dc9524972
+		dataCategory: WebUrl
+		summarizeBy: none
+		sourceColumn: WebLink
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Judge Program Links' = m
+		mode: import
+		queryGroup: 'Cacade Tables'
+		source =
+				let
+				    Source = Table.Combine({#"Homepage Links", #"Resource Links"}),
+				    #"Removed Duplicates" = Table.Distinct(Source, {"WebLink"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

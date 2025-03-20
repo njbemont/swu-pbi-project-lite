@@ -59,7 +59,7 @@ table Traits
 
 	partition Traits = m
 		mode: import
-		queryGroup: Table
+		queryGroup: 'API Tables'
 		source =
 				let
 				    Source = Base,

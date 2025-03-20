@@ -160,6 +160,30 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3158.3830500146937,
+            "y": 107.21117448996125
+          },
+          "nodeIndex": "Judge Program Links",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3392.3830500146937,
+            "y": 83.211174489961252
+          },
+          "nodeIndex": "HoverSelector",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",

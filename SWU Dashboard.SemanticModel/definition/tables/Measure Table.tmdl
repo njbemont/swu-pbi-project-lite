@@ -16,6 +16,17 @@ table 'Measure Table'
 	measure 'Rulings Check' = IF(ISBLANK(MAX(Rules[ruling])), "No additional rulings available for this card", BLANK())
 		lineageTag: ff25b9f0-6246-485e-a5b3-510122291b07
 
+	measure 'Card Image Switcher' =
+			
+			VAR SelectedFrontImage = SELECTEDVALUE(Cards[artFront.data.attributes.url])
+			VAR SelectedBackImage = SELECTEDVALUE(Cards[artBack.data.attributes.url.cardBack])
+			VAR HoverChoice = SELECTEDVALUE(HoverSelector[View], "Front")
+			
+			RETURN
+			IF(HoverChoice = "Front", SelectedFrontImage, SelectedBackImage)
+		lineageTag: 76d97ae8-545b-4e09-ad04-469a9ed54a36
+		dataCategory: ImageUrl
+
 	column Column
 		isHidden
 		formatString: 0

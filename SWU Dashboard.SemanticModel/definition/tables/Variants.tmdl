@@ -19,7 +19,7 @@ table Variants
 
 	partition Variants = m
 		mode: import
-		queryGroup: Table
+		queryGroup: 'API Tables'
 		source =
 				let
 				    Source = Base,

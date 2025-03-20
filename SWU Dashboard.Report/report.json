@@ -1,18 +1,39 @@
 {
-  "config": "{\"version\":\"5.61\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":3,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "config": "{\"version\":\"5.61\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":2,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
   "filters": "[]",
   "layoutOptimization": 0,
   "pods": [
+    {
+      "boundSection": "fd8f3d906599c75ca5aa",
+      "config": "{}",
+      "name": "111e9305007298158c25",
+      "parameters": "[{\"name\":\"625469d17d969b889884\",\"boundFilter\":\"0a32e068953e44a07850\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"artFront.data.attributes.url\"}}}]",
+      "type": 2
+    },
     {
       "boundSection": "3a4b80d0be4c2abc5063",
       "config": "{}",
       "name": "41132e2f2c734a2781ea"
     },
     {
+      "boundSection": "6bc2d32e0c260b5cb08b",
+      "config": "{}",
+      "name": "53c9de4f991b5314607c",
+      "parameters": "[{\"name\":\"88aca4e70a8d4c03500a\",\"boundFilter\":\"c36ccd9c03b8e37b0dcd\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"artBack.data.attributes.url\"}}}]",
+      "type": 2
+    },
+    {
+      "boundSection": "4c991921e49872d597e9",
+      "config": "{}",
+      "name": "7d7c711fe37e1825a254",
+      "parameters": "[{\"name\":\"377b2b2a0db43713ddce\",\"boundFilter\":\"42c0dfc47644b7d28cea\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Rules\"}},\"Property\":\"ruling\"}}},{\"name\":\"86bd9e2a3d4ad63b04cc\",\"boundFilter\":\"6809dd91935b9d0217ae\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Aspects\"}},\"Property\":\"name\"}}},{\"name\":\"4b6d8e14a82d3a3868b7\",\"boundFilter\":\"7804415347340384c344\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"cost\"}},\"asAggregation\":true}]",
+      "type": 1
+    },
+    {
       "boundSection": "76a6e2bd589776a3bb25",
       "config": "{}",
       "name": "7ecc352e94dec305dc63",
-      "parameters": "[{\"name\":\"625469d17d969b889884\",\"boundFilter\":\"0a32e068953e44a07850\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"artFront.data.attributes.url\"}}},{\"name\":\"e150ae1bae65c2890d00\",\"boundFilter\":\"9ae5c1573784d5369679\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"cardUid\"}}}]",
+      "parameters": "[{\"name\":\"625469d17d969b889884\",\"boundFilter\":\"0a32e068953e44a07850\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"artFront.data.attributes.url\"}}}]",
       "type": 2
     },
     {
@@ -171,7 +192,91 @@
       "ordinal": 2,
       "visualContainers": [
         {
-          "config": "{\"name\":\"152d9cc91b8bd2112e01\",\"layouts\":[{\"id\":0,\"position\":{\"x\":224.6808510638298,\"y\":75.86626139817629,\"z\":0,\"width\":1055.3191489361702,\"height\":644.8632218844986,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Cards.artFront.data.attributes.url\"},{\"queryRef\":\"Rules.date\"},{\"queryRef\":\"Rules.ruling\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0},{\"Name\":\"r\",\"Entity\":\"Rules\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"artFront.data.attributes.url\"},\"Name\":\"Cards.artFront.data.attributes.url\",\"NativeReferenceName\":\"Card\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"date\"},\"Name\":\"Rules.date\",\"NativeReferenceName\":\"Date\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"ruling\"},\"Name\":\"Rules.ruling\",\"NativeReferenceName\":\"Ruling\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"date\"}}}]},\"columnProperties\":{\"Cards.artFront.data.attributes.url\":{\"displayName\":\"Card\"},\"Rules.date\":{\"displayName\":\"Date\"},\"Rules.ruling\":{\"displayName\":\"Ruling\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"795.9135105269373D\"}}}},\"selector\":{\"metadata\":\"Rules.ruling\"}}]},\"vcObjects\":{\"visualTooltip\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"section\":{\"expr\":{\"Literal\":{\"Value\":\"'76a6e2bd589776a3bb25'\"}}}}}]}}}",
+          "config": "{\"name\":\"152d9cc91b8bd2112e01\",\"layouts\":[{\"id\":0,\"position\":{\"x\":224.84656084656083,\"y\":77.2063492063492,\"z\":0,\"width\":1055.1534391534392,\"height\":643.3862433862433,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Cards.artFront.data.attributes.url\"},{\"queryRef\":\"Cards.artBack.data.attributes.url.cardBack\"},{\"queryRef\":\"Rules.date\"},{\"queryRef\":\"Rules.ruling\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0},{\"Name\":\"r\",\"Entity\":\"Rules\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"artFront.data.attributes.url\"},\"Name\":\"Cards.artFront.data.attributes.url\",\"NativeReferenceName\":\"Card\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"date\"},\"Name\":\"Rules.date\",\"NativeReferenceName\":\"Date\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"ruling\"},\"Name\":\"Rules.ruling\",\"NativeReferenceName\":\"Ruling\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"artBack.data.attributes.url.cardBack\"},\"Name\":\"Cards.artBack.data.attributes.url.cardBack\",\"NativeReferenceName\":\"artBack.data.attributes.url.cardBack\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"date\"}}}]},\"columnProperties\":{\"Cards.artFront.data.attributes.url\":{\"displayName\":\"Card\"},\"Rules.date\":{\"displayName\":\"Date\"},\"Rules.ruling\":{\"displayName\":\"Ruling\"},\"Cards.artBack.data.attributes.url\":{\"displayName\":\"Card Back\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"795.9135105269373D\"}}}},\"selector\":{\"metadata\":\"Rules.ruling\"}}]},\"vcObjects\":{\"visualTooltip\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"section\":{\"expr\":{\"Literal\":{\"Value\":\"'fd8f3d906599c75ca5aa'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 643.39,
+          "width": 1055.15,
+          "x": 224.85,
+          "y": 77.21,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"37de8ceea6abb33dd1b0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":2001,\"width\":224.84656084656083,\"height\":97.52380952380952,\"tabOrder\":2001}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Links.LinkText\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"Judge Program Links\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"LinkText\"},\"Name\":\"Links.LinkText\",\"NativeReferenceName\":\"Official Documents\"}]},\"columnProperties\":{\"Links.LinkText\":{\"displayName\":\"Official Documents\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"values\":[{\"properties\":{\"urlIcon\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}},{\"properties\":{\"webURL\":{\"expr\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Judge Program Links\"}},\"Property\":\"WebLink\"}},\"Function\":3}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}],\"metadata\":\"Links.LinkText\"}}],\"total\":[{\"properties\":{\"totals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[{\"name\":\"00a39ee7021a010b664c\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Judge Program Links\"}},\"Property\":\"LinkText\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"j\",\"Entity\":\"Judge Program Links\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"j\"}},\"Property\":\"LinkText\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Comprehensive Rules'\"}}],[{\"Literal\":{\"Value\":\"'Master Event Document'\"}}],[{\"Literal\":{\"Value\":\"'Tournament Regulations'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 97.52,
+          "width": 224.85,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 2001.00
+        },
+        {
+          "config": "{\"name\":\"56f2da64cc516e5a0d9b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":97.52380952380952,\"z\":1000,\"width\":224.16931216931218,\"height\":622.3915343915344,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Variants.name\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"Variants\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"name\"},\"Name\":\"Variants.name\",\"NativeReferenceName\":\"Variant\"}]},\"columnProperties\":{\"Variants.name\":{\"displayName\":\"Variant\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"Variants\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Standard'\"}}]]}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 622.39,
+          "width": 224.17,
+          "x": 0.00,
+          "y": 97.52,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"59aff459cb0501d51005\",\"layouts\":[{\"id\":0,\"position\":{\"x\":595.3015873015873,\"y\":0,\"z\":2003,\"width\":194.37037037037038,\"height\":58.24338624338624}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"HoverSelector.View\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"HoverSelector\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"View\"},\"Name\":\"HoverSelector.View\",\"NativeReferenceName\":\"View\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"h\",\"Entity\":\"HoverSelector\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"View\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Front'\"}}]]}}}]}}}}],\"header\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Card View'\"}}}}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 58.24,
+          "width": 194.37,
+          "x": 595.30,
+          "y": 0.00,
+          "z": 2003.00
+        },
+        {
+          "config": "{\"name\":\"d5599bd067569d29eae8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":224.84656084656083,\"y\":0,\"z\":2000,\"width\":370.4550264550264,\"height\":77.2063492063492,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Cards.title\",\"active\":true},{\"queryRef\":\"Cards.subtitle\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title\"},\"Name\":\"Cards.title\",\"NativeReferenceName\":\"title\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"subtitle\"},\"Name\":\"Cards.subtitle\",\"NativeReferenceName\":\"subtitle\"}]},\"expansionStates\":[{\"roles\":[\"Values\"],\"levels\":[{\"queryRefs\":[\"Cards.title\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"title\"}}],\"isPinned\":true},{\"queryRefs\":[\"Cards.subtitle\"],\"isCollapsed\":true,\"isPinned\":true}],\"root\":{\"identityValues\":null,\"children\":[{\"identityValues\":[{\"Literal\":{\"Value\":\"'Admiral Yularen'\"}}],\"isToggled\":true},{\"identityValues\":[{\"Literal\":{\"Value\":\"'Colonel Yularen'\"}}],\"isToggled\":true}]}}],\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"header\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Title > Subtitle'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 77.21,
+          "width": 370.46,
+          "x": 224.85,
+          "y": 0.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"f0b77859385a2a7504b7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1055.1534391534392,\"y\":0,\"z\":2002,\"width\":224.84656084656083,\"height\":77.2063492063492,\"tabOrder\":2002}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Links.LinkText\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"Judge Program Links\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"LinkText\"},\"Name\":\"Links.LinkText\",\"NativeReferenceName\":\"Clarifications\"}]},\"columnProperties\":{\"Links.LinkText\":{\"displayName\":\"Clarifications\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"values\":[{\"properties\":{\"urlIcon\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}},{\"properties\":{\"webURL\":{\"expr\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Judge Program Links\"}},\"Property\":\"WebLink\"}},\"Function\":3}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}],\"metadata\":\"Links.LinkText\"}}],\"total\":[{\"properties\":{\"totals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"columnHeaders\":[{\"properties\":{\"fontFamily\":{\"expr\":{\"Literal\":{\"Value\":\"'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"backColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}]}}}",
+          "filters": "[{\"name\":\"00a39ee7021a010b664c\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Judge Program Links\"}},\"Property\":\"LinkText\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"j\",\"Entity\":\"Judge Program Links\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"j\"}},\"Property\":\"LinkText\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Policy Clarifications'\"}}],[{\"Literal\":{\"Value\":\"'Rules Clarifications'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 77.21,
+          "width": 224.85,
+          "x": 1055.15,
+          "y": 0.00,
+          "z": 2002.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "Rulings - Drill",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"42c0dfc47644b7d28cea\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Rules\"}},\"Property\":\"ruling\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"6809dd91935b9d0217ae\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Aspects\"}},\"Property\":\"name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Aspects\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Command'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"7804415347340384c344\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"cost\"}},\"type\":\"Categorical\",\"howCreated\":5}]",
+      "height": 720.00,
+      "name": "4c991921e49872d597e9",
+      "ordinal": 12,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"049a19117bea06e16c06\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"width\":100,\"height\":40,\"z\":2001}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 100.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 2001.00
+        },
+        {
+          "config": "{\"name\":\"8d258364aaa60931e5a4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":224.6808510638298,\"y\":0,\"z\":2000,\"width\":283.03951367781156,\"height\":75.86626139817629,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Cards.title\",\"active\":true},{\"queryRef\":\"Cards.subtitle\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title\"},\"Name\":\"Cards.title\",\"NativeReferenceName\":\"title\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"subtitle\"},\"Name\":\"Cards.subtitle\",\"NativeReferenceName\":\"subtitle\"}]},\"expansionStates\":[{\"roles\":[\"Values\"],\"levels\":[{\"queryRefs\":[\"Cards.title\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"title\"}}],\"isPinned\":true},{\"queryRefs\":[\"Cards.subtitle\"],\"isCollapsed\":true,\"isPinned\":true}],\"root\":{\"identityValues\":null,\"children\":[{\"identityValues\":[{\"Literal\":{\"Value\":\"'Admiral Yularen'\"}}],\"isToggled\":true},{\"identityValues\":[{\"Literal\":{\"Value\":\"'Colonel Yularen'\"}}],\"isToggled\":true}]}}],\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"header\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Title > Subtitle'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 75.87,
+          "width": 283.04,
+          "x": 224.68,
+          "y": 0.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"c07351cd92b1db106910\",\"layouts\":[{\"id\":0,\"position\":{\"x\":224.6808510638298,\"y\":75.86626139817629,\"z\":0,\"width\":1055.3191489361702,\"height\":644.8632218844986,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Cards.artFront.data.attributes.url\"},{\"queryRef\":\"Rules.date\"},{\"queryRef\":\"Rules.ruling\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0},{\"Name\":\"r\",\"Entity\":\"Rules\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"artFront.data.attributes.url\"},\"Name\":\"Cards.artFront.data.attributes.url\",\"NativeReferenceName\":\"Card\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"date\"},\"Name\":\"Rules.date\",\"NativeReferenceName\":\"Date\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"ruling\"},\"Name\":\"Rules.ruling\",\"NativeReferenceName\":\"Ruling\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"date\"}}}]},\"columnProperties\":{\"Cards.artFront.data.attributes.url\":{\"displayName\":\"Card\"},\"Rules.date\":{\"displayName\":\"Date\"},\"Rules.ruling\":{\"displayName\":\"Ruling\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"795.9135105269373D\"}}}},\"selector\":{\"metadata\":\"Rules.ruling\"}}]},\"vcObjects\":{\"visualTooltip\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"section\":{\"expr\":{\"Literal\":{\"Value\":\"'76a6e2bd589776a3bb25'\"}}}}}]}}}",
           "filters": "[]",
           "height": 644.86,
           "width": 1055.32,
@@ -180,22 +285,13 @@
           "z": 0.00
         },
         {
-          "config": "{\"name\":\"56f2da64cc516e5a0d9b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":1000,\"width\":224.4698205546493,\"height\":720.3915171288744,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Variants.name\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"Variants\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"name\"},\"Name\":\"Variants.name\",\"NativeReferenceName\":\"Variant\"}]},\"columnProperties\":{\"Variants.name\":{\"displayName\":\"Variant\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"Variants\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Standard'\"}}]]}}}]}}}}]}}}",
+          "config": "{\"name\":\"cc34aaf465db0586dae6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":1000,\"width\":224.4698205546493,\"height\":720.3915171288744,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Variants.name\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"Variants\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"name\"},\"Name\":\"Variants.name\",\"NativeReferenceName\":\"Variant\"}]},\"columnProperties\":{\"Variants.name\":{\"displayName\":\"Variant\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"Variants\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Standard'\"}}]]}}}]}}}}]}}}",
           "filters": "[]",
           "height": 720.39,
           "width": 224.47,
           "x": 0.00,
           "y": 0.00,
           "z": 1000.00
-        },
-        {
-          "config": "{\"name\":\"d5599bd067569d29eae8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":224.6808510638298,\"y\":0,\"z\":2000,\"width\":283.03951367781156,\"height\":75.86626139817629,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Cards.title\",\"active\":true},{\"queryRef\":\"Cards.subtitle\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title\"},\"Name\":\"Cards.title\",\"NativeReferenceName\":\"title\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"subtitle\"},\"Name\":\"Cards.subtitle\",\"NativeReferenceName\":\"subtitle\"}]},\"expansionStates\":[{\"roles\":[\"Values\"],\"levels\":[{\"queryRefs\":[\"Cards.title\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"title\"}}],\"isPinned\":true},{\"queryRefs\":[\"Cards.subtitle\"],\"isCollapsed\":true,\"isPinned\":true}],\"root\":{\"identityValues\":null,\"children\":[{\"identityValues\":[{\"Literal\":{\"Value\":\"'Admiral Yularen'\"}}],\"isToggled\":true},{\"identityValues\":[{\"Literal\":{\"Value\":\"'Colonel Yularen'\"}}],\"isToggled\":true}]}}],\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"header\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Title > Subtitle'\"}}}}}]}}}",
-          "filters": "[]",
-          "height": 75.87,
-          "width": 283.04,
-          "x": 224.68,
-          "y": 0.00,
-          "z": 2000.00
         }
       ],
       "width": 1280.00
@@ -232,12 +328,42 @@
     },
     {
       "config": "{\"visibility\":1,\"type\":1}",
+      "displayName": "Card Back Img Tooltip",
+      "displayOption": 3,
+      "filters": "[{\"name\":\"c36ccd9c03b8e37b0dcd\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"artBack.data.attributes.url\"}},\"type\":\"Categorical\",\"howCreated\":5}]",
+      "height": 500.00,
+      "name": "6bc2d32e0c260b5cb08b",
+      "ordinal": 9,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"60c76360cae01063e010\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":500,\"height\":525,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Cards.artBack.data.attributes.url\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"artBack.data.attributes.url\"},\"Name\":\"Cards.artBack.data.attributes.url\",\"NativeReferenceName\":\"artBack.data.attributes.url\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"grid\":[{\"properties\":{\"imageHeight\":{\"expr\":{\"Literal\":{\"Value\":\"500D\"}}},\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}},\"outlineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}},\"rowPadding\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"outlineStyle\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"columnHeaders\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"padding\":[{\"properties\":{\"left\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"bottom\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"right\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"top\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 525.00,
+          "width": 500.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"e04d94b16020c7a342cc\",\"layouts\":[{\"id\":0,\"position\":{\"x\":101,\"y\":440,\"z\":1000,\"width\":311,\"height\":85,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Cards.title + subtitle\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title + subtitle\"},\"Name\":\"Cards.title + subtitle\",\"NativeReferenceName\":\"title + subtitle\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title + subtitle\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnHeaders\":[{\"properties\":{\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}},\"fontFamily\":{\"expr\":{\"Literal\":{\"Value\":\"'wf_standard-font, helvetica, arial, sans-serif'\"}}}}}],\"grid\":[{\"properties\":{\"outlineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}}}],\"columnFormatting\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Center'\"}}}},\"selector\":{\"metadata\":\"Cards.title + subtitle\"}}],\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"301D\"}}}},\"selector\":{\"metadata\":\"Cards.title + subtitle\"}}]},\"vcObjects\":{\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"right\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"bottom\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"left\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 85.00,
+          "width": 311.00,
+          "x": 101.00,
+          "y": 440.00,
+          "z": 1000.00
+        }
+      ],
+      "width": 500.00
+    },
+    {
+      "config": "{\"visibility\":1,\"type\":1}",
       "displayName": "Rulings Tooltip",
       "displayOption": 1,
       "filters": "[{\"name\":\"a58b105c04a512069897\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"artFront.data.attributes.url\"}},\"type\":\"Categorical\",\"howCreated\":5}]",
       "height": 500.00,
       "name": "6c7fc33342850d2ebb34",
-      "ordinal": 8,
+      "ordinal": 10,
       "visualContainers": [
         {
           "config": "{\"name\":\"3e96b8824eb8c4092962\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":1000,\"width\":425.04559270516717,\"height\":499.9392097264438,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Cards.artFront.data.attributes.url\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"artFront.data.attributes.url\"},\"Name\":\"Cards.artFront.data.attributes.url\",\"NativeReferenceName\":\"Card\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"artFront.data.attributes.url\"}}}]},\"columnProperties\":{\"Cards.artFront.data.attributes.url\":{\"displayName\":\"Card\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"grid\":[{\"properties\":{\"imageHeight\":{\"expr\":{\"Literal\":{\"Value\":\"400D\"}}},\"outlineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}}}],\"values\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"25D\"}}}}}],\"general\":[{\"properties\":{}}],\"columnHeaders\":[{\"properties\":{\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"visualTooltip\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"background\":[{\"properties\":{\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
@@ -280,12 +406,12 @@
     },
     {
       "config": "{\"visibility\":1,\"type\":1}",
-      "displayName": "Card Img Tooltip",
+      "displayName": "Card Front Img Tooltip",
       "displayOption": 3,
-      "filters": "[{\"name\":\"0a32e068953e44a07850\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"artFront.data.attributes.url\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"9ae5c1573784d5369679\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"cardUid\"}},\"type\":\"Categorical\",\"howCreated\":5}]",
+      "filters": "[{\"name\":\"0a32e068953e44a07850\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"artFront.data.attributes.url\"}},\"type\":\"Categorical\",\"howCreated\":5}]",
       "height": 500.00,
       "name": "76a6e2bd589776a3bb25",
-      "ordinal": 7,
+      "ordinal": 8,
       "visualContainers": [
         {
           "config": "{\"name\":\"435a3199643e82904300\",\"layouts\":[{\"id\":0,\"position\":{\"x\":101,\"y\":440,\"z\":1000,\"width\":311,\"height\":85,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Cards.title + subtitle\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title + subtitle\"},\"Name\":\"Cards.title + subtitle\",\"NativeReferenceName\":\"title + subtitle\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title + subtitle\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnHeaders\":[{\"properties\":{\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}},\"fontFamily\":{\"expr\":{\"Literal\":{\"Value\":\"'wf_standard-font, helvetica, arial, sans-serif'\"}}}}}],\"grid\":[{\"properties\":{\"outlineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}}}],\"columnFormatting\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Center'\"}}}},\"selector\":{\"metadata\":\"Cards.title + subtitle\"}}],\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"301D\"}}}},\"selector\":{\"metadata\":\"Cards.title + subtitle\"}}]},\"vcObjects\":{\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"right\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"bottom\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"left\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
@@ -521,7 +647,7 @@
       "filters": "[]",
       "height": 720.00,
       "name": "cacd71a0743b7b4bab89",
-      "ordinal": 10,
+      "ordinal": 13,
       "visualContainers": [],
       "width": 1280.00
     },
@@ -595,10 +721,10 @@
       "config": "{\"visibility\":1}",
       "displayName": "Card Gallery - Drill",
       "displayOption": 1,
-      "filters": "[{\"name\":\"e61d654e845ce214d544\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"artist\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"737a27704a8b39d6e0a8\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Traits\"}},\"Property\":\"name\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"1b2e16c46a6ab5a6903d\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Arenas\"}},\"Property\":\"name\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"c703724c212817926420\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Variants\"}},\"Property\":\"name\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"6344c05590d541574dc7\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"cost\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"cost\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'9'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"65e1c20d0a6a6a7dc56b\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Aspects\"}},\"Property\":\"name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Aspects\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Villainy'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":5}]",
+      "filters": "[{\"name\":\"e61d654e845ce214d544\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"artist\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"737a27704a8b39d6e0a8\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Traits\"}},\"Property\":\"name\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"1b2e16c46a6ab5a6903d\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Arenas\"}},\"Property\":\"name\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"c703724c212817926420\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Variants\"}},\"Property\":\"name\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"6344c05590d541574dc7\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"cost\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"65e1c20d0a6a6a7dc56b\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Aspects\"}},\"Property\":\"name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Aspects\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Command'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":5}]",
       "height": 720.00,
       "name": "dbd8b7a1e3bd40e6d4b0",
-      "ordinal": 9,
+      "ordinal": 11,
       "visualContainers": [
         {
           "config": "{\"name\":\"2ec4dcebb1014c178761\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":2000,\"width\":40,\"height\":40}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
@@ -638,6 +764,36 @@
         }
       ],
       "width": 1280.00
+    },
+    {
+      "config": "{\"visibility\":1,\"type\":1}",
+      "displayName": "Card Img Tooltip",
+      "displayOption": 3,
+      "filters": "[{\"name\":\"0a32e068953e44a07850\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"artFront.data.attributes.url\"}},\"type\":\"Categorical\",\"howCreated\":5}]",
+      "height": 500.00,
+      "name": "fd8f3d906599c75ca5aa",
+      "ordinal": 7,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"c178be81333304684cdd\",\"layouts\":[{\"id\":0,\"position\":{\"x\":101,\"y\":440,\"z\":1000,\"width\":311,\"height\":85,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Cards.title + subtitle\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title + subtitle\"},\"Name\":\"Cards.title + subtitle\",\"NativeReferenceName\":\"title + subtitle\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title + subtitle\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnHeaders\":[{\"properties\":{\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}},\"fontFamily\":{\"expr\":{\"Literal\":{\"Value\":\"'wf_standard-font, helvetica, arial, sans-serif'\"}}}}}],\"grid\":[{\"properties\":{\"outlineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}}}],\"columnFormatting\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Center'\"}}}},\"selector\":{\"metadata\":\"Cards.title + subtitle\"}}],\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"301D\"}}}},\"selector\":{\"metadata\":\"Cards.title + subtitle\"}}]},\"vcObjects\":{\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"right\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"bottom\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"left\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 85.00,
+          "width": 311.00,
+          "x": 101.00,
+          "y": 440.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"e04ed776635aa2b2b146\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":500,\"height\":525,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Measure Table.Card Image Switcher\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Measure Table\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Card Image Switcher\"},\"Name\":\"Measure Table.Card Image Switcher\",\"NativeReferenceName\":\"Card Image Switcher\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"grid\":[{\"properties\":{\"imageHeight\":{\"expr\":{\"Literal\":{\"Value\":\"500D\"}}},\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}},\"outlineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}},\"rowPadding\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"outlineStyle\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"columnHeaders\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"padding\":[{\"properties\":{\"left\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"bottom\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"right\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"top\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 525.00,
+          "width": 500.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 500.00
     }
   ]
 }

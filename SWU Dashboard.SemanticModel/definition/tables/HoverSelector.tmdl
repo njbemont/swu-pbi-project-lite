@@ -1,0 +1,29 @@
+table HoverSelector
+	lineageTag: a00e38a4-81ca-40e8-aa72-8a4af65f4cd5
+
+	column View
+		lineageTag: 8f18c3a6-1552-4d31-b0c5-6ed7fb7745b0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [View]
+		sortByColumn: Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sort
+		formatString: 0
+		lineageTag: a4fa4eaa-a292-4108-ba11-4d8a3c059b3b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Sort]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition HoverSelector = calculated
+		mode: import
+		source =
+				
+				DATATABLE("View", STRING, "Sort", INTEGER, {{"Front", 0}, {"Back", 1}})
+
+	annotation PBI_Id = ecd83b60197d4d5d94debe219864d139
+

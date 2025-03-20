@@ -543,7 +543,7 @@ table Base
 
 	partition Base = m
 		mode: import
-		queryGroup: Table
+		queryGroup: 'API Tables'
 		source =
 				let
 				    Source = List.Generate(

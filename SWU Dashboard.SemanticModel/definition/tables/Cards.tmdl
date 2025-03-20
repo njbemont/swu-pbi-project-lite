@@ -318,9 +318,16 @@ table Cards
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'artBack.data.attributes.url.cardBack' = IF(OR(ISBLANK(Cards[artBack.data.attributes.url]), Cards[artBack.data.attributes.url] = ""), "https://oasisgamesslc.com/img/product/starwars/cardback.png", (Cards[artBack.data.attributes.url]))
+		lineageTag: 2e478dff-a280-43ab-bc42-8be422be35c7
+		dataCategory: ImageUrl
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Cards = m
 		mode: import
-		queryGroup: Table
+		queryGroup: 'API Tables'
 		source =
 				let
 				    Source = Base,

@@ -28,3 +28,45 @@ expression Dynamic =
 
 	annotation PBI_ResultType = Function
 
+expression 'Homepage Links' =
+		let
+		    #"HTML Code" = Web.BrowserContents("https://nexus.cascadegames.com/"),
+		    #"Converted to Table" = #table(1, {{#"HTML Code"}}),
+		    ExtractedLinks = Table.TransformColumns(#"Converted to Table", {"Column1", each Text.Split(_, "<a")}),
+		    ExpandedLinks = Table.ExpandListColumn(ExtractedLinks, "Column1"),
+		    ExtractHyperlinks = Table.AddColumn(ExpandedLinks, "Hyperlink", each Text.BetweenDelimiters([Column1], "href=""", """")),
+		    ExtractLinkText = Table.AddColumn(ExtractHyperlinks, "LinkText", each Text.BetweenDelimiters([Column1], ">", "</a>")),
+		    CleanedTable = Table.SelectColumns(ExtractLinkText, {"Hyperlink", "LinkText"}),
+		    #"Added Custom" = Table.AddColumn(CleanedTable, "Custom", each if Text.StartsWith([Hyperlink], "http") then [Hyperlink] else "https://nexus.cascadegames.com" & [Hyperlink]),
+		    #"Filtered Rows" = Table.SelectRows(#"Added Custom", each ([Hyperlink] <> "#")),
+		    #"Renamed Columns" = Table.RenameColumns(#"Filtered Rows",{{"Custom", "WebLink"}})
+		in
+		    #"Renamed Columns"
+	lineageTag: 321aee7b-6ff3-42cd-8011-d1d9ea36e5e1
+	queryGroup: 'Cacade Tables'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Resource Links' =
+		let
+		    #"HTML Code" = Web.BrowserContents("https://nexus.cascadegames.com/resources/"),
+		    #"Converted to Table" = #table(1, {{#"HTML Code"}}),
+		    ExtractedLinks = Table.TransformColumns(#"Converted to Table", {"Column1", each Text.Split(_, "<a")}),
+		    ExpandedLinks = Table.ExpandListColumn(ExtractedLinks, "Column1"),
+		    ExtractHyperlinks = Table.AddColumn(ExpandedLinks, "Hyperlink", each Text.BetweenDelimiters([Column1], "href=""", """")),
+		    ExtractLinkText = Table.AddColumn(ExtractHyperlinks, "LinkText", each Text.BetweenDelimiters([Column1], ">", "</a>")),
+		    CleanedTable = Table.SelectColumns(ExtractLinkText, {"Hyperlink", "LinkText"}),
+		    #"Added Custom" = Table.AddColumn(CleanedTable, "Custom", each if Text.StartsWith([Hyperlink], "http") then [Hyperlink] else "https://nexus.cascadegames.com" & [Hyperlink]),
+		    #"Filtered Rows" = Table.SelectRows(#"Added Custom", each ([Hyperlink] <> "#")),
+		    #"Renamed Columns" = Table.RenameColumns(#"Filtered Rows",{{"Custom", "WebLink"}})
+		in
+		    #"Renamed Columns"
+	lineageTag: 15aa0470-41e9-44b1-a8c7-01bf344200d9
+	queryGroup: 'Cacade Tables'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
