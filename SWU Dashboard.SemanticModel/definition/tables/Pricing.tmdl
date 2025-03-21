@@ -1,0 +1,177 @@
+table Pricing
+	lineageTag: 114606d0-90b6-4bc4-9289-097dd5ff0fe8
+
+	column group
+		dataType: string
+		lineageTag: 8c90e9bb-7bf8-432d-b341-69e0cc7502e1
+		summarizeBy: none
+		sourceColumn: group
+
+		annotation SummarizationSetBy = Automatic
+
+	column productId
+		dataType: string
+		lineageTag: 49d052fb-e446-4e03-97ed-7f296c4e0d81
+		summarizeBy: none
+		sourceColumn: productId
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 8afe9f1d-538b-4d7c-b519-0599e7e854a6
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column cleanName
+		dataType: string
+		lineageTag: 118f269d-6559-4cdf-872d-b0b5a208b2e7
+		summarizeBy: none
+		sourceColumn: cleanName
+
+		annotation SummarizationSetBy = Automatic
+
+	column imageUrl
+		dataType: string
+		lineageTag: c317dbb1-0115-4c75-bbde-f0f68afc2a0a
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: imageUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	column categoryId
+		dataType: string
+		lineageTag: a49e0e5a-6c77-4c16-bd24-52a9f30a8861
+		summarizeBy: none
+		sourceColumn: categoryId
+
+		annotation SummarizationSetBy = Automatic
+
+	column groupId
+		dataType: string
+		lineageTag: a1246135-cf10-4a7e-afe8-794fce7c1520
+		summarizeBy: none
+		sourceColumn: groupId
+
+		annotation SummarizationSetBy = Automatic
+
+	column url
+		dataType: string
+		lineageTag: 9fc946b3-00d9-4cfa-88e9-eee2c89d12ed
+		summarizeBy: none
+		sourceColumn: url
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedOn
+		dataType: string
+		lineageTag: 539ead26-e2a8-404c-a8f1-00405c13d7cf
+		summarizeBy: none
+		sourceColumn: modifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column imageCount
+		dataType: string
+		lineageTag: c0ad2330-b19c-4d8a-91dd-c55f46898a0b
+		summarizeBy: none
+		sourceColumn: imageCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column cardNumber
+		dataType: string
+		lineageTag: 6cbca207-0efc-4e44-a03b-750c4940b435
+		summarizeBy: none
+		sourceColumn: cardNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column abbreviation
+		dataType: string
+		lineageTag: ddd47616-d938-4e37-a703-056955b00730
+		summarizeBy: none
+		sourceColumn: abbreviation
+
+		annotation SummarizationSetBy = Automatic
+
+	column setName
+		dataType: string
+		lineageTag: b93072e5-3ab1-4da2-977f-db080e398745
+		summarizeBy: none
+		sourceColumn: setName
+
+		annotation SummarizationSetBy = Automatic
+
+	column subTypeName
+		dataType: string
+		lineageTag: 2824494a-c2c1-4fe4-9388-796c07baa9b3
+		summarizeBy: none
+		sourceColumn: subTypeName
+
+		annotation SummarizationSetBy = Automatic
+
+	column lowPrice
+		dataType: string
+		lineageTag: 610a13c6-f066-414a-8aaa-1a3288c7d728
+		summarizeBy: none
+		sourceColumn: lowPrice
+
+		annotation SummarizationSetBy = Automatic
+
+	column midPrice
+		dataType: string
+		lineageTag: e5d71dd6-81d7-4361-88c4-55f1bc243777
+		summarizeBy: none
+		sourceColumn: midPrice
+
+		annotation SummarizationSetBy = Automatic
+
+	column highPrice
+		dataType: string
+		lineageTag: d3cae032-07f3-4691-a3ce-1aa820cf8a79
+		summarizeBy: none
+		sourceColumn: highPrice
+
+		annotation SummarizationSetBy = Automatic
+
+	column marketPrice
+		dataType: string
+		lineageTag: 2dbd819f-92b9-4d96-a2f5-67a2b6b1e99c
+		summarizeBy: none
+		sourceColumn: marketPrice
+
+		annotation SummarizationSetBy = Automatic
+
+	column directLowPrice
+		dataType: string
+		lineageTag: 80d0aa86-cc1e-4092-ae1a-417492c9b916
+		summarizeBy: none
+		sourceColumn: directLowPrice
+
+		annotation SummarizationSetBy = Automatic
+
+	column priceKey = Pricing[abbreviation] & "_" & Pricing[cardNumber] & "_" & IF(Pricing[subTypeName] = "Normal", "Standard", Pricing[subTypeName])
+		lineageTag: 7139b3a3-663d-439b-ba86-e033c9556c8a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Pricing = m
+		mode: import
+		queryGroup: 'TCGPlayer Pricing'
+		source =
+				let
+				    Source = Table.NestedJoin(Products, {"productId", "group"}, Prices, {"productId", "group"}, "Prices", JoinKind.LeftOuter),
+				    #"Expanded Prices" = Table.ExpandTableColumn(Source, "Prices", {"lowPrice", "midPrice", "highPrice", "marketPrice", "directLowPrice", "subTypeName"}, {"lowPrice", "midPrice", "highPrice", "marketPrice", "directLowPrice", "subTypeName"}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Expanded Prices",{"group", "productId", "name", "cleanName", "imageUrl", "categoryId", "groupId", "url", "modifiedOn", "imageCount", "cardNumber", "abbreviation", "setName", "subTypeName", "lowPrice", "midPrice", "highPrice", "marketPrice", "directLowPrice"})
+				in
+				    #"Reordered Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

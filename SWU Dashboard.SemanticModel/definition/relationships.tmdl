@@ -54,3 +54,7 @@ relationship 95f7840c-9fea-4af5-8943-1fd93d88d0eb
 	fromColumn: Cards.publishedAt
 	toColumn: LocalDateTable_8aecdfd4-668e-46b3-ad90-0b8e8ca7c033.Date
 
+relationship a959247b-8aaf-168e-a084-983805992eb8
+	fromColumn: 'Cards Fact'.'expansion.data.id'
+	toColumn: Sets.id
+

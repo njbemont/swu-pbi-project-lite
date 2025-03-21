@@ -2955,234 +2955,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "card.expansion_data_attributes_name": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Cards",
-			          "ConceptualProperty": "expansion.data.attributes.name"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "expansion data attributes name": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "expansion data attribute name": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "expansion.data.attributes.name": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "attributes": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "attribute": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.7566
-			          }
-			        },
-			        {
-			          "data attributes": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "data attribute": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.7566
-			          }
-			        },
-			        {
-			          "expansion data attributes": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "expansion data attribute": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.7566
-			          }
-			        },
-			        {
-			          "attributes name": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "attribute name": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.7566
-			          }
-			        },
-			        {
-			          "data attributes name": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "data attribute name": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.7566
-			          }
-			        },
-			        {
-			          "expansion data attribute nickname": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.748
-			          }
-			        },
-			        {
-			          "expansion data attribute title": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.748
-			          }
-			        },
-			        {
-			          "expansion data attribute label": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.748
-			          }
-			        },
-			        {
-			          "expansion data attribute tag": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.748
-			          }
-			        },
-			        {
-			          "data attribute nickname": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.739
-			          }
-			        },
-			        {
-			          "data attribute title": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.739
-			          }
-			        },
-			        {
-			          "data attribute label": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.739
-			          }
-			        },
-			        {
-			          "data attribute tag": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.739
-			          }
-			        },
-			        {
-			          "attribute nickname": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "attribute title": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        }
-			      ]
-			    },
-			    "card.expansion_data_attributes_code": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Cards",
-			          "ConceptualProperty": "expansion.data.attributes.code"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "expansion.data.attributes.code": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "expansion.data.attribute.code": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "Set Code": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
 			    "aspect": {
 			      "Definition": {
 			        "Binding": {
@@ -9076,62 +8848,6 @@ cultureInfo en-US
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
-			        },
-			        {
-			          "back": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "spinal": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "backbone": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "posterior": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
-			          }
-			        },
-			        {
-			          "rear": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
-			          }
-			        },
-			        {
-			          "hind": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
-			          }
 			        }
 			      ]
 			    },
@@ -12672,12 +12388,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "set": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "count set": {
 			            "State": "Generated",
 			            "Weight": 0.97
@@ -12711,46 +12421,6 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.582
-			          }
-			        },
-			        {
-			          "usual": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "regular": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "firm": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
-			          }
-			        },
-			        {
-			          "solid": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
 			          }
 			        }
 			      ]
@@ -14223,9 +13893,1171 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "card.expansion": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Cards",
+			          "ConceptualProperty": "expansion"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "expansion": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "growth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "development": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "extension": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "enlargement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "increase": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "cards_fact.expansion_data_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Cards Fact",
+			          "ConceptualProperty": "expansion.data.id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "expansion data id": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "expansion.data.id": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "data": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "expansion data": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "data id": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "expansion data identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "expansion data identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "expansion data identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "expansion information": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "expansion fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "expansion info": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "expansion statistic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "data identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "data identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "data identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "set": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Sets"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "set": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "usual": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "regular": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "firm": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "solid": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "set.id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Sets",
+			          "ConceptualProperty": "id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "id": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "NameType": "Identifier"
+			    },
+			    "set.name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Sets",
+			          "ConceptualProperty": "name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "set.description": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Sets",
+			          "ConceptualProperty": "description"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "description": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "appearance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "descriptor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "explanation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "specification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "account": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "overview": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "report": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "set.code": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Sets",
+			          "ConceptualProperty": "code"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "code": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "Set Code": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ],
+			      "NameType": "Identifier"
+			    },
+			    "set.created_at": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Sets",
+			          "ConceptualProperty": "createdAt"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "created at": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "createdAt": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "set.updated_at": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Sets",
+			          "ConceptualProperty": "updatedAt"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "updated at": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "updatedAt": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "set.published_at": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Sets",
+			          "ConceptualProperty": "publishedAt"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "published at": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "publishedAt": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "set.locale": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Sets",
+			          "ConceptualProperty": "locale"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "locale": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "location": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "milieu": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "locality": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "setting": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "place": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "area": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "site": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "spot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "backdrop": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "environment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "set.sort_value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Sets",
+			          "ConceptualProperty": "sortValue"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sort value": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "sortValue": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "value": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "sort assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "sort worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "sort price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "sort cost": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "sort charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "sort rate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "set_has_id": {
+			      "Binding": {
+			        "ConceptualEntity": "Sets"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "set": {
+			          "Target": {
+			            "Entity": "set"
+			          }
+			        },
+			        "set.id": {
+			          "Target": {
+			            "Entity": "set.id"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "set"
+			            },
+			            "Object": {
+			              "Role": "set.id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "sets_have_ids"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "set"
+			            },
+			            "Name": {
+			              "Role": "set.id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ids_are_names_IDs_of_sets"
+			        }
+			      ]
+			    },
+			    "card_has_expansion": {
+			      "Binding": {
+			        "ConceptualEntity": "Cards"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "card": {
+			          "Target": {
+			            "Entity": "card"
+			          }
+			        },
+			        "card.expansion": {
+			          "Target": {
+			            "Entity": "card.expansion"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "card"
+			            },
+			            "Object": {
+			              "Role": "card.expansion"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cards_have_expansions"
+			        }
+			      ]
+			    },
+			    "hover_selector_has_sort": {
+			      "Binding": {
+			        "ConceptualEntity": "HoverSelector"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "hover_selector": {
+			          "Target": {
+			            "Entity": "hover_selector"
+			          }
+			        },
+			        "hover_selector.sort": {
+			          "Target": {
+			            "Entity": "hover_selector.sort"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "hover_selector"
+			            },
+			            "Object": {
+			              "Role": "hover_selector.sort"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hover_selectors_have_sorts"
+			        }
+			      ]
+			    },
+			    "hover_selector_has_view": {
+			      "Binding": {
+			        "ConceptualEntity": "HoverSelector"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "hover_selector": {
+			          "Target": {
+			            "Entity": "hover_selector"
+			          }
+			        },
+			        "hover_selector.view": {
+			          "Target": {
+			            "Entity": "hover_selector.view"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "hover_selector"
+			            },
+			            "Object": {
+			              "Role": "hover_selector.view"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hover_selectors_have_views"
+			        }
+			      ]
+			    },
+			    "measure_table_has_card_image_switcher": {
+			      "Binding": {
+			        "ConceptualEntity": "Measure Table"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure_table": {
+			          "Target": {
+			            "Entity": "measure_table"
+			          }
+			        },
+			        "measure_table.card_image_switcher": {
+			          "Target": {
+			            "Entity": "measure_table.card_image_switcher"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure_table"
+			            },
+			            "Object": {
+			              "Role": "measure_table.card_image_switcher"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "measure_tables_have_card_image_switcher"
+			        },
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "measure_table.card_image_switcher"
+			            },
+			            "Verbs": [
+			              {
+			                "switch": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "measure_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.75,
+			          "ID": "card_image_switcher_switch_measure_tables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "measure_table.card_image_switcher"
+			            },
+			            "Object": {
+			              "Role": "measure_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "card_image_switcher_have_measure_tables"
+			        }
+			      ]
+			    },
+			    "card_has_artBack_data_attributes_url_cardBack": {
+			      "Binding": {
+			        "ConceptualEntity": "Cards"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "card": {
+			          "Target": {
+			            "Entity": "card"
+			          }
+			        },
+			        "card.artBack_data_attributes_url_cardBack": {
+			          "Target": {
+			            "Entity": "card.artBack_data_attributes_url_cardBack"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "card"
+			            },
+			            "Object": {
+			              "Role": "card.artBack_data_attributes_url_cardBack"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cards_have_artBack_data_attributes_url_cardBacks"
+			        }
+			      ]
+			    },
+			    "link_has_web_link": {
+			      "Binding": {
+			        "ConceptualEntity": "Judge Program Links"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "link": {
+			          "Target": {
+			            "Entity": "link"
+			          }
+			        },
+			        "link.web_link": {
+			          "Target": {
+			            "Entity": "link.web_link"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "link"
+			            },
+			            "Object": {
+			              "Role": "link.web_link"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "judge_program_links_have_web_links"
+			        }
+			      ]
+			    },
+			    "link_has_link_text": {
+			      "Binding": {
+			        "ConceptualEntity": "Judge Program Links"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "link": {
+			          "Target": {
+			            "Entity": "link"
+			          }
+			        },
+			        "link.link_text": {
+			          "Target": {
+			            "Entity": "link.link_text"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "link"
+			            },
+			            "Object": {
+			              "Role": "link.link_text"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "judge_program_links_have_link_texts"
+			        }
+			      ]
+			    },
+			    "link_has_hyperlink": {
+			      "Binding": {
+			        "ConceptualEntity": "Judge Program Links"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "link": {
+			          "Target": {
+			            "Entity": "link"
+			          }
+			        },
+			        "link.hyperlink": {
+			          "Target": {
+			            "Entity": "link.hyperlink"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "link"
+			            },
+			            "Object": {
+			              "Role": "link.hyperlink"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "judge_program_links_have_hyperlinks"
+			        }
+			      ]
+			    },
+			    "rule_has_measure_table_rulings_check": {
+			      "Binding": {
+			        "ConceptualEntity": "Rules"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "rule": {
+			          "Target": {
+			            "Entity": "rule"
+			          }
+			        },
+			        "measure_table.rulings_check": {
+			          "Target": {
+			            "Entity": "measure_table.rulings_check"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "rule"
+			            },
+			            "Object": {
+			              "Role": "measure_table.rulings_check"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "rules_have_rulings_check"
+			        }
+			      ]
+			    },
 			    "card_has_reprints": {
 			      "Binding": {
 			        "ConceptualEntity": "Cards"
@@ -16246,72 +17078,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "card_has_expansion_data_attributes_code": {
-			      "Binding": {
-			        "ConceptualEntity": "Cards"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "card": {
-			          "Target": {
-			            "Entity": "card"
-			          }
-			        },
-			        "card.expansion_data_attributes_code": {
-			          "Target": {
-			            "Entity": "card.expansion_data_attributes_code"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "card"
-			            },
-			            "Object": {
-			              "Role": "card.expansion_data_attributes_code"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cards_have_expansion_data_attributes_codes"
-			        }
-			      ]
-			    },
-			    "card_has_expansion_data_attributes_name": {
-			      "Binding": {
-			        "ConceptualEntity": "Cards"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "card": {
-			          "Target": {
-			            "Entity": "card"
-			          }
-			        },
-			        "card.expansion_data_attributes_name": {
-			          "Target": {
-			            "Entity": "card.expansion_data_attributes_name"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "card"
-			            },
-			            "Object": {
-			              "Role": "card.expansion_data_attributes_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cards_have_expansion_data_attributes_names"
-			        }
-			      ]
-			    },
 			    "card_has_rarity_data_attributes_name": {
 			      "Binding": {
 			        "ConceptualEntity": "Cards"
@@ -17440,6 +18206,198 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
+			    "set_is_published_at_published_at": {
+			      "Binding": {
+			        "ConceptualEntity": "Sets"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "set": {
+			          "Target": {
+			            "Entity": "set"
+			          }
+			        },
+			        "set.published_at": {
+			          "Target": {
+			            "Entity": "set.published_at"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Verb": {
+			            "Verbs": [
+			              {
+			                "publish": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "set"
+			            },
+			            "PrepositionalPhrases": [
+			              {
+			                "Prepositions": [
+			                  {
+			                    "at": {
+			                      "State": "Generated"
+			                    }
+			                  }
+			                ],
+			                "Object": {
+			                  "Role": "set.published_at"
+			                }
+			              }
+			            ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.95,
+			          "ID": "sets_are_published_at_published_at"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "set"
+			            },
+			            "Object": {
+			              "Role": "set.published_at"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "sets_have_published_at"
+			        }
+			      ]
+			    },
+			    "set_is_updated_at_updated_at": {
+			      "Binding": {
+			        "ConceptualEntity": "Sets"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "set": {
+			          "Target": {
+			            "Entity": "set"
+			          }
+			        },
+			        "set.updated_at": {
+			          "Target": {
+			            "Entity": "set.updated_at"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Verb": {
+			            "Verbs": [
+			              {
+			                "update": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "set"
+			            },
+			            "PrepositionalPhrases": [
+			              {
+			                "Prepositions": [
+			                  {
+			                    "at": {
+			                      "State": "Generated"
+			                    }
+			                  }
+			                ],
+			                "Object": {
+			                  "Role": "set.updated_at"
+			                }
+			              }
+			            ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.95,
+			          "ID": "sets_are_updated_at_updated_at"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "set"
+			            },
+			            "Object": {
+			              "Role": "set.updated_at"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "sets_have_updated_at"
+			        }
+			      ]
+			    },
+			    "set_is_created_at_created_at": {
+			      "Binding": {
+			        "ConceptualEntity": "Sets"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "set": {
+			          "Target": {
+			            "Entity": "set"
+			          }
+			        },
+			        "set.created_at": {
+			          "Target": {
+			            "Entity": "set.created_at"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Verb": {
+			            "Verbs": [
+			              {
+			                "create": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "set"
+			            },
+			            "PrepositionalPhrases": [
+			              {
+			                "Prepositions": [
+			                  {
+			                    "at": {
+			                      "State": "Generated"
+			                    }
+			                  }
+			                ],
+			                "Object": {
+			                  "Role": "set.created_at"
+			                }
+			              }
+			            ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.95,
+			          "ID": "sets_are_created_at_created_at"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "set"
+			            },
+			            "Object": {
+			              "Role": "set.created_at"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "sets_have_created_at"
+			        }
+			      ]
+			    },
 			    "card_is_published_on_published_at": {
 			      "Binding": {
 			        "ConceptualEntity": "Cards"
@@ -17598,119 +18556,112 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure_table_card_image_switcher_switch_measure_table": {
+			    "set_is_named_code": {
 			      "Binding": {
-			        "ConceptualEntity": "Measure Table"
+			        "ConceptualEntity": "Sets"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "measure_table.card_image_switcher": {
+			        "set": {
 			          "Target": {
-			            "Entity": "measure_table.card_image_switcher"
+			            "Entity": "set"
 			          }
 			        },
-			        "measure_table": {
+			        "set.code": {
 			          "Target": {
-			            "Entity": "measure_table"
+			            "Entity": "set.code"
 			          }
 			        }
 			      },
 			      "Phrasings": [
 			        {
-			          "Verb": {
+			          "Name": {
 			            "Subject": {
-			              "Role": "measure_table.card_image_switcher"
+			              "Role": "set"
 			            },
-			            "Verbs": [
-			              {
-			                "switch": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "measure_table"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.75,
-			          "ID": "card_image_switcher_switch_measure_tables"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "measure_table.card_image_switcher"
-			            },
-			            "Object": {
-			              "Role": "measure_table"
+			            "Name": {
+			              "Role": "set.code"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "card_image_switcher_have_measure_tables"
+			          "ID": "codes_are_names_IDs_of_sets"
 			        },
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "measure_table"
+			              "Role": "set"
 			            },
 			            "Object": {
-			              "Role": "measure_table.card_image_switcher"
+			              "Role": "set.code"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measure_tables_have_card_image_switcher"
+			          "ID": "sets_have_codes"
 			        }
 			      ]
 			    },
-			    "rule_has_measure_table_rulings_check": {
+			    "set_is_named_name": {
 			      "Binding": {
-			        "ConceptualEntity": "Rules"
+			        "ConceptualEntity": "Sets"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "rule": {
+			        "set": {
 			          "Target": {
-			            "Entity": "rule"
+			            "Entity": "set"
 			          }
 			        },
-			        "measure_table.rulings_check": {
+			        "set.name": {
 			          "Target": {
-			            "Entity": "measure_table.rulings_check"
+			            "Entity": "set.name"
 			          }
 			        }
 			      },
 			      "Phrasings": [
 			        {
-			          "Attribute": {
+			          "Name": {
 			            "Subject": {
-			              "Role": "rule"
+			              "Role": "set"
 			            },
-			            "Object": {
-			              "Role": "measure_table.rulings_check"
+			            "Name": {
+			              "Role": "set.name"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "rules_have_rulings_check"
+			          "ID": "names_are_names_IDs_of_sets"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "set"
+			            },
+			            "Object": {
+			              "Role": "set.name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "sets_have_names"
 			        }
 			      ]
 			    },
-			    "link_has_hyperlink": {
+			    "set_has_description": {
 			      "Binding": {
-			        "ConceptualEntity": "Judge Program Links"
+			        "ConceptualEntity": "Sets"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "link": {
+			        "set": {
 			          "Target": {
-			            "Entity": "link"
+			            "Entity": "set"
 			          }
 			        },
-			        "link.hyperlink": {
+			        "set.description": {
 			          "Target": {
-			            "Entity": "link.hyperlink"
+			            "Entity": "set.description"
 			          }
 			        }
 			      },
@@ -17718,32 +18669,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "link"
+			              "Role": "set"
 			            },
 			            "Object": {
-			              "Role": "link.hyperlink"
+			              "Role": "set.description"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "judge_program_links_have_hyperlinks"
+			          "ID": "sets_have_descriptions"
 			        }
 			      ]
 			    },
-			    "link_has_link_text": {
+			    "set_has_locale": {
 			      "Binding": {
-			        "ConceptualEntity": "Judge Program Links"
+			        "ConceptualEntity": "Sets"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "link": {
+			        "set": {
 			          "Target": {
-			            "Entity": "link"
+			            "Entity": "set"
 			          }
 			        },
-			        "link.link_text": {
+			        "set.locale": {
 			          "Target": {
-			            "Entity": "link.link_text"
+			            "Entity": "set.locale"
 			          }
 			        }
 			      },
@@ -17751,32 +18702,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "link"
+			              "Role": "set"
 			            },
 			            "Object": {
-			              "Role": "link.link_text"
+			              "Role": "set.locale"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "judge_program_links_have_link_texts"
+			          "ID": "sets_have_locales"
 			        }
 			      ]
 			    },
-			    "link_has_web_link": {
+			    "set_has_sort_value": {
 			      "Binding": {
-			        "ConceptualEntity": "Judge Program Links"
+			        "ConceptualEntity": "Sets"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "link": {
+			        "set": {
 			          "Target": {
-			            "Entity": "link"
+			            "Entity": "set"
 			          }
 			        },
-			        "link.web_link": {
+			        "set.sort_value": {
 			          "Target": {
-			            "Entity": "link.web_link"
+			            "Entity": "set.sort_value"
 			          }
 			        }
 			      },
@@ -17784,114 +18735,15 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "link"
+			              "Role": "set"
 			            },
 			            "Object": {
-			              "Role": "link.web_link"
+			              "Role": "set.sort_value"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "judge_program_links_have_web_links"
-			        }
-			      ]
-			    },
-			    "card_has_artBack_data_attributes_url_cardBack": {
-			      "Binding": {
-			        "ConceptualEntity": "Cards"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "card": {
-			          "Target": {
-			            "Entity": "card"
-			          }
-			        },
-			        "card.artBack_data_attributes_url_cardBack": {
-			          "Target": {
-			            "Entity": "card.artBack_data_attributes_url_cardBack"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "card"
-			            },
-			            "Object": {
-			              "Role": "card.artBack_data_attributes_url_cardBack"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cards_have_artBack_data_attributes_url_cardBacks"
-			        }
-			      ]
-			    },
-			    "hover_selector_has_view": {
-			      "Binding": {
-			        "ConceptualEntity": "HoverSelector"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "hover_selector": {
-			          "Target": {
-			            "Entity": "hover_selector"
-			          }
-			        },
-			        "hover_selector.view": {
-			          "Target": {
-			            "Entity": "hover_selector.view"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "hover_selector"
-			            },
-			            "Object": {
-			              "Role": "hover_selector.view"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "hover_selectors_have_views"
-			        }
-			      ]
-			    },
-			    "hover_selector_has_sort": {
-			      "Binding": {
-			        "ConceptualEntity": "HoverSelector"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "hover_selector": {
-			          "Target": {
-			            "Entity": "hover_selector"
-			          }
-			        },
-			        "hover_selector.sort": {
-			          "Target": {
-			            "Entity": "hover_selector.sort"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "hover_selector"
-			            },
-			            "Object": {
-			              "Role": "hover_selector.sort"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "hover_selectors_have_sorts"
+			          "ID": "sets_have_sort_values"
 			        }
 			      ]
 			    },
@@ -18017,6 +18869,24 @@ cultureInfo en-US
 			        "rule": {
 			          "Target": {
 			            "Entity": "rule"
+			          }
+			        }
+			      }
+			    },
+			    "cards_fact_has_set": {
+			      "Binding": {
+			        "ConceptualEntity": "Cards Fact"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "cards_fact": {
+			          "Target": {
+			            "Entity": "cards_fact"
+			          }
+			        },
+			        "set": {
+			          "Target": {
+			            "Entity": "set"
 			          }
 			        }
 			      }

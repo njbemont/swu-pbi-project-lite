@@ -68,13 +68,21 @@ table 'Cards Fact'
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'expansion.data.id'
+		dataType: string
+		lineageTag: f91692fd-8a22-49e7-99a2-d4ae23b31478
+		summarizeBy: none
+		sourceColumn: expansion.data.id
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'Cards Fact' = m
 		mode: import
 		queryGroup: 'API Tables'
 		source =
 				let
 				    Source = Base,
-				    #"Removed Other Columns" = Table.SelectColumns(Source,{"cardUid", "aspects", "traits", "arenas", "keywords", "variantTypes"}),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"cardUid", "aspects", "traits", "arenas", "keywords", "expansion", "variantTypes"}),
 				    #"Expanded aspects" = Table.ExpandRecordColumn(#"Removed Other Columns", "aspects", {"data"}, {"aspects.data"}),
 				    #"Expanded aspects.data" = Table.ExpandListColumn(#"Expanded aspects", "aspects.data"),
 				    #"Expanded aspects.data1" = Table.ExpandRecordColumn(#"Expanded aspects.data", "aspects.data", {"id"}, {"aspects.data.id"}),
@@ -87,7 +95,9 @@ table 'Cards Fact'
 				    #"Expanded keywords" = Table.ExpandRecordColumn(#"Expanded arenas.data1", "keywords", {"data"}, {"keywords.data"}),
 				    #"Expanded keywords.data" = Table.ExpandListColumn(#"Expanded keywords", "keywords.data"),
 				    #"Expanded keywords.data1" = Table.ExpandRecordColumn(#"Expanded keywords.data", "keywords.data", {"id"}, {"keywords.data.id"}),
-				    #"Expanded variantTypes" = Table.ExpandRecordColumn(#"Expanded keywords.data1", "variantTypes", {"data"}, {"variantTypes.data"}),
+				    #"Expanded expansion" = Table.ExpandRecordColumn(#"Expanded keywords.data1", "expansion", {"data"}, {"expansion.data"}),
+				    #"Expanded expansion.data" = Table.ExpandRecordColumn(#"Expanded expansion", "expansion.data", {"id"}, {"expansion.data.id"}),
+				    #"Expanded variantTypes" = Table.ExpandRecordColumn(#"Expanded expansion.data", "variantTypes", {"data"}, {"variantTypes.data"}),
 				    #"Expanded variantTypes.data" = Table.ExpandListColumn(#"Expanded variantTypes", "variantTypes.data"),
 				    #"Expanded variantTypes.data1" = Table.ExpandRecordColumn(#"Expanded variantTypes.data", "variantTypes.data", {"id"}, {"variantTypes.data.id"})
 				in

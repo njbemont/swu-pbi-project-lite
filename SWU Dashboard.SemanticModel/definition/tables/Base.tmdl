@@ -547,9 +547,9 @@ table Base
 		source =
 				let
 				    Source = List.Generate(
-				        () => [Result = try Dynamic(1) otherwise null, pagenumber=1],
+				        () => [Result = try GetSWUAPIPages(1) otherwise null, pagenumber=1],
 				        each List.IsEmpty([Result]) = false,
-				        each [Result = try Dynamic(pagenumber) otherwise null, pagenumber = [pagenumber] + 1],
+				        each [Result = try GetSWUAPIPages(pagenumber) otherwise null, pagenumber = [pagenumber] + 1],
 				        each [Result]),
 				    #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
 				    #"Expanded Column1" = Table.ExpandListColumn(#"Converted to Table", "Column1"),

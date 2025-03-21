@@ -22,11 +22,15 @@ queryGroup 'Cacade Tables'
 
 	annotation PBI_QueryGroupOrder = 3
 
+queryGroup 'TCGPlayer Pricing'
+
+	annotation PBI_QueryGroupOrder = 4
+
 annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBIDesktopVersion = 2.140.1577.0 (25.02)+00af0910c5ca19a229c472b0dfc17a2c488f6b0a
 
-annotation PBI_QueryOrder = ["Page","Rows","Dynamic","Base","Cards Fact","Cards","Arenas","Aspects","Keywords","Rules","Traits","Variants","Homepage Links","Resource Links","Judge Program Links"]
+annotation PBI_QueryOrder = ["Page","Rows","GetSWUAPIPages","Base","Cards Fact","Cards","Arenas","Aspects","Keywords","Rules","Traits","Variants","Homepage Links","Resource Links","Judge Program Links","Sets","Groups","GetGroupProducts","GetGroupPrices","Products","Prices","Pricing"]
 
 annotation PBI_ProTooling = ["DaxQueryView_Desktop","DevMode"]
 
@@ -49,6 +53,8 @@ ref table LocalDateTable_f2d3c612-927f-4c67-8ce4-4d18e28f301d
 ref table LocalDateTable_8aecdfd4-668e-46b3-ad90-0b8e8ca7c033
 ref table 'Judge Program Links'
 ref table HoverSelector
+ref table Sets
+ref table Pricing
 
 ref cultureInfo en-US
 

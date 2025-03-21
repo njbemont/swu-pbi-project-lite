@@ -275,22 +275,6 @@ table Cards
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'expansion.data.attributes.name'
-		dataType: string
-		lineageTag: a6e436b9-3bb8-4e01-b200-9ab2b7edd521
-		summarizeBy: none
-		sourceColumn: expansion.data.attributes.name
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'expansion.data.attributes.code'
-		dataType: string
-		lineageTag: 113e23c7-227c-4932-9c0e-3c929ec35584
-		summarizeBy: none
-		sourceColumn: expansion.data.attributes.code
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'title + subtitle' = Cards[title] & IF(OR(ISBLANK(Cards[subtitle]), Cards[subtitle] = ""), BLANK(), " - " & Cards[subtitle])
 		lineageTag: ca949078-fae2-42ed-b5f6-dc03e646e45b
 		summarizeBy: none
@@ -325,6 +309,20 @@ table Cards
 
 		annotation SummarizationSetBy = Automatic
 
+	column expansion
+		dataType: string
+		lineageTag: a38197a1-025d-485f-b675-71ff9ef68bfe
+		summarizeBy: none
+		sourceColumn: expansion
+
+		annotation SummarizationSetBy = Automatic
+
+	column priceKey = FORMAT(Cards[cardNumber], "000")
+		lineageTag: 00c64cee-b41f-4fa3-9a44-2dd6cf769143
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Cards = m
 		mode: import
 		queryGroup: 'API Tables'
@@ -349,10 +347,7 @@ table Cards
 				    #"Expanded rarity" = Table.ExpandRecordColumn(#"Expanded type2.data.attributes", "rarity", {"data"}, {"rarity.data"}),
 				    #"Expanded rarity.data" = Table.ExpandRecordColumn(#"Expanded rarity", "rarity.data", {"attributes"}, {"rarity.data.attributes"}),
 				    #"Expanded rarity.data.attributes" = Table.ExpandRecordColumn(#"Expanded rarity.data", "rarity.data.attributes", {"name"}, {"rarity.data.attributes.name"}),
-				    #"Expanded expansion" = Table.ExpandRecordColumn(#"Expanded rarity.data.attributes", "expansion", {"data"}, {"expansion.data"}),
-				    #"Expanded expansion.data" = Table.ExpandRecordColumn(#"Expanded expansion", "expansion.data", {"attributes"}, {"expansion.data.attributes"}),
-				    #"Expanded expansion.data.attributes" = Table.ExpandRecordColumn(#"Expanded expansion.data", "expansion.data.attributes", {"name", "code"}, {"expansion.data.attributes.name", "expansion.data.attributes.code"}),
-				    #"Removed Columns" = Table.RemoveColumns(#"Expanded expansion.data.attributes",{"textStyled", "deployBoxStyled", "epicActionStyled", "linkHtml", "localizations", "aspects", "traits", "arenas", "keywords", "variantTypes", "variantOf", "validationId", "cardId", "aspectDuplicates", "rulesStyled", "rules"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Expanded rarity.data.attributes",{"textStyled", "deployBoxStyled", "epicActionStyled", "linkHtml", "localizations", "aspects", "traits", "arenas", "keywords", "variantTypes", "variantOf", "validationId", "cardId", "aspectDuplicates", "rulesStyled", "rules"}),
 				    #"Expanded reprintOf" = Table.ExpandRecordColumn(#"Removed Columns", "reprintOf", {"data"}, {"reprintOf.data"}),
 				    #"Expanded reprintOf.data" = Table.ExpandRecordColumn(#"Expanded reprintOf", "reprintOf.data", {"id"}, {"reprintOf.data.id"}),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded reprintOf.data",{{"cardNumber", Int64.Type}, {"cardCount", Int64.Type}, {"cost", Int64.Type}, {"hp", Int64.Type}, {"power", Int64.Type}, {"reprintOf.data.id", Int64.Type}, {"publishedAt", type datetime}, {"updatedAt", type datetime}, {"createdAt", type datetime}})

@@ -44,7 +44,7 @@ table Legend
 				    ("Aspects", NAMEOF('Aspects'[name]), 1),
 				    ("Cost", NAMEOF(Cards[cost]), 2),
 				    ("Keywords", NAMEOF('Keywords'[name]), 3),
-				    ("Set", NAMEOF(Cards[expansion.data.attributes.name]), 4),
+				    ("Set", NAMEOF(Sets[name]), 4),
 				    ("Type", NAMEOF(Cards[type.data.attributes.name]), 5),
 				    ("Variants", NAMEOF('Variants'[name]), 6)
 				}

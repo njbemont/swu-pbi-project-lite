@@ -14,7 +14,7 @@ expression Rows = 25 meta [IsParameterQuery=true, Type="Any", IsParameterQueryRe
 
 	annotation PBI_ResultType = Number
 
-expression Dynamic =
+expression GetSWUAPIPages =
 		(page as number) =>
 		let
 		     Source = Json.Document(Web.Contents("https://admin.starwarsunlimited.com/api/card-list?locale=en&pagination[page]=" & Number.ToText(page) & "&pagination[pageSize]=" & Number.ToText(#"Rows") & "")),
@@ -65,6 +65,139 @@ expression 'Resource Links' =
 		    #"Renamed Columns"
 	lineageTag: 15aa0470-41e9-44b1-a8c7-01bf344200d9
 	queryGroup: 'Cacade Tables'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Groups =
+		let
+		     Source = Json.Document(Web.Contents("https://tcgcsv.com/tcgplayer/79/groups")),
+		     data = Source[results],
+		    #"Converted to Table" = Table.FromList(data, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+		    #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"groupId", "name", "abbreviation", "isSupplemental", "publishedOn", "modifiedOn", "categoryId"}, {"groupId", "name", "abbreviation", "isSupplemental", "publishedOn", "modifiedOn", "categoryId"})
+		in
+		    #"Expanded Column1"
+	lineageTag: 878ef626-98c7-4118-a732-40c82bbeafa8
+	queryGroup: 'TCGPlayer Pricing'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression GetGroupProducts = ```
+		(group as number) =>
+		let
+		    Source = Json.Document(
+		        Web.Contents(
+		            "https://tcgcsv.com", 
+		            [
+		                RelativePath = "/tcgplayer/79/" & Number.ToText(group) & "/products"
+		            ]
+		        )
+		    ),
+		    data = Source[results]
+		in
+		    data
+		```
+	lineageTag: d5deeb59-19a3-4587-8d3c-29cf31ef0e98
+	queryGroup: Function
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Function
+
+expression GetGroupPrices = ```
+		(group as number) =>
+		let
+		    Source = Json.Document(
+		        Web.Contents(
+		            "https://tcgcsv.com", 
+		            [
+		                RelativePath = "/tcgplayer/79/" & Number.ToText(group) & "/prices"
+		            ]
+		        )
+		    ),
+		    data = Source[results]
+		in
+		    data
+		```
+	lineageTag: d150f783-714e-4da5-bb2b-be980313c636
+	queryGroup: Function
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Function
+
+expression Products = ```
+		let
+		    // Reference your Groups table
+		    groupTable = Groups,
+		
+		    // Get just the groupId column as a list
+		    groupIds = groupTable[groupId],
+		
+		    // Call the function for each groupId
+		    results = List.Transform(groupIds, each 
+		        [ 
+		            group = _, 
+		            data = try GetGroupProducts(_) otherwise null
+		        ]
+		    ),
+		
+		    // Remove any nulls (failed API calls)
+		    cleanResults = List.Select(results, each [data] <> null),
+		    #"Converted to Table" = Table.FromList(cleanResults, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+		    #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"group", "data"}, {"group", "data"}),
+		    #"Expanded data" = Table.ExpandListColumn(#"Expanded Column1", "data"),
+		    #"Expanded data1" = Table.ExpandRecordColumn(#"Expanded data", "data", {"productId", "name", "cleanName", "imageUrl", "categoryId", "groupId", "url", "modifiedOn", "imageCount", "presaleInfo", "extendedData"}, {"productId", "name", "cleanName", "imageUrl", "categoryId", "groupId", "url", "modifiedOn", "imageCount", "presaleInfo", "extendedData"}),
+		    #"Expanded extendedData" = Table.ExpandListColumn(#"Expanded data1", "extendedData"),
+		    #"Expanded extendedData1" = Table.ExpandRecordColumn(#"Expanded extendedData", "extendedData", {"name", "displayName", "value"}, {"name.1", "displayName", "value"}),
+		    #"Filtered Rows" = Table.SelectRows(#"Expanded extendedData1", each ([name.1] = "Number")),
+		    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"name.1", "displayName", "presaleInfo"}),
+		    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"value", "cardNumber"}}),
+		    #"Merged Queries" = Table.NestedJoin(#"Renamed Columns", {"group"}, Groups, {"groupId"}, "Groups", JoinKind.LeftOuter),
+		    #"Expanded Groups" = Table.ExpandTableColumn(#"Merged Queries", "Groups", {"name", "abbreviation"}, {"name.1", "abbreviation"}),
+		    #"Renamed Columns1" = Table.RenameColumns(#"Expanded Groups",{{"name.1", "setName"}}),
+		    #"Reordered Columns" = Table.ReorderColumns(#"Renamed Columns1",{"group", "productId", "name", "cleanName", "imageUrl", "categoryId", "groupId", "url", "modifiedOn", "imageCount", "cardNumber", "abbreviation", "setName"})
+		in
+		    #"Reordered Columns"
+		```
+	lineageTag: bc50e7e4-6317-4fd0-8909-14e74f798e7f
+	queryGroup: 'TCGPlayer Pricing'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Prices = ```
+		let
+		    // Reference your Groups table
+		    groupTable = Groups,
+		
+		    // Get just the groupId column as a list
+		    groupIds = groupTable[groupId],
+		
+		    // Call the function for each groupId
+		    results = List.Transform(groupIds, each 
+		        [ 
+		            group = _, 
+		            data = try GetGroupPrices(_) otherwise null
+		        ]
+		    ),
+		
+		    // Remove any nulls (failed API calls)
+		    cleanResults = List.Select(results, each [data] <> null),
+		    #"Converted to Table" = Table.FromList(cleanResults, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+		    #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"group", "data"}, {"group", "data"}),
+		    #"Expanded data" = Table.ExpandListColumn(#"Expanded Column1", "data"),
+		    #"Expanded data1" = Table.ExpandRecordColumn(#"Expanded data", "data", {"productId", "lowPrice", "midPrice", "highPrice", "marketPrice", "directLowPrice", "subTypeName"}, {"productId", "lowPrice", "midPrice", "highPrice", "marketPrice", "directLowPrice", "subTypeName"}),
+		    #"Filtered Rows" = Table.SelectRows(#"Expanded data1", each [productId] <> null and [productId] <> "")
+		in
+		    #"Filtered Rows"
+		```
+	lineageTag: 0bb00db4-f673-4919-a97d-898f34c83a0a
+	queryGroup: 'TCGPlayer Pricing'
 
 	annotation PBI_NavigationStepName = Navigation
 

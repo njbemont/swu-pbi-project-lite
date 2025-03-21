@@ -1,0 +1,102 @@
+table Sets
+	lineageTag: 53c5afd4-ed16-47ca-a5f1-525ba52cdd87
+
+	column id
+		dataType: string
+		lineageTag: 2646c06a-6b28-4195-8b4b-3cc88dd5774a
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 77783f7a-7191-416b-95bf-6d8f9036be25
+		summarizeBy: none
+		sourceColumn: name
+		sortByColumn: sortValue
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: 6d752c69-3117-4e36-ab30-cc9d2a82b18f
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column code
+		dataType: string
+		lineageTag: 961c0e5b-2a14-4a3d-ad39-23ee589e30db
+		summarizeBy: none
+		sourceColumn: code
+		sortByColumn: sortValue
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdAt
+		dataType: string
+		lineageTag: 717486d3-0c74-4730-96d2-9562d7841354
+		summarizeBy: none
+		sourceColumn: createdAt
+
+		annotation SummarizationSetBy = Automatic
+
+	column updatedAt
+		dataType: string
+		lineageTag: a2b770b5-e0e8-4a5a-b078-a945bd547469
+		summarizeBy: none
+		sourceColumn: updatedAt
+
+		annotation SummarizationSetBy = Automatic
+
+	column publishedAt
+		dataType: string
+		lineageTag: e4f07cdf-54e7-4b01-96ce-d1910b64e9a5
+		summarizeBy: none
+		sourceColumn: publishedAt
+
+		annotation SummarizationSetBy = Automatic
+
+	column locale
+		dataType: string
+		lineageTag: 3f10a132-a3e3-41a6-875e-de8a6966d690
+		summarizeBy: none
+		sourceColumn: locale
+
+		annotation SummarizationSetBy = Automatic
+
+	column sortValue
+		dataType: int64
+		formatString: 0
+		lineageTag: ca4a0b8a-2030-4807-b72a-e105a2348b41
+		summarizeBy: none
+		sourceColumn: sortValue
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Sets = m
+		mode: import
+		queryGroup: 'API Tables'
+		source =
+				let
+				    Source = Base,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"expansion"}),
+				    #"Expanded expansion" = Table.ExpandRecordColumn(#"Removed Other Columns", "expansion", {"data"}, {"data"}),
+				    #"Expanded data" = Table.ExpandRecordColumn(#"Expanded expansion", "data", {"id", "attributes"}, {"id", "attributes"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Expanded data", each [id] <> null and [id] <> ""),
+				    #"Expanded attributes" = Table.ExpandRecordColumn(#"Filtered Rows", "attributes", {"name", "description", "code", "createdAt", "updatedAt", "publishedAt", "locale", "sortValue"}, {"name", "description", "code", "createdAt", "updatedAt", "publishedAt", "locale", "sortValue"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Expanded attributes", {"id"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Duplicates",{{"sortValue", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
