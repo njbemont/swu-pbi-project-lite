@@ -203,3 +203,62 @@ expression Prices = ```
 
 	annotation PBI_ResultType = Table
 
+expression 'File Path' = "C:\Users\NoahBemont\OneDrive - StarPoint Technologies Inc\Documents\" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	lineageTag: 364fe700-e36b-4e0c-aba8-9fd5c7daf978
+	queryGroup: Parameter
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression 'Sample File' =
+		let
+		    Source = Folder.Files("C:\Users\NoahBemont\OneDrive - StarPoint Technologies Inc\Documents\GitHub\swu-pbi-project\Decklists"),
+		    Navigation1 = Source{0}[Content]
+		in
+		    Navigation1
+	lineageTag: 69da7462-6b6d-462c-98fe-d2d9a47135d2
+	queryGroup: 'Folder Tables\Transform File from Decklists\Helper Queries'
+
+	annotation PBI_ResultType = Binary
+
+expression Parameter1 = #"Sample File" meta [IsParameterQuery=true, BinaryIdentifier=#"Sample File", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 9d969e2c-f7b7-485a-8406-3e673df3b1eb
+	queryGroup: 'Folder Tables\Transform File from Decklists\Helper Queries'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transform Sample File' =
+		let
+		    Source = Json.Document(Parameter1),
+		    #"Converted to Table" = Table.FromRecords({Source}),
+		    #"Expanded metadata" = Table.ExpandRecordColumn(#"Converted to Table", "metadata", {"name", "author"}, {"metadata.name", "metadata.author"}),
+		    #"Expanded leader" = Table.ExpandRecordColumn(#"Expanded metadata", "leader", {"id", "count"}, {"leader.id", "leader.count"}),
+		    #"Expanded base" = Table.ExpandRecordColumn(#"Expanded leader", "base", {"id", "count"}, {"base.id", "base.count"}),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Expanded base",{{"metadata.name", type text}, {"metadata.author", type text}, {"leader.id", type text}, {"leader.count", Int64.Type}, {"base.id", type text}, {"base.count", Int64.Type}, {"deck", type any}, {"sideboard", type any}})
+		in
+		    #"Changed Type"
+	lineageTag: a9b21813-a912-4d51-8f98-7bedfaae5085
+	queryGroup: 'Folder Tables\Transform File from Decklists'
+
+	annotation PBI_ResultType = Record
+
+expression 'Transform File' =
+		let
+		    Source = (Parameter1) => let
+		        Source = Json.Document(Parameter1),
+		        #"Converted to Table" = Table.FromRecords({Source}),
+		        #"Expanded metadata" = Table.ExpandRecordColumn(#"Converted to Table", "metadata", {"name", "author"}, {"metadata.name", "metadata.author"}),
+		        #"Expanded leader" = Table.ExpandRecordColumn(#"Expanded metadata", "leader", {"id", "count"}, {"leader.id", "leader.count"}),
+		        #"Expanded base" = Table.ExpandRecordColumn(#"Expanded leader", "base", {"id", "count"}, {"base.id", "base.count"}),
+		        #"Changed Type" = Table.TransformColumnTypes(#"Expanded base",{{"metadata.name", type text}, {"metadata.author", type text}, {"leader.id", type text}, {"leader.count", Int64.Type}, {"base.id", type text}, {"base.count", Int64.Type}, {"deck", type any}, {"sideboard", type any}})
+		    in
+		        #"Changed Type"
+		in
+		    Source
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transform Sample File""}" ]
+	lineageTag: 44837f18-239d-433b-afcd-9ef8e5dd2291
+	queryGroup: 'Folder Tables\Transform File from Decklists\Helper Queries'
+
+	annotation PBI_ResultType = Function
+

@@ -1,0 +1,102 @@
+{
+  "metadata": {
+    "name": "Filemot Lizbyet Corwi",
+    "author": "okternal"
+  },
+  "leader": {
+    "id": "SHD_013",
+    "count": 1
+  },
+  "base": {
+    "id": "SOR_022",
+    "count": 1
+  },
+  "deck": [
+    {
+      "id": "JTL_155",
+      "count": 3
+    },
+    {
+      "id": "SHD_248",
+      "count": 1
+    },
+    {
+      "id": "SHD_109",
+      "count": 2
+    },
+    {
+      "id": "JTL_250",
+      "count": 3
+    },
+    {
+      "id": "SOR_099",
+      "count": 3
+    },
+    {
+      "id": "SHD_096",
+      "count": 3
+    },
+    {
+      "id": "TWI_127",
+      "count": 3
+    },
+    {
+      "id": "SOR_102",
+      "count": 2
+    },
+    {
+      "id": "SHD_153",
+      "count": 3
+    },
+    {
+      "id": "SHD_172",
+      "count": 2
+    },
+    {
+      "id": "JTL_105",
+      "count": 3
+    },
+    {
+      "id": "SHD_105",
+      "count": 2
+    },
+    {
+      "id": "JTL_119",
+      "count": 3
+    },
+    {
+      "id": "SHD_154",
+      "count": 1
+    },
+    {
+      "id": "JTL_094",
+      "count": 3
+    },
+    {
+      "id": "SOR_119",
+      "count": 2
+    },
+    {
+      "id": "SOR_104",
+      "count": 2
+    },
+    {
+      "id": "JTL_100",
+      "count": 3
+    },
+    {
+      "id": "JTL_096",
+      "count": 3
+    },
+    {
+      "id": "SHD_102",
+      "count": 3
+    }
+  ],
+  "sideboard": [
+    {
+      "id": "JTL_164",
+      "count": 1
+    }
+  ]
+}

@@ -115,44 +115,59 @@ table Pricing
 		annotation SummarizationSetBy = Automatic
 
 	column lowPrice
-		dataType: string
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
 		lineageTag: 610a13c6-f066-414a-8aaa-1a3288c7d728
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: lowPrice
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
 	column midPrice
-		dataType: string
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
 		lineageTag: e5d71dd6-81d7-4361-88c4-55f1bc243777
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: midPrice
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
 	column highPrice
-		dataType: string
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
 		lineageTag: d3cae032-07f3-4691-a3ce-1aa820cf8a79
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: highPrice
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
 	column marketPrice
-		dataType: string
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
 		lineageTag: 2dbd819f-92b9-4d96-a2f5-67a2b6b1e99c
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: marketPrice
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
 	column directLowPrice
-		dataType: string
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
 		lineageTag: 80d0aa86-cc1e-4092-ae1a-417492c9b916
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: directLowPrice
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
 	column priceKey = ```
 			
@@ -177,9 +192,10 @@ table Pricing
 				let
 				    Source = Table.NestedJoin(Products, {"productId", "group"}, Prices, {"productId", "group"}, "Prices", JoinKind.LeftOuter),
 				    #"Expanded Prices" = Table.ExpandTableColumn(Source, "Prices", {"lowPrice", "midPrice", "highPrice", "marketPrice", "directLowPrice", "subTypeName"}, {"lowPrice", "midPrice", "highPrice", "marketPrice", "directLowPrice", "subTypeName"}),
-				    #"Reordered Columns" = Table.ReorderColumns(#"Expanded Prices",{"group", "productId", "name", "cleanName", "imageUrl", "categoryId", "groupId", "url", "modifiedOn", "imageCount", "cardNumber", "abbreviation", "setName", "subTypeName", "lowPrice", "midPrice", "highPrice", "marketPrice", "directLowPrice"})
+				    #"Reordered Columns" = Table.ReorderColumns(#"Expanded Prices",{"group", "productId", "name", "cleanName", "imageUrl", "categoryId", "groupId", "url", "modifiedOn", "imageCount", "cardNumber", "abbreviation", "setName", "subTypeName", "lowPrice", "midPrice", "highPrice", "marketPrice", "directLowPrice"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Reordered Columns",{{"lowPrice", type number}, {"midPrice", type number}, {"highPrice", type number}, {"marketPrice", type number}, {"directLowPrice", type number}})
 				in
-				    #"Reordered Columns"
+				    #"Changed Type"
 
 	annotation PBI_NavigationStepName = Navigation
 

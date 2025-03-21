@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "name": "The Insidious Bailiwick",
+    "author": "okternal"
+  },
+  "leader": {
+    "id": "SOR_017",
+    "count": 1
+  },
+  "base": {
+    "id": "JTL_023",
+    "count": 1
+  },
+  "deck": [
+    {
+      "id": "JTL_119",
+      "count": 2
+    },
+    {
+      "id": "SHD_102",
+      "count": 3
+    },
+    {
+      "id": "SHD_174",
+      "count": 2
+    },
+    {
+      "id": "TWI_193",
+      "count": 3
+    },
+    {
+      "id": "SHD_105",
+      "count": 2
+    },
+    {
+      "id": "SOR_193",
+      "count": 3
+    },
+    {
+      "id": "JTL_096",
+      "count": 3
+    },
+    {
+      "id": "JTL_203",
+      "count": 3
+    },
+    {
+      "id": "SHD_202",
+      "count": 2
+    },
+    {
+      "id": "SOR_200",
+      "count": 3
+    },
+    {
+      "id": "JTL_201",
+      "count": 1
+    },
+    {
+      "id": "JTL_103",
+      "count": 3
+    },
+    {
+      "id": "SHD_197",
+      "count": 3
+    },
+    {
+      "id": "SHD_213",
+      "count": 3
+    },
+    {
+      "id": "SHD_248",
+      "count": 3
+    },
+    {
+      "id": "SOR_099",
+      "count": 3
+    },
+    {
+      "id": "SOR_198",
+      "count": 2
+    },
+    {
+      "id": "SOR_104",
+      "count": 3
+    },
+    {
+      "id": "TWI_127",
+      "count": 3
+    }
+  ],
+  "sideboard": []
+}

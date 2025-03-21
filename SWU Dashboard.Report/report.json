@@ -82,6 +82,27 @@
   "sections": [
     {
       "config": "{}",
+      "displayName": "Credits",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "3671a0d09bb948608b78",
+      "ordinal": 15,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"8d876f2e6650661808d7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":280.08179959100204,\"height\":280.08179959100204,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Card Data: Official SWU API\"}]},{\"textRuns\":[{\"value\":\"Rules and Clarifications: Cascade Games\"}]},{\"textRuns\":[{\"value\":\"Pricing Data: TCGCSV\"}]},{\"textRuns\":[{\"value\":\"Deck JSON: SWUDB\"}]},{\"textRuns\":[{\"value\":\"Card Stats: SWU Stats API\"}]}]}}]}}}",
+          "filters": "[]",
+          "height": 280.08,
+          "width": 280.08,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
       "displayName": "Card Gallery w/ Rulings",
       "displayOption": 1,
       "filters": "[]",
@@ -258,30 +279,30 @@
       "ordinal": 14,
       "visualContainers": [
         {
-          "config": "{\"name\":\"05d20abe3b5493028515\",\"layouts\":[{\"id\":0,\"position\":{\"x\":590.920245398773,\"y\":391.3292433537832,\"z\":1,\"width\":269.6114519427403,\"height\":277.46421267893663}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Pricing.priceKey\"},{\"queryRef\":\"Pricing.imageUrl\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Pricing\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"priceKey\"},\"Name\":\"Pricing.priceKey\",\"NativeReferenceName\":\"priceKey\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"imageUrl\"},\"Name\":\"Pricing.imageUrl\",\"NativeReferenceName\":\"imageUrl\"}]},\"drillFilterOtherVisuals\":true}}",
+          "config": "{\"name\":\"05d20abe3b5493028515\",\"layouts\":[{\"id\":0,\"position\":{\"x\":783.3128834355829,\"y\":442.3721881390593,\"z\":1,\"width\":269.6114519427403,\"height\":277.46421267893663}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Pricing.priceKey\"},{\"queryRef\":\"Pricing.imageUrl\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Pricing\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"priceKey\"},\"Name\":\"Pricing.priceKey\",\"NativeReferenceName\":\"priceKey\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"imageUrl\"},\"Name\":\"Pricing.imageUrl\",\"NativeReferenceName\":\"imageUrl\"}]},\"drillFilterOtherVisuals\":true}}",
           "filters": "[]",
           "height": 277.46,
           "width": 269.61,
-          "x": 590.92,
-          "y": 391.33,
+          "x": 783.31,
+          "y": 442.37,
           "z": 1.00
         },
         {
-          "config": "{\"name\":\"21b8afc10b8c3819a29d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":893.9059304703477,\"y\":391.3292433537832,\"z\":2,\"width\":363.1901840490798,\"height\":277.46421267893663}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Pricing Bridge.priceKey\"},{\"queryRef\":\"Pricing Bridge.variantTypes.data.attributes.name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Pricing Bridge\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"priceKey\"},\"Name\":\"Pricing Bridge.priceKey\",\"NativeReferenceName\":\"priceKey\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"variantTypes.data.attributes.name\"},\"Name\":\"Pricing Bridge.variantTypes.data.attributes.name\",\"NativeReferenceName\":\"variantTypes.data.attributes.name\"}]},\"drillFilterOtherVisuals\":true}}",
+          "config": "{\"name\":\"21b8afc10b8c3819a29d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":2,\"width\":751.9018404907976,\"height\":719.8364008179959}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Sets.code\"},{\"queryRef\":\"Sum(Cards.cardNumber)\"},{\"queryRef\":\"Pricing Bridge.priceKey\"},{\"queryRef\":\"Pricing Bridge.variantTypes.data.attributes.name\"},{\"queryRef\":\"Pricing.lowPrice\"},{\"queryRef\":\"Cards.artFront.data.attributes.url\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Pricing Bridge\",\"Type\":0},{\"Name\":\"p1\",\"Entity\":\"Pricing\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0},{\"Name\":\"s\",\"Entity\":\"Sets\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"priceKey\"},\"Name\":\"Pricing Bridge.priceKey\",\"NativeReferenceName\":\"priceKey\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"variantTypes.data.attributes.name\"},\"Name\":\"Pricing Bridge.variantTypes.data.attributes.name\",\"NativeReferenceName\":\"variantTypes.data.attributes.name\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p1\"}},\"Property\":\"lowPrice\"},\"Name\":\"Pricing.lowPrice\",\"NativeReferenceName\":\"lowPrice\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"artFront.data.attributes.url\"},\"Name\":\"Cards.artFront.data.attributes.url\",\"NativeReferenceName\":\"artFront.data.attributes.url\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"cardNumber\"},\"Name\":\"Sum(Cards.cardNumber)\",\"NativeReferenceName\":\"cardNumber\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"code\"},\"Name\":\"Sets.code\",\"NativeReferenceName\":\"code\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"code\"}}}]},\"drillFilterOtherVisuals\":true}}",
           "filters": "[]",
-          "height": 277.46,
-          "width": 363.19,
-          "x": 893.91,
-          "y": 391.33,
+          "height": 719.84,
+          "width": 751.90,
+          "x": 0.00,
+          "y": 0.00,
           "z": 2.00
         },
         {
-          "config": "{\"name\":\"c5b5af78b16e1d24485d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":225.1124744376278,\"y\":391.3292433537832,\"z\":0,\"width\":201.55419222903885,\"height\":277.46421267893663}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Pricing.priceKey\"},{\"queryRef\":\"Pricing Bridge.priceKey\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Pricing\",\"Type\":0},{\"Name\":\"p1\",\"Entity\":\"Pricing Bridge\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"priceKey\"},\"Name\":\"Pricing.priceKey\",\"NativeReferenceName\":\"priceKey\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p1\"}},\"Property\":\"priceKey\"},\"Name\":\"Pricing Bridge.priceKey\",\"NativeReferenceName\":\"priceKey1\"}]},\"drillFilterOtherVisuals\":true}}",
+          "config": "{\"name\":\"c5b5af78b16e1d24485d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1078.4458077709612,\"y\":442.3721881390593,\"z\":0,\"width\":201.55419222903885,\"height\":277.46421267893663}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Pricing.priceKey\"},{\"queryRef\":\"Pricing Bridge.priceKey\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Pricing\",\"Type\":0},{\"Name\":\"p1\",\"Entity\":\"Pricing Bridge\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"priceKey\"},\"Name\":\"Pricing.priceKey\",\"NativeReferenceName\":\"priceKey\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p1\"}},\"Property\":\"priceKey\"},\"Name\":\"Pricing Bridge.priceKey\",\"NativeReferenceName\":\"priceKey1\"}]},\"drillFilterOtherVisuals\":true}}",
           "filters": "[]",
           "height": 277.46,
           "width": 201.55,
-          "x": 225.11,
-          "y": 391.33,
+          "x": 1078.45,
+          "y": 442.37,
           "z": 0.00
         }
       ],

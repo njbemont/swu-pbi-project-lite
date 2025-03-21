@@ -1,0 +1,99 @@
+table Maindeck
+	lineageTag: 698e378a-2b5d-4619-b48d-ec62ec71e96f
+
+	column 'Source.Name'
+		dataType: string
+		lineageTag: e3e498c4-d691-403b-974c-2efdfaf3bd8b
+		summarizeBy: none
+		sourceColumn: Source.Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'metadata.name'
+		dataType: string
+		lineageTag: 4cefea58-e675-4319-9bfa-ca10073a8013
+		summarizeBy: none
+		sourceColumn: metadata.name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'metadata.author'
+		dataType: string
+		lineageTag: 4861abd5-03b8-4146-a8be-51f9e53b711d
+		summarizeBy: none
+		sourceColumn: metadata.author
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'leader.id'
+		dataType: string
+		lineageTag: eb78bde0-ebca-44b8-9ceb-744cfe3e69bc
+		summarizeBy: none
+		sourceColumn: leader.id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'leader.count'
+		dataType: int64
+		formatString: 0
+		lineageTag: 784b4b03-34b1-4d94-a09f-4cc7e06875e2
+		summarizeBy: sum
+		sourceColumn: leader.count
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'base.id'
+		dataType: string
+		lineageTag: 321cfa25-de41-4a1d-a41e-597bc2e5f5d5
+		summarizeBy: none
+		sourceColumn: base.id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'base.count'
+		dataType: int64
+		formatString: 0
+		lineageTag: a452a28c-4caa-42f6-bfaa-522dd03d767d
+		summarizeBy: sum
+		sourceColumn: base.count
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'deck.id'
+		dataType: string
+		lineageTag: a64a62ef-9d5d-4180-bd7d-cf303996aba6
+		summarizeBy: none
+		sourceColumn: deck.id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'deck.count'
+		dataType: string
+		lineageTag: 846e18a0-026f-41f9-a220-e2bb7c84ac56
+		summarizeBy: none
+		sourceColumn: deck.count
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Maindeck = m
+		mode: import
+		queryGroup: 'Folder Tables'
+		source =
+				let
+				    Source = Folder.Files(#"File Path" & "GitHub\swu-pbi-project\Decklists"),
+				    #"Filtered Hidden Files1" = Table.SelectRows(Source, each [Attributes]?[Hidden]? <> true),
+				    #"Invoke Custom Function1" = Table.AddColumn(#"Filtered Hidden Files1", "Transform File", each #"Transform File"([Content])),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Invoke Custom Function1", {"Name", "Source.Name"}),
+				    #"Removed Other Columns1" = Table.SelectColumns(#"Renamed Columns1", {"Source.Name", "Transform File"}),
+				    #"Expanded Table Column1" = Table.ExpandTableColumn(#"Removed Other Columns1", "Transform File", Table.ColumnNames(#"Transform File"(#"Sample File"))),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded Table Column1",{{"Source.Name", type text}, {"metadata.name", type text}, {"metadata.author", type text}, {"leader.id", type text}, {"leader.count", Int64.Type}, {"base.id", type text}, {"base.count", Int64.Type}, {"deck", type any}, {"sideboard", type any}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"sideboard"}),
+				    #"Expanded deck" = Table.ExpandListColumn(#"Removed Columns", "deck"),
+				    #"Expanded deck1" = Table.ExpandRecordColumn(#"Expanded deck", "deck", {"id", "count"}, {"deck.id", "deck.count"})
+				in
+				    #"Expanded deck1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

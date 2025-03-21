@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "name": "Abilities aren't real, they can't hurt you - Copy",
+    "author": "okternal"
+  },
+  "leader": {
+    "id": "JTL_018",
+    "count": 1
+  },
+  "base": {
+    "id": "JTL_025",
+    "count": 1
+  },
+  "deck": [
+    {
+      "id": "JTL_223",
+      "count": 2
+    },
+    {
+      "id": "JTL_158",
+      "count": 3
+    },
+    {
+      "id": "JTL_207",
+      "count": 3
+    },
+    {
+      "id": "JTL_217",
+      "count": 3
+    },
+    {
+      "id": "SOR_199",
+      "count": 2
+    },
+    {
+      "id": "SHD_195",
+      "count": 3
+    },
+    {
+      "id": "JTL_235",
+      "count": 2
+    },
+    {
+      "id": "TWI_210",
+      "count": 3
+    },
+    {
+      "id": "JTL_156",
+      "count": 3
+    },
+    {
+      "id": "JTL_198",
+      "count": 3
+    },
+    {
+      "id": "SOR_193",
+      "count": 3
+    },
+    {
+      "id": "SOR_150",
+      "count": 3
+    },
+    {
+      "id": "JTL_151",
+      "count": 3
+    },
+    {
+      "id": "JTL_147",
+      "count": 3
+    },
+    {
+      "id": "JTL_203",
+      "count": 3
+    },
+    {
+      "id": "JTL_221",
+      "count": 3
+    }
+  ],
+  "sideboard": [
+    {
+      "id": "JTL_216",
+      "count": 3
+    },
+    {
+      "id": "SOR_200",
+      "count": 3
+    },
+    {
+      "id": "TWI_215",
+      "count": 2
+    },
+    {
+      "id": "SHD_166",
+      "count": 2
+    }
+  ]
+}
