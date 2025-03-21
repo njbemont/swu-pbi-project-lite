@@ -30,7 +30,7 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBIDesktopVersion = 2.140.1577.0 (25.02)+00af0910c5ca19a229c472b0dfc17a2c488f6b0a
 
-annotation PBI_QueryOrder = ["Page","Rows","GetSWUAPIPages","Base","Cards Fact","Cards","Arenas","Aspects","Keywords","Rules","Traits","Variants","Homepage Links","Resource Links","Judge Program Links","Sets","Groups","GetGroupProducts","GetGroupPrices","Products","Prices","Pricing"]
+annotation PBI_QueryOrder = ["Page","Rows","GetSWUAPIPages","Base","Cards Fact","Cards","Arenas","Aspects","Keywords","Rules","Traits","Variants","Homepage Links","Resource Links","Judge Program Links","Sets","Groups","GetGroupProducts","GetGroupPrices","Products","Prices","Pricing","Pricing Bridge"]
 
 annotation PBI_ProTooling = ["DaxQueryView_Desktop","DevMode"]
 
@@ -55,6 +55,7 @@ ref table 'Judge Program Links'
 ref table HoverSelector
 ref table Sets
 ref table Pricing
+ref table 'Pricing Bridge'
 
 ref cultureInfo en-US
 

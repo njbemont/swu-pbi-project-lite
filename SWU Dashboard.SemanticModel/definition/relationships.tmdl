@@ -58,3 +58,15 @@ relationship a959247b-8aaf-168e-a084-983805992eb8
 	fromColumn: 'Cards Fact'.'expansion.data.id'
 	toColumn: Sets.id
 
+relationship AutoDetected_3771f371-1cac-48e7-9a67-eab995558773
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Pricing Bridge'.cardUid
+	toColumn: Cards.cardUid
+
+relationship 6f54767f-bace-c213-0e7e-54536b44a11c
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'Pricing Bridge'.priceKey
+	toColumn: Pricing.priceKey
+

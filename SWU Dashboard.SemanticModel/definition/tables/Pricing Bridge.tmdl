@@ -1,0 +1,105 @@
+table 'Pricing Bridge'
+	lineageTag: a85fec7b-8021-4460-a95f-07a38fb8c114
+
+	column cardNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 306d6fc0-707c-4dc8-a317-4d13a90edf1e
+		summarizeBy: sum
+		sourceColumn: cardNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column cardCount
+		dataType: string
+		lineageTag: 549856f7-b69d-4c04-a34e-e46a464e0b0f
+		summarizeBy: none
+		sourceColumn: cardCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column cardUid
+		dataType: string
+		lineageTag: 4394f872-36f3-4154-9f25-392d8cd66f49
+		summarizeBy: none
+		sourceColumn: cardUid
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'expansion.data.id'
+		dataType: string
+		lineageTag: c5fd92d2-d979-4a93-88ea-88236770b340
+		summarizeBy: none
+		sourceColumn: expansion.data.id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'expansion.data.attributes.code'
+		dataType: string
+		lineageTag: 1f14d585-cc34-4e1f-9861-3e64911fdf3d
+		summarizeBy: none
+		sourceColumn: expansion.data.attributes.code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'variantTypes.data.id'
+		dataType: string
+		lineageTag: e6e11d81-aedb-455f-80b6-d7854d56643d
+		summarizeBy: none
+		sourceColumn: variantTypes.data.id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'variantTypes.data.attributes.name'
+		dataType: string
+		lineageTag: 1b65df67-2693-482c-bc45-8c6436d4db08
+		summarizeBy: none
+		sourceColumn: variantTypes.data.attributes.name
+
+		annotation SummarizationSetBy = Automatic
+
+	column priceKey = ```
+			
+			IF(
+			    'Pricing Bridge'[variantTypes.data.attributes.name] = "OP Promo",
+			    'Pricing Bridge'[expansion.data.attributes.code] & "-WPP", 
+			    'Pricing Bridge'[expansion.data.attributes.code]
+			) 
+			& "_" & 
+			FORMAT('Pricing Bridge'[cardNumber], "000") 
+			&
+			SWITCH(
+			    TRUE(),
+			    AND('Pricing Bridge'[variantTypes.data.attributes.name] IN {"Standard"}, 'Pricing Bridge'[expansion.data.attributes.code] IN {"SOR", "SHD", "TWI"}), "/" & 'Pricing Bridge'[cardCount] & "_" & 'Pricing Bridge'[variantTypes.data.attributes.name],
+			    AND('Pricing Bridge'[variantTypes.data.attributes.name] IN {"Standard Foil"}, 'Pricing Bridge'[expansion.data.attributes.code] IN {"SOR", "SHD", "TWI"}), "/" & 'Pricing Bridge'[cardCount] & "_Foil",
+			    AND('Pricing Bridge'[variantTypes.data.attributes.name] IN {"Hyperspace Foil"}, 'Pricing Bridge'[expansion.data.attributes.code] IN {"SOR", "SHD", "TWI"}), "_Foil",
+			    'Pricing Bridge'[variantTypes.data.attributes.name] IN {"Standard"}, "/" & 'Pricing Bridge'[cardCount]
+			)
+			```
+		lineageTag: 35f1265e-8d9a-49b1-9857-a0e2979dcb13
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Pricing Bridge' = m
+		mode: import
+		queryGroup: 'API Tables'
+		source =
+				let
+				    Source = Base,
+				    #"Removed Columns" = Table.RemoveColumns(Source,{"title", "subtitle", "artist", "artFrontHorizontal", "artBackHorizontal", "hasFoil", "cost", "hp", "power", "text", "textStyled", "deployBox", "deployBoxStyled", "epicAction", "epicActionStyled", "linkHtml", "createdAt", "updatedAt", "publishedAt", "locale", "hyperspace", "unique", "showcase", "rules", "rulesStyled", "serialCode", "upgradeHp", "upgradePower", "artFront", "artBack", "artThumbnail", "localizations", "aspects", "aspectDuplicates", "type", "type2", "traits", "arenas", "keywords", "rarity", "variantOf", "reprintOf", "validationId", "cardId"}),
+				    #"Expanded expansion" = Table.ExpandRecordColumn(#"Removed Columns", "expansion", {"data"}, {"expansion.data"}),
+				    #"Expanded expansion.data" = Table.ExpandRecordColumn(#"Expanded expansion", "expansion.data", {"id", "attributes"}, {"expansion.data.id", "expansion.data.attributes"}),
+				    #"Expanded expansion.data.attributes" = Table.ExpandRecordColumn(#"Expanded expansion.data", "expansion.data.attributes", {"code"}, {"expansion.data.attributes.code"}),
+				    #"Expanded variantTypes" = Table.ExpandRecordColumn(#"Expanded expansion.data.attributes", "variantTypes", {"data"}, {"variantTypes.data"}),
+				    #"Expanded variantTypes.data" = Table.ExpandListColumn(#"Expanded variantTypes", "variantTypes.data"),
+				    #"Expanded variantTypes.data1" = Table.ExpandRecordColumn(#"Expanded variantTypes.data", "variantTypes.data", {"id", "attributes"}, {"variantTypes.data.id", "variantTypes.data.attributes"}),
+				    #"Expanded variantTypes.data.attributes" = Table.ExpandRecordColumn(#"Expanded variantTypes.data1", "variantTypes.data.attributes", {"name"}, {"variantTypes.data.attributes.name"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded variantTypes.data.attributes",{{"cardNumber", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

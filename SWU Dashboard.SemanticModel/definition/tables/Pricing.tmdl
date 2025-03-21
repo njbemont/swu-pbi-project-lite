@@ -154,7 +154,17 @@ table Pricing
 
 		annotation SummarizationSetBy = Automatic
 
-	column priceKey = Pricing[abbreviation] & "_" & Pricing[cardNumber] & "_" & IF(Pricing[subTypeName] = "Normal", "Standard", Pricing[subTypeName])
+	column priceKey = ```
+			
+			Pricing[abbreviation] 
+			& "_" & 
+			Pricing[cardNumber]
+			  &
+			IF(
+			    Pricing[abbreviation] IN {"SOR", "SHD", "TWI"},
+			    "_" & IF(Pricing[subTypeName] = "Normal", "Standard", Pricing[subTypeName])
+			)
+			```
 		lineageTag: 7139b3a3-663d-439b-ba86-e033c9556c8a
 		summarizeBy: none
 

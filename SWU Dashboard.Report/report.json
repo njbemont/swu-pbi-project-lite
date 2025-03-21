@@ -1,5 +1,5 @@
 {
-  "config": "{\"version\":\"5.61\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":13,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "config": "{\"version\":\"5.61\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":14,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
   "filters": "[]",
   "layoutOptimization": 0,
   "pods": [
@@ -244,6 +244,45 @@
           "x": 1055.15,
           "y": 0.00,
           "z": 4000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"9efa7ce50d85c4b886ba\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Pricing\"}},\"Property\":\"name\"}},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+      "height": 720.00,
+      "name": "43a5f5f60b2a94108090",
+      "ordinal": 14,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"05d20abe3b5493028515\",\"layouts\":[{\"id\":0,\"position\":{\"x\":590.920245398773,\"y\":391.3292433537832,\"z\":1,\"width\":269.6114519427403,\"height\":277.46421267893663}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Pricing.priceKey\"},{\"queryRef\":\"Pricing.imageUrl\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Pricing\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"priceKey\"},\"Name\":\"Pricing.priceKey\",\"NativeReferenceName\":\"priceKey\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"imageUrl\"},\"Name\":\"Pricing.imageUrl\",\"NativeReferenceName\":\"imageUrl\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 277.46,
+          "width": 269.61,
+          "x": 590.92,
+          "y": 391.33,
+          "z": 1.00
+        },
+        {
+          "config": "{\"name\":\"21b8afc10b8c3819a29d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":893.9059304703477,\"y\":391.3292433537832,\"z\":2,\"width\":363.1901840490798,\"height\":277.46421267893663}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Pricing Bridge.priceKey\"},{\"queryRef\":\"Pricing Bridge.variantTypes.data.attributes.name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Pricing Bridge\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"priceKey\"},\"Name\":\"Pricing Bridge.priceKey\",\"NativeReferenceName\":\"priceKey\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"variantTypes.data.attributes.name\"},\"Name\":\"Pricing Bridge.variantTypes.data.attributes.name\",\"NativeReferenceName\":\"variantTypes.data.attributes.name\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 277.46,
+          "width": 363.19,
+          "x": 893.91,
+          "y": 391.33,
+          "z": 2.00
+        },
+        {
+          "config": "{\"name\":\"c5b5af78b16e1d24485d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":225.1124744376278,\"y\":391.3292433537832,\"z\":0,\"width\":201.55419222903885,\"height\":277.46421267893663}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Pricing.priceKey\"},{\"queryRef\":\"Pricing Bridge.priceKey\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Pricing\",\"Type\":0},{\"Name\":\"p1\",\"Entity\":\"Pricing Bridge\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"priceKey\"},\"Name\":\"Pricing.priceKey\",\"NativeReferenceName\":\"priceKey\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p1\"}},\"Property\":\"priceKey\"},\"Name\":\"Pricing Bridge.priceKey\",\"NativeReferenceName\":\"priceKey1\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 277.46,
+          "width": 201.55,
+          "x": 225.11,
+          "y": 391.33,
+          "z": 0.00
         }
       ],
       "width": 1280.00
@@ -650,22 +689,22 @@
       "ordinal": 13,
       "visualContainers": [
         {
-          "config": "{\"name\":\"496187ca3a100aa18129\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":1,\"width\":640,\"height\":299.43097997892517}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Cards.artFront.data.attributes.url\"},{\"queryRef\":\"Cards.title\"},{\"queryRef\":\"Sum(Cards.cardNumber)\"},{\"queryRef\":\"Cards.priceKey\"},{\"queryRef\":\"Variants.name\"},{\"queryRef\":\"Sets.code\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0},{\"Name\":\"v\",\"Entity\":\"Variants\",\"Type\":0},{\"Name\":\"s\",\"Entity\":\"Sets\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"artFront.data.attributes.url\"},\"Name\":\"Cards.artFront.data.attributes.url\",\"NativeReferenceName\":\"artFront.data.attributes.url\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title\"},\"Name\":\"Cards.title\",\"NativeReferenceName\":\"title\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"cardNumber\"}},\"Function\":0},\"Name\":\"Sum(Cards.cardNumber)\",\"NativeReferenceName\":\"Sum of cardNumber\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"priceKey\"},\"Name\":\"Cards.priceKey\",\"NativeReferenceName\":\"priceKey\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"name\"},\"Name\":\"Variants.name\",\"NativeReferenceName\":\"name\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"code\"},\"Name\":\"Sets.code\",\"NativeReferenceName\":\"code\"}]},\"drillFilterOtherVisuals\":true}}",
+          "config": "{\"name\":\"496187ca3a100aa18129\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":1000,\"width\":640,\"height\":299.43097997892517}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Cards.artFront.data.attributes.url\"},{\"queryRef\":\"Cards.title\"},{\"queryRef\":\"Sum(Cards.cardNumber)\"},{\"queryRef\":\"Cards.priceKey\"},{\"queryRef\":\"Variants.name\"},{\"queryRef\":\"Sets.code\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0},{\"Name\":\"v\",\"Entity\":\"Variants\",\"Type\":0},{\"Name\":\"s\",\"Entity\":\"Sets\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"artFront.data.attributes.url\"},\"Name\":\"Cards.artFront.data.attributes.url\",\"NativeReferenceName\":\"artFront.data.attributes.url\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title\"},\"Name\":\"Cards.title\",\"NativeReferenceName\":\"title\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"cardNumber\"}},\"Function\":0},\"Name\":\"Sum(Cards.cardNumber)\",\"NativeReferenceName\":\"Sum of cardNumber\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"priceKey\"},\"Name\":\"Cards.priceKey\",\"NativeReferenceName\":\"priceKey\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"name\"},\"Name\":\"Variants.name\",\"NativeReferenceName\":\"name\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"code\"},\"Name\":\"Sets.code\",\"NativeReferenceName\":\"code\"}]},\"drillFilterOtherVisuals\":true}}",
           "filters": "[{\"name\":\"73a366585dba7d98da00\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"title\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Resupply'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
           "height": 299.43,
           "width": 640.00,
           "x": 0.00,
           "y": 0.00,
-          "z": 1.00
+          "z": 1000.00
         },
         {
-          "config": "{\"name\":\"64e8b5386c8c0e8ab143\",\"layouts\":[{\"id\":0,\"position\":{\"x\":699.9051633298208,\"y\":309.43097997892517,\"width\":580.0948366701792,\"height\":299.43097997892517,\"z\":3}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Pricing.abbreviation\"},{\"queryRef\":\"Pricing.setName\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Pricing\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"abbreviation\"},\"Name\":\"Pricing.abbreviation\",\"NativeReferenceName\":\"abbreviation\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"setName\"},\"Name\":\"Pricing.setName\",\"NativeReferenceName\":\"setName\"}]},\"drillFilterOtherVisuals\":true}}",
+          "config": "{\"name\":\"64e8b5386c8c0e8ab143\",\"layouts\":[{\"id\":0,\"position\":{\"x\":699.9051633298208,\"y\":309.43097997892517,\"width\":580.0948366701792,\"height\":299.43097997892517,\"z\":3000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Pricing.abbreviation\"},{\"queryRef\":\"Pricing.setName\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Pricing\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"abbreviation\"},\"Name\":\"Pricing.abbreviation\",\"NativeReferenceName\":\"abbreviation\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"setName\"},\"Name\":\"Pricing.setName\",\"NativeReferenceName\":\"setName\"}]},\"drillFilterOtherVisuals\":true}}",
           "filters": "[]",
           "height": 299.43,
           "width": 580.09,
           "x": 699.91,
           "y": 309.43,
-          "z": 3.00
+          "z": 3000.00
         },
         {
           "config": "{\"name\":\"926bc63a802ab8b69b56\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":420.82191780821915,\"z\":0,\"width\":689.9051633298208,\"height\":299.43097997892517}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Pricing.priceKey\"},{\"queryRef\":\"Pricing.subTypeName\"},{\"queryRef\":\"Pricing.imageUrl\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Pricing\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"priceKey\"},\"Name\":\"Pricing.priceKey\",\"NativeReferenceName\":\"priceKey\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"subTypeName\"},\"Name\":\"Pricing.subTypeName\",\"NativeReferenceName\":\"subTypeName\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"imageUrl\"},\"Name\":\"Pricing.imageUrl\",\"NativeReferenceName\":\"imageUrl\"}]},\"drillFilterOtherVisuals\":true}}",
@@ -677,13 +716,13 @@
           "z": 0.00
         },
         {
-          "config": "{\"name\":\"d6ec82a4e60d109ca463\",\"layouts\":[{\"id\":0,\"position\":{\"x\":699.9051633298208,\"y\":0,\"width\":580.0948366701792,\"height\":299.43097997892517,\"z\":2}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Sets.code\"},{\"queryRef\":\"Sets.name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Sets\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"code\"},\"Name\":\"Sets.code\",\"NativeReferenceName\":\"code\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"name\"},\"Name\":\"Sets.name\",\"NativeReferenceName\":\"name\"}]},\"drillFilterOtherVisuals\":true}}",
+          "config": "{\"name\":\"d6ec82a4e60d109ca463\",\"layouts\":[{\"id\":0,\"position\":{\"x\":699.9051633298208,\"y\":0,\"width\":580.0948366701792,\"height\":299.43097997892517,\"z\":2000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Sets.code\"},{\"queryRef\":\"Sets.name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Sets\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"code\"},\"Name\":\"Sets.code\",\"NativeReferenceName\":\"code\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"name\"},\"Name\":\"Sets.name\",\"NativeReferenceName\":\"name\"}]},\"drillFilterOtherVisuals\":true}}",
           "filters": "[]",
           "height": 299.43,
           "width": 580.09,
           "x": 699.91,
           "y": 0.00,
-          "z": 2.00
+          "z": 2000.00
         }
       ],
       "width": 1280.00
