@@ -173,13 +173,12 @@ table Pricing
 			
 			Pricing[abbreviation] 
 			& "_" & 
-			Pricing[cardNumber]
-			&
 			SWITCH(
 			    TRUE(),
-			    AND(Pricing[abbreviation] IN {"SOR", "SHD", "TWI"}, Pricing[subTypeName] = "Normal"), "_Standard", 
-			    Pricing[abbreviation] IN {"SOR", "SHD", "TWI"}, "_" & Pricing[subTypeName],
-			    Pricing[abbreviation] = "SSP", RIGHT(Pricing[name], - LEN(Pricing[name]))
+			    AND(Pricing[abbreviation] IN {"SOR", "SHD", "TWI"}, Pricing[subTypeName] = "Normal"), Pricing[cardNumber] & "_Standard", 
+			    Pricing[abbreviation] IN {"SOR", "SHD", "TWI"}, Pricing[cardNumber] & "_" & Pricing[subTypeName],
+			    Pricing[abbreviation] = "SSP", "2/2_" & Pricing[name],
+			    Pricing[cardNumber]
 			)
 			```
 		lineageTag: 7139b3a3-663d-439b-ba86-e033c9556c8a
@@ -195,7 +194,7 @@ table Pricing
 				    Source = Table.NestedJoin(Products, {"productId", "group"}, Prices, {"productId", "group"}, "Prices", JoinKind.LeftOuter),
 				    #"Expanded Prices" = Table.ExpandTableColumn(Source, "Prices", {"lowPrice", "midPrice", "highPrice", "marketPrice", "directLowPrice", "subTypeName"}, {"lowPrice", "midPrice", "highPrice", "marketPrice", "directLowPrice", "subTypeName"}),
 				    #"Reordered Columns" = Table.ReorderColumns(#"Expanded Prices",{"group", "productId", "name", "cleanName", "imageUrl", "categoryId", "groupId", "url", "modifiedOn", "imageCount", "cardNumber", "abbreviation", "setName", "subTypeName", "lowPrice", "midPrice", "highPrice", "marketPrice", "directLowPrice"}),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Reordered Columns",{{"lowPrice", type number}, {"midPrice", type number}, {"highPrice", type number}, {"marketPrice", type number}, {"directLowPrice", type number}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Reordered Columns",{{"lowPrice", type number}, {"midPrice", type number}, {"highPrice", type number}, {"marketPrice", type number}, {"directLowPrice", type number}, {"name", type text}})
 				in
 				    #"Changed Type"
 

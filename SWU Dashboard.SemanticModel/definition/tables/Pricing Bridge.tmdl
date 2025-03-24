@@ -88,7 +88,7 @@ table 'Pricing Bridge'
 			    AND('Pricing Bridge'[variantTypes.data.attributes.name] = "Hyperspace", 'Pricing Bridge'[expansion.data.attributes.code] IN {"SOR", "SHD", "TWI"}), "_Standard",
 			    AND('Pricing Bridge'[variantTypes.data.attributes.name] = "Hyperspace Foil", 'Pricing Bridge'[expansion.data.attributes.code] IN {"SOR", "SHD", "TWI"}), "_Foil",
 			    'Pricing Bridge'[variantTypes.data.attributes.name] IN {"OP Judge", "Prerelease Promo", "Convention Exclusive"}, "/" & FORMAT('Pricing Bridge'[cardCount], "000"),
-			    'Pricing Bridge'[variantTypes.data.attributes.name] IN {"OP Champion", "OP Finalist", "OP Top 4", "OP Top 8", "OP Top 16"}, "/2_" & RIGHT('Pricing Bridge'[variantTypes.data.attributes.name] , LEN('Pricing Bridge'[variantTypes.data.attributes.name]) - 3),
+			    'Pricing Bridge'[variantTypes.data.attributes.name] IN {"OP Champion", "OP Finalist", "OP Top 4", "OP Top 8", "OP Top 16"}, "/2_" & RELATED(Cards[title + subtitle]) & " (" & RIGHT('Pricing Bridge'[variantTypes.data.attributes.name], LEN('Pricing Bridge'[variantTypes.data.attributes.name]) - 3) & ")",
 			    'Pricing Bridge'[variantTypes.data.attributes.name] IN {"Standard"}, "/" & 'Pricing Bridge'[cardCount]
 			)
 			```
