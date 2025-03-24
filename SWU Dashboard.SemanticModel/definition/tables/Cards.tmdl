@@ -323,6 +323,14 @@ table Cards
 
 		annotation SummarizationSetBy = Automatic
 
+	column id
+		dataType: string
+		lineageTag: bdddba72-1f75-48f1-b492-880d4287e628
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Cards = m
 		mode: import
 		queryGroup: 'API Tables'

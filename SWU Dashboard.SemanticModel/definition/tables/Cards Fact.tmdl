@@ -76,13 +76,21 @@ table 'Cards Fact'
 
 		annotation SummarizationSetBy = Automatic
 
+	column id
+		dataType: string
+		lineageTag: 6a474cd8-d8e8-42b4-bc43-4b124d2d7c20
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'Cards Fact' = m
 		mode: import
 		queryGroup: 'API Tables'
 		source =
 				let
 				    Source = Base,
-				    #"Removed Other Columns" = Table.SelectColumns(Source,{"cardUid", "aspects", "traits", "arenas", "keywords", "expansion", "variantTypes"}),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"id", "cardUid", "aspects", "traits", "arenas", "keywords", "expansion", "variantTypes"}),
 				    #"Expanded aspects" = Table.ExpandRecordColumn(#"Removed Other Columns", "aspects", {"data"}, {"aspects.data"}),
 				    #"Expanded aspects.data" = Table.ExpandListColumn(#"Expanded aspects", "aspects.data"),
 				    #"Expanded aspects.data1" = Table.ExpandRecordColumn(#"Expanded aspects.data", "aspects.data", {"id"}, {"aspects.data.id"}),

@@ -262,3 +262,45 @@ expression 'Transform File' =
 
 	annotation PBI_ResultType = Function
 
+expression Maindeck =
+		let
+		    Source = Folder.Files(#"File Path" & "GitHub\swu-pbi-project\Decklists"),
+		    #"Filtered Hidden Files1" = Table.SelectRows(Source, each [Attributes]?[Hidden]? <> true),
+		    #"Invoke Custom Function1" = Table.AddColumn(#"Filtered Hidden Files1", "Transform File", each #"Transform File"([Content])),
+		    #"Renamed Columns1" = Table.RenameColumns(#"Invoke Custom Function1", {"Name", "Source.Name"}),
+		    #"Removed Other Columns1" = Table.SelectColumns(#"Renamed Columns1", {"Source.Name", "Transform File"}),
+		    #"Expanded Table Column1" = Table.ExpandTableColumn(#"Removed Other Columns1", "Transform File", Table.ColumnNames(#"Transform File"(#"Sample File"))),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Expanded Table Column1",{{"Source.Name", type text}, {"metadata.name", type text}, {"metadata.author", type text}, {"leader.id", type text}, {"leader.count", Int64.Type}, {"base.id", type text}, {"base.count", Int64.Type}, {"deck", type any}, {"sideboard", type any}}),
+		    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"sideboard"}),
+		    #"Expanded deck" = Table.ExpandListColumn(#"Removed Columns", "deck"),
+		    #"Expanded deck1" = Table.ExpandRecordColumn(#"Expanded deck", "deck", {"id", "count"}, {"deck.id", "deck.count"})
+		in
+		    #"Expanded deck1"
+	lineageTag: 6fa97376-97de-4fa0-9039-55990aa69da5
+	queryGroup: 'Folder Tables'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Sideboards =
+		let
+		    Source = Folder.Files(#"File Path" & "GitHub\swu-pbi-project\Decklists"),
+		    #"Filtered Hidden Files1" = Table.SelectRows(Source, each [Attributes]?[Hidden]? <> true),
+		    #"Invoke Custom Function1" = Table.AddColumn(#"Filtered Hidden Files1", "Transform File", each #"Transform File"([Content])),
+		    #"Renamed Columns1" = Table.RenameColumns(#"Invoke Custom Function1", {"Name", "Source.Name"}),
+		    #"Removed Other Columns1" = Table.SelectColumns(#"Renamed Columns1", {"Source.Name", "Transform File"}),
+		    #"Expanded Table Column1" = Table.ExpandTableColumn(#"Removed Other Columns1", "Transform File", Table.ColumnNames(#"Transform File"(#"Sample File"))),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Expanded Table Column1",{{"Source.Name", type text}, {"metadata.name", type text}, {"metadata.author", type text}, {"leader.id", type text}, {"leader.count", Int64.Type}, {"base.id", type text}, {"base.count", Int64.Type}, {"deck", type any}, {"sideboard", type any}}),
+		    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"deck"}),
+		    #"Expanded sideboard" = Table.ExpandListColumn(#"Removed Columns", "sideboard"),
+		    #"Expanded sideboard1" = Table.ExpandRecordColumn(#"Expanded sideboard", "sideboard", {"id", "count"}, {"sideboard.id", "sideboard.count"})
+		in
+		    #"Expanded sideboard1"
+	lineageTag: c3de88c5-5242-442f-b0ae-5a76b54f922f
+	queryGroup: 'Folder Tables'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

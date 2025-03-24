@@ -70,3 +70,15 @@ relationship 6f54767f-bace-c213-0e7e-54536b44a11c
 	fromColumn: 'Pricing Bridge'.priceKey
 	toColumn: Pricing.priceKey
 
+relationship 633b9125-5f5c-211e-ec8f-453c8cb4e151
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Pricing Bridge'.cardUid
+	toColumn: Collection.cardUid
+
+relationship e890205a-f631-3275-0c1e-18921e198510
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: Decks.'Card ID'
+	toColumn: Collection.standardKey
+

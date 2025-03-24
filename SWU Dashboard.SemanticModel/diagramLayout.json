@@ -239,26 +239,13 @@
         },
         {
           "location": {
-            "x": 4612.3830500146942,
-            "y": 40.869555357432148
+            "x": 4562.3830500146942,
+            "y": 40.1459521686773
           },
-          "nodeIndex": "Maindeck",
-          "nodeLineageTag": "698e378a-2b5d-4619-b48d-ec62ec71e96f",
+          "nodeIndex": "Decks",
+          "nodeLineageTag": "2a4d3154-213d-47f6-9381-704ff364ab0d",
           "size": {
-            "height": 296,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 4896.3830500146942,
-            "y": 40.869555357432148
-          },
-          "nodeIndex": "Sideboards",
-          "nodeLineageTag": "efef7dbb-45fc-4f94-815e-4f8cbdbabdb0",
-          "size": {
-            "height": 296,
+            "height": 300,
             "width": 234
           },
           "zIndex": 0

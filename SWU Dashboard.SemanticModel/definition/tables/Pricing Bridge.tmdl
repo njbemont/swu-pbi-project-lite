@@ -11,9 +11,10 @@ table 'Pricing Bridge'
 		annotation SummarizationSetBy = Automatic
 
 	column cardCount
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 549856f7-b69d-4c04-a34e-e46a464e0b0f
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: cardCount
 
 		annotation SummarizationSetBy = Automatic
@@ -60,24 +61,47 @@ table 'Pricing Bridge'
 
 	column priceKey = ```
 			
-			IF(
-			    'Pricing Bridge'[variantTypes.data.attributes.name] = "OP Promo",
-			    'Pricing Bridge'[expansion.data.attributes.code] & "-WPP", 
-			    'Pricing Bridge'[expansion.data.attributes.code]
-			) 
-			& "_" & 
-			FORMAT('Pricing Bridge'[cardNumber], "000") 
-			&
+			//Prefix
 			SWITCH(
 			    TRUE(),
-			    AND('Pricing Bridge'[variantTypes.data.attributes.name] IN {"Standard"}, 'Pricing Bridge'[expansion.data.attributes.code] IN {"SOR", "SHD", "TWI"}), "/" & 'Pricing Bridge'[cardCount] & "_" & 'Pricing Bridge'[variantTypes.data.attributes.name],
-			    AND('Pricing Bridge'[variantTypes.data.attributes.name] IN {"Standard Foil"}, 'Pricing Bridge'[expansion.data.attributes.code] IN {"SOR", "SHD", "TWI"}), "/" & 'Pricing Bridge'[cardCount] & "_Foil",
-			    AND('Pricing Bridge'[variantTypes.data.attributes.name] IN {"Hyperspace Foil"}, 'Pricing Bridge'[expansion.data.attributes.code] IN {"SOR", "SHD", "TWI"}), "_Foil",
+			    OR(ISBLANK('Pricing Bridge'[variantTypes.data.attributes.name]), 'Pricing Bridge'[variantTypes.data.attributes.name] IN {"OP Promo", ""}), LEFT('Pricing Bridge'[expansion.data.attributes.code], 3) & "-WPP",
+			    'Pricing Bridge'[variantTypes.data.attributes.name] IN {"OP Judge", "Judge Program"}, "JDG",
+			    'Pricing Bridge'[variantTypes.data.attributes.name] = "Prerelease Promo", "PRE",
+			    'Pricing Bridge'[variantTypes.data.attributes.name] = "Convention Exclusive", "CE2024",
+			    'Pricing Bridge'[variantTypes.data.attributes.name] = "Event Exclusive", "EEP",
+			    'Pricing Bridge'[variantTypes.data.attributes.name] IN {"OP Champion", "OP Finalist", "OP Top 4", "OP Top 8", "OP Top 16"}, "SSP",
+			    'Pricing Bridge'[expansion.data.attributes.code]
+			) 
+			& "_" &
+			//CardNumber
+			SWITCH(
+			    TRUE(),
+			    OR(ISBLANK('Pricing Bridge'[variantTypes.data.attributes.name]),'Pricing Bridge'[variantTypes.data.attributes.name] IN {"Judge Program", "OP Promo", "OP Champion", "OP Finalist", "OP Top 4", "OP Top 8", "OP Top 16", ""}), 'Pricing Bridge'[cardNumber],
+			    FORMAT('Pricing Bridge'[cardNumber], "000")
+			)
+			&
+			//Suffix
+			SWITCH(
+			    TRUE(),
+			    AND('Pricing Bridge'[variantTypes.data.attributes.name] = "Standard", 'Pricing Bridge'[expansion.data.attributes.code] IN {"SOR", "SHD", "TWI"}), "/" & 'Pricing Bridge'[cardCount] & "_" & 'Pricing Bridge'[variantTypes.data.attributes.name],
+			    AND('Pricing Bridge'[variantTypes.data.attributes.name] = "Standard Foil", 'Pricing Bridge'[expansion.data.attributes.code] IN {"SOR", "SHD", "TWI"}), "/" & 'Pricing Bridge'[cardCount] & "_Foil",
+			    AND('Pricing Bridge'[variantTypes.data.attributes.name] = "Hyperspace", 'Pricing Bridge'[expansion.data.attributes.code] IN {"SOR", "SHD", "TWI"}), "_Standard",
+			    AND('Pricing Bridge'[variantTypes.data.attributes.name] = "Hyperspace Foil", 'Pricing Bridge'[expansion.data.attributes.code] IN {"SOR", "SHD", "TWI"}), "_Foil",
+			    'Pricing Bridge'[variantTypes.data.attributes.name] IN {"OP Judge", "Prerelease Promo", "Convention Exclusive"}, "/" & FORMAT('Pricing Bridge'[cardCount], "000"),
+			    'Pricing Bridge'[variantTypes.data.attributes.name] IN {"OP Champion", "OP Finalist", "OP Top 4", "OP Top 8", "OP Top 16"}, "/2_" & RIGHT('Pricing Bridge'[variantTypes.data.attributes.name] , LEN('Pricing Bridge'[variantTypes.data.attributes.name]) - 3),
 			    'Pricing Bridge'[variantTypes.data.attributes.name] IN {"Standard"}, "/" & 'Pricing Bridge'[cardCount]
 			)
 			```
 		lineageTag: 35f1265e-8d9a-49b1-9857-a0e2979dcb13
 		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column id
+		dataType: string
+		lineageTag: bc5d46bb-0e40-46d2-8282-88a0ef4802bb
+		summarizeBy: none
+		sourceColumn: id
 
 		annotation SummarizationSetBy = Automatic
 
@@ -95,7 +119,7 @@ table 'Pricing Bridge'
 				    #"Expanded variantTypes.data" = Table.ExpandListColumn(#"Expanded variantTypes", "variantTypes.data"),
 				    #"Expanded variantTypes.data1" = Table.ExpandRecordColumn(#"Expanded variantTypes.data", "variantTypes.data", {"id", "attributes"}, {"variantTypes.data.id", "variantTypes.data.attributes"}),
 				    #"Expanded variantTypes.data.attributes" = Table.ExpandRecordColumn(#"Expanded variantTypes.data1", "variantTypes.data.attributes", {"name"}, {"variantTypes.data.attributes.name"}),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded variantTypes.data.attributes",{{"cardNumber", Int64.Type}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded variantTypes.data.attributes",{{"cardNumber", Int64.Type}, {"cardCount", Int64.Type}})
 				in
 				    #"Changed Type"
 

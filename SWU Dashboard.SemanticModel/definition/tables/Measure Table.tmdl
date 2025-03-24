@@ -27,6 +27,146 @@ table 'Measure Table'
 		lineageTag: 76d97ae8-545b-4e09-ad04-469a9ed54a36
 		dataCategory: ImageUrl
 
+	measure 'Owned - Hyperspace' =
+			
+			CALCULATE(
+			    SUM(Collection[owned]),
+			    Variants[id] = "56"
+			)
+		formatString: 0
+		lineageTag: f3a7ddb5-1621-4252-9592-8e897d2f6a08
+
+	measure 'Owned - Convention Exclusive' =
+			
+			CALCULATE(
+			    SUM(Collection[owned]),
+			    Variants[id] = "41"
+			)
+		formatString: 0
+		lineageTag: df041a8c-11ce-434d-8834-418ed1ad34bc
+
+	measure 'Owned - Event Exclusive' =
+			
+			CALCULATE(
+			    SUM(Collection[owned]),
+			    Variants[id] = "2"
+			)
+		formatString: 0
+		lineageTag: ce066233-87eb-40eb-998e-1f094488287d
+
+	measure 'Owned - Prestige Foil' =
+			
+			CALCULATE(
+			    SUM(Collection[owned]),
+			    Variants[id] = "86"
+			)
+		formatString: 0
+		lineageTag: 706a8c02-2eaa-4b82-995c-a5da92482596
+
+	measure 'Owned - Hyperfoil' =
+			
+			CALCULATE(
+			    SUM(Collection[owned]),
+			    Variants[id] = "61"
+			)
+		formatString: 0
+		lineageTag: 8cb02bb1-d3ed-4e1f-aaec-5e2f85129cab
+
+	measure 'Owned - Judge Program' =
+			
+			CALCULATE(
+			    SUM(Collection[owned]),
+			    Variants[id] = "126"
+			)
+		formatString: 0
+		lineageTag: e8371f5a-0ac4-48c0-a5a8-6dd141520963
+
+	measure 'Owned - OP' =
+			
+			CALCULATE(
+			    SUM(Collection[owned]),
+			    Variants[id] IN {"36", "31", "16", "1", "71", "26", "21"}
+			)
+		formatString: 0
+		lineageTag: d06fd14f-93bb-4234-9bb5-9df144ca8ad2
+
+	measure 'Owned - Prerelease' =
+			
+			CALCULATE(
+			    SUM(Collection[owned]),
+			    Variants[id] = "3"
+			)
+		formatString: 0
+		lineageTag: 713fb791-309e-4300-88a5-f100f280cfe1
+
+	measure 'Owned - Serialized Prestige' =
+			
+			CALCULATE(
+			    SUM(Collection[owned]),
+			    Variants[id] = "91"
+			)
+		formatString: 0
+		lineageTag: 99a3a4fc-9f7a-4df5-bf6b-b03b04e4f015
+
+	measure 'Owned - Showcase' =
+			
+			CALCULATE(
+			    SUM(Collection[owned]),
+			    Variants[id] = "66"
+			)
+		formatString: 0
+		lineageTag: bc9cf7f5-84f4-487b-b82e-0cdf6d80f739
+
+	measure 'Owned - Standard' =
+			
+			CALCULATE(
+			    SUM(Collection[owned]),
+			    Variants[id] = "46"
+			)
+		formatString: 0
+		lineageTag: 86ec251b-9e3a-4116-b94c-702698532be5
+
+	measure 'Owned - Standard Foil' =
+			
+			CALCULATE(
+			    SUM(Collection[owned]),
+			    Variants[id] = "51"
+			)
+		formatString: 0
+		lineageTag: f281877b-780c-4951-aaa2-069b5b0af1ad
+
+	measure 'Owned - Prestige' =
+			
+			CALCULATE(
+			    SUM(Collection[owned]),
+			    Variants[id] = "81"
+			)
+		formatString: 0
+		lineageTag: 8c6c5a84-56f4-419e-b648-047fdd97722d
+
+	measure Owned = SUM(Collection[owned])
+		formatString: 0
+		lineageTag: ae710d14-7053-461f-a3cd-6afedc8ab277
+
+	measure 'Used in Decks' = SUM(Decks[Card Count])
+		formatString: 0
+		lineageTag: 41b873af-8219-4a88-b7db-f1aad9d6f11b
+
+	measure Available = [Owned] - [Used in Decks]
+		formatString: 0
+		lineageTag: 0a7c8bc2-8b11-40ed-967e-997cb13bc8a2
+
+	measure 'Collection Value' =
+			
+			SUMX(
+			    VALUES(Collection[cardUid]),
+			    CALCULATE(
+			        MAX(Collection[owned]) * MAX(Pricing[marketPrice])
+			    )
+			)
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: c11f2f5e-4bf2-47f4-87e2-ed2194d5a418
+
 	column Column
 		isHidden
 		formatString: 0

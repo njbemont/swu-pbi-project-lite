@@ -541,6 +541,14 @@ table Base
 
 		annotation SummarizationSetBy = Automatic
 
+	column id
+		dataType: string
+		lineageTag: 08ab6f71-5afe-4dcf-a82e-d473129f74b9
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Base = m
 		mode: import
 		queryGroup: 'API Tables'
@@ -553,7 +561,7 @@ table Base
 				        each [Result]),
 				    #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
 				    #"Expanded Column1" = Table.ExpandListColumn(#"Converted to Table", "Column1"),
-				    #"Expanded Column2" = Table.ExpandRecordColumn(#"Expanded Column1", "Column1", {"attributes"}, {"attributes"}),
+				    #"Expanded Column2" = Table.ExpandRecordColumn(#"Expanded Column1", "Column1", {"id", "attributes"}, {"id", "attributes"}),
 				    #"Expanded attributes" = Table.ExpandRecordColumn(#"Expanded Column2", "attributes", {"title", "subtitle", "cardNumber", "cardCount", "artist", "artFrontHorizontal", "artBackHorizontal", "hasFoil", "cost", "hp", "power", "text", "textStyled", "deployBox", "deployBoxStyled", "epicAction", "epicActionStyled", "linkHtml", "cardId", "createdAt", "updatedAt", "publishedAt", "locale", "hyperspace", "unique", "showcase", "cardUid", "rules", "rulesStyled", "serialCode", "upgradeHp", "upgradePower", "artFront", "artBack", "artThumbnail", "localizations", "aspects", "aspectDuplicates", "type", "type2", "traits", "arenas", "keywords", "rarity", "expansion", "variantTypes", "variantOf", "reprintOf", "validationId"}, {"title", "subtitle", "cardNumber", "cardCount", "artist", "artFrontHorizontal", "artBackHorizontal", "hasFoil", "cost", "hp", "power", "text", "textStyled", "deployBox", "deployBoxStyled", "epicAction", "epicActionStyled", "linkHtml", "cardId", "createdAt", "updatedAt", "publishedAt", "locale", "hyperspace", "unique", "showcase", "cardUid", "rules", "rulesStyled", "serialCode", "upgradeHp", "upgradePower", "artFront", "artBack", "artThumbnail", "localizations", "aspects", "aspectDuplicates", "type", "type2", "traits", "arenas", "keywords", "rarity", "expansion", "variantTypes", "variantOf", "reprintOf", "validationId"})
 				in
 				    #"Expanded attributes"

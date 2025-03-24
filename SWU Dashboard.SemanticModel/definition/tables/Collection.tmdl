@@ -5,7 +5,7 @@ table Collection
 		dataType: int64
 		formatString: 0
 		lineageTag: e9fc478b-b4b2-470f-a3d8-65b1602dda46
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: cardUid
 
 		annotation SummarizationSetBy = Automatic
@@ -28,17 +28,19 @@ table Collection
 		annotation SummarizationSetBy = Automatic
 
 	column owned
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: b62ca42b-a1d4-45b6-9250-398f23695356
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: owned
 
 		annotation SummarizationSetBy = Automatic
 
 	column inDecks
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 6a414de3-d202-44a9-b953-94f4dce41b41
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: inDecks
 
 		annotation SummarizationSetBy = Automatic
@@ -211,6 +213,39 @@ table Collection
 
 		annotation SummarizationSetBy = Automatic
 
+	column cardKey
+		dataType: string
+		lineageTag: ba924d9e-b0b2-448e-a783-5a5ecc3a94fa
+		summarizeBy: none
+		sourceColumn: cardKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: dde738f5-b6a7-4199-981a-4c3b8dfd5444
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'title - subtitle'
+		dataType: string
+		lineageTag: 45e73b57-ce3a-4ed5-8b2b-b2bf7bbbf954
+		summarizeBy: none
+		sourceColumn: title - subtitle
+
+		annotation SummarizationSetBy = Automatic
+
+	column standardKey
+		dataType: string
+		lineageTag: b72cee8d-2e75-4edf-8d71-2daa6c1b0267
+		summarizeBy: none
+		sourceColumn: standardKey
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Collection = m
 		mode: import
 		queryGroup: 'Folder Tables'
@@ -219,7 +254,7 @@ table Collection
 				    Source = Excel.Workbook(File.Contents(#"File Path" & "GitHub\swu-pbi-project\Collection\collection_spreadsheet.xlsx"), null, true),
 				    cards_Sheet = Source{[Item="cards",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(cards_Sheet, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"cardUid", Int64.Type}, {"cardNumber", Int64.Type}, {"set", type text}, {"owned", type any}, {"inDecks", type any}, {"isReprint", type logical}, {"variant", type text}, {"rarity", type text}, {"aspects1", type text}, {"aspects2", type text}, {"title", type text}, {"subtitle", type text}, {"cost", Int64.Type}, {"power", Int64.Type}, {"hp", Int64.Type}, {"upgradePower", Int64.Type}, {"upgradeHp", Int64.Type}, {"arenas", type text}, {"keywords", type text}, {"type", type text}, {"type2", type text}, {"traits", type text}, {"setName", type text}, {"setSort", Int64.Type}, {"reprintId", Int64.Type}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"cardUid", Int64.Type}, {"cardNumber", Int64.Type}, {"set", type text}, {"owned", Int64.Type}, {"inDecks", Int64.Type}, {"isReprint", type logical}, {"variant", type text}, {"rarity", type text}, {"aspects1", type text}, {"aspects2", type text}, {"title", type text}, {"subtitle", type text}, {"cost", Int64.Type}, {"power", Int64.Type}, {"hp", Int64.Type}, {"upgradePower", Int64.Type}, {"upgradeHp", Int64.Type}, {"arenas", type text}, {"keywords", type text}, {"type", type text}, {"type2", type text}, {"traits", type text}, {"setName", type text}, {"setSort", Int64.Type}, {"reprintId", Int64.Type}, {"cardKey", type text}, {"id", Int64.Type}, {"title - subtitle", type text}, {"standardKey", type text}})
 				in
 				    #"Changed Type"
 
