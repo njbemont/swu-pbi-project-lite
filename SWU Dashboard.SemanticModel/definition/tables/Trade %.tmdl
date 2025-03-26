@@ -1,0 +1,28 @@
+table 'Trade %'
+	lineageTag: 8a5af1b7-6047-458e-912d-93951b98e897
+
+	measure 'Trade % Value' = SELECTEDVALUE('Trade %'[Trade %], 1)
+		lineageTag: 23fe3709-e64b-47be-9c16-286947a175a5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Trade %'
+		lineageTag: 8576464b-21fb-4ceb-8741-fc3988387879
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Trade %' = calculated
+		mode: import
+		source = GENERATESERIES(0, 1, 0.01)
+
+	annotation PBI_Id = 35e9a2d757be4597970615bf256c2213
+

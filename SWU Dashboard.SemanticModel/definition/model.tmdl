@@ -70,6 +70,9 @@ ref table Pricing
 ref table 'Pricing Bridge'
 ref table Collection
 ref table Decks
+ref table 'Trade %'
+ref table TradeSideA
+ref table TradeSideB
 
 ref cultureInfo en-US
 

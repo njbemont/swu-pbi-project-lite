@@ -1,0 +1,40 @@
+table TradeSideA
+	lineageTag: ed258c20-e085-4f70-b5bd-82db1ddc1e47
+
+	column Title
+		lineageTag: 85418e34-ddc6-4af9-b7ef-4c92c4993229
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Title]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subtitle
+		lineageTag: 89051972-da36-402f-b22f-2c42f60baaa1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Subtitle]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Variant
+		lineageTag: bc331de4-4e1f-4942-acdf-8dacbc338688
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Variant]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TradeSideA = calculated
+		mode: import
+		source =
+				
+				SELECTCOLUMNS(
+				    Cards,
+				    "Title", Cards[Title],
+				    "Subtitle", Cards[Subtitle],
+				    "Variant", RELATED(Collection[variant])
+				)
+
+	annotation PBI_Id = 124f006d06f14f5eab7a5f763e01d49e
+

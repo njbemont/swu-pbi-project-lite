@@ -30,6 +30,9 @@ table Decks
 		lineageTag: fb00653d-023a-47f0-99dd-1c58dba25657
 		summarizeBy: none
 		sourceColumn: Card Type
+		sortByColumn: cardtypeSort
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
@@ -47,6 +50,14 @@ table Decks
 		lineageTag: 6268da33-92bb-4336-bd87-98e53ea1a45d
 		summarizeBy: sum
 		sourceColumn: Card Count
+
+		annotation SummarizationSetBy = Automatic
+
+	column cardtypeSort
+		dataType: string
+		lineageTag: 912ab92e-c576-45b0-b1fd-71a8a1658e04
+		summarizeBy: none
+		sourceColumn: cardtypeSort
 
 		annotation SummarizationSetBy = Automatic
 
@@ -76,9 +87,10 @@ table Decks
 				    RemovedColumns = Table.RemoveColumns(Expanded, {"RowID"}),
 				    Renamed = Table.RenameColumns(RemovedColumns, {{"Attribute", "Card Type"}}),
 				    #"Removed Duplicates" = Table.Distinct(Renamed),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Duplicates",{{"Card Count", Int64.Type}, {"Card ID", type text}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Duplicates",{{"Card Count", Int64.Type}, {"Card ID", type text}}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Changed Type", "cardtypeSort", each if [Card Type] = "leader" then 1 else if [Card Type] = "base" then 2 else if [Card Type] = "deck" then 3 else if [Card Type] = "sideboard" then 4 else null)
 				in
-				    #"Changed Type"
+				    #"Added Conditional Column"
 
 	annotation PBI_NavigationStepName = Navigation
 

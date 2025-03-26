@@ -144,7 +144,7 @@ table 'Measure Table'
 		formatString: 0
 		lineageTag: 8c6c5a84-56f4-419e-b648-047fdd97722d
 
-	measure Owned = SUM(Collection[owned])
+	measure Owned = SUM(Collection[owned]) + 0
 		formatString: 0
 		lineageTag: ae710d14-7053-461f-a3cd-6afedc8ab277
 
@@ -166,6 +166,95 @@ table 'Measure Table'
 			)
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
 		lineageTag: c11f2f5e-4bf2-47f4-87e2-ed2194d5a418
+
+	measure 'Master Set Completion %' =
+			
+			DIVIDE(
+			    [Distinct Variants Owned],
+			    MAX(Collection[cardNumber]) * DISTINCTCOUNT(Variants[name])
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 5412ebf8-bf3f-48cb-869a-de6821aee841
+
+	measure 'Distinct Variants Owned' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(Collection[id]),
+			    Collection[owned] > 0
+			)
+		formatString: 0
+		lineageTag: dde1c3d8-0a63-4c8f-8998-58fc3244c62a
+
+	measure 'Distinct Cards Owned' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(Collection[title - subtitle]),
+			    Collection[owned] > 0
+			)
+		formatString: 0
+		lineageTag: e0bf1009-336c-4b70-aa52-4e8a2cf80f58
+
+	measure 'Set Completion %' =
+			
+			[Distinct Cards Owned]
+			/
+			MAX(Collection[cardNumber])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 9848b158-b9b4-4b9d-a73f-5f57984e70e2
+
+	measure 'Completed Playsets' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(Collection[title - subtitle]),
+			    Collection[owned] >= 3
+			)
+		formatString: 0
+		lineageTag: ce98fc4c-5122-436d-8ca8-bf6c138417cb
+
+	measure 'Playset Completion %' =
+			
+			DIVIDE(
+			    [Completed Playsets],
+			    MAX(Collection[cardNumber])
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 4c67512e-828c-4418-9de3-4e7be7914347
+
+	measure 'Number of Playsets' =
+			
+			DIVIDE(
+			    [Owned],
+			    3
+			)
+		lineageTag: 34f748c3-052b-416e-bd95-ca3413970bdc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Trade Value A' =
+			
+			CALCULATE(
+			    SUM(Pricing[marketPrice]),
+			    TREATAS(VALUES(TradeSideA[Title]), Cards[Title]),
+			    TREATAS(VALUES(TradeSideA[Subtitle]), Cards[Subtitle]),
+			    TREATAS(VALUES(TradeSideA[Variant]), Variants[name])
+			) * 'Trade %'[Trade % Value]
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 7867d447-85ee-4f1f-ab6e-1815ad857ff5
+
+	measure 'Trade Value B' =
+			
+			CALCULATE(
+			    SUM(Pricing[marketPrice]),
+			    TREATAS(VALUES(TradeSideB[Title]), Cards[Title]),
+			    TREATAS(VALUES(TradeSideB[Subtitle]), Cards[Subtitle]),
+			    TREATAS(VALUES(TradeSideB[Variant]), Variants[name])
+			) * 'Trade %'[Trade % Value]
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 53f27732-3830-4f72-9fad-f34b04e68334
+
+	measure 'Trade Value Difference' = [Trade Value A] - [Trade Value B]
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: eed17964-14c1-4729-afe4-4fb4bccdb058
 
 	column Column
 		isHidden

@@ -64,6 +64,10 @@ table 'Pricing Bridge'
 			//Prefix
 			SWITCH(
 			    TRUE(),
+			    'Pricing Bridge'[id] IN {"8667", "8672", "8677", "8682", "8687", "8692", "8697", "8702", "2668", "1828", "2673", "1969", "2681", "1739", "1818", "2659", "15614", "15618", "15622", "15626", "15630", "15634", "15638", "15642"}, LEFT('Pricing Bridge'[expansion.data.attributes.code], 3) & "-WPP",
+			    'Pricing Bridge'[id] IN {"981", "982"}, "EEP",
+			    'Pricing Bridge'[id] IN {"8664", "8834", "19456", "19461"}, "PRE",
+			    'Pricing Bridge'[id] IN {"8712", "19466", "1015", "16960", "16964"}, "SSP",
 			    OR(ISBLANK('Pricing Bridge'[variantTypes.data.attributes.name]), 'Pricing Bridge'[variantTypes.data.attributes.name] IN {"OP Promo", ""}), LEFT('Pricing Bridge'[expansion.data.attributes.code], 3) & "-WPP",
 			    'Pricing Bridge'[variantTypes.data.attributes.name] IN {"OP Judge", "Judge Program"}, "JDG",
 			    'Pricing Bridge'[variantTypes.data.attributes.name] = "Prerelease Promo", "PRE",
@@ -76,19 +80,35 @@ table 'Pricing Bridge'
 			//CardNumber
 			SWITCH(
 			    TRUE(),
-			    OR(ISBLANK('Pricing Bridge'[variantTypes.data.attributes.name]),'Pricing Bridge'[variantTypes.data.attributes.name] IN {"Judge Program", "OP Promo", "OP Champion", "OP Finalist", "OP Top 4", "OP Top 8", "OP Top 16", ""}), 'Pricing Bridge'[cardNumber],
+			    'Pricing Bridge'[id] IN {"8667", "8672", "8677", "8682", "8687", "8692", "8697", "8702", "2668", "1828", "2673", "1969", "2681", "1739", "1818", "2659", "15614", "15618", "15622", "15626", "15630", "15634", "15638", "15642"}, FORMAT('Pricing Bridge'[cardNumber], "00"),
+			    'Pricing Bridge'[id] IN {"981", "982"}, 'Pricing Bridge'[cardNumber],
+			    'Pricing Bridge'[id] IN {"8712", "19466", "1015", "16960", "16964"}, "1",
+			    'Pricing Bridge'[id] IN {"2752", "2753", "17014", "17015"}, FORMAT('Pricing Bridge'[cardNumber], "000"),
+			    AND('Pricing Bridge'[expansion.data.attributes.code]  IN {"SOR", "SHD", "TWI"}, OR(ISBLANK('Pricing Bridge'[variantTypes.data.attributes.name]), 'Pricing Bridge'[variantTypes.data.attributes.name] IN {"OP Promo", ""})), FORMAT('Pricing Bridge'[cardNumber], "00"),
+			    OR(ISBLANK('Pricing Bridge'[variantTypes.data.attributes.name]),'Pricing Bridge'[variantTypes.data.attributes.name] IN {"Judge Program", "OP Judge", "OP Promo", "OP Champion", "OP Finalist", "OP Top 4", "OP Top 8", "OP Top 16", ""}), 'Pricing Bridge'[cardNumber],
 			    FORMAT('Pricing Bridge'[cardNumber], "000")
 			)
 			&
 			//Suffix
 			SWITCH(
 			    TRUE(),
+			    'Pricing Bridge'[id] IN {"8667", "8672", "8677", "8682", "8687", "8692", "8697", "8702", "2668", "1828", "2673", "1969", "2681", "1739", "1818", "2659", "15614", "15618", "15622", "15626", "15630", "15634", "15638", "15642"}, "/20",
+			    'Pricing Bridge'[id] IN {"981", "982"}, "/" & 'Pricing Bridge'[cardCount],
+			    'Pricing Bridge'[id] IN {"8664", "8834", "19456", "19461"}, "/002" & "_" & RELATED(Cards[title + subtitle]) & " (Hyperspace)",
+			    'Pricing Bridge'[id] IN {"2752", "2753", "17014", "17015"}, "/" & FORMAT('Pricing Bridge'[cardCount], "000") & "_" & RELATED(Cards[title + subtitle]),
+			    'Pricing Bridge'[id] IN {"17009", "17013", "8712", "19466", "1015", "16960", "16964"}, "/2" & "_" & RELATED(Cards[title + subtitle]),
+			    'Pricing Bridge'[id] = {"2726"}, "/" & 'Pricing Bridge'[cardCount] & "_" & RELATED(Cards[title + subtitle]) & " (Surge Foil)",
+			    AND('Pricing Bridge'[expansion.data.attributes.code]  IN {"SOR", "SHD", "TWI"}, OR(ISBLANK('Pricing Bridge'[variantTypes.data.attributes.name]), 'Pricing Bridge'[variantTypes.data.attributes.name] IN {"OP Promo", ""})), "/20",
 			    AND('Pricing Bridge'[variantTypes.data.attributes.name] = "Standard", 'Pricing Bridge'[expansion.data.attributes.code] IN {"SOR", "SHD", "TWI"}), "/" & 'Pricing Bridge'[cardCount] & "_" & 'Pricing Bridge'[variantTypes.data.attributes.name],
 			    AND('Pricing Bridge'[variantTypes.data.attributes.name] = "Standard Foil", 'Pricing Bridge'[expansion.data.attributes.code] IN {"SOR", "SHD", "TWI"}), "/" & 'Pricing Bridge'[cardCount] & "_Foil",
 			    AND('Pricing Bridge'[variantTypes.data.attributes.name] = "Hyperspace", 'Pricing Bridge'[expansion.data.attributes.code] IN {"SOR", "SHD", "TWI"}), "_Standard",
 			    AND('Pricing Bridge'[variantTypes.data.attributes.name] = "Hyperspace Foil", 'Pricing Bridge'[expansion.data.attributes.code] IN {"SOR", "SHD", "TWI"}), "_Foil",
-			    'Pricing Bridge'[variantTypes.data.attributes.name] IN {"OP Judge", "Prerelease Promo", "Convention Exclusive"}, "/" & FORMAT('Pricing Bridge'[cardCount], "000"),
-			    'Pricing Bridge'[variantTypes.data.attributes.name] IN {"OP Champion", "OP Finalist", "OP Top 4", "OP Top 8", "OP Top 16"}, "/2_" & RELATED(Cards[title + subtitle]) & " (" & RIGHT('Pricing Bridge'[variantTypes.data.attributes.name], LEN('Pricing Bridge'[variantTypes.data.attributes.name]) - 3) & ")",
+			    AND('Pricing Bridge'[variantTypes.data.attributes.name] = "Showcase", 'Pricing Bridge'[expansion.data.attributes.code] IN {"SOR", "SHD", "TWI"}), "_Foil",
+			    'Pricing Bridge'[variantTypes.data.attributes.name] = "Convention Exclusive", "/" & FORMAT('Pricing Bridge'[cardCount], "000"),
+			    'Pricing Bridge'[variantTypes.data.attributes.name] = "Prerelease Promo", "/" & FORMAT('Pricing Bridge'[cardCount], "000") & "_" & RELATED(Cards[title + subtitle]),
+			    'Pricing Bridge'[variantTypes.data.attributes.name] = "OP Judge", "/" & 'Pricing Bridge'[cardCount] & "_" & RELATED(Cards[title + subtitle]),
+			    'Pricing Bridge'[variantTypes.data.attributes.name] = "Judge Program", "_" & RELATED(Cards[title + subtitle]),
+			    'Pricing Bridge'[variantTypes.data.attributes.name] IN {"OP Champion", "OP Finalist", "OP Top 4", "OP Top 8", "OP Top 16"}, "/2" & "_" & RELATED(Cards[title + subtitle]) & " (" & RIGHT('Pricing Bridge'[variantTypes.data.attributes.name], LEN('Pricing Bridge'[variantTypes.data.attributes.name]) - 3) & ")",
 			    'Pricing Bridge'[variantTypes.data.attributes.name] IN {"Standard"}, "/" & 'Pricing Bridge'[cardCount]
 			)
 			```

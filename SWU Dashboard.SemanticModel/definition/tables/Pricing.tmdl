@@ -175,9 +175,10 @@ table Pricing
 			& "_" & 
 			SWITCH(
 			    TRUE(),
+			    Pricing[productId] IN {"594176", "594177", "594178", "594179"}, "2/2" & "_" & Pricing[name],
 			    AND(Pricing[abbreviation] IN {"SOR", "SHD", "TWI"}, Pricing[subTypeName] = "Normal"), Pricing[cardNumber] & "_Standard", 
 			    Pricing[abbreviation] IN {"SOR", "SHD", "TWI"}, Pricing[cardNumber] & "_" & Pricing[subTypeName],
-			    Pricing[abbreviation] = "SSP", "2/2_" & Pricing[name],
+			    Pricing[abbreviation] IN {"JDG", "SSP", "PRE"}, Pricing[cardNumber] & "_" & Pricing[name],
 			    Pricing[cardNumber]
 			)
 			```
