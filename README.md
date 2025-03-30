@@ -22,7 +22,8 @@ The main goal of this project is to provide a dashboard for players and judges t
 6. Wait for it to load. If it asks about privacy settings, check the box to ignore privacy settings.
 
 ### Collection Import
-1. Open the collection_spreadsheet file in the Collection folder. Using the userInput tab, enter the count of each card you have in column J. Save your version of this file with the same file name in the Collection folder. 
+1. Open the collection_spreadsheet file in the Collection folder. Using the userInput tab, enter the count of each card you have in column J. Save your version of this file with the same file name in the Collection folder.
+2. Right click on the "Collection" table in the table list (far right side of the application under "Data") and click refresh.
 
 ### Decklists Import
 1. Download your Decklist JSON files from SWUDB
