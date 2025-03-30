@@ -6,10 +6,28 @@
 The main goal of this project is to provide a dashboard for players and judges to search for, analyze, and find rulings on Star Wars: Unlimited cards.
 
 ## Getting Started
-1. Download the PBIX.
-2. Click the Refresh button in the toolbar to get any recent updates.
-3. ???
-4. Profit.
+
+### Pre-requisites
+1. Github account
+2. Power BI Desktop installed
+   https://www.microsoft.com/en-us/power-platform/products/power-bi/desktop
+
+### Initial Setup
+   
+1. Clone the GitRepo to your machine
+2. Open PBIP file (SWU Dashboard.pbip)
+3. Click "Transform Data" in the top tool bar
+4. In the top folder "Parameter", change the "File Path" Parameter to the path your GitHub folder is located (ex. if your full folder path to the project is "C:\Users\NoahBemont\OneDrive - StarPoint Technologies Inc\Documents\GitHub\swu-pbi-project", change this parameter to "C:\Users\NoahBemont\OneDrive - StarPoint Technologies Inc\Documents\"). This project always assumes that your project files will be in a GitHub\swu-pbi-project folder structure. 
+5. Click "Close & Apply"
+6. Wait for it to load. If it asks about privacy settings, check the box to ignore privacy settings.
+
+### Collection Import
+1. Open the collection_spreadsheet file in the Collection folder. Using the userInput tab, enter the count of each card you have in column J. Save your version of this file with the same file name in the Collection folder. 
+
+### Decklists Import
+1. Download your Decklist JSON files from SWUDB
+2. Put each JSON file in the "Decklists" folder
+3. Right click on the "Decks" table in the table list (far right side of the application under "Data") and click refresh. 
 
 ## Documentation
 ### API
