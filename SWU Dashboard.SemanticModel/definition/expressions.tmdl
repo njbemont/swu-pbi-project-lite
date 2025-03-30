@@ -213,7 +213,7 @@ expression 'File Path' = "C:\Users\NoahBemont\OneDrive - StarPoint Technologies 
 
 expression 'Sample File' =
 		let
-		    Source = Folder.Files("C:\Users\NoahBemont\OneDrive - StarPoint Technologies Inc\Documents\GitHub\swu-pbi-project\Decklists"),
+		    Source = Folder.Files(#"File Path" & "GitHub\swu-pbi-project\Decklists"),
 		    Navigation1 = Source{0}[Content]
 		in
 		    Navigation1
@@ -221,6 +221,8 @@ expression 'Sample File' =
 	queryGroup: 'Folder Tables\Transform File from Decklists\Helper Queries'
 
 	annotation PBI_ResultType = Binary
+
+	annotation PBI_NavigationStepName = Navigation
 
 expression Parameter1 = #"Sample File" meta [IsParameterQuery=true, BinaryIdentifier=#"Sample File", Type="Binary", IsParameterQueryRequired=true]
 	lineageTag: 9d969e2c-f7b7-485a-8406-3e673df3b1eb
