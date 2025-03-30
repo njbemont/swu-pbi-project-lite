@@ -245,15 +245,15 @@ expression 'Transform Sample File' =
 
 expression 'Transform File' =
 		let
-		    Source = (Parameter1) => let
-		        Source = Json.Document(Parameter1),
-		        #"Converted to Table" = Table.FromRecords({Source}),
-		        #"Expanded metadata" = Table.ExpandRecordColumn(#"Converted to Table", "metadata", {"name", "author"}, {"metadata.name", "metadata.author"}),
-		        #"Expanded leader" = Table.ExpandRecordColumn(#"Expanded metadata", "leader", {"id", "count"}, {"leader.id", "leader.count"}),
-		        #"Expanded base" = Table.ExpandRecordColumn(#"Expanded leader", "base", {"id", "count"}, {"base.id", "base.count"}),
-		        #"Changed Type" = Table.TransformColumnTypes(#"Expanded base",{{"metadata.name", type text}, {"metadata.author", type text}, {"leader.id", type text}, {"leader.count", Int64.Type}, {"base.id", type text}, {"base.count", Int64.Type}, {"deck", type any}, {"sideboard", type any}})
-		    in
-		        #"Changed Type"
+		    Source = (Parameter1 as binary) => let
+		    Source = Json.Document(Parameter1),
+		    #"Converted to Table" = Table.FromRecords({Source}),
+		    #"Expanded metadata" = Table.ExpandRecordColumn(#"Converted to Table", "metadata", {"name", "author"}, {"metadata.name", "metadata.author"}),
+		    #"Expanded leader" = Table.ExpandRecordColumn(#"Expanded metadata", "leader", {"id", "count"}, {"leader.id", "leader.count"}),
+		    #"Expanded base" = Table.ExpandRecordColumn(#"Expanded leader", "base", {"id", "count"}, {"base.id", "base.count"}),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Expanded base",{{"metadata.name", type text}, {"metadata.author", type text}, {"leader.id", type text}, {"leader.count", Int64.Type}, {"base.id", type text}, {"base.count", Int64.Type}, {"deck", type any}, {"sideboard", type any}})
+		in
+		    #"Changed Type"
 		in
 		    Source
 	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transform Sample File""}" ]
@@ -299,6 +299,97 @@ expression Sideboards =
 		    #"Expanded sideboard1"
 	lineageTag: c3de88c5-5242-442f-b0ae-5a76b54f922f
 	queryGroup: 'Folder Tables'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Rules Clarifications' =
+		let
+		    // Load markdown content from GitHub Gist
+		    Source = Text.FromBinary(Web.Contents("https://gist.githubusercontent.com/macfergusson/256a534a98fc1d45f2595503f7d54953/raw/c55e1e4c5bedef1ecfaa18e6ce26374a895a9d32/SWU_Resources.md")),
+		
+		    // Split the text into blocks
+		    Blocks = Text.Split(Source, "-------------------------------------------------"),
+		    TrimmedBlocks = List.Transform(Blocks, each Text.Trim(_)),
+		    NonEmptyBlocks = List.Select(TrimmedBlocks, each Text.Length(_) > 0),
+		
+		    // Parse each block
+		    ParseBlock = (block as text) =>
+		        let
+		            Lines = Text.Split(block, "#(lf)"),
+		
+		            // Get line index of "**Question:**"
+		            QuestionHeaderIndex = List.PositionOfAny(Lines, List.Select(Lines, each Text.Contains(_, "**Question:**"))),
+		
+		            // Lines after "**Question:**"
+		            AfterQuestionHeader = List.Skip(Lines, QuestionHeaderIndex + 1),
+		
+		            // First line containing the actual bolded question
+		            FirstBoldLine = List.First(List.Select(AfterQuestionHeader, each Text.Contains(_, "**"))),
+		
+		            // SAFELY extract first bolded text using Text.BetweenDelimiters
+		            QuestionText = Text.BetweenDelimiters(FirstBoldLine, "**", "**"),
+		
+		                        // Get index of the bolded question line
+		            FirstBoldIndex = List.PositionOf(AfterQuestionHeader, FirstBoldLine),
+		
+		            // Lines after the bolded question
+		            AfterBold = List.Skip(AfterQuestionHeader, FirstBoldIndex + 1),
+		
+		            // Find the index of the first CR line in the full Lines list
+		            CRLineIndex = List.PositionOfAny(Lines, List.Select(Lines, each Text.StartsWith(Text.Trim(_), "CR "))),
+		
+		            // If CR found, figure out how far it is from AfterBold
+		            CRAbsoluteIndex = if CRLineIndex <> -1 then CRLineIndex else List.Count(Lines),
+		            AbsoluteAfterBoldStart = List.PositionOf(Lines, AfterBold{0}),
+		            ExampleLineCount = CRAbsoluteIndex - AbsoluteAfterBoldStart,
+		
+		            // Extract example lines and join
+		            ExampleLines = List.FirstN(AfterBold, ExampleLineCount),
+		            ExampleText = Text.Combine(ExampleLines, " "),
+		
+		
+		            // Extract CRs
+		            CRLines = List.Select(Lines, each Text.StartsWith(Text.Trim(_), "CR ")),
+		            CRTextLines = List.Select(Lines, each Text.StartsWith(Text.Trim(_), "*") and not Text.StartsWith(_, "**")),
+		            CRs = List.Zip({CRLines, CRTextLines}),
+		            CRTable = Table.FromRecords(List.Transform(CRs, each [
+		                CRReference = Text.Trim(_{0}),
+		                CRText = Text.Middle(Text.Trim(_{1}), 1, Text.Length(Text.Trim(_{1})) - 2)
+		            ])),
+		
+		            // Extract answer
+		            AnswerIndex = List.PositionOfAny(Lines, List.Select(Lines, each Text.Contains(_, "**Answer:**"))),
+		            AfterAnswer = List.Skip(Lines, AnswerIndex + 1),
+		            EndOfAnswerIndex = List.PositionOfAny(AfterAnswer, List.Select(AfterAnswer, each Text.Contains(_, "`"))),
+		            AnswerTextLines = if EndOfAnswerIndex = -1 then AfterAnswer else List.FirstN(AfterAnswer, EndOfAnswerIndex),
+		            AnswerText = Text.Combine(AnswerTextLines, " "),
+		
+		            // Extract date
+		            DateLine = List.First(List.Select(Lines, each Text.Contains(_, "`(Answer shared on"))),
+		            DateText = Text.Middle(
+		                DateLine,
+		                Text.PositionOf(DateLine, "(") + 1,
+		                Text.PositionOf(DateLine, ")") - Text.PositionOf(DateLine, "(") - 1
+		            )
+		        in
+		            [
+		                Question = QuestionText,
+		                Example = ExampleText,
+		                CRs = CRTable,
+		                Answer = AnswerText,
+		                Date = DateText
+		            ],
+		
+		    // Apply parsing to all blocks
+		    Parsed = List.Transform(NonEmptyBlocks, each ParseBlock(_)),
+		    Output = Table.FromRecords(Parsed),
+		    #"Filtered Rows" = Table.SelectRows(Output, each ([Question] <> ""))
+		in
+		    #"Filtered Rows"
+	lineageTag: 50aa8a7b-d70a-411b-8749-dae03ad30538
+	queryGroup: 'Cacade Tables'
 
 	annotation PBI_NavigationStepName = Navigation
 
