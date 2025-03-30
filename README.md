@@ -9,8 +9,7 @@ The main goal of this project is to provide a dashboard for players and judges t
 
 ### Pre-requisites
 1. Github account
-2. Power BI Desktop installed
-   https://www.microsoft.com/en-us/power-platform/products/power-bi/desktop
+2. Power BI Desktop installed - https://www.microsoft.com/en-us/power-platform/products/power-bi/desktop
 
 ### Initial Setup
    
