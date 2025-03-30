@@ -22260,6 +22260,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.727
 			          }
+			        },
+			        {
+			          "Value Adjust": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -23322,6 +23332,122 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "measure_table.collection_value_adjusted": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure Table",
+			          "ConceptualProperty": "Collection Value Adjusted"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "collection value adjusted": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "collection assessment adjusted": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "collection worth adjusted": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "collection price adjusted": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "collection cost adjusted": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "collection charge adjusted": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "collection rate adjusted": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "collection importance adjusted": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "collection significance adjusted": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "collection usefulness adjusted": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "collection consequence adjusted": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
 			          }
 			        }
 			      ]
@@ -31180,6 +31306,105 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "decks_have_cardtype_sorts"
+			        }
+			      ]
+			    },
+			    "collection_has_measure_table_collection_value_adjusted": {
+			      "Binding": {
+			        "ConceptualEntity": "Collection"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "collection": {
+			          "Target": {
+			            "Entity": "collection"
+			          }
+			        },
+			        "measure_table.collection_value_adjusted": {
+			          "Target": {
+			            "Entity": "measure_table.collection_value_adjusted"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "collection"
+			            },
+			            "Object": {
+			              "Role": "measure_table.collection_value_adjusted"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "collections_have_collection_value_adjusted"
+			        }
+			      ]
+			    },
+			    "pricing_has_measure_table_collection_value_adjusted": {
+			      "Binding": {
+			        "ConceptualEntity": "Pricing"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "pricing": {
+			          "Target": {
+			            "Entity": "pricing"
+			          }
+			        },
+			        "measure_table.collection_value_adjusted": {
+			          "Target": {
+			            "Entity": "measure_table.collection_value_adjusted"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "pricing"
+			            },
+			            "Object": {
+			              "Role": "measure_table.collection_value_adjusted"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "pricing_have_collection_value_adjusted"
+			        }
+			      ]
+			    },
+			    "trade__has_measure_table_collection_value_adjusted": {
+			      "Binding": {
+			        "ConceptualEntity": "Trade %"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "trade_": {
+			          "Target": {
+			            "Entity": "trade_"
+			          }
+			        },
+			        "measure_table.collection_value_adjusted": {
+			          "Target": {
+			            "Entity": "measure_table.collection_value_adjusted"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "trade_"
+			            },
+			            "Object": {
+			              "Role": "measure_table.collection_value_adjusted"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trade__have_collection_value_adjusted"
 			        }
 			      ]
 			    },

@@ -1,5 +1,5 @@
 {
-  "config": "{\"version\":\"5.61\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "config": "{\"version\":\"5.61\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":7,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
   "filters": "[]",
   "layoutOptimization": 0,
   "pods": [
@@ -80,7 +80,7 @@
       "filters": "[]",
       "height": 720.00,
       "name": "1f8c8edc80b3502e0712",
-      "ordinal": 7,
+      "ordinal": 8,
       "visualContainers": [
         {
           "config": "{\"name\":\"487c0c6796dcb5c98177\",\"layouts\":[{\"id\":0,\"position\":{\"x\":589.7840968931016,\"y\":168.5097419694576,\"z\":8000,\"width\":101.10584518167457,\"height\":84.2548709847288,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Measure Table.Trade Value Difference\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Measure Table\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Trade Value Difference\"},\"Name\":\"Measure Table.Trade Value Difference\",\"NativeReferenceName\":\"Value Diff\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Trade Value Difference\"}}}]},\"columnProperties\":{\"Measure Table.Trade Value Difference\":{\"displayName\":\"Value Diff\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}},\"fontFamily\":{\"expr\":{\"Literal\":{\"Value\":\"'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Conditional\":{\"Cases\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":1,\"Left\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Measure Table\"}},\"Property\":\"Trade Value Difference\"}},\"Right\":{\"Literal\":{\"Value\":\"0D\"}}}},\"Value\":{\"Literal\":{\"Value\":\"'#18A618'\"}}},{\"Condition\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Measure Table\"}},\"Property\":\"Trade Value Difference\"}},\"Right\":{\"Literal\":{\"Value\":\"0D\"}}}},\"Value\":{\"Literal\":{\"Value\":\"'#D64550'\"}}}]}}}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
@@ -173,7 +173,7 @@
       "filters": "[]",
       "height": 720.00,
       "name": "3671a0d09bb948608b78",
-      "ordinal": 9,
+      "ordinal": 10,
       "visualContainers": [
         {
           "config": "{\"name\":\"8d876f2e6650661808d7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":280.08179959100204,\"height\":280.08179959100204,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Card Data: Official SWU API\"}]},{\"textRuns\":[{\"value\":\"Rules and Clarifications: Cascade Games\"}]},{\"textRuns\":[{\"value\":\"Pricing Data: TCGCSV\"}]},{\"textRuns\":[{\"value\":\"Deck JSON: SWUDB\"}]},{\"textRuns\":[{\"value\":\"Card Stats: SWU Stats API\"}]}]}}]}}}",
@@ -388,7 +388,7 @@
       "filters": "[{\"name\":\"2206b08f41960a771052\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Measure Table\"}},\"Property\":\"Used in Decks\"}},\"type\":\"Categorical\",\"howCreated\":5}]",
       "height": 720.00,
       "name": "40f4c40457d440b0e19c",
-      "ordinal": 8,
+      "ordinal": 9,
       "visualContainers": [
         {
           "config": "{\"name\":\"29c19f8bb2371e38251b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":994.2074776197999,\"y\":0,\"z\":8000,\"width\":285.79252238020007,\"height\":196.8193786203265,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Collection.aspects1\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Decks.Card Count)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Collection\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Decks\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Count\"}},\"Function\":0},\"Name\":\"Sum(Decks.Card Count)\",\"NativeReferenceName\":\"Sum of Card Count\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"aspects1\"},\"Name\":\"Collection.aspects1\",\"NativeReferenceName\":\"Aspect 1\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Count\"}},\"Function\":0}}}]},\"columnProperties\":{\"Collection.aspects1\":{\"displayName\":\"Aspect 1\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"legend\":[{\"properties\":{\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Base Aspects'\"}}}}}]}}}",
@@ -481,7 +481,7 @@
       "filters": "[{\"name\":\"42c0dfc47644b7d28cea\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Rules\"}},\"Property\":\"ruling\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"6809dd91935b9d0217ae\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Aspects\"}},\"Property\":\"name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Aspects\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Command'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"7804415347340384c344\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"cost\"}},\"type\":\"Categorical\",\"howCreated\":5}]",
       "height": 720.00,
       "name": "4c991921e49872d597e9",
-      "ordinal": 14,
+      "ordinal": 15,
       "visualContainers": [
         {
           "config": "{\"name\":\"049a19117bea06e16c06\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"width\":100,\"height\":40,\"z\":3000,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
@@ -559,7 +559,7 @@
       "filters": "[{\"name\":\"a58b105c04a512069897\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"artFront.data.attributes.url\"}},\"type\":\"Categorical\",\"howCreated\":5}]",
       "height": 500.00,
       "name": "6c7fc33342850d2ebb34",
-      "ordinal": 12,
+      "ordinal": 13,
       "visualContainers": [
         {
           "config": "{\"name\":\"3e96b8824eb8c4092962\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":1000,\"width\":425.04559270516717,\"height\":499.9392097264438,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Cards.artFront.data.attributes.url\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"artFront.data.attributes.url\"},\"Name\":\"Cards.artFront.data.attributes.url\",\"NativeReferenceName\":\"Card\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"artFront.data.attributes.url\"}}}]},\"columnProperties\":{\"Cards.artFront.data.attributes.url\":{\"displayName\":\"Card\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"grid\":[{\"properties\":{\"imageHeight\":{\"expr\":{\"Literal\":{\"Value\":\"400D\"}}},\"outlineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}}}],\"values\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"25D\"}}}}}],\"general\":[{\"properties\":{}}],\"columnHeaders\":[{\"properties\":{\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"visualTooltip\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"background\":[{\"properties\":{\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
@@ -607,7 +607,7 @@
       "filters": "[]",
       "height": 720.00,
       "name": "77ae17f0c78626892124",
-      "ordinal": 15,
+      "ordinal": 16,
       "visualContainers": [
         {
           "config": "{\"name\":\"443091f8d0dd20cc0060\",\"layouts\":[{\"id\":0,\"position\":{\"x\":640.3370194839389,\"y\":0,\"z\":4000,\"width\":454.97630331753555,\"height\":151.65876777251185,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Pricing Bridge.priceKey\"},{\"queryRef\":\"Cards.title + subtitle\"},{\"queryRef\":\"Variants.name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Pricing Bridge\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0},{\"Name\":\"v\",\"Entity\":\"Variants\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"priceKey\"},\"Name\":\"Pricing Bridge.priceKey\",\"NativeReferenceName\":\"priceKey\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title + subtitle\"},\"Name\":\"Cards.title + subtitle\",\"NativeReferenceName\":\"title + subtitle\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"name\"},\"Name\":\"Variants.name\",\"NativeReferenceName\":\"name\"}]},\"drillFilterOtherVisuals\":true}}",
@@ -673,7 +673,7 @@
       "filters": "[]",
       "height": 720.00,
       "name": "859d1f5490073505dea6",
-      "ordinal": 16,
+      "ordinal": 17,
       "visualContainers": [
         {
           "config": "{\"name\":\"0625920153523adcd375\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":3000,\"width\":707.51345532831,\"height\":719.9138858988159,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Pricing.productId\"},{\"queryRef\":\"Pricing.abbreviation\"},{\"queryRef\":\"Pricing.name\"},{\"queryRef\":\"Pricing.priceKey\"},{\"queryRef\":\"Sum(Pricing.marketPrice)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Pricing\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"priceKey\"},\"Name\":\"Pricing.priceKey\",\"NativeReferenceName\":\"priceKey\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"marketPrice\"},\"Name\":\"Sum(Pricing.marketPrice)\",\"NativeReferenceName\":\"marketPrice\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"abbreviation\"},\"Name\":\"Pricing.abbreviation\",\"NativeReferenceName\":\"abbreviation\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"name\"},\"Name\":\"Pricing.name\",\"NativeReferenceName\":\"name\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"productId\"},\"Name\":\"Pricing.productId\",\"NativeReferenceName\":\"productId\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"priceKey\"}}}]},\"drillFilterOtherVisuals\":true}}",
@@ -804,7 +804,7 @@
       "filters": "[{\"name\":\"001290d5434750caaa12\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"artist\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"artist\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Amad Mir'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":5}]",
       "height": 720.00,
       "name": "b539cba18a3d2cc79db9",
-      "ordinal": 10,
+      "ordinal": 11,
       "visualContainers": [
         {
           "config": "{\"name\":\"152628e544b4d086e254\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":39.87841945288754,\"z\":1000,\"width\":426,\"height\":226,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Y\":[{\"queryRef\":\"CountNonNull(Cards.cardUid)\"}],\"Category\":[{\"queryRef\":\"Aspects.name\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0},{\"Name\":\"a\",\"Entity\":\"Aspects\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"cardUid\"}},\"Function\":5},\"Name\":\"CountNonNull(Cards.cardUid)\",\"NativeReferenceName\":\"Count of cardUid\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"name\"},\"Name\":\"Aspects.name\",\"NativeReferenceName\":\"Aspect\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"cardUid\"}},\"Function\":5}}}]},\"columnProperties\":{\"Aspects.name\":{\"displayName\":\"Aspect\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
@@ -904,6 +904,45 @@
     },
     {
       "config": "{}",
+      "displayName": "Collection Pricing",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "d4910a5cc4e62cac7908",
+      "ordinal": 7,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"610d0b9cba8ad320302e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":293.8241308793456,\"y\":0,\"z\":2,\"width\":287.280163599182,\"height\":87.68916155419222,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Trade %.Trade %\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Trade %\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Trade %\"},\"Name\":\"Trade %.Trade %\",\"NativeReferenceName\":\"Value Adjust\"}]},\"columnProperties\":{\"Trade %.Trade %\":{\"displayName\":\"Value Adjust\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"numericStart\":{\"expr\":{\"Literal\":{\"Value\":\"0.8000000000000005D\"}}},\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Single'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Trade %\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Trade %\"}},\"Right\":{\"Literal\":{\"Value\":\"0.8000000000000005D\"}}}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 87.69,
+          "width": 287.28,
+          "x": 293.82,
+          "y": 0.00,
+          "z": 2.00
+        },
+        {
+          "config": "{\"name\":\"aec25207b0bd0123bbe4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":87.68916155419222,\"z\":0,\"width\":1280,\"height\":632.1472392638037,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Cards.artFront.data.attributes.url\"},{\"queryRef\":\"Collection.title - subtitle\"},{\"queryRef\":\"Collection.variant\"},{\"queryRef\":\"Sum(Pricing.lowPrice)\"},{\"queryRef\":\"Sum(Pricing.midPrice)\"},{\"queryRef\":\"Sum(Pricing.highPrice)\"},{\"queryRef\":\"Sum(Pricing.marketPrice)\"},{\"queryRef\":\"Sum(Collection.owned)\"},{\"queryRef\":\"Measure Table.Collection Value\"},{\"queryRef\":\"Measure Table.Collection Value Adjusted\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Collection\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"Pricing\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Measure Table\",\"Type\":0},{\"Name\":\"c1\",\"Entity\":\"Cards\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title - subtitle\"},\"Name\":\"Collection.title - subtitle\",\"NativeReferenceName\":\"title - subtitle\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"variant\"},\"Name\":\"Collection.variant\",\"NativeReferenceName\":\"variant\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"lowPrice\"},\"Name\":\"Sum(Pricing.lowPrice)\",\"NativeReferenceName\":\"lowPrice\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"midPrice\"},\"Name\":\"Sum(Pricing.midPrice)\",\"NativeReferenceName\":\"midPrice\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"highPrice\"},\"Name\":\"Sum(Pricing.highPrice)\",\"NativeReferenceName\":\"highPrice\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"marketPrice\"},\"Name\":\"Sum(Pricing.marketPrice)\",\"NativeReferenceName\":\"marketPrice\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"owned\"}},\"Function\":0},\"Name\":\"Sum(Collection.owned)\",\"NativeReferenceName\":\"Sum of owned\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Collection Value\"},\"Name\":\"Measure Table.Collection Value\",\"NativeReferenceName\":\"Collection Value\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Collection Value Adjusted\"},\"Name\":\"Measure Table.Collection Value Adjusted\",\"NativeReferenceName\":\"Collection Value Adjusted\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"artFront.data.attributes.url\"},\"Name\":\"Cards.artFront.data.attributes.url\",\"NativeReferenceName\":\"artFront.data.attributes.url\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 632.15,
+          "width": 1280.00,
+          "x": 0.00,
+          "y": 87.69,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"c8c21d0aeb146c446cc2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":1,\"width\":293.8241308793456,\"height\":87.68916155419222}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Collection.title - subtitle\",\"active\":true},{\"queryRef\":\"Collection.variant\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Collection\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title - subtitle\"},\"Name\":\"Collection.title - subtitle\",\"NativeReferenceName\":\"title - subtitle\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"variant\"},\"Name\":\"Collection.variant\",\"NativeReferenceName\":\"variant\"}]},\"expansionStates\":[{\"roles\":[\"Values\"],\"levels\":[{\"queryRefs\":[\"Collection.title - subtitle\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Collection\"}},\"Property\":\"title - subtitle\"}}],\"isPinned\":true},{\"queryRefs\":[\"Collection.variant\"],\"isCollapsed\":true,\"isPinned\":true}],\"root\":{\"identityValues\":null,\"children\":[{\"identityValues\":[{\"Literal\":{\"Value\":\"'A Fine Addition'\"}}],\"isToggled\":true}]}}],\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{}}],\"selection\":[{\"properties\":{\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 87.69,
+          "width": 293.82,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 1.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
       "displayName": "Rulings Stats",
       "displayOption": 1,
       "filters": "[]",
@@ -975,7 +1014,7 @@
       "filters": "[{\"name\":\"e61d654e845ce214d544\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"artist\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"737a27704a8b39d6e0a8\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Traits\"}},\"Property\":\"name\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"1b2e16c46a6ab5a6903d\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Arenas\"}},\"Property\":\"name\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"c703724c212817926420\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Variants\"}},\"Property\":\"name\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"6344c05590d541574dc7\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"cost\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"65e1c20d0a6a6a7dc56b\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Aspects\"}},\"Property\":\"name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Aspects\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Command'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":5}]",
       "height": 720.00,
       "name": "dbd8b7a1e3bd40e6d4b0",
-      "ordinal": 13,
+      "ordinal": 14,
       "visualContainers": [
         {
           "config": "{\"name\":\"2ec4dcebb1014c178761\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":2000,\"width\":40,\"height\":40}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
@@ -1071,7 +1110,7 @@
       "filters": "[{\"name\":\"0a32e068953e44a07850\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"artFront.data.attributes.url\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"00dda52f4bbe8e9e8001\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"title + subtitle\"}},\"type\":\"Categorical\",\"howCreated\":5}]",
       "height": 500.00,
       "name": "fd8f3d906599c75ca5aa",
-      "ordinal": 11,
+      "ordinal": 12,
       "visualContainers": [
         {
           "config": "{\"name\":\"c178be81333304684cdd\",\"layouts\":[{\"id\":0,\"position\":{\"x\":62,\"y\":440,\"z\":1000,\"width\":380,\"height\":85,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Cards.title + subtitle\"},{\"queryRef\":\"Sum(Pricing.marketPrice)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"Pricing\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title + subtitle\"},\"Name\":\"Cards.title + subtitle\",\"NativeReferenceName\":\"title + subtitle\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"marketPrice\"},\"Name\":\"Sum(Pricing.marketPrice)\",\"NativeReferenceName\":\"marketPrice\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title + subtitle\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnHeaders\":[{\"properties\":{\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}},\"fontFamily\":{\"expr\":{\"Literal\":{\"Value\":\"'wf_standard-font, helvetica, arial, sans-serif'\"}}}}}],\"grid\":[{\"properties\":{\"outlineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}}}],\"columnFormatting\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Center'\"}}}},\"selector\":{\"metadata\":\"Cards.title + subtitle\"}},{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Center'\"}}}},\"selector\":{\"metadata\":\"Sum(Pricing.marketPrice)\"}}],\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"306D\"}}}},\"selector\":{\"metadata\":\"Cards.title + subtitle\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"65D\"}}}},\"selector\":{\"metadata\":\"Sum(Pricing.marketPrice)\"}}],\"total\":[{\"properties\":{\"totals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"right\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"bottom\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"left\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",

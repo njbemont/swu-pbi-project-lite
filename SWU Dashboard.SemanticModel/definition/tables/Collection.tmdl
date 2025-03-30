@@ -2,8 +2,7 @@ table Collection
 	lineageTag: ec7fc4b2-b3b1-4a40-b396-1e11afe886d3
 
 	column cardUid
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: e9fc478b-b4b2-470f-a3d8-65b1602dda46
 		summarizeBy: none
 		sourceColumn: cardUid
@@ -245,7 +244,7 @@ table Collection
 				    Source = Excel.Workbook(File.Contents(#"File Path" & "GitHub\swu-pbi-project\Collection\collection_spreadsheet.xlsx"), null, true),
 				    cards_Sheet = Source{[Item="userInput",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(cards_Sheet, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"cardUid", Int64.Type}, {"cardNumber", Int64.Type}, {"set", type text}, {"owned", Int64.Type}, {"isReprint", type logical}, {"variant", type text}, {"rarity", type text}, {"aspects1", type text}, {"aspects2", type text}, {"title", type text}, {"subtitle", type text}, {"cost", Int64.Type}, {"power", Int64.Type}, {"hp", Int64.Type}, {"upgradePower", Int64.Type}, {"upgradeHp", Int64.Type}, {"arenas", type text}, {"keywords", type text}, {"type", type text}, {"type2", type text}, {"traits", type text}, {"setName", type text}, {"setSort", Int64.Type}, {"reprintId", Int64.Type}, {"cardKey", type text}, {"id", Int64.Type}, {"title - subtitle", type text}, {"standardKey", type text}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"cardUid", type text}, {"cardNumber", Int64.Type}, {"set", type text}, {"owned", Int64.Type}, {"isReprint", type logical}, {"variant", type text}, {"rarity", type text}, {"aspects1", type text}, {"aspects2", type text}, {"title", type text}, {"subtitle", type text}, {"cost", Int64.Type}, {"power", Int64.Type}, {"hp", Int64.Type}, {"upgradePower", Int64.Type}, {"upgradeHp", Int64.Type}, {"arenas", type text}, {"keywords", type text}, {"type", type text}, {"type2", type text}, {"traits", type text}, {"setName", type text}, {"setSort", Int64.Type}, {"reprintId", Int64.Type}, {"cardKey", type text}, {"id", Int64.Type}, {"title - subtitle", type text}, {"standardKey", type text}})
 				in
 				    #"Changed Type"
 

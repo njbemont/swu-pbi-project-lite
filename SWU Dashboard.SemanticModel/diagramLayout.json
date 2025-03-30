@@ -4,7 +4,7 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 2924,
+        "x": 2917,
         "y": 0
       },
       "nodes": [
@@ -294,8 +294,62 @@
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,
       "tablesLocked": false
+    },
+    {
+      "ordinal": 1,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 137,
+            "y": 251
+          },
+          "nodeIndex": "Collection",
+          "nodeLineageTag": "ec7fc4b2-b3b1-4a40-b396-1e11afe886d3",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1447,
+            "y": 467
+          },
+          "nodeIndex": "Pricing",
+          "nodeLineageTag": "114606d0-90b6-4bc4-9289-097dd5ff0fe8",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 832,
+            "y": 261
+          },
+          "nodeIndex": "Pricing Bridge",
+          "nodeLineageTag": "a85fec7b-8021-4460-a95f-07a38fb8c114",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Layout 1",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
     }
   ],
-  "selectedDiagram": "All tables",
+  "selectedDiagram": "Layout 1",
   "defaultDiagram": "All tables"
 }
