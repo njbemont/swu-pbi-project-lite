@@ -13,12 +13,16 @@ The main goal of this project is to provide a dashboard for players and judges t
 
 ### Initial Setup
    
-1. Clone the GitRepo to your machine
-2. Open PBIP file (SWU Dashboard.pbip)
-3. Click "Transform Data" in the top tool bar
-4. In the top folder "Parameter", change the "File Path" Parameter to the path your GitHub folder is located (ex. if your full folder path to the project is "C:\Users\NoahBemont\OneDrive - StarPoint Technologies Inc\Documents\GitHub\swu-pbi-project", change this parameter to "C:\Users\NoahBemont\OneDrive - StarPoint Technologies Inc\Documents\"). This project always assumes that your project files will be in a GitHub\swu-pbi-project folder structure. 
-5. Click "Close & Apply"
-6. Wait for it to load. If it asks about privacy settings, check the box to ignore privacy settings.
+1. Download ZIP File
+2. Extract Zip to a folder called GitHub
+3. Rename swu-pbi-project-main to swu-pbi-project
+4. Open PBIP file (SWU Dashboard.pbip)
+5. Click "Transform Data" in the top tool bar
+6. In the top folder "Parameter", change the "File Path" Parameter to the path your GitHub folder is located (ex. if your full folder path to the project is "C:\Users\NoahBemont\OneDrive - StarPoint Technologies Inc\Documents\GitHub\swu-pbi-project", change this parameter to "C:\Users\NoahBemont\OneDrive - StarPoint Technologies Inc\Documents\"). This project always assumes that your project files will be in a GitHub\swu-pbi-project folder structure. 
+7. Click "Close & Apply"
+8. Wait for it to load. If it asks about privacy settings, check the box to ignore privacy settings.
+9. If you get an error on Pricing, go to File > Options and Settings > Options > Current File > Privacy > Check "Ignore Privacy Levels"
+10. 
 
 ### Collection Import
 1. Open the collection_spreadsheet file in the Collection folder. Using the userInput tab, enter the count of each card you have in column J. Save your version of this file with the same file name in the Collection folder.
