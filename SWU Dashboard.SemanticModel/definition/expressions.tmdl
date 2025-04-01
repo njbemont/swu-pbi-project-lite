@@ -203,7 +203,7 @@ expression Prices = ```
 
 	annotation PBI_ResultType = Table
 
-expression 'File Path' = "C:\Users\NoahBemont\OneDrive - StarPoint Technologies Inc\Documents\github" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+expression 'File Path' = "C:\PlaceHolder\PathToProject" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
 	lineageTag: 364fe700-e36b-4e0c-aba8-9fd5c7daf978
 	queryGroup: Parameter
 
