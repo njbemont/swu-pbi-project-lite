@@ -28,6 +28,23 @@ The main goal of this project is to provide a dashboard for players and judges t
 2. Put each JSON file in the "Decklists" folder
 3. Right-click on the "Decks" table in the table list (far right side of the application under "Data") and click refresh. 
 
+## Dashboards
+### !!Visualizations are a work in progress and are subject to change!!
+### Card Gallery
+![image](https://github.com/user-attachments/assets/ea32161f-c798-4ac3-8a62-16cf6a3df87a)
+### Slice & Dice
+![image](https://github.com/user-attachments/assets/d9d1be25-c155-4952-85af-f4e15f62b788)
+### Collection
+![image](https://github.com/user-attachments/assets/6c040fa8-b7f9-49de-8c8d-217a6dd1312d)
+### Collection Pricing
+![image](https://github.com/user-attachments/assets/8a6e36c2-b8ce-4936-9330-5b73c5bb3689)
+### Watchlist
+![image](https://github.com/user-attachments/assets/0e20b16e-d58b-414b-9cd5-8581052e22f7)
+### Trade Tool
+![image](https://github.com/user-attachments/assets/20b0a6aa-306e-4f3b-87a3-3954fa3ca131)
+### Decks
+![image](https://github.com/user-attachments/assets/e6346a65-99f3-49ba-a5c2-e9af66219b3d)
+
 ## Documentation
 ### API
 This project uses the official Star Wars: Unlimited card database API. This API does not have public documentation, but it is publicly accessible. The effort to extract information from this API was a lot of trial and error. I'll document any relevant filters or API call information here.  
