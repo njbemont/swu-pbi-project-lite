@@ -1,5 +1,3 @@
-# WORK IN PROGRESS, FREQUENT CHANGES, BUGS ABOUND, INSTRUCTIONS NOT DONE YET
-
 # swu-pbi-project
 
 ## Goals
@@ -13,39 +11,31 @@ The main goal of this project is to provide a dashboard for players and judges t
 
 ### Initial Setup
    
-1. Download ZIP File
-2. Extract Zip to a folder called GitHub
-3. Rename swu-pbi-project-main to swu-pbi-project
-4. Open PBIP file (SWU Dashboard.pbip)
-5. Click "Transform Data" in the top tool bar
-6. In the top folder "Parameter", change the "File Path" Parameter to the path your GitHub folder is located (ex. if your full folder path to the project is "C:\Users\NoahBemont\OneDrive - StarPoint Technologies Inc\Documents\GitHub\swu-pbi-project", change this parameter to "C:\Users\NoahBemont\OneDrive - StarPoint Technologies Inc\Documents\"). This project always assumes that your project files will be in a GitHub\swu-pbi-project folder structure. 
-7. Click "Close & Apply"
-8. Wait for it to load. If it asks about privacy settings, check the box to ignore privacy settings.
-9. If you get an error on Pricing, go to File > Options and Settings > Options > Current File > Privacy > Check "Ignore Privacy Levels"
-10. 
+1. Download and Extract ZIP File
+2. Open PBIP file (SWU Dashboard.pbip)
+3. Click "Transform Data" in the top tool bar
+4. In the top folder "Parameter", change the "File Path" Parameter to the path your GitHub folder is located (ex. if your full folder path to the project is "C:\Users\NoahBemont\OneDrive - StarPoint Technologies Inc\Documents\GitHub\swu-pbi-project", change this parameter to "C:\Users\NoahBemont\OneDrive - StarPoint Technologies Inc\Documents\"). This project always assumes that your project files will be in a GitHub\swu-pbi-project folder structure. 
+5. Click "Close & Apply"
+6. Wait for it to load. If it asks about privacy settings, check the box to ignore privacy settings.
+7. If you get an error on Pricing, go to File > Options and Settings > Options > Current File > Privacy > Check "Ignore Privacy Levels"
 
 ### Collection Import
 1. Open the collection_spreadsheet file in the Collection folder. Using the userInput tab, enter the count of each card you have in column J. Save your version of this file with the same file name in the Collection folder.
-2. Right click on the "Collection" table in the table list (far right side of the application under "Data") and click refresh.
+2. Right-click on the "Collection" table in the table list (far right side of the application under "Data") and click refresh.
 
 ### Decklists Import
 1. Download your Decklist JSON files from SWUDB
 2. Put each JSON file in the "Decklists" folder
-3. Right click on the "Decks" table in the table list (far right side of the application under "Data") and click refresh. 
+3. Right-click on the "Decks" table in the table list (far right side of the application under "Data") and click refresh. 
 
 ## Documentation
 ### API
-This project is using the official Star Wars: Unlimited card database API. This API does not have public documentation, but it is publicly accessible. The effort to extract information from this API was a lot of trial and error. I'll document any relevant filters or API call information here.  
+This project uses the official Star Wars: Unlimited card database API. This API does not have public documentation, but it is publicly accessible. The effort to extract information from this API was a lot of trial and error. I'll document any relevant filters or API call information here.  
 Base URL: https://admin.starwarsunlimited.com/api/card-list  
 Filters in use:
 1. locale
 2. pagination[page]
 3. pagination[pageSize]
-
-Other Filters:
-1. ???
-2. ???
-3. ???
 
 ### API Extraction within PBIX:
 #### Functions:
