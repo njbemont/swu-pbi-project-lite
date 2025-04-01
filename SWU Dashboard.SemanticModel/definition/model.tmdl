@@ -42,7 +42,7 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBIDesktopVersion = 2.140.1577.0 (25.02)+00af0910c5ca19a229c472b0dfc17a2c488f6b0a
 
-annotation PBI_QueryOrder = ["File Path","Page","Rows","GetSWUAPIPages","Base","Cards Fact","Cards","Arenas","Aspects","Keywords","Rules","Traits","Variants","Homepage Links","Resource Links","Judge Program Links","Rules Clarifications","Sets","Groups","GetGroupProducts","GetGroupPrices","Products","Prices","Pricing","Pricing Bridge","Collection","Maindeck","Sample File","Parameter1","Transform Sample File","Transform File","Sideboards","Decks"]
+annotation PBI_QueryOrder = ["File Path","Page","Rows","GetSWUAPIPages","Base","Cards Fact","Cards","Arenas","Aspects","Keywords","Rules","Traits","Variants","Homepage Links","Resource Links","Events","Judge Program Links","Rules Clarifications","Sets","Groups","GetGroupProducts","GetGroupPrices","Products","Prices","Pricing","Pricing Bridge","Collection","Maindeck","Sample File","Parameter1","Transform Sample File","Transform File","Sideboards","Decks"]
 
 annotation PBI_ProTooling = ["DaxQueryView_Desktop","DevMode"]
 
@@ -73,6 +73,10 @@ ref table Decks
 ref table 'Trade %'
 ref table TradeSideA
 ref table TradeSideB
+ref table Events
+ref table LocalDateTable_bdbaf0b7-865b-460d-b053-b9f43b7585aa
+ref table LocalDateTable_a92661d0-1ad3-469b-b83a-76d14999c427
+ref table 'Reserved for Collection'
 
 ref cultureInfo en-US
 

@@ -14,6 +14,17 @@ table Variants
 		lineageTag: e6d7cdc4-fa62-4106-a4d8-e04f1af1c86b
 		summarizeBy: none
 		sourceColumn: name
+		sortByColumn: sortValue
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column sortValue
+		dataType: string
+		lineageTag: b0850777-07f6-4f11-b099-d6a6d8055dbb
+		summarizeBy: none
+		sourceColumn: sortValue
 
 		annotation SummarizationSetBy = Automatic
 
@@ -28,12 +39,12 @@ table Variants
 				    #"Expanded data" = Table.ExpandListColumn(#"Expanded variantTypes", "data"),
 				    #"Expanded data1" = Table.ExpandRecordColumn(#"Expanded data", "data", {"id", "attributes"}, {"id", "attributes"}),
 				    #"Filtered Rows" = Table.SelectRows(#"Expanded data1", each [id] <> null and [id] <> ""),
-				    #"Expanded attributes" = Table.ExpandRecordColumn(#"Filtered Rows", "attributes", {"name"}, {"name"}),
+				    #"Expanded attributes" = Table.ExpandRecordColumn(#"Filtered Rows", "attributes", {"name", "sortValue"}, {"name", "sortValue"}),
 				    #"Removed Duplicates" = Table.Distinct(#"Expanded attributes", {"id"})
 				in
 				    #"Removed Duplicates"
 
 	annotation PBI_NavigationStepName = Navigation
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 

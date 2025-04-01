@@ -61,6 +61,7 @@ table Pricing
 	column url
 		dataType: string
 		lineageTag: 9fc946b3-00d9-4cfa-88e9-eee2c89d12ed
+		dataCategory: WebUrl
 		summarizeBy: none
 		sourceColumn: url
 

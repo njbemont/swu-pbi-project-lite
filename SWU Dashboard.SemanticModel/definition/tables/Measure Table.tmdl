@@ -267,6 +267,10 @@ table 'Measure Table'
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
 		lineageTag: 9b5a46ac-aa26-45d2-b9b9-aa5147124d34
 
+	measure 'Available for Trades' = IF([Owned] - 'Reserved for Collection'[Reserved for Collection Value] < 1, 0, [Owned] - 'Reserved for Collection'[Reserved for Collection Value])
+		formatString: 0
+		lineageTag: 7304d48a-bf96-4099-bc59-84c7792fbd82
+
 	column Column
 		isHidden
 		formatString: 0

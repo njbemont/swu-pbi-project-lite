@@ -1,0 +1,93 @@
+table Events
+	lineageTag: e13f9928-8543-4f4e-876e-c983cca8566b
+
+	column Name
+		dataType: string
+		lineageTag: f09caaff-954e-4303-802b-f9885b819ced
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: d2518b93-20b3-4688-8814-1af5c5a0ce8b
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Organizer
+		dataType: string
+		lineageTag: 9adcc360-6f6b-41d2-ad80-b470c90c2ba4
+		summarizeBy: none
+		sourceColumn: Organizer
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		lineageTag: 16935401-864c-4eca-8ab1-f16a7d4e5ad3
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 21209c39-f3c2-49e3-98f2-ab8c1eeeb875
+		summarizeBy: none
+		sourceColumn: Start Date
+
+		variation Variation
+			isDefault
+			relationship: e2443436-dd5f-4149-b34e-bfbba40a17b1
+			defaultHierarchy: LocalDateTable_bdbaf0b7-865b-460d-b053-b9f43b7585aa.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'End Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: fb6b593c-08d6-4cb3-917d-41f07100ee84
+		summarizeBy: none
+		sourceColumn: End Date
+
+		variation Variation
+			isDefault
+			relationship: 6e7bcf04-67fe-4603-b476-873927378140
+			defaultHierarchy: LocalDateTable_a92661d0-1ad3-469b-b83a-76d14999c427.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Application Deadline'
+		dataType: string
+		lineageTag: 49022586-0311-4ba6-8b51-ab8124f94f67
+		summarizeBy: none
+		sourceColumn: Application Deadline
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Events = m
+		mode: import
+		queryGroup: 'Cacade Tables'
+		source =
+				let
+				    Source = Web.BrowserContents("https://nexus.cascadegames.com/events/"),
+				    #"Extracted Table From Html" = Html.Table(Source, {{"Column1", "TABLE[id='events-list'] > * > TR > TH[colspan=""1""][rowspan=""1""]:nth-child(1):nth-last-child(6), TABLE[id='events-list'] > * > TR > TD:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(6)"}, {"Column2", "TABLE[id='events-list'] > * > TR > TH[colspan=""1""][rowspan=""1""]:nth-child(1):nth-last-child(6) + TH[colspan=""1""][rowspan=""1""]:nth-child(2):nth-last-child(5), TABLE[id='events-list'] > * > TR > TD:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(6) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(5)"}, {"Column3", "TABLE[id='events-list'] > * > TR > TH[colspan=""1""][rowspan=""1""]:nth-child(1):nth-last-child(6) + TH[colspan=""1""][rowspan=""1""]:nth-child(2):nth-last-child(5) + TH[colspan=""1""][rowspan=""1""]:nth-child(3):nth-last-child(4), TABLE[id='events-list'] > * > TR > TD:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(6) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(5) + TD:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(4)"}, {"Column4", "TABLE[id='events-list'] > * > TR > TH[colspan=""1""][rowspan=""1""]:nth-child(1):nth-last-child(6) + TH[colspan=""1""][rowspan=""1""]:nth-child(2):nth-last-child(5) + TH[colspan=""1""][rowspan=""1""]:nth-child(3):nth-last-child(4) + TH[colspan=""1""][rowspan=""1""]:nth-child(4):nth-last-child(3), TABLE[id='events-list'] > * > TR > TD:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(6) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(5) + TD:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(4) + TD:not([colspan]):not([rowspan]):nth-child(4):nth-last-child(3)"}, {"Column5", "TABLE[id='events-list'] > * > TR > TH[colspan=""1""][rowspan=""1""]:nth-child(1):nth-last-child(6) + TH[colspan=""1""][rowspan=""1""]:nth-child(2):nth-last-child(5) + TH[colspan=""1""][rowspan=""1""]:nth-child(3):nth-last-child(4) + TH[colspan=""1""][rowspan=""1""]:nth-child(4):nth-last-child(3) + TH[colspan=""1""][rowspan=""1""]:nth-child(5):nth-last-child(2), TABLE[id='events-list'] > * > TR > TD:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(6) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(5) + TD:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(4) + TD:not([colspan]):not([rowspan]):nth-child(4):nth-last-child(3) + TD:not([colspan]):not([rowspan]):nth-child(5):nth-last-child(2)"}, {"Column6", "TABLE[id='events-list'] > * > TR > TH[colspan=""1""][rowspan=""1""]:nth-child(1):nth-last-child(6) + TH[colspan=""1""][rowspan=""1""]:nth-child(2):nth-last-child(5) + TH[colspan=""1""][rowspan=""1""]:nth-child(3):nth-last-child(4) + TH[colspan=""1""][rowspan=""1""]:nth-child(4):nth-last-child(3) + TH[colspan=""1""][rowspan=""1""]:nth-child(5):nth-last-child(2) + TH[colspan=""1""][rowspan=""1""]:nth-child(6):nth-last-child(1), TABLE[id='events-list'] > * > TR > TD:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(6) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(5) + TD:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(4) + TD:not([colspan]):not([rowspan]):nth-child(4):nth-last-child(3) + TD:not([colspan]):not([rowspan]):nth-child(5):nth-last-child(2) + TD:not([colspan]):not([rowspan]):nth-child(6):nth-last-child(1)"}}, [RowSelector="TABLE[id='events-list'] > * > TR"]),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Extracted Table From Html", [PromoteAllScalars=true]),
+				    #"Split Column by Delimiter" = Table.SplitColumn(#"Promoted Headers", "Date(s)", Splitter.SplitTextByDelimiter(" - ", QuoteStyle.Csv), {"Date(s).1", "Date(s).2"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Split Column by Delimiter",{{"Date(s).1", "Start Date"}, {"Date(s).2", "End Date"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Start Date", type date}, {"End Date", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

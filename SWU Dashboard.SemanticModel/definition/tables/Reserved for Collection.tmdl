@@ -1,0 +1,26 @@
+table 'Reserved for Collection'
+	lineageTag: f8909f8c-2ce2-4ef8-8e7c-dc2c3da5efec
+
+	measure 'Reserved for Collection Value' = SELECTEDVALUE('Reserved for Collection'[Reserved for Collection], 3)
+		formatString: 0
+		lineageTag: ab67f61e-a65b-4ff8-b7f8-cd3c0af10b46
+
+	column 'Reserved for Collection'
+		formatString: 0
+		lineageTag: 11aa91ab-6b7d-4c5a-a626-c31ce37bcb44
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Reserved for Collection' = calculated
+		mode: import
+		source = GENERATESERIES(0, 20, 1)
+
+	annotation PBI_Id = bf799e9b322e4228841d72e4bbc3883d
+

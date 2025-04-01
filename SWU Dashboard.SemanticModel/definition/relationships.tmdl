@@ -82,3 +82,13 @@ relationship e890205a-f631-3275-0c1e-18921e198510
 	fromColumn: Decks.'Card ID'
 	toColumn: Collection.standardKey
 
+relationship e2443436-dd5f-4149-b34e-bfbba40a17b1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Events.'Start Date'
+	toColumn: LocalDateTable_bdbaf0b7-865b-460d-b053-b9f43b7585aa.Date
+
+relationship 6e7bcf04-67fe-4603-b476-873927378140
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Events.'End Date'
+	toColumn: LocalDateTable_a92661d0-1ad3-469b-b83a-76d14999c427.Date
+
