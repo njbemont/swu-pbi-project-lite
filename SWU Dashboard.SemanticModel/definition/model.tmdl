@@ -40,7 +40,7 @@ queryGroup 'Folder Tables\Transform File from Decklists\Helper Queries'
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBIDesktopVersion = 2.140.1577.0 (25.02)+00af0910c5ca19a229c472b0dfc17a2c488f6b0a
+annotation PBIDesktopVersion = 2.141.1253.0 (25.03)+74f9999a1e95f78c739f3ea2b96ba340e9ba8729
 
 annotation PBI_QueryOrder = ["File Path","Page","Rows","GetSWUAPIPages","Base","Cards Fact","Cards","Arenas","Aspects","Keywords","Rules","Traits","Variants","Homepage Links","Resource Links","Events","Judge Program Links","Rules Clarifications","Sets","Groups","GetGroupProducts","GetGroupPrices","Products","Prices","Pricing","Pricing Bridge","Collection","Maindeck","Sample File","Parameter1","Transform Sample File","Transform File","Sideboards","Decks"]
 

@@ -203,7 +203,7 @@ expression Prices = ```
 
 	annotation PBI_ResultType = Table
 
-expression 'File Path' = "C:\Users\NoahBemont\OneDrive - StarPoint Technologies Inc\Documents\" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+expression 'File Path' = "C:\Users\NoahBemont\OneDrive - StarPoint Technologies Inc\Documents\github" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
 	lineageTag: 364fe700-e36b-4e0c-aba8-9fd5c7daf978
 	queryGroup: Parameter
 
@@ -213,7 +213,7 @@ expression 'File Path' = "C:\Users\NoahBemont\OneDrive - StarPoint Technologies 
 
 expression 'Sample File' =
 		let
-		    Source = Folder.Files(#"File Path" & "GitHub\swu-pbi-project\Decklists"),
+		    Source = Folder.Files(#"File Path" & "\swu-pbi-project-main\Decklists"),
 		    Navigation1 = Source{0}[Content]
 		in
 		    Navigation1
@@ -266,7 +266,7 @@ expression 'Transform File' =
 
 expression Maindeck =
 		let
-		    Source = Folder.Files(#"File Path" & "GitHub\swu-pbi-project\Decklists"),
+		    Source = Folder.Files(#"File Path" & "\swu-pbi-project-main\Decklists"),
 		    #"Filtered Hidden Files1" = Table.SelectRows(Source, each [Attributes]?[Hidden]? <> true),
 		    #"Invoke Custom Function1" = Table.AddColumn(#"Filtered Hidden Files1", "Transform File", each #"Transform File"([Content])),
 		    #"Renamed Columns1" = Table.RenameColumns(#"Invoke Custom Function1", {"Name", "Source.Name"}),
@@ -287,7 +287,7 @@ expression Maindeck =
 
 expression Sideboards =
 		let
-		    Source = Folder.Files(#"File Path" & "GitHub\swu-pbi-project\Decklists"),
+		    Source = Folder.Files(#"File Path" & "\swu-pbi-project-main\Decklists"),
 		    #"Filtered Hidden Files1" = Table.SelectRows(Source, each [Attributes]?[Hidden]? <> true),
 		    #"Invoke Custom Function1" = Table.AddColumn(#"Filtered Hidden Files1", "Transform File", each #"Transform File"([Content])),
 		    #"Renamed Columns1" = Table.RenameColumns(#"Invoke Custom Function1", {"Name", "Source.Name"}),
