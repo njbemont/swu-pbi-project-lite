@@ -1,5 +1,5 @@
 {
-  "config": "{\"version\":\"5.62\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":1,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "config": "{\"version\":\"5.62\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
   "filters": "[]",
   "layoutOptimization": 0,
   "pods": [
@@ -20,6 +20,13 @@
       "config": "{}",
       "name": "7d7c711fe37e1825a254",
       "parameters": "[{\"name\":\"377b2b2a0db43713ddce\",\"boundFilter\":\"42c0dfc47644b7d28cea\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Rules\"}},\"Property\":\"ruling\"}}},{\"name\":\"86bd9e2a3d4ad63b04cc\",\"boundFilter\":\"6809dd91935b9d0217ae\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Aspects\"}},\"Property\":\"name\"}}},{\"name\":\"4b6d8e14a82d3a3868b7\",\"boundFilter\":\"7804415347340384c344\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"cost\"}},\"asAggregation\":true}]",
+      "type": 1
+    },
+    {
+      "boundSection": "3470ac1089ebbac98d9d",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "86cb4873876809a927c7",
+      "parameters": "[{\"name\":\"2f2e284248052a30e851\",\"boundFilter\":\"636f2e05b49c930480e7\",\"fieldExpr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Measure Table\"}},\"Property\":\"Used in Decks\"}}}]",
       "type": 1
     },
     {
@@ -46,9 +53,7 @@
     {
       "boundSection": "40f4c40457d440b0e19c",
       "config": "{\"acceptsFilterContext\":1}",
-      "name": "b5bd4a14423ea400edbc",
-      "parameters": "[{\"name\":\"a5e548c65d4421b130bb\",\"boundFilter\":\"2206b08f41960a771052\",\"fieldExpr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Measure Table\"}},\"Property\":\"Used in Decks\"}}}]",
-      "type": 1
+      "name": "b5bd4a14423ea400edbc"
     }
   ],
   "resourcePackages": [
@@ -157,6 +162,108 @@
           "x": 312.75,
           "y": 0.00,
           "z": 2000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "Deck - Drill",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"636f2e05b49c930480e7\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Measure Table\"}},\"Property\":\"Used in Decks\"}},\"type\":\"Categorical\",\"howCreated\":5}]",
+      "height": 720.00,
+      "name": "3470ac1089ebbac98d9d",
+      "ordinal": 16,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"442d1f2c0a0719c58050\",\"layouts\":[{\"id\":0,\"position\":{\"x\":719.8364008179959,\"y\":196.97341513292434,\"z\":3000,\"width\":280.08179959100204,\"height\":196.97341513292434,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Collection.aspects1\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Decks.Card Count)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Collection\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Decks\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"aspects1\"},\"Name\":\"Collection.aspects1\",\"NativeReferenceName\":\"Aspect 1\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Count\"}},\"Function\":0},\"Name\":\"Sum(Decks.Card Count)\",\"NativeReferenceName\":\"Sum of Card Count\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Count\"}},\"Function\":0}}}]},\"columnProperties\":{\"Collection.aspects1\":{\"displayName\":\"Aspect 1\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}}}}],\"legend\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Deck Main Aspects'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"05e47c9341640bd53c36\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Decks\"}},\"Property\":\"Card Type\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Decks\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Type\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'deck'\"}}],[{\"Literal\":{\"Value\":\"'sideboard'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+          "height": 196.97,
+          "width": 280.08,
+          "x": 719.84,
+          "y": 196.97,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"5c6aa463220e4b70b432\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":63.47648261758692,\"z\":2000,\"width\":517.6278118609407,\"height\":656.359918200409,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"Decks.metadata.name\",\"active\":true},{\"queryRef\":\"Collection.title - subtitle\",\"active\":true}],\"Values\":[{\"queryRef\":\"Sum(Decks.Card Count)\"},{\"queryRef\":\"Measure Table.Deck Price\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Decks\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Collection\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Measure Table\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Count\"}},\"Function\":0},\"Name\":\"Sum(Decks.Card Count)\",\"NativeReferenceName\":\"Card Count\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"metadata.name\"},\"Name\":\"Decks.metadata.name\",\"NativeReferenceName\":\"Decklist\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title - subtitle\"},\"Name\":\"Collection.title - subtitle\",\"NativeReferenceName\":\"title - subtitle\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Deck Price\"},\"Name\":\"Measure Table.Deck Price\",\"NativeReferenceName\":\"Deck Price\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"metadata.name\"}}}]},\"expansionStates\":[{\"roles\":[\"Rows\"],\"levels\":[{\"queryRefs\":[\"Decks.metadata.name\"],\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Decks\"}},\"Property\":\"metadata.name\"}}],\"isPinned\":true},{\"queryRefs\":[\"Collection.title - subtitle\"],\"isCollapsed\":true,\"isPinned\":true}],\"root\":{\"identityValues\":null,\"children\":[{\"identityValues\":[{\"Literal\":{\"Value\":\"'Abilities aren''t real, they can''t hurt you - Copy'\"}}]}]}}],\"columnProperties\":{\"Decks.metadata.name\":{\"displayName\":\"Decklist\"},\"Sum(Decks.Card Count)\":{\"displayName\":\"Card Count\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{},\"selector\":{\"metadata\":\"Decks.metadata.name\"}}]}}}",
+          "filters": "[]",
+          "height": 656.36,
+          "width": 517.63,
+          "x": 0.00,
+          "y": 63.48,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"6e289a3914ab777c189a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"width\":100,\"height\":40,\"z\":10001}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 100.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 10001.00
+        },
+        {
+          "config": "{\"name\":\"9a9943a5719529716a7c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":700.2044989775052,\"y\":0,\"z\":6000,\"width\":299.71370143149284,\"height\":196.97341513292434,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Collection.set\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Decks.Card Count)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Collection\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Decks\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Count\"}},\"Function\":0},\"Name\":\"Sum(Decks.Card Count)\",\"NativeReferenceName\":\"Sum of Card Count\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"set\"},\"Name\":\"Collection.set\",\"NativeReferenceName\":\"set\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Count\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}},\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'outside'\"}}}}}],\"legend\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Cards by Set'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"05e47c9341640bd53c36\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Decks\"}},\"Property\":\"Card Type\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Decks\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Type\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'deck'\"}}],[{\"Literal\":{\"Value\":\"'sideboard'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+          "height": 196.97,
+          "width": 299.71,
+          "x": 700.20,
+          "y": 0.00,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"ada0d212895b7c5d9e06\",\"layouts\":[{\"id\":0,\"position\":{\"x\":518.282208588957,\"y\":254.560327198364,\"z\":10000,\"width\":181.92229038854805,\"height\":98.81390593047036,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Measure Table.Deck Price\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Measure Table\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Deck Price\"},\"Name\":\"Measure Table.Deck Price\",\"NativeReferenceName\":\"Sideboard Cost\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Deck Price\"}}}]},\"columnProperties\":{\"Measure Table.Deck Price\":{\"displayName\":\"Sideboard Cost\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"28D\"}}}}}]}}}",
+          "filters": "[{\"name\":\"c0c9350b0a2d3e448234\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Decks\"}},\"Property\":\"Card Type\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Decks\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Type\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'sideboard'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+          "height": 98.81,
+          "width": 181.92,
+          "x": 518.28,
+          "y": 254.56,
+          "z": 10000.00
+        },
+        {
+          "config": "{\"name\":\"b78846bb136894071b0c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":517.6278118609407,\"y\":147.23926380368098,\"z\":9000,\"width\":182.57668711656441,\"height\":98.81390593047036,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Measure Table.Deck Price\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Measure Table\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Deck Price\"},\"Name\":\"Measure Table.Deck Price\",\"NativeReferenceName\":\"Main Deck Cost\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Deck Price\"}}}]},\"columnProperties\":{\"Measure Table.Deck Price\":{\"displayName\":\"Main Deck Cost\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"28D\"}}}}}]}}}",
+          "filters": "[{\"name\":\"c0c9350b0a2d3e448234\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Decks\"}},\"Property\":\"Card Type\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Decks\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Type\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'deck'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+          "height": 98.81,
+          "width": 182.58,
+          "x": 517.63,
+          "y": 147.24,
+          "z": 9000.00
+        },
+        {
+          "config": "{\"name\":\"c56bc4926a2590ebb157\",\"layouts\":[{\"id\":0,\"position\":{\"x\":517.6278118609407,\"y\":31.411042944785276,\"z\":7000,\"width\":182.57668711656441,\"height\":98.81390593047036,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Measure Table.Deck Price\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Measure Table\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Deck Price\"},\"Name\":\"Measure Table.Deck Price\",\"NativeReferenceName\":\"Total Deck Cost\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Deck Price\"}}}]},\"columnProperties\":{\"Measure Table.Deck Price\":{\"displayName\":\"Total Deck Cost\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"28D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 98.81,
+          "width": 182.58,
+          "x": 517.63,
+          "y": 31.41,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"d1bddf94cb91563993e6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":999.918200408998,\"y\":0,\"z\":8000,\"width\":280.08179959100204,\"height\":196.97341513292434,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Collection.type\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Decks.Card Count)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Collection\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Decks\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Count\"}},\"Function\":0},\"Name\":\"Sum(Decks.Card Count)\",\"NativeReferenceName\":\"Sum of Card Count\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"type\"},\"Name\":\"Collection.type\",\"NativeReferenceName\":\"type\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Count\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}}}}],\"legend\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Cards by Type'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"05e47c9341640bd53c36\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Decks\"}},\"Property\":\"Card Type\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Decks\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Type\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'deck'\"}}],[{\"Literal\":{\"Value\":\"'sideboard'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+          "height": 196.97,
+          "width": 280.08,
+          "x": 999.92,
+          "y": 0.00,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"d98f43a7e1ddb02982d5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":517.6278118609407,\"y\":393.9468302658487,\"z\":5000,\"width\":762.3721881390593,\"height\":325.88957055214723,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Decks.metadata.name\",\"active\":true}],\"Y\":[{\"queryRef\":\"Measure Table.Deck Price\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Decks\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Measure Table\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"metadata.name\"},\"Name\":\"Decks.metadata.name\",\"NativeReferenceName\":\"metadata.name\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Deck Price\"},\"Name\":\"Measure Table.Deck Price\",\"NativeReferenceName\":\"Deck Price\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Deck Price\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Deck Prices'\"}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Collection\"}},\"Property\":\"title - subtitle\"}},\"type\":\"TopN\",\"howCreated\":1,\"isHiddenInViewMode\":false}]",
+          "height": 325.89,
+          "width": 762.37,
+          "x": 517.63,
+          "y": 393.95,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"e593ce0257500ec92659\",\"layouts\":[{\"id\":0,\"position\":{\"x\":999.918200408998,\"y\":196.97341513292434,\"z\":4000,\"width\":280.08179959100204,\"height\":196.97341513292434,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Collection.aspects2\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Decks.Card Count)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Collection\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Decks\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Count\"}},\"Function\":0},\"Name\":\"Sum(Decks.Card Count)\",\"NativeReferenceName\":\"Sum of Card Count\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"aspects2\"},\"Name\":\"Collection.aspects2\",\"NativeReferenceName\":\"Aspect 2\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Count\"}},\"Function\":0}}}]},\"columnProperties\":{\"Collection.aspects2\":{\"displayName\":\"Aspect 2\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"legend\":[{\"properties\":{\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Deck Secondary Aspects'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"05e47c9341640bd53c36\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Decks\"}},\"Property\":\"Card Type\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Decks\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Type\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'deck'\"}}],[{\"Literal\":{\"Value\":\"'sideboard'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}},{\"name\":\"0aff32f5919880159316\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Collection\"}},\"Property\":\"aspects2\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Collection\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"aspects2\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"''\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false},{\"name\":\"f5a33513760aa0800028\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Decks\"}},\"Property\":\"metadata.name\"}},\"type\":\"Advanced\",\"howCreated\":1}]",
+          "height": 196.97,
+          "width": 280.08,
+          "x": 999.92,
+          "y": 196.97,
+          "z": 4000.00
         }
       ],
       "width": 1280.00
@@ -380,7 +487,7 @@
       "config": "{\"relationships\":[{\"source\":\"3088d654604e3703b2e9\",\"target\":\"808da8dd78c7bb6edd31\",\"type\":3}]}",
       "displayName": "Decks",
       "displayOption": 1,
-      "filters": "[{\"name\":\"2206b08f41960a771052\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Measure Table\"}},\"Property\":\"Used in Decks\"}},\"type\":\"Categorical\",\"howCreated\":5}]",
+      "filters": "[]",
       "height": 720.00,
       "name": "40f4c40457d440b0e19c",
       "visualContainers": [
@@ -421,7 +528,7 @@
           "z": 6000.00
         },
         {
-          "config": "{\"name\":\"708d50091ccc221b035d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":63.47648261758692,\"z\":2000,\"width\":517.6278118609407,\"height\":656.359918200409,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"Decks.metadata.name\",\"active\":true},{\"queryRef\":\"Decks.Card Type\",\"active\":true},{\"queryRef\":\"Collection.title - subtitle\"}],\"Values\":[{\"queryRef\":\"Sum(Decks.Card Count)\"},{\"queryRef\":\"Measure Table.Deck Price\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Decks\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Collection\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Measure Table\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Count\"}},\"Function\":0},\"Name\":\"Sum(Decks.Card Count)\",\"NativeReferenceName\":\"Card Count\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"metadata.name\"},\"Name\":\"Decks.metadata.name\",\"NativeReferenceName\":\"Decklist\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title - subtitle\"},\"Name\":\"Collection.title - subtitle\",\"NativeReferenceName\":\"title - subtitle\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Deck Price\"},\"Name\":\"Measure Table.Deck Price\",\"NativeReferenceName\":\"Deck Price\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Type\"},\"Name\":\"Decks.Card Type\",\"NativeReferenceName\":\"Card Type\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"metadata.name\"}}}]},\"queryFieldParametersByRole\":{\"Rows\":[{\"index\":1,\"length\":1,\"expr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Deck Break By\"}},\"Property\":\"Parameter\"}}}]},\"expansionStates\":[{\"roles\":[\"Rows\"],\"levels\":[{\"queryRefs\":[\"Decks.metadata.name\"],\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Decks\"}},\"Property\":\"metadata.name\"}}],\"isPinned\":true},{\"queryRefs\":[\"Decks.Card Type\"],\"isCollapsed\":true,\"isPinned\":true},{\"queryRefs\":[\"Collection.title - subtitle\"],\"isCollapsed\":true,\"isPinned\":true}],\"root\":{\"identityValues\":null}}],\"columnProperties\":{\"Decks.metadata.name\":{\"displayName\":\"Decklist\"},\"Sum(Decks.Card Count)\":{\"displayName\":\"Card Count\"},\"Decks.Card Type\":{\"displayName\":\"Card Type\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{},\"selector\":{\"metadata\":\"Decks.metadata.name\"}}]}}}",
+          "config": "{\"name\":\"708d50091ccc221b035d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":63.47648261758692,\"z\":2000,\"width\":517.6278118609407,\"height\":656.359918200409,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"Decks.metadata.name\",\"active\":true},{\"queryRef\":\"Decks.Card Type\",\"active\":true},{\"queryRef\":\"Collection.title - subtitle\",\"active\":true}],\"Values\":[{\"queryRef\":\"Sum(Decks.Card Count)\"},{\"queryRef\":\"Measure Table.Deck Price\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Decks\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Collection\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Measure Table\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Count\"}},\"Function\":0},\"Name\":\"Sum(Decks.Card Count)\",\"NativeReferenceName\":\"Card Count\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"metadata.name\"},\"Name\":\"Decks.metadata.name\",\"NativeReferenceName\":\"Decklist\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title - subtitle\"},\"Name\":\"Collection.title - subtitle\",\"NativeReferenceName\":\"title - subtitle\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Deck Price\"},\"Name\":\"Measure Table.Deck Price\",\"NativeReferenceName\":\"Deck Price\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Type\"},\"Name\":\"Decks.Card Type\",\"NativeReferenceName\":\"Card Type\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"metadata.name\"}}}]},\"queryFieldParametersByRole\":{\"Rows\":[{\"index\":1,\"length\":1,\"expr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Deck Break By\"}},\"Property\":\"Parameter\"}}}]},\"expansionStates\":[{\"roles\":[\"Rows\"],\"levels\":[{\"queryRefs\":[\"Decks.metadata.name\"],\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Decks\"}},\"Property\":\"metadata.name\"}}],\"isPinned\":true},{\"queryRefs\":[\"Decks.Card Type\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Decks\"}},\"Property\":\"Card Type\"}}],\"isPinned\":true},{\"queryRefs\":[\"Collection.title - subtitle\"],\"isCollapsed\":true,\"isPinned\":true}],\"root\":{\"identityValues\":null,\"children\":[{\"identityValues\":[{\"Literal\":{\"Value\":\"'Abilities aren''t real, they can''t hurt you - Copy'\"}}],\"children\":[{\"identityValues\":[{\"Literal\":{\"Value\":\"'deck'\"}}],\"isToggled\":true}]}]}}],\"columnProperties\":{\"Decks.metadata.name\":{\"displayName\":\"Decklist\"},\"Sum(Decks.Card Count)\":{\"displayName\":\"Card Count\"},\"Decks.Card Type\":{\"displayName\":\"Card Type\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{},\"selector\":{\"metadata\":\"Decks.metadata.name\"}}]}}}",
           "filters": "[]",
           "height": 656.36,
           "width": 517.63,
@@ -475,15 +582,6 @@
           "z": 4000.00
         },
         {
-          "config": "{\"name\":\"d29b01112540d75cc985\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":41.116377040547654,\"height\":39.76829910479199,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
-          "filters": "[]",
-          "height": 39.77,
-          "width": 41.12,
-          "x": 0.00,
-          "y": 0.00,
-          "z": 0.00
-        },
-        {
           "config": "{\"name\":\"fa37ebe2a3d05247ed28\",\"layouts\":[{\"id\":0,\"position\":{\"x\":518.282208588957,\"y\":254.560327198364,\"z\":10000,\"width\":181.92229038854805,\"height\":98.81390593047036,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Measure Table.Deck Price\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Measure Table\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Deck Price\"},\"Name\":\"Measure Table.Deck Price\",\"NativeReferenceName\":\"Sideboard Cost\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Deck Price\"}}}]},\"columnProperties\":{\"Measure Table.Deck Price\":{\"displayName\":\"Sideboard Cost\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"28D\"}}}}}]}}}",
           "filters": "[{\"name\":\"c0c9350b0a2d3e448234\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Decks\"}},\"Property\":\"Card Type\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Decks\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Card Type\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'sideboard'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
           "height": 98.81,
@@ -502,7 +600,7 @@
       "filters": "[{\"name\":\"42c0dfc47644b7d28cea\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Rules\"}},\"Property\":\"ruling\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"6809dd91935b9d0217ae\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Aspects\"}},\"Property\":\"name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Aspects\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Command'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"7804415347340384c344\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Cards\"}},\"Property\":\"cost\"}},\"type\":\"Categorical\",\"howCreated\":5}]",
       "height": 720.00,
       "name": "4c991921e49872d597e9",
-      "ordinal": 16,
+      "ordinal": 17,
       "visualContainers": [
         {
           "config": "{\"name\":\"049a19117bea06e16c06\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"width\":100,\"height\":40,\"z\":3000,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
@@ -539,27 +637,6 @@
           "x": 0.00,
           "y": 0.00,
           "z": 1000.00
-        }
-      ],
-      "width": 1280.00
-    },
-    {
-      "config": "{}",
-      "displayName": "Page 1",
-      "displayOption": 1,
-      "filters": "[]",
-      "height": 720.00,
-      "name": "5333bb405c0401bb02c7",
-      "ordinal": 19,
-      "visualContainers": [
-        {
-          "config": "{\"name\":\"9266a15071603dc01935\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":290.2325581395349,\"z\":0,\"width\":1031.7124735729387,\"height\":300.38054968287526}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Sets.code\"},{\"queryRef\":\"Cards.title + subtitle\"},{\"queryRef\":\"Collection.title - subtitle\"},{\"queryRef\":\"Collection.cardUid\"},{\"queryRef\":\"Measure Table.Distinct Variants Owned\"},{\"queryRef\":\"Measure Table.Card Count - All Variants\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Collection\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Measure Table\",\"Type\":0},{\"Name\":\"c1\",\"Entity\":\"Cards\",\"Type\":0},{\"Name\":\"s\",\"Entity\":\"Sets\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"cardUid\"},\"Name\":\"Collection.cardUid\",\"NativeReferenceName\":\"cardUid\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Distinct Variants Owned\"},\"Name\":\"Measure Table.Distinct Variants Owned\",\"NativeReferenceName\":\"Distinct Variants Owned\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Card Count - All Variants\"},\"Name\":\"Measure Table.Card Count - All Variants\",\"NativeReferenceName\":\"Card Count - All Variants\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"title + subtitle\"},\"Name\":\"Cards.title + subtitle\",\"NativeReferenceName\":\"title + subtitle\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title - subtitle\"},\"Name\":\"Collection.title - subtitle\",\"NativeReferenceName\":\"title - subtitle\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"code\"},\"Name\":\"Sets.code\",\"NativeReferenceName\":\"code\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Card Count - All Variants\"}}}]},\"drillFilterOtherVisuals\":true}}",
-          "filters": "[]",
-          "height": 300.38,
-          "width": 1031.71,
-          "x": 0.00,
-          "y": 290.23,
-          "z": 0.00
         }
       ],
       "width": 1280.00
@@ -724,7 +801,7 @@
       "filters": "[]",
       "height": 720.00,
       "name": "77ae17f0c78626892124",
-      "ordinal": 17,
+      "ordinal": 18,
       "visualContainers": [
         {
           "config": "{\"name\":\"443091f8d0dd20cc0060\",\"layouts\":[{\"id\":0,\"position\":{\"x\":640.3370194839389,\"y\":0,\"z\":4000,\"width\":454.97630331753555,\"height\":151.65876777251185,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Pricing Bridge.priceKey\"},{\"queryRef\":\"Cards.title + subtitle\"},{\"queryRef\":\"Variants.name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Pricing Bridge\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0},{\"Name\":\"v\",\"Entity\":\"Variants\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"priceKey\"},\"Name\":\"Pricing Bridge.priceKey\",\"NativeReferenceName\":\"priceKey\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"title + subtitle\"},\"Name\":\"Cards.title + subtitle\",\"NativeReferenceName\":\"title + subtitle\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"name\"},\"Name\":\"Variants.name\",\"NativeReferenceName\":\"name\"}]},\"drillFilterOtherVisuals\":true}}",
@@ -790,7 +867,7 @@
       "filters": "[]",
       "height": 720.00,
       "name": "859d1f5490073505dea6",
-      "ordinal": 18,
+      "ordinal": 19,
       "visualContainers": [
         {
           "config": "{\"name\":\"0625920153523adcd375\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":3000,\"width\":707.51345532831,\"height\":719.9138858988159,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Pricing.productId\"},{\"queryRef\":\"Pricing.abbreviation\"},{\"queryRef\":\"Pricing.name\"},{\"queryRef\":\"Pricing.priceKey\"},{\"queryRef\":\"Sum(Pricing.marketPrice)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Pricing\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"priceKey\"},\"Name\":\"Pricing.priceKey\",\"NativeReferenceName\":\"priceKey\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"marketPrice\"},\"Name\":\"Sum(Pricing.marketPrice)\",\"NativeReferenceName\":\"marketPrice\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"abbreviation\"},\"Name\":\"Pricing.abbreviation\",\"NativeReferenceName\":\"abbreviation\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"name\"},\"Name\":\"Pricing.name\",\"NativeReferenceName\":\"name\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"productId\"},\"Name\":\"Pricing.productId\",\"NativeReferenceName\":\"productId\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"priceKey\"}}}]},\"drillFilterOtherVisuals\":true}}",
