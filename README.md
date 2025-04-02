@@ -14,7 +14,7 @@ The main goal of this project is to provide a dashboard for players and judges t
 1. Download and Extract ZIP File
 2. Open PBIP file (SWU Dashboard.pbip)
 3. Click "Transform Data" in the top tool bar
-4. In the top folder "Parameter", change the "File Path" Parameter to the path your GitHub folder is located (ex. if your full folder path to the project is "C:\Users\NoahBemont\OneDrive - StarPoint Technologies Inc\Documents\GitHub\swu-pbi-project", change this parameter to "C:\Users\NoahBemont\OneDrive - StarPoint Technologies Inc\Documents\"). This project always assumes that your project files will be in a GitHub\swu-pbi-project folder structure. 
+4. In the top folder "Parameter", change the "File Path" Parameter to the path your GitHub folder is located (ex. if your full folder path to the project is "C:\Users\Username\Documents\swu-pbi-project-main", change this parameter to "C:\Users\Username\Documents"). 
 5. Click "Close & Apply"
 6. Wait for it to load. If it asks about privacy settings, check the box to ignore privacy settings.
 7. If you get an error on Pricing, go to File > Options and Settings > Options > Current File > Privacy > Check "Ignore Privacy Levels"
