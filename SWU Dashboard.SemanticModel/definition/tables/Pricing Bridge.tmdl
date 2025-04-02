@@ -68,7 +68,7 @@ table 'Pricing Bridge'
 			    'Pricing Bridge'[id] IN {"981", "982"}, "EEP",
 			    'Pricing Bridge'[id] IN {"8664", "8834", "19456", "19461"}, "PRE",
 			    'Pricing Bridge'[id] IN {"8712", "19466", "1015", "16960", "16964"}, "SSP",
-			    OR(ISBLANK('Pricing Bridge'[variantTypes.data.attributes.name]), 'Pricing Bridge'[variantTypes.data.attributes.name] IN {"OP Promo", ""}), LEFT('Pricing Bridge'[expansion.data.attributes.code], 3) & "-WPP",
+			    OR(ISBLANK('Pricing Bridge'[variantTypes.data.attributes.name]), 'Pricing Bridge'[variantTypes.data.attributes.name] IN {"OP Promo", "OP Promo Foil", ""}), LEFT('Pricing Bridge'[expansion.data.attributes.code], 3) & "-WPP",
 			    'Pricing Bridge'[variantTypes.data.attributes.name] IN {"OP Judge", "Judge Program"}, "JDG",
 			    'Pricing Bridge'[variantTypes.data.attributes.name] = "Prerelease Promo", "PRE",
 			    'Pricing Bridge'[variantTypes.data.attributes.name] = "Convention Exclusive", "CE2024",
@@ -84,7 +84,8 @@ table 'Pricing Bridge'
 			    'Pricing Bridge'[id] IN {"981", "982"}, 'Pricing Bridge'[cardNumber],
 			    'Pricing Bridge'[id] IN {"8712", "19466", "1015", "16960", "16964"}, "1",
 			    'Pricing Bridge'[id] IN {"2752", "2753", "17014", "17015"}, FORMAT('Pricing Bridge'[cardNumber], "000"),
-			    AND('Pricing Bridge'[expansion.data.attributes.code]  IN {"SOR", "SHD", "TWI"}, OR(ISBLANK('Pricing Bridge'[variantTypes.data.attributes.name]), 'Pricing Bridge'[variantTypes.data.attributes.name] IN {"OP Promo", ""})), FORMAT('Pricing Bridge'[cardNumber], "00"),
+			    AND('Pricing Bridge'[expansion.data.attributes.code]  IN {"SOR", "SHD", "TWI"}, OR(ISBLANK('Pricing Bridge'[variantTypes.data.attributes.name]), 'Pricing Bridge'[variantTypes.data.attributes.name] IN {"OP Promo", "OP Promo Foil", ""})), FORMAT('Pricing Bridge'[cardNumber], "00"),
+			    'Pricing Bridge'[variantTypes.data.attributes.name] IN {"OP Promo Foil"}, FORMAT('Pricing Bridge'[cardNumber], "00"),
 			    OR(ISBLANK('Pricing Bridge'[variantTypes.data.attributes.name]),'Pricing Bridge'[variantTypes.data.attributes.name] IN {"Judge Program", "OP Judge", "OP Promo", "OP Champion", "OP Finalist", "OP Top 4", "OP Top 8", "OP Top 16", ""}), 'Pricing Bridge'[cardNumber],
 			    FORMAT('Pricing Bridge'[cardNumber], "000")
 			)
@@ -131,7 +132,7 @@ table 'Pricing Bridge'
 		source =
 				let
 				    Source = Base,
-				    #"Removed Columns" = Table.RemoveColumns(Source,{"title", "subtitle", "artist", "artFrontHorizontal", "artBackHorizontal", "hasFoil", "cost", "hp", "power", "text", "textStyled", "deployBox", "deployBoxStyled", "epicAction", "epicActionStyled", "linkHtml", "createdAt", "updatedAt", "publishedAt", "locale", "hyperspace", "unique", "showcase", "rules", "rulesStyled", "serialCode", "upgradeHp", "upgradePower", "artFront", "artBack", "artThumbnail", "localizations", "aspects", "aspectDuplicates", "type", "type2", "traits", "arenas", "keywords", "rarity", "variantOf", "reprintOf", "validationId", "cardId"}),
+				    #"Removed Columns" = Table.RemoveColumns(Source,{"title", "subtitle", "artist", "artFrontHorizontal", "artBackHorizontal", "hasFoil", "cost", "hp", "power", "text", "textStyled", "deployBox", "deployBoxStyled", "epicAction", "epicActionStyled", "linkHtml", "createdAt", "updatedAt", "publishedAt", "locale", "hyperspace", "unique", "showcase", "rules", "rulesStyled", "serialCode", "upgradeHp", "upgradePower", "artFront", "artBack", "artThumbnail", "localizations", "aspects", "aspectDuplicates", "type.data.attributes.name", "type2", "traits", "arenas", "keywords", "rarity", "variantOf", "reprintOf", "validationId", "cardId"}),
 				    #"Expanded expansion" = Table.ExpandRecordColumn(#"Removed Columns", "expansion", {"data"}, {"expansion.data"}),
 				    #"Expanded expansion.data" = Table.ExpandRecordColumn(#"Expanded expansion", "expansion.data", {"id", "attributes"}, {"expansion.data.id", "expansion.data.attributes"}),
 				    #"Expanded expansion.data.attributes" = Table.ExpandRecordColumn(#"Expanded expansion.data", "expansion.data.attributes", {"code"}, {"expansion.data.attributes.code"}),

@@ -171,7 +171,7 @@ table 'Measure Table'
 			
 			DIVIDE(
 			    [Distinct Variants Owned],
-			    MAX(Cards[cardCount]) * DISTINCTCOUNT(Variants[name])
+			    [Card Count - All Variants]
 			)
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 5412ebf8-bf3f-48cb-869a-de6821aee841
@@ -179,7 +179,7 @@ table 'Measure Table'
 	measure 'Distinct Variants Owned' =
 			
 			CALCULATE(
-			    DISTINCTCOUNT(Collection[id]),
+			    DISTINCTCOUNT(Collection[cardUid]),
 			    Collection[owned] > 0
 			)
 		formatString: 0
@@ -196,16 +196,17 @@ table 'Measure Table'
 
 	measure 'Set Completion %' =
 			
-			[Distinct Cards Owned]
-			/
-			MAX(Cards[cardCount])
+			DIVIDE(
+			    [Distinct Cards Owned Per Set],
+			    [Card Count]
+			)
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 9848b158-b9b4-4b9d-a73f-5f57984e70e2
 
 	measure 'Completed Playsets' =
 			
 			CALCULATE(
-			    DISTINCTCOUNT(Collection[title - subtitle]),
+			    DISTINCTCOUNT(Collection[title - sibtitle - set]),
 			    Collection[owned] >= 3
 			)
 		formatString: 0
@@ -215,7 +216,7 @@ table 'Measure Table'
 			
 			DIVIDE(
 			    [Completed Playsets],
-			    MAX(Cards[cardCount])
+			    [Card Count]
 			)
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 4c67512e-828c-4418-9de3-4e7be7914347
@@ -298,6 +299,49 @@ table 'Measure Table'
 			```
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
 		lineageTag: 7131ab0d-1aaf-41ca-9ca7-b2c2acd0ed24
+
+	measure 'Distinct Cards Owned Per Set' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(Collection[title - sibtitle - set]),
+			    Collection[owned] > 0
+			)
+		formatString: 0
+		lineageTag: 469411ce-18d3-41f5-9cdd-7de2da9c9973
+
+	measure 'Card Count' =
+			
+			SUMX(
+			    DISTINCT('Cards Fact'[expansion.data.id]),
+			    SWITCH(
+			        TRUE(),
+			        'Cards Fact'[expansion.data.id] = "13", 6,
+			        'Cards Fact'[expansion.data.id] = "28", 6,
+			        'Cards Fact'[expansion.data.id] = "43", 4,
+			        'Cards Fact'[expansion.data.id] = "48", 20,
+			        CALCULATE(
+			            MAX('Cards'[cardCount]),
+			            'Cards Fact'[expansion.data.id] = EARLIER('Cards Fact'[expansion.data.id])
+			        )
+			    )
+			)
+		formatString: 0
+		lineageTag: 102f46d6-646a-44dc-8413-f07dab17c1f3
+
+	measure 'Variant Count' = ```
+			
+			SUMX(
+			    SUMMARIZE(
+			        'Cards Fact', 
+			        'Cards Fact'[expansion.data.id], 
+			        'Cards Fact'[cardUid],  -- Assuming CardID exists in the Cards Fact table
+			        "DistinctVariants", DISTINCTCOUNT('Variants'[id])
+			    ),
+			    [DistinctVariants]
+			)
+			```
+		formatString: 0
+		lineageTag: b3c865e9-7747-4e31-97ca-c4ead591a005
 
 	column Column
 		isHidden

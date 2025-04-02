@@ -41,8 +41,7 @@ table 'Deck Break By'
 		source =
 				{
 				    ("Card Type", NAMEOF('Decks'[Card Type]), 0),
-				    ("set", NAMEOF('Collection'[set]), 1),
-				    ("setName", NAMEOF('Collection'[setName]), 2)
+				    ("Set", NAMEOF(Decks[Set]), 1)
 				}
 
 	annotation PBI_Id = 9c9d7a0b0b884b179e0039a55a22db3b
