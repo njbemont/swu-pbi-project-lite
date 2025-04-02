@@ -5148,6 +5148,16 @@ cultureInfo en-US
 			          }
 			        },
 			        {
+			          "Variants": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
 			          "Variant": {
 			            "State": "Suggested",
 			            "Source": {
@@ -14293,6 +14303,16 @@ cultureInfo en-US
 			        {
 			          "code": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Set": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        },
 			        {

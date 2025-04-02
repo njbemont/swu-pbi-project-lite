@@ -171,7 +171,7 @@ table 'Measure Table'
 			
 			DIVIDE(
 			    [Distinct Variants Owned],
-			    MAX(Collection[cardNumber]) * DISTINCTCOUNT(Variants[name])
+			    MAX(Cards[cardCount]) * DISTINCTCOUNT(Variants[name])
 			)
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 5412ebf8-bf3f-48cb-869a-de6821aee841
@@ -198,7 +198,7 @@ table 'Measure Table'
 			
 			[Distinct Cards Owned]
 			/
-			MAX(Collection[cardNumber])
+			MAX(Cards[cardCount])
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 9848b158-b9b4-4b9d-a73f-5f57984e70e2
 
@@ -215,7 +215,7 @@ table 'Measure Table'
 			
 			DIVIDE(
 			    [Completed Playsets],
-			    MAX(Collection[cardNumber])
+			    MAX(Cards[cardCount])
 			)
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 4c67512e-828c-4418-9de3-4e7be7914347

@@ -23,6 +23,9 @@ table Collection
 		lineageTag: c42a76c4-7de6-449e-a547-9e90ef2234fa
 		summarizeBy: none
 		sourceColumn: set
+		sortByColumn: setSort
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
@@ -182,6 +185,9 @@ table Collection
 		lineageTag: 8aec360b-1fb6-479c-80ae-a3ab919a0c7d
 		summarizeBy: none
 		sourceColumn: setName
+		sortByColumn: setSort
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
