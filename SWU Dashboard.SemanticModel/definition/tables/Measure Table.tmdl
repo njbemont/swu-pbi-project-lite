@@ -152,7 +152,7 @@ table 'Measure Table'
 		formatString: 0
 		lineageTag: 41b873af-8219-4a88-b7db-f1aad9d6f11b
 
-	measure Available = [Owned] - [Used in Decks]
+	measure Available = IF([Owned] - [Used in Decks] < 0, 0, [Owned] - [Used in Decks])
 		formatString: 0
 		lineageTag: 0a7c8bc2-8b11-40ed-967e-997cb13bc8a2
 

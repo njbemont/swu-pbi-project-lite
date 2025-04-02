@@ -77,6 +77,7 @@ ref table Events
 ref table LocalDateTable_bdbaf0b7-865b-460d-b053-b9f43b7585aa
 ref table LocalDateTable_a92661d0-1ad3-469b-b83a-76d14999c427
 ref table 'Reserved for Collection'
+ref table 'Deck Break By'
 
 ref cultureInfo en-US
 

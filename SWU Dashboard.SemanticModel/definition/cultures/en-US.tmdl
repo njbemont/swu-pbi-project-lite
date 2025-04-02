@@ -26104,7 +26104,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Total Deck Cost": {
+			          "Main Deck Cost": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -26114,7 +26114,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Main Deck Cost": {
+			          "Total Deck Cost": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -26134,9 +26134,599 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "deck_break_by": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Deck Break By"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "deck break by": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "deck disruption by": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "deck breakdown by": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "deck discontinuity by": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "deck interruption by": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "deck cessation by": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "deck opportunity by": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "deck pause by": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "deck halt by": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "deck opening by": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "deck occasion by": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "deck_break_by.parameter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Deck Break By",
+			          "ConceptualProperty": "Parameter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "parameter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "stricture": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "limitation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "restriction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "constraint": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "consideration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "boundary": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "limit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "bound": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "factor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "issue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "Deck Break By": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "deck_break_by.parameter_field": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Deck Break By",
+			          "ConceptualProperty": "Parameter Fields"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "parameter field": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "field": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "parameter arena": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "parameter turf": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "parameter ground": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "parameter pitch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "parameter park": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "turf": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "ground": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "pitch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "park": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "parameter meadow": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        }
+			      ]
+			    },
+			    "deck_break_by.parameter_order": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Deck Break By",
+			          "ConceptualProperty": "Parameter Order"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "parameter order": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "order": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "parameter instruction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "parameter direction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "parameter edict": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "instruction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "direction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "edict": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "parameter command": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "parameter directive": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "parameter demand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "parameter mandate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "event_has_organizer": {
+			      "Binding": {
+			        "ConceptualEntity": "Events"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "event": {
+			          "Target": {
+			            "Entity": "event"
+			          }
+			        },
+			        "event.organizer": {
+			          "Target": {
+			            "Entity": "event.organizer"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "event"
+			            },
+			            "Object": {
+			              "Role": "event.organizer"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "events_have_organizers"
+			        },
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "event.organizer"
+			            },
+			            "Verbs": [
+			              {
+			                "organize": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "event"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.75,
+			          "ID": "organizers_organize_events"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "event.organizer"
+			            },
+			            "Object": {
+			              "Role": "event"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "organizers_have_events"
+			        }
+			      ]
+			    },
+			    "event_has_type": {
+			      "Binding": {
+			        "ConceptualEntity": "Events"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "event": {
+			          "Target": {
+			            "Entity": "event"
+			          }
+			        },
+			        "event.type": {
+			          "Target": {
+			            "Entity": "event.type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "event"
+			            },
+			            "Object": {
+			              "Role": "event.type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "events_have_types"
+			        }
+			      ]
+			    },
 			    "event_has_name": {
 			      "Binding": {
 			        "ConceptualEntity": "Events"
@@ -29405,15 +29995,15 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "deck_has_measure_table_available": {
+			    "measure_table_has_available": {
 			      "Binding": {
-			        "ConceptualEntity": "Decks"
+			        "ConceptualEntity": "Measure Table"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "deck": {
+			        "measure_table": {
 			          "Target": {
-			            "Entity": "deck"
+			            "Entity": "measure_table"
 			          }
 			        },
 			        "measure_table.available": {
@@ -29426,7 +30016,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "deck"
+			              "Role": "measure_table"
 			            },
 			            "Object": {
 			              "Role": "measure_table.available"
@@ -29434,12 +30024,12 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "decks_have_available"
+			          "ID": "measure_tables_have_available"
 			        },
 			        {
 			          "Adjective": {
 			            "Subject": {
-			              "Role": "deck"
+			              "Role": "measure_table"
 			            },
 			            "Adjectives": [
 			              {
@@ -29454,60 +30044,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "available_indicates_how_available_decks_are"
-			        }
-			      ]
-			    },
-			    "collection_has_measure_table_available": {
-			      "Binding": {
-			        "ConceptualEntity": "Collection"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "collection": {
-			          "Target": {
-			            "Entity": "collection"
-			          }
-			        },
-			        "measure_table.available": {
-			          "Target": {
-			            "Entity": "measure_table.available"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "collection"
-			            },
-			            "Object": {
-			              "Role": "measure_table.available"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "collections_have_available"
-			        },
-			        {
-			          "Adjective": {
-			            "Subject": {
-			              "Role": "collection"
-			            },
-			            "Adjectives": [
-			              {
-			                "available": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Measurement": {
-			              "Role": "measure_table.available"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "available_indicates_how_available_collections_are"
+			          "ID": "available_indicates_how_available_measure_tables_are"
 			        }
 			      ]
 			    },
@@ -34359,105 +34896,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "event_organizer_organize_event": {
-			      "Binding": {
-			        "ConceptualEntity": "Events"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "event.organizer": {
-			          "Target": {
-			            "Entity": "event.organizer"
-			          }
-			        },
-			        "event": {
-			          "Target": {
-			            "Entity": "event"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Verb": {
-			            "Subject": {
-			              "Role": "event.organizer"
-			            },
-			            "Verbs": [
-			              {
-			                "organize": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "event"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.75,
-			          "ID": "organizers_organize_events"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "event.organizer"
-			            },
-			            "Object": {
-			              "Role": "event"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "organizers_have_events"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "event"
-			            },
-			            "Object": {
-			              "Role": "event.organizer"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "events_have_organizers"
-			        }
-			      ]
-			    },
-			    "event_has_type": {
-			      "Binding": {
-			        "ConceptualEntity": "Events"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "event": {
-			          "Target": {
-			            "Entity": "event"
-			          }
-			        },
-			        "event.type": {
-			          "Target": {
-			            "Entity": "event.type"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "event"
-			            },
-			            "Object": {
-			              "Role": "event.type"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "events_have_types"
-			        }
-			      ]
-			    },
 			    "event_has_location": {
 			      "Binding": {
 			        "ConceptualEntity": "Events"
@@ -34686,6 +35124,39 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "variants_have_sort_values"
+			        }
+			      ]
+			    },
+			    "deck_break_by_has_parameter": {
+			      "Binding": {
+			        "ConceptualEntity": "Deck Break By"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "deck_break_by": {
+			          "Target": {
+			            "Entity": "deck_break_by"
+			          }
+			        },
+			        "deck_break_by.parameter": {
+			          "Target": {
+			            "Entity": "deck_break_by.parameter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "deck_break_by"
+			            },
+			            "Object": {
+			              "Role": "deck_break_by.parameter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "deck_break_by_have_parameters"
 			        }
 			      ]
 			    },
