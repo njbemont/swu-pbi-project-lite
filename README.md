@@ -17,7 +17,7 @@ The main goal of this project is to provide a dashboard for players and judges t
 4. In the top folder "Parameter", change the "File Path" Parameter to the path your GitHub folder is located (ex. if your full folder path to the project is "C:\Users\Username\Documents\swu-pbi-project-main", change this parameter to "C:\Users\Username\Documents"). 
 5. Click "Close & Apply"
 6. Wait for it to load. If it asks about privacy settings, check the box to ignore privacy settings.
-7. If you get an error on Pricing, go to File > Options and Settings > Options > Current File > Privacy > Check "Ignore Privacy Levels"
+7. If you get an error on Pricing, go to File > Options and Settings > Options. Then, under the Current File header on the left side of the options screen, click Privacy > Check "Ignore Privacy Levels" and click the green "OK" at the bottom
 
 ### Collection Import
 1. Open the collection_spreadsheet file in the Collection folder. Using the userInput tab, enter the count of each card you have in column J. Save your version of this file with the same file name in the Collection folder.
