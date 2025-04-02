@@ -350,13 +350,26 @@
         },
         {
           "location": {
-            "x": 832,
-            "y": 261
+            "x": 724,
+            "y": 432
           },
           "nodeIndex": "Pricing Bridge",
           "nodeLineageTag": "a85fec7b-8021-4460-a95f-07a38fb8c114",
           "size": {
             "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 744,
+            "y": 0
+          },
+          "nodeIndex": "Decks",
+          "nodeLineageTag": "2a4d3154-213d-47f6-9381-704ff364ab0d",
+          "size": {
+            "height": 248,
             "width": 234
           },
           "zIndex": 0

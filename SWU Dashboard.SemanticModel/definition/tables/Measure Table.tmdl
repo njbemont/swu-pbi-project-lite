@@ -271,6 +271,34 @@ table 'Measure Table'
 		formatString: 0
 		lineageTag: 7304d48a-bf96-4099-bc59-84c7792fbd82
 
+	measure 'Deck Price' = ```
+			
+			SUMX(
+			    Collection,
+			    VAR Price = 
+			        CALCULATE(
+			            SUMX(
+			                FILTER(
+			                    Pricing,
+			                    MAX('Pricing Bridge'[variantTypes.data.attributes.name]) = "Standard"
+			                ),
+			                Pricing[marketPrice]
+			            )
+			        )
+			    VAR CardCount = 
+			        CALCULATE(
+			            SUMX(
+			                Decks,
+			                Decks[Card Count]
+			            ),
+			            USERELATIONSHIP(Decks[Card ID], Collection[standardKey])
+			        )
+			    RETURN Price * CardCount
+			)
+			```
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 7131ab0d-1aaf-41ca-9ca7-b2c2acd0ed24
+
 	column Column
 		isHidden
 		formatString: 0
