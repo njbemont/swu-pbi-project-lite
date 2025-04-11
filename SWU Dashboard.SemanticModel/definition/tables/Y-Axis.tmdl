@@ -42,7 +42,7 @@ table Y-Axis
 				{
 				    ("Arenas", NAMEOF('Arenas'[name]), 0),
 				    ("Artist", NAMEOF(Cards[artist]), 1),
-				    ("Aspects", NAMEOF('Aspects'[name]), 2),
+				    ("Aspects", NAMEOF(Aspects[name]), 2),
 				    ("Keywords", NAMEOF('Keywords'[name]), 3),
 				    ("Set", NAMEOF(Sets[name]), 4),
 				    ("Traits", NAMEOF('Traits'[name]), 5),

@@ -20,15 +20,15 @@ queryGroup 'API Tables'
 
 queryGroup 'Cacade Tables'
 
-	annotation PBI_QueryGroupOrder = 3
+	annotation PBI_QueryGroupOrder = 4
 
 queryGroup 'TCGPlayer Pricing'
 
-	annotation PBI_QueryGroupOrder = 4
+	annotation PBI_QueryGroupOrder = 5
 
 queryGroup 'Folder Tables'
 
-	annotation PBI_QueryGroupOrder = 7
+	annotation PBI_QueryGroupOrder = 6
 
 queryGroup 'Folder Tables\Transform File from Decklists'
 
@@ -38,11 +38,15 @@ queryGroup 'Folder Tables\Transform File from Decklists\Helper Queries'
 
 	annotation PBI_QueryGroupOrder = 0
 
+queryGroup 'SWU Stats Tables'
+
+	annotation PBI_QueryGroupOrder = 3
+
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBIDesktopVersion = 2.141.1253.0 (25.03)+74f9999a1e95f78c739f3ea2b96ba340e9ba8729
+annotation PBIDesktopVersion = 2.141.1451.0 (25.03)+5007b75f0f7edbed506e31fcb76584cd6d711788
 
-annotation PBI_QueryOrder = ["File Path","Page","Rows","GetSWUAPIPages","Base","Cards Fact","Cards","Arenas","Aspects","Keywords","Rules","Traits","Variants","Homepage Links","Resource Links","Events","Judge Program Links","Rules Clarifications","Sets","Groups","GetGroupProducts","GetGroupPrices","Products","Prices","Pricing","Pricing Bridge","Collection","Maindeck","Sample File","Parameter1","Transform Sample File","Transform File","Sideboards","Decks"]
+annotation PBI_QueryOrder = ["File Path","Page","Rows","GetSWUAPIPages","Base","Cards Fact","Cards","Arenas","Aspects","Keywords","Rules","Traits","Variants","Homepage Links","Resource Links","Events","Judge Program Links","Rules Clarifications","Sets","Groups","GetGroupProducts","GetGroupPrices","Products","Prices","Pricing","Pricing Bridge","Collection","Maindeck","Sample File","Parameter1","Transform Sample File","Transform File","Sideboards","Decks","Meta Stats - Deck","Meta Stats - Card"]
 
 annotation PBI_ProTooling = ["DaxQueryView_Desktop","DevMode"]
 
@@ -53,7 +57,6 @@ ref table Arenas
 ref table Keywords
 ref table Variants
 ref table 'Cards Fact'
-ref table Base
 ref table Rules
 ref table DateTableTemplate_0b4c62b2-ad51-4e8b-899a-fdf66d9b6b63
 ref table LocalDateTable_e3d70a23-d04e-4c99-bf90-293b16bed457
@@ -78,6 +81,9 @@ ref table LocalDateTable_bdbaf0b7-865b-460d-b053-b9f43b7585aa
 ref table LocalDateTable_a92661d0-1ad3-469b-b83a-76d14999c427
 ref table 'Reserved for Collection'
 ref table 'Deck Break By'
+ref table Base
+ref table 'Meta Stats - Deck'
+ref table 'Meta Stats - Card'
 
 ref cultureInfo en-US
 

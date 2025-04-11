@@ -1,548 +1,403 @@
 table Base
-	isHidden
-	lineageTag: cfa3681b-85bf-4777-b381-edcc82874357
-
-	column title
-		dataType: string
-		isHidden
-		lineageTag: 02af5da4-3a1a-4674-beb3-4070efdab380
-		summarizeBy: none
-		sourceColumn: title
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column subtitle
-		dataType: string
-		isHidden
-		lineageTag: ce945a87-18c9-4d3f-919f-5a07d636d22a
-		summarizeBy: none
-		sourceColumn: subtitle
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column cardNumber
-		dataType: string
-		isHidden
-		lineageTag: 8c970d28-e41f-4e7c-a741-3dfff2d7be72
-		summarizeBy: none
-		sourceColumn: cardNumber
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column cardCount
-		dataType: string
-		isHidden
-		lineageTag: cefc53c5-02f4-474e-9bc4-9a3c89419fd5
-		summarizeBy: none
-		sourceColumn: cardCount
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column artist
-		dataType: string
-		isHidden
-		lineageTag: 45cb84c7-ed62-4d96-b1ea-683bc3ac2f35
-		summarizeBy: none
-		sourceColumn: artist
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column artFrontHorizontal
-		dataType: string
-		isHidden
-		lineageTag: 049a5eb8-b1dd-4ef4-acca-80abf657231f
-		summarizeBy: none
-		sourceColumn: artFrontHorizontal
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column artBackHorizontal
-		dataType: string
-		isHidden
-		lineageTag: 3fca8c3d-c006-42a3-b661-5c24af57ca76
-		summarizeBy: none
-		sourceColumn: artBackHorizontal
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column hasFoil
-		dataType: string
-		isHidden
-		lineageTag: c966bc64-ff5e-406d-a2c7-8fbda9432344
-		summarizeBy: none
-		sourceColumn: hasFoil
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column cost
-		dataType: string
-		isHidden
-		lineageTag: 241b37a2-74e7-4488-88aa-528fd1b35253
-		summarizeBy: none
-		sourceColumn: cost
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column hp
-		dataType: string
-		isHidden
-		lineageTag: 173c6279-aac1-4fdc-8c0e-1d62cff0941c
-		summarizeBy: none
-		sourceColumn: hp
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column power
-		dataType: string
-		isHidden
-		lineageTag: 8ff2222b-fc5a-4c3d-950a-f98a3f63e316
-		summarizeBy: none
-		sourceColumn: power
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column text
-		dataType: string
-		isHidden
-		lineageTag: 544c45c4-fb95-4c90-9e79-a1bd6243bc4c
-		summarizeBy: none
-		sourceColumn: text
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column textStyled
-		dataType: string
-		isHidden
-		lineageTag: cdd86518-84c3-4cf1-b557-ad8b01c8251f
-		summarizeBy: none
-		sourceColumn: textStyled
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column deployBox
-		dataType: string
-		isHidden
-		lineageTag: 971671b5-7290-44eb-a267-191a77b30800
-		summarizeBy: none
-		sourceColumn: deployBox
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column deployBoxStyled
-		dataType: string
-		isHidden
-		lineageTag: bf4bb4d9-eb32-4e19-bf52-f39ae3823f4c
-		summarizeBy: none
-		sourceColumn: deployBoxStyled
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column epicAction
-		dataType: string
-		isHidden
-		lineageTag: 01af6451-7a63-44ed-b8c2-e43d9d0cf76d
-		summarizeBy: none
-		sourceColumn: epicAction
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column epicActionStyled
-		dataType: string
-		isHidden
-		lineageTag: 4e9dd6f2-2370-4be1-a594-d14269e004af
-		summarizeBy: none
-		sourceColumn: epicActionStyled
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column linkHtml
-		dataType: string
-		isHidden
-		lineageTag: 27763400-611c-4969-ab83-7094347840ec
-		summarizeBy: none
-		sourceColumn: linkHtml
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column cardId
-		dataType: string
-		isHidden
-		lineageTag: 534573ac-ce23-45d4-a5de-c79a079f19e1
-		summarizeBy: none
-		sourceColumn: cardId
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column createdAt
-		dataType: string
-		isHidden
-		lineageTag: 102e1e9f-f58f-490b-a3fa-25f7effc7a02
-		summarizeBy: none
-		sourceColumn: createdAt
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column updatedAt
-		dataType: string
-		isHidden
-		lineageTag: 8bb9cdeb-4aeb-4345-993c-9566f287d130
-		summarizeBy: none
-		sourceColumn: updatedAt
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column publishedAt
-		dataType: string
-		isHidden
-		lineageTag: 3bfcd209-bf24-41d0-8f94-88e1a7fc4b1f
-		summarizeBy: none
-		sourceColumn: publishedAt
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column locale
-		dataType: string
-		isHidden
-		lineageTag: 6a3c186d-c284-41e3-9f87-b1b555a3bbe3
-		summarizeBy: none
-		sourceColumn: locale
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column hyperspace
-		dataType: string
-		isHidden
-		lineageTag: 5e763ca6-326c-46ef-8e56-5900807dc544
-		summarizeBy: none
-		sourceColumn: hyperspace
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column unique
-		dataType: string
-		isHidden
-		lineageTag: c9e11065-b9e3-440a-b7f4-c9d994e8cd97
-		summarizeBy: none
-		sourceColumn: unique
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column showcase
-		dataType: string
-		isHidden
-		lineageTag: 8c592a13-3817-4a9e-a4ae-71c882cf9a4c
-		summarizeBy: none
-		sourceColumn: showcase
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column cardUid
-		dataType: string
-		isHidden
-		lineageTag: 6cc85f72-fa69-4741-830a-efa86364a213
-		summarizeBy: none
-		sourceColumn: cardUid
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column rules
-		dataType: string
-		isHidden
-		lineageTag: 43274846-fd18-4bba-81ad-04244c61b56e
-		summarizeBy: none
-		sourceColumn: rules
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column rulesStyled
-		dataType: string
-		isHidden
-		lineageTag: fa549717-aa93-4a27-b059-b1bdbdf8dd27
-		summarizeBy: none
-		sourceColumn: rulesStyled
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column serialCode
-		dataType: string
-		isHidden
-		lineageTag: 3b1a38fd-6dd5-42c6-86f6-631dde75200a
-		summarizeBy: none
-		sourceColumn: serialCode
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column upgradeHp
-		dataType: string
-		isHidden
-		lineageTag: 755ba8a7-6427-4eef-bfe4-f035d2d9b841
-		summarizeBy: none
-		sourceColumn: upgradeHp
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column upgradePower
-		dataType: string
-		isHidden
-		lineageTag: ede67efe-a25d-49af-8db6-df0c22c7dd00
-		summarizeBy: none
-		sourceColumn: upgradePower
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column artFront
-		dataType: string
-		isHidden
-		lineageTag: 90bcbc22-1060-4d4c-ab3e-90da33028222
-		summarizeBy: none
-		sourceColumn: artFront
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column artBack
-		dataType: string
-		isHidden
-		lineageTag: b97a27bf-cae4-413e-a390-5c840d3fd59b
-		summarizeBy: none
-		sourceColumn: artBack
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column artThumbnail
-		dataType: string
-		isHidden
-		lineageTag: 4ac319c6-2ebf-4903-afe3-82607cc16bfc
-		summarizeBy: none
-		sourceColumn: artThumbnail
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column localizations
-		dataType: string
-		isHidden
-		lineageTag: f2a80213-715b-4756-b38a-b5697463f1ab
-		summarizeBy: none
-		sourceColumn: localizations
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column aspects
-		dataType: string
-		isHidden
-		lineageTag: d434bd79-5a0c-4591-bb2e-bf51546174eb
-		summarizeBy: none
-		sourceColumn: aspects
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column aspectDuplicates
-		dataType: string
-		isHidden
-		lineageTag: 5cb6a688-cdd2-4522-b407-5e933da2a70b
-		summarizeBy: none
-		sourceColumn: aspectDuplicates
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column type2
-		dataType: string
-		isHidden
-		lineageTag: 2f80c0ee-054a-454c-bd13-302666e35848
-		summarizeBy: none
-		sourceColumn: type2
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column traits
-		dataType: string
-		isHidden
-		lineageTag: 9f1acea2-3ec1-4fe7-b316-699dec45893c
-		summarizeBy: none
-		sourceColumn: traits
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column arenas
-		dataType: string
-		isHidden
-		lineageTag: 1fb576af-0dd1-4b77-bd18-ca4f4653755d
-		summarizeBy: none
-		sourceColumn: arenas
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column keywords
-		dataType: string
-		isHidden
-		lineageTag: 581c1ce3-b9ab-41ff-bd8a-c3af1e2ccafc
-		summarizeBy: none
-		sourceColumn: keywords
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column rarity
-		dataType: string
-		isHidden
-		lineageTag: 2f3cb8e7-724c-47b7-9c8c-fcac53ab98cd
-		summarizeBy: none
-		sourceColumn: rarity
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column expansion
-		dataType: string
-		isHidden
-		lineageTag: 185683d3-6916-4857-8ecd-9d0b769245d6
-		summarizeBy: none
-		sourceColumn: expansion
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column variantTypes
-		dataType: string
-		isHidden
-		lineageTag: 944c84f9-371e-4cef-9e01-01994db5efc9
-		summarizeBy: none
-		sourceColumn: variantTypes
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column variantOf
-		dataType: string
-		isHidden
-		lineageTag: d0350881-5dd9-40e1-a124-01d0f35539ed
-		summarizeBy: none
-		sourceColumn: variantOf
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column reprintOf
-		dataType: string
-		isHidden
-		lineageTag: 809ec979-346d-4889-968c-3fd21909f453
-		summarizeBy: none
-		sourceColumn: reprintOf
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column validationId
-		dataType: string
-		isHidden
-		lineageTag: 25c0658e-098a-4333-9772-6e5af20bf4d8
-		summarizeBy: none
-		sourceColumn: validationId
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
+	lineageTag: 9af3df69-6f04-469d-ab3c-e921892e482a
 
 	column id
 		dataType: string
-		lineageTag: 08ab6f71-5afe-4dcf-a82e-d473129f74b9
+		lineageTag: ab244d16-218a-4ce2-8564-567b5b6d2db3
 		summarizeBy: none
 		sourceColumn: id
 
 		annotation SummarizationSetBy = Automatic
 
+	column title
+		dataType: string
+		lineageTag: 84f2391f-e27e-4531-ad34-cf46360d383b
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = Automatic
+
+	column subtitle
+		dataType: string
+		lineageTag: 1791b466-1fc6-49b0-bff2-317fc8761161
+		summarizeBy: none
+		sourceColumn: subtitle
+
+		annotation SummarizationSetBy = Automatic
+
+	column cardNumber
+		dataType: string
+		lineageTag: 4dd82063-7188-40ec-9aba-3d74c2dcbe5b
+		summarizeBy: none
+		sourceColumn: cardNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column cardCount
+		dataType: string
+		lineageTag: 5dad85ee-75a4-405b-ab7a-c7219130b83f
+		summarizeBy: none
+		sourceColumn: cardCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column artist
+		dataType: string
+		lineageTag: 35cea52e-7e1c-4a23-bf05-187bfbbceead
+		summarizeBy: none
+		sourceColumn: artist
+
+		annotation SummarizationSetBy = Automatic
+
+	column artFrontHorizontal
+		dataType: string
+		lineageTag: b14cc233-79b5-4760-82a2-a4f0e287357f
+		summarizeBy: none
+		sourceColumn: artFrontHorizontal
+
+		annotation SummarizationSetBy = Automatic
+
+	column artBackHorizontal
+		dataType: string
+		lineageTag: 180a0efd-1869-436c-b211-164751d13254
+		summarizeBy: none
+		sourceColumn: artBackHorizontal
+
+		annotation SummarizationSetBy = Automatic
+
+	column hasFoil
+		dataType: string
+		lineageTag: 49cdd285-f883-43e9-a8d0-c1a5e0760d56
+		summarizeBy: none
+		sourceColumn: hasFoil
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost
+		dataType: string
+		lineageTag: 5ba49645-d99f-4788-9fb1-edb4f9dd03e6
+		summarizeBy: none
+		sourceColumn: cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column hp
+		dataType: string
+		lineageTag: 8c211be8-035c-4944-a903-47d8a930bda5
+		summarizeBy: none
+		sourceColumn: hp
+
+		annotation SummarizationSetBy = Automatic
+
+	column power
+		dataType: string
+		lineageTag: c6a93a94-6e8c-4db2-96dc-421d1b28cf1b
+		summarizeBy: none
+		sourceColumn: power
+
+		annotation SummarizationSetBy = Automatic
+
+	column text
+		dataType: string
+		lineageTag: f68b89e9-ad7a-4857-9f34-9aab7f01e0c4
+		summarizeBy: none
+		sourceColumn: text
+
+		annotation SummarizationSetBy = Automatic
+
+	column textStyled
+		dataType: string
+		lineageTag: 778e800a-c60a-44f8-b32a-932b37812d7a
+		summarizeBy: none
+		sourceColumn: textStyled
+
+		annotation SummarizationSetBy = Automatic
+
+	column deployBox
+		dataType: string
+		lineageTag: 334aa5a4-d288-4c3f-a2ed-f79535a686b0
+		summarizeBy: none
+		sourceColumn: deployBox
+
+		annotation SummarizationSetBy = Automatic
+
+	column deployBoxStyled
+		dataType: string
+		lineageTag: aad81ffc-16a7-4b97-b06a-f4c607c04e5d
+		summarizeBy: none
+		sourceColumn: deployBoxStyled
+
+		annotation SummarizationSetBy = Automatic
+
+	column epicAction
+		dataType: string
+		lineageTag: 76d5e2d9-b2aa-4ea2-ac63-56b083c68942
+		summarizeBy: none
+		sourceColumn: epicAction
+
+		annotation SummarizationSetBy = Automatic
+
+	column epicActionStyled
+		dataType: string
+		lineageTag: 390e3082-59cd-465d-8afb-08f7b34960e5
+		summarizeBy: none
+		sourceColumn: epicActionStyled
+
+		annotation SummarizationSetBy = Automatic
+
+	column linkHtml
+		dataType: string
+		lineageTag: d918ca8e-07ff-48f6-aa77-fefa65716022
+		summarizeBy: none
+		sourceColumn: linkHtml
+
+		annotation SummarizationSetBy = Automatic
+
+	column cardId
+		dataType: string
+		lineageTag: c789ec23-d8e2-4a8f-9dab-028d84ac9df8
+		summarizeBy: none
+		sourceColumn: cardId
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdAt
+		dataType: string
+		lineageTag: 9bb25f45-1c43-47e6-a106-c8bb0977c35e
+		summarizeBy: none
+		sourceColumn: createdAt
+
+		annotation SummarizationSetBy = Automatic
+
+	column updatedAt
+		dataType: string
+		lineageTag: 53779784-d6e0-497b-bff0-561d1b8cc01a
+		summarizeBy: none
+		sourceColumn: updatedAt
+
+		annotation SummarizationSetBy = Automatic
+
+	column publishedAt
+		dataType: string
+		lineageTag: dc55a010-ccca-4e4f-b593-563be9d4b621
+		summarizeBy: none
+		sourceColumn: publishedAt
+
+		annotation SummarizationSetBy = Automatic
+
+	column locale
+		dataType: string
+		lineageTag: 9afa9266-6af8-47a1-8b4c-544003ad9570
+		summarizeBy: none
+		sourceColumn: locale
+
+		annotation SummarizationSetBy = Automatic
+
+	column hyperspace
+		dataType: string
+		lineageTag: 7c93c9c5-eb67-4295-b57e-d96e5c9912f9
+		summarizeBy: none
+		sourceColumn: hyperspace
+
+		annotation SummarizationSetBy = Automatic
+
+	column unique
+		dataType: string
+		lineageTag: 4cdcd7dc-5165-4e15-8815-4a8c5ddaa7c0
+		summarizeBy: none
+		sourceColumn: unique
+
+		annotation SummarizationSetBy = Automatic
+
+	column showcase
+		dataType: string
+		lineageTag: bb978ee7-e4c3-4935-a1bf-54455038147a
+		summarizeBy: none
+		sourceColumn: showcase
+
+		annotation SummarizationSetBy = Automatic
+
+	column cardUid
+		dataType: string
+		lineageTag: 6f7a54a4-4816-41be-9f3e-11f8d1e7c7c0
+		summarizeBy: none
+		sourceColumn: cardUid
+
+		annotation SummarizationSetBy = Automatic
+
+	column rules
+		dataType: string
+		lineageTag: 29cda992-66ef-4597-b96d-e1efcc876066
+		summarizeBy: none
+		sourceColumn: rules
+
+		annotation SummarizationSetBy = Automatic
+
+	column rulesStyled
+		dataType: string
+		lineageTag: af724107-2bec-4802-b4ba-3d36475d006f
+		summarizeBy: none
+		sourceColumn: rulesStyled
+
+		annotation SummarizationSetBy = Automatic
+
+	column serialCode
+		dataType: string
+		lineageTag: e176e74f-612c-4f33-9915-8574b0813274
+		summarizeBy: none
+		sourceColumn: serialCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column upgradeHp
+		dataType: string
+		lineageTag: ea0090ba-15a6-4bf3-86cf-7acd29ba05cc
+		summarizeBy: none
+		sourceColumn: upgradeHp
+
+		annotation SummarizationSetBy = Automatic
+
+	column upgradePower
+		dataType: string
+		lineageTag: 0ffe306f-fb03-4024-a6a9-03c98b610a7f
+		summarizeBy: none
+		sourceColumn: upgradePower
+
+		annotation SummarizationSetBy = Automatic
+
+	column artFront
+		dataType: string
+		lineageTag: e316197c-0d78-4f8d-8d7c-d36b4a7aa6ad
+		summarizeBy: none
+		sourceColumn: artFront
+
+		annotation SummarizationSetBy = Automatic
+
+	column artBack
+		dataType: string
+		lineageTag: ccf475a1-3cc8-4e87-b3d9-b18de4b8c6aa
+		summarizeBy: none
+		sourceColumn: artBack
+
+		annotation SummarizationSetBy = Automatic
+
+	column artThumbnail
+		dataType: string
+		lineageTag: 18560a80-b044-4aaf-8b3e-568ce9923ae7
+		summarizeBy: none
+		sourceColumn: artThumbnail
+
+		annotation SummarizationSetBy = Automatic
+
+	column localizations
+		dataType: string
+		lineageTag: 7bda6755-ecf1-415d-ad6b-8237209badca
+		summarizeBy: none
+		sourceColumn: localizations
+
+		annotation SummarizationSetBy = Automatic
+
+	column aspects
+		dataType: string
+		lineageTag: 26c571ae-6601-41eb-921d-42dc3b2b2d7c
+		summarizeBy: none
+		sourceColumn: aspects
+
+		annotation SummarizationSetBy = Automatic
+
+	column aspectDuplicates
+		dataType: string
+		lineageTag: 416d9ac3-064a-41c0-9f00-69c97a0ebd61
+		summarizeBy: none
+		sourceColumn: aspectDuplicates
+
+		annotation SummarizationSetBy = Automatic
+
 	column 'type.data.attributes.name'
 		dataType: string
-		lineageTag: 111fa43f-e182-4631-8ecf-b2ca2a9665b0
+		lineageTag: 8aa9a85e-6dc3-40b6-98d1-4c57f7edbf15
 		summarizeBy: none
 		sourceColumn: type.data.attributes.name
+
+		annotation SummarizationSetBy = Automatic
+
+	column type2
+		dataType: string
+		lineageTag: 0804d4d0-01f2-4937-ab37-c99e1274bc55
+		summarizeBy: none
+		sourceColumn: type2
+
+		annotation SummarizationSetBy = Automatic
+
+	column traits
+		dataType: string
+		lineageTag: 75be0bc4-c504-4563-b05d-b90192d2ba50
+		summarizeBy: none
+		sourceColumn: traits
+
+		annotation SummarizationSetBy = Automatic
+
+	column arenas
+		dataType: string
+		lineageTag: 816d0675-4f0e-45bd-a5f4-055b3c1bea27
+		summarizeBy: none
+		sourceColumn: arenas
+
+		annotation SummarizationSetBy = Automatic
+
+	column keywords
+		dataType: string
+		lineageTag: ef8d0a91-6588-4b79-bd1b-cdf8c0297f1b
+		summarizeBy: none
+		sourceColumn: keywords
+
+		annotation SummarizationSetBy = Automatic
+
+	column rarity
+		dataType: string
+		lineageTag: 17232c44-4a57-4bb5-96ad-02a8ba854f06
+		summarizeBy: none
+		sourceColumn: rarity
+
+		annotation SummarizationSetBy = Automatic
+
+	column expansion
+		dataType: string
+		lineageTag: 6d02d67c-129e-4719-a0f0-acdb22073956
+		summarizeBy: none
+		sourceColumn: expansion
+
+		annotation SummarizationSetBy = Automatic
+
+	column variantTypes
+		dataType: string
+		lineageTag: 4edaafde-3dd7-4fdf-bb4e-ce9b360480c0
+		summarizeBy: none
+		sourceColumn: variantTypes
+
+		annotation SummarizationSetBy = Automatic
+
+	column variantOf
+		dataType: string
+		lineageTag: 2457212b-d201-4dfe-b80c-9b71d5256101
+		summarizeBy: none
+		sourceColumn: variantOf
+
+		annotation SummarizationSetBy = Automatic
+
+	column reprintOf
+		dataType: string
+		lineageTag: 0a35d55f-836f-4a5f-ae63-a64abb4ea3ec
+		summarizeBy: none
+		sourceColumn: reprintOf
+
+		annotation SummarizationSetBy = Automatic
+
+	column validationId
+		dataType: string
+		lineageTag: 19483f45-6655-428b-a7b8-9281290ca9a9
+		summarizeBy: none
+		sourceColumn: validationId
 
 		annotation SummarizationSetBy = Automatic
 
@@ -566,8 +421,6 @@ table Base
 				    #"Filtered Rows" = Table.SelectRows(#"Expanded type.data.attributes", each not Text.Contains([type.data.attributes.name], "Token"))
 				in
 				    #"Filtered Rows"
-
-	changedProperty = IsHidden
 
 	annotation PBI_NavigationStepName = Navigation
 

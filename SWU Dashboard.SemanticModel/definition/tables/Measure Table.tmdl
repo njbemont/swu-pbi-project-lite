@@ -161,7 +161,7 @@ table 'Measure Table'
 			SUMX(
 			    VALUES(Collection[cardUid]),
 			    CALCULATE(
-			        MAX(Collection[owned]) * MAX(Pricing[marketPrice])
+			        MAX(Collection[owned]) * IF(ISBLANK(MAX(Pricing[marketPrice])), MAX(Pricing[midPrice]), MAX(Pricing[marketPrice]))
 			    )
 			)
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
@@ -234,7 +234,7 @@ table 'Measure Table'
 	measure 'Trade Value A' =
 			
 			CALCULATE(
-			    SUM(Pricing[marketPrice]),
+			    IF(ISBLANK(SUM(Pricing[marketPrice])), SUM(Pricing[midPrice]), SUM(Pricing[marketPrice])),
 			    TREATAS(VALUES(TradeSideA[Title]), Cards[Title]),
 			    TREATAS(VALUES(TradeSideA[Subtitle]), Cards[Subtitle]),
 			    TREATAS(VALUES(TradeSideA[Variant]), Variants[name])
@@ -245,7 +245,7 @@ table 'Measure Table'
 	measure 'Trade Value B' =
 			
 			CALCULATE(
-			    SUM(Pricing[marketPrice]),
+			    IF(ISBLANK(SUM(Pricing[marketPrice])), SUM(Pricing[midPrice]), SUM(Pricing[marketPrice])),
 			    TREATAS(VALUES(TradeSideB[Title]), Cards[Title]),
 			    TREATAS(VALUES(TradeSideB[Subtitle]), Cards[Subtitle]),
 			    TREATAS(VALUES(TradeSideB[Variant]), Variants[name])
@@ -259,12 +259,7 @@ table 'Measure Table'
 
 	measure 'Collection Value Adjusted' =
 			
-			SUMX(
-			    VALUES(Collection[cardUid]),
-			    CALCULATE(
-			        MAX(Collection[owned]) * MAX(Pricing[marketPrice])
-			    )
-			) * 'Trade %'[Trade % Value]
+			[Collection Value] * 'Trade %'[Trade % Value]
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
 		lineageTag: 9b5a46ac-aa26-45d2-b9b9-aa5147124d34
 
@@ -283,7 +278,7 @@ table 'Measure Table'
 			                    Pricing,
 			                    MAX('Pricing Bridge'[variantTypes.data.attributes.name]) = "Standard"
 			                ),
-			                Pricing[marketPrice]
+			                IF(ISBLANK(Pricing[marketPrice]), Pricing[midPrice], Pricing[marketPrice])
 			            )
 			        )
 			    VAR CardCount = 
@@ -342,6 +337,15 @@ table 'Measure Table'
 			```
 		formatString: 0
 		lineageTag: b3c865e9-7747-4e31-97ca-c4ead591a005
+
+	measure 'Random Card' =
+			
+			CALCULATE(
+			    MAX(Cards[artFront.data.attributes.url]),
+			    SAMPLE(1, Cards, RAND())
+			)
+		lineageTag: 49a8956a-beb0-41e5-90d2-204984d1036f
+		dataCategory: ImageUrl
 
 	column Column
 		isHidden

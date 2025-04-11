@@ -36,19 +36,6 @@
         },
         {
           "location": {
-            "x": 618.38305001469382,
-            "y": -41.422348979922475
-          },
-          "nodeIndex": "Base",
-          "nodeLineageTag": "cfa3681b-85bf-4777-b381-edcc82874357",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
             "x": 334.20156119318534,
             "y": -8.5776510200774112
           },
@@ -312,6 +299,34 @@
           "nodeIndex": "Deck Break By",
           "size": {
             "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Base",
+          "nodeLineageTag": "9af3df69-6f04-469d-ab3c-e921892e482a",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Meta Stats - Deck",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Meta Stats - Card",
+          "size": {
+            "height": 300,
             "width": 234
           },
           "zIndex": 0

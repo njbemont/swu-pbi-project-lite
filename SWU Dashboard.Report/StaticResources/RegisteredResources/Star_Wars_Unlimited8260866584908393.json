@@ -1,0 +1,35 @@
+{
+  "name": "Star Wars Unlimited",
+  "dataColors": [
+    "#6694CE",
+    "#41AD49",
+    "#D2232A",
+    "#FDB933",
+    "#040004",
+    "#C6C1A0",
+    "#FFFFFF",
+    "#413314"
+  ],
+  "visualStyles": {
+    "*": {
+      "*": {
+        "border": [
+          {
+            "color": {
+              "solid": {
+                "color": "#413314"
+              }
+            },
+            "show": false,
+            "radius": 1
+          }
+        ]
+      }
+    }
+  },
+  "textClasses": {
+    "title": {
+      "color": "#000000"
+    }
+  }
+}

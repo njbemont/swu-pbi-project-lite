@@ -1,0 +1,130 @@
+table 'Meta Stats - Deck'
+	lineageTag: 8437e4e7-2dfa-4688-9342-3f21d07f205a
+
+	measure 'Win Rate' = AVERAGE('Meta Stats - Deck'[winRate]) / 100
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 9e68f303-d59e-40f6-a2a0-02c01cab783c
+
+	column leaderID
+		dataType: int64
+		formatString: 0
+		lineageTag: 342df698-ac9a-4a6a-836b-4b5f6f064e84
+		summarizeBy: count
+		sourceColumn: leaderID
+
+		annotation SummarizationSetBy = Automatic
+
+	column baseID
+		dataType: int64
+		formatString: 0
+		lineageTag: 98762b6b-9654-4c75-894a-4d362ac13199
+		summarizeBy: count
+		sourceColumn: baseID
+
+		annotation SummarizationSetBy = Automatic
+
+	column numPlays
+		dataType: int64
+		formatString: 0
+		lineageTag: f859c1b6-3831-4c3a-a40b-29786c062454
+		summarizeBy: sum
+		sourceColumn: numPlays
+
+		annotation SummarizationSetBy = Automatic
+
+	column winRate
+		dataType: double
+		lineageTag: 897e0a2b-bc51-4c5d-9243-b9fafe4c2908
+		summarizeBy: sum
+		sourceColumn: winRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avgTurnsInWins
+		dataType: double
+		lineageTag: ad6079a3-84c7-4b38-8ef0-8aee5d1f9004
+		summarizeBy: sum
+		sourceColumn: avgTurnsInWins
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avgTurnsInLosses
+		dataType: double
+		lineageTag: 4d4c7720-700d-4a4d-baa7-f8491c9efe89
+		summarizeBy: sum
+		sourceColumn: avgTurnsInLosses
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avgCardsResourcedInWins
+		dataType: double
+		lineageTag: 6a376c85-f603-449c-b77f-a6b5d1d0ee46
+		summarizeBy: sum
+		sourceColumn: avgCardsResourcedInWins
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avgRemainingHealthInWins
+		dataType: double
+		lineageTag: e4812a1e-7631-41ed-9a08-bea28b61572e
+		summarizeBy: sum
+		sourceColumn: avgRemainingHealthInWins
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column leaderUID
+		dataType: string
+		lineageTag: 870a5b59-f1ba-452b-9a70-e35946dfc21e
+		summarizeBy: none
+		sourceColumn: leaderUID
+
+		annotation SummarizationSetBy = Automatic
+
+	column baseUID
+		dataType: string
+		lineageTag: 03d8f3c8-5162-4f23-a202-069841b8e1ed
+		summarizeBy: none
+		sourceColumn: baseUID
+
+		annotation SummarizationSetBy = Automatic
+
+	column leaderName = LOOKUPVALUE(Cards[title + subtitle], Cards[cardUid], 'Meta Stats - Deck'[leaderUID])
+		lineageTag: 71c38a32-59d3-4a28-b964-4b612bb29aad
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column baseName = LOOKUPVALUE(Cards[title + subtitle], Cards[cardUid], 'Meta Stats - Deck'[baseUID])
+		lineageTag: e81770c8-266d-48a8-9cef-aef1e73673b0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Meta Stats - Deck' = m
+		mode: import
+		queryGroup: 'SWU Stats Tables'
+		source =
+				let
+				    Source = Json.Document(Web.Contents("https://swustats.net/TCGEngine/Stats/DeckMetaStatsAPI.php")),
+				    #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"leaderID", "baseID", "numPlays", "winRate", "avgTurnsInWins", "avgTurnsInLosses", "avgCardsResourcedInWins", "avgRemainingHealthInWins"}, {"leaderID", "baseID", "numPlays", "winRate", "avgTurnsInWins", "avgTurnsInLosses", "avgCardsResourcedInWins", "avgRemainingHealthInWins"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded Column1",{{"leaderID", Int64.Type}, {"baseID", Int64.Type}, {"numPlays", Int64.Type}, {"winRate", type number}, {"avgTurnsInWins", type number}, {"avgTurnsInLosses", type number}, {"avgCardsResourcedInWins", type number}, {"avgRemainingHealthInWins", type number}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "leaderUID", each Text.PadStart(Text.From([leaderID]), 10, "0")),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "baseUID", each Text.PadStart(Text.From([baseID]), 10, "0"))
+				in
+				    #"Added Custom1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

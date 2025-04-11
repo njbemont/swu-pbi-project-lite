@@ -92,3 +92,9 @@ relationship 6e7bcf04-67fe-4603-b476-873927378140
 	fromColumn: Events.'End Date'
 	toColumn: LocalDateTable_a92661d0-1ad3-469b-b83a-76d14999c427.Date
 
+relationship d7cd6e5c-3b0a-52b8-bc57-d587e0eb4cdf
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Meta Stats - Card'.cardUID2
+	toColumn: Cards.cardUid
+

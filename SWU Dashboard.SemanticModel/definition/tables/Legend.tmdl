@@ -41,7 +41,7 @@ table Legend
 		source =
 				{
 				    ("Arenas", NAMEOF('Arenas'[name]), 0),
-				    ("Aspects", NAMEOF('Aspects'[name]), 1),
+				    ("Aspects", NAMEOF(Aspects[name]), 1),
 				    ("Cost", NAMEOF(Cards[cost]), 2),
 				    ("Keywords", NAMEOF('Keywords'[name]), 3),
 				    ("Set", NAMEOF(Sets[name]), 4),

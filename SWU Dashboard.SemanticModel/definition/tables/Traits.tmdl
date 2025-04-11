@@ -1,4 +1,5 @@
 table Traits
+	excludeFromModelRefresh
 	lineageTag: db73ea23-7376-4935-aa97-4c6152218161
 
 	column id

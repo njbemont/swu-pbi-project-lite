@@ -1,4 +1,5 @@
 table Aspects
+	excludeFromModelRefresh
 	lineageTag: 0153c9f8-0a76-4f42-9fb6-a954db7c9115
 
 	column id
@@ -85,6 +86,14 @@ table Aspects
 
 		annotation SummarizationSetBy = Automatic
 
+	column image
+		dataType: string
+		lineageTag: 18711c26-a519-403e-b6cc-593d0fc9f470
+		summarizeBy: none
+		sourceColumn: image
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Aspects = m
 		mode: import
 		queryGroup: 'API Tables'
@@ -98,9 +107,10 @@ table Aspects
 				    #"Filtered Rows" = Table.SelectRows(#"Expanded data1", each [id] <> null and [id] <> ""),
 				    #"Expanded attributes" = Table.ExpandRecordColumn(#"Filtered Rows", "attributes", {"name", "description", "color", "createdAt", "updatedAt", "publishedAt", "locale", "englishName", "sortValue"}, {"name", "description", "color", "createdAt", "updatedAt", "publishedAt", "locale", "englishName", "sortValue"}),
 				    #"Removed Duplicates" = Table.Distinct(#"Expanded attributes", {"id"}),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Duplicates",{{"sortValue", Int64.Type}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Duplicates",{{"sortValue", Int64.Type}}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Changed Type", "image", each if [id] = 2 then "https://cdn.starwarsunlimited.com/icon_vigilance_aebda7026f.png" else if [id] = 22 then "https://cdn.starwarsunlimited.com/icon_heroism_99d152cb2d.png" else if [id] = 12 then "https://cdn.starwarsunlimited.com/icon_aggression_24cc746635.png" else if [id] = 27 then "https://cdn.starwarsunlimited.com/icon_villainy_eb77e7874b.png" else if [id] = 7 then "https://cdn.starwarsunlimited.com/icon_command_df837f32c6.png" else if [id] = 17 then "https://cdn.starwarsunlimited.com/icon_cunning_931f93ee4c.png" else null)
 				in
-				    #"Changed Type"
+				    #"Added Conditional Column"
 
 	annotation PBI_NavigationStepName = Navigation
 

@@ -1,4 +1,5 @@
 table Variants
+	excludeFromModelRefresh
 	lineageTag: bd5dcb25-4563-427b-92a8-208690893b1c
 
 	column id

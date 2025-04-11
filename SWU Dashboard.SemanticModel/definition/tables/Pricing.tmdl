@@ -189,6 +189,15 @@ table Pricing
 
 		annotation SummarizationSetBy = Automatic
 
+	column partnerURL
+		dataType: string
+		lineageTag: 132f4d6f-2d45-432b-a529-59a6a5ffe846
+		dataCategory: WebUrl
+		summarizeBy: none
+		sourceColumn: partnerURL
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Pricing = m
 		mode: import
 		queryGroup: 'TCGPlayer Pricing'
@@ -197,7 +206,8 @@ table Pricing
 				    Source = Table.NestedJoin(Products, {"productId", "group"}, Prices, {"productId", "group"}, "Prices", JoinKind.LeftOuter),
 				    #"Expanded Prices" = Table.ExpandTableColumn(Source, "Prices", {"lowPrice", "midPrice", "highPrice", "marketPrice", "directLowPrice", "subTypeName"}, {"lowPrice", "midPrice", "highPrice", "marketPrice", "directLowPrice", "subTypeName"}),
 				    #"Reordered Columns" = Table.ReorderColumns(#"Expanded Prices",{"group", "productId", "name", "cleanName", "imageUrl", "categoryId", "groupId", "url", "modifiedOn", "imageCount", "cardNumber", "abbreviation", "setName", "subTypeName", "lowPrice", "midPrice", "highPrice", "marketPrice", "directLowPrice"}),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Reordered Columns",{{"lowPrice", type number}, {"midPrice", type number}, {"highPrice", type number}, {"marketPrice", type number}, {"directLowPrice", type number}, {"name", type text}})
+				    #"Added Custom" = Table.AddColumn(#"Reordered Columns", "partnerURL", each [url] & "?partner=BnOEKx"),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom",{{"lowPrice", type number}, {"midPrice", type number}, {"highPrice", type number}, {"marketPrice", type number}, {"directLowPrice", type number}, {"name", type text}})
 				in
 				    #"Changed Type"
 
