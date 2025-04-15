@@ -206,7 +206,7 @@ table Pricing
 				    Source = Table.NestedJoin(Products, {"productId", "group"}, Prices, {"productId", "group"}, "Prices", JoinKind.LeftOuter),
 				    #"Expanded Prices" = Table.ExpandTableColumn(Source, "Prices", {"lowPrice", "midPrice", "highPrice", "marketPrice", "directLowPrice", "subTypeName"}, {"lowPrice", "midPrice", "highPrice", "marketPrice", "directLowPrice", "subTypeName"}),
 				    #"Reordered Columns" = Table.ReorderColumns(#"Expanded Prices",{"group", "productId", "name", "cleanName", "imageUrl", "categoryId", "groupId", "url", "modifiedOn", "imageCount", "cardNumber", "abbreviation", "setName", "subTypeName", "lowPrice", "midPrice", "highPrice", "marketPrice", "directLowPrice"}),
-				    #"Added Custom" = Table.AddColumn(#"Reordered Columns", "partnerURL", each [url] & "?partner=BnOEKx"),
+				    #"Added Custom" = Table.AddColumn(#"Reordered Columns", "partnerURL", each "https://partner.tcgplayer.com/c/6152233/1780961/21018?u=" & Uri.EscapeDataString([url])),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom",{{"lowPrice", type number}, {"midPrice", type number}, {"highPrice", type number}, {"marketPrice", type number}, {"directLowPrice", type number}, {"name", type text}})
 				in
 				    #"Changed Type"
