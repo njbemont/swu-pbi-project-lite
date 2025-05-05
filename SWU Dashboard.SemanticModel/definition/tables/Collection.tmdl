@@ -255,8 +255,8 @@ table Collection
 		queryGroup: 'Folder Tables'
 		source =
 				let
-				    Source = Excel.Workbook(File.Contents(#"File Path" & "\swu-pbi-project-main\Collection\collection_spreadsheet.xlsx"), null, true),
-				    cards_Sheet = Source{[Item="userInput",Kind="Sheet"]}[Data],
+				    Source = GoogleSheets.Contents("https://docs.google.com/spreadsheets/d/1ymASHx_Tr96ny7D32RozMHar14Bde2wRLNIRAaOMiv8/edit?gid=1884736088#gid=1884736088"),
+				    cards_Sheet = Source{[name="UserInput",ItemKind="Table"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(cards_Sheet, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"cardUid", type text}, {"cardNumber", Int64.Type}, {"set", type text}, {"owned", Int64.Type}, {"isReprint", type logical}, {"variant", type text}, {"rarity", type text}, {"aspects1", type text}, {"aspects2", type text}, {"title", type text}, {"subtitle", type text}, {"cost", Int64.Type}, {"power", Int64.Type}, {"hp", Int64.Type}, {"upgradePower", Int64.Type}, {"upgradeHp", Int64.Type}, {"arenas", type text}, {"keywords", type text}, {"type", type text}, {"type2", type text}, {"traits", type text}, {"setName", type text}, {"setSort", Int64.Type}, {"reprintId", Int64.Type}, {"cardKey", type text}, {"id", Int64.Type}, {"title - subtitle", type text}, {"standardKey", type text}}),
 				    #"Added Custom" = Table.AddColumn(#"Changed Type", "title - sibtitle - set", each [#"title - subtitle"] & " - " & [set])

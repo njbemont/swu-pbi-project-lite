@@ -397,3 +397,35 @@ expression 'Rules Clarifications' =
 
 	annotation PBI_ResultType = Table
 
+expression Base =
+		let
+		    Source = List.Generate(
+		        () => [Result = try GetSWUAPIPages(1) otherwise null, pagenumber=1],
+		        each List.IsEmpty([Result]) = false,
+		        each [Result = try GetSWUAPIPages(pagenumber) otherwise null, pagenumber = [pagenumber] + 1],
+		        each [Result]),
+		    #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+		    #"Expanded Column1" = Table.ExpandListColumn(#"Converted to Table", "Column1"),
+		    #"Expanded Column2" = Table.ExpandRecordColumn(#"Expanded Column1", "Column1", {"id", "attributes"}, {"id", "attributes"}),
+		    #"Expanded attributes" = Table.ExpandRecordColumn(#"Expanded Column2", "attributes", {"title", "subtitle", "cardNumber", "cardCount", "artist", "artFrontHorizontal", "artBackHorizontal", "hasFoil", "cost", "hp", "power", "text", "textStyled", "deployBox", "deployBoxStyled", "epicAction", "epicActionStyled", "linkHtml", "cardId", "createdAt", "updatedAt", "publishedAt", "locale", "hyperspace", "unique", "showcase", "cardUid", "rules", "rulesStyled", "serialCode", "upgradeHp", "upgradePower", "artFront", "artBack", "artThumbnail", "localizations", "aspects", "aspectDuplicates", "type", "type2", "traits", "arenas", "keywords", "rarity", "expansion", "variantTypes", "variantOf", "reprintOf", "validationId"}, {"title", "subtitle", "cardNumber", "cardCount", "artist", "artFrontHorizontal", "artBackHorizontal", "hasFoil", "cost", "hp", "power", "text", "textStyled", "deployBox", "deployBoxStyled", "epicAction", "epicActionStyled", "linkHtml", "cardId", "createdAt", "updatedAt", "publishedAt", "locale", "hyperspace", "unique", "showcase", "cardUid", "rules", "rulesStyled", "serialCode", "upgradeHp", "upgradePower", "artFront", "artBack", "artThumbnail", "localizations", "aspects", "aspectDuplicates", "type", "type2", "traits", "arenas", "keywords", "rarity", "expansion", "variantTypes", "variantOf", "reprintOf", "validationId"}),
+		    #"Expanded type" = Table.ExpandRecordColumn(#"Expanded attributes", "type", {"data"}, {"type.data"}),
+		    #"Expanded type.data" = Table.ExpandRecordColumn(#"Expanded type", "type.data", {"attributes"}, {"type.data.attributes"}),
+		    #"Expanded type.data.attributes" = Table.ExpandRecordColumn(#"Expanded type.data", "type.data.attributes", {"name"}, {"type.data.attributes.name"}),
+		    #"Filtered Rows" = Table.SelectRows(#"Expanded type.data.attributes", each not Text.Contains([type.data.attributes.name], "Token"))
+		in
+		    #"Filtered Rows"
+	lineageTag: a2ae0752-1444-4598-9bab-521bc7ee93a2
+	queryGroup: 'API Tables'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Google Sheets Link' = "https://docs.google.com/spreadsheets/d/1ymASHx_Tr96ny7D32RozMHar14Bde2wRLNIRAaOMiv8/edit?gid=1884736088#gid=1884736088" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	lineageTag: a0b3f9e0-7e5b-478d-856e-5110b80252d9
+	queryGroup: Parameter
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

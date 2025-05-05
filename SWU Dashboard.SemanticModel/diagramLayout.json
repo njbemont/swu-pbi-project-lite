@@ -305,16 +305,6 @@
         },
         {
           "location": {},
-          "nodeIndex": "Base",
-          "nodeLineageTag": "9af3df69-6f04-469d-ab3c-e921892e482a",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {},
           "nodeIndex": "Meta Stats - Deck",
           "size": {
             "height": 272,

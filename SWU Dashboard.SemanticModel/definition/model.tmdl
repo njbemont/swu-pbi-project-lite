@@ -2,6 +2,7 @@ model Model
 	culture: en-US
 	defaultPowerBIDataSourceVersion: powerBI_V3
 	sourceQueryCulture: en-US
+	maxParallelismPerRefresh: 1
 	dataAccessOptions
 		legacyRedirects
 		returnErrorValuesAsNull
@@ -44,9 +45,9 @@ queryGroup 'SWU Stats Tables'
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBIDesktopVersion = 2.141.1558.0 (25.03)+75b5f06a991f8f8a8a4d6b6fcd0f66e1ec2d6fdc
+annotation PBIDesktopVersion = 2.142.928.0 (25.04)+de52df9f0bb74ad93a80d89c52d63fe6d07e0e1b
 
-annotation PBI_QueryOrder = ["File Path","Page","Rows","GetSWUAPIPages","Base","Cards Fact","Cards","Arenas","Aspects","Keywords","Rules","Traits","Variants","Homepage Links","Resource Links","Events","Judge Program Links","Rules Clarifications","Sets","Groups","GetGroupProducts","GetGroupPrices","Products","Prices","Pricing","Pricing Bridge","Collection","Maindeck","Sample File","Parameter1","Transform Sample File","Transform File","Sideboards","Decks","Meta Stats - Deck","Meta Stats - Card"]
+annotation PBI_QueryOrder = ["Google Sheets Link","File Path","Page","Rows","GetSWUAPIPages","Base","Cards Fact","Cards","Arenas","Aspects","Keywords","Rules","Traits","Variants","Homepage Links","Resource Links","Events","Judge Program Links","Rules Clarifications","Sets","Groups","GetGroupProducts","GetGroupPrices","Products","Prices","Pricing","Pricing Bridge","Collection","Maindeck","Sample File","Parameter1","Transform Sample File","Transform File","Sideboards","Decks","Meta Stats - Deck","Meta Stats - Card"]
 
 annotation PBI_ProTooling = ["DaxQueryView_Desktop","DevMode"]
 
@@ -81,7 +82,6 @@ ref table LocalDateTable_bdbaf0b7-865b-460d-b053-b9f43b7585aa
 ref table LocalDateTable_a92661d0-1ad3-469b-b83a-76d14999c427
 ref table 'Reserved for Collection'
 ref table 'Deck Break By'
-ref table Base
 ref table 'Meta Stats - Deck'
 ref table 'Meta Stats - Card'
 
