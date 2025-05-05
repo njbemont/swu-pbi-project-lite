@@ -1,0 +1,59 @@
+table 'Meta Stats - Tournaments'
+	lineageTag: 40e8105a-d121-4448-b6ef-cae740476b8a
+
+	column id
+		dataType: string
+		lineageTag: fbd209b3-65b3-4e83-9f2d-a55c6f60cbf3
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: a6fb5dad-40f2-4293-9dc1-0ba294b9690e
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date
+		dataType: string
+		lineageTag: 2da8c4db-5935-4bc0-99d8-0a34b23452e2
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+	column link
+		dataType: string
+		lineageTag: ec797b19-597a-49f2-9fab-1a74e29cde02
+		summarizeBy: none
+		sourceColumn: link
+
+		annotation SummarizationSetBy = Automatic
+
+	column melee_url
+		dataType: string
+		lineageTag: 196623ee-576d-44f2-8abc-8fab095b1bc5
+		summarizeBy: none
+		sourceColumn: melee_url
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Meta Stats - Tournaments' = m
+		mode: import
+		queryGroup: 'SWU Stats Tables'
+		source =
+				let
+				    Source = Json.Document(Web.Contents("https://swustats.net/TCGEngine/APIs/GetMeleeTournaments.php")),
+				    tournaments = Source[tournaments],
+				    #"Converted to Table" = Table.FromList(tournaments, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"id", "name", "date", "link", "melee_url"}, {"id", "name", "date", "link", "melee_url"})
+				in
+				    #"Expanded Column1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

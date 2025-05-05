@@ -47,7 +47,7 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBIDesktopVersion = 2.142.928.0 (25.04)+de52df9f0bb74ad93a80d89c52d63fe6d07e0e1b
 
-annotation PBI_QueryOrder = ["Google Sheets Link","File Path","Page","Rows","GetSWUAPIPages","Base","Cards Fact","Cards","Arenas","Aspects","Keywords","Rules","Traits","Variants","Homepage Links","Resource Links","Events","Judge Program Links","Rules Clarifications","Sets","Groups","GetGroupProducts","GetGroupPrices","Products","Prices","Pricing","Pricing Bridge","Collection","Maindeck","Sample File","Parameter1","Transform Sample File","Transform File","Sideboards","Decks","Meta Stats - Deck","Meta Stats - Card"]
+annotation PBI_QueryOrder = ["Google Sheets Link","File Path","Page","Rows","GetSWUAPIPages","Base","Cards Fact","Cards","Arenas","Aspects","Keywords","Rules","Traits","Variants","Homepage Links","Resource Links","Events","Judge Program Links","Rules Clarifications","Sets","Groups","GetGroupProducts","GetGroupPrices","Products","Prices","Pricing","Pricing Bridge","Collection","Maindeck","Sample File","Parameter1","Transform Sample File","Transform File","Sideboards","Decks","Meta Stats - Deck","Meta Stats - Card","Meta Stats - Tournaments","Meta Stats - Tournament Stats","GetSWUTourneys"]
 
 annotation PBI_ProTooling = ["DaxQueryView_Desktop","DevMode"]
 
@@ -84,6 +84,8 @@ ref table 'Reserved for Collection'
 ref table 'Deck Break By'
 ref table 'Meta Stats - Deck'
 ref table 'Meta Stats - Card'
+ref table 'Meta Stats - Tournaments'
+ref table 'Meta Stats - Tournament Stats'
 
 ref cultureInfo en-US
 

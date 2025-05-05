@@ -320,6 +320,26 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Meta Stats - Tournament Stats",
+          "nodeLineageTag": "7af5d070-a974-4cb6-b151-760d76844cd7",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Meta Stats - Tournaments",
+          "nodeLineageTag": "40e8105a-d121-4448-b6ef-cae740476b8a",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",

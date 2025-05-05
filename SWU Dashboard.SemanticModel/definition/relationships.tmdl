@@ -98,3 +98,7 @@ relationship d7cd6e5c-3b0a-52b8-bc57-d587e0eb4cdf
 	fromColumn: 'Meta Stats - Card'.cardUID2
 	toColumn: Cards.cardUid
 
+relationship 593da1e4-f74a-8736-6deb-4effaa4ec733
+	fromColumn: 'Meta Stats - Tournament Stats'.tourney
+	toColumn: 'Meta Stats - Tournaments'.id
+

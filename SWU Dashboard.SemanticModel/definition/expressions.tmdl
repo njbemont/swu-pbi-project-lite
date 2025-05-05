@@ -429,3 +429,25 @@ expression 'Google Sheets Link' = "https://docs.google.com/spreadsheets/d/1ymASH
 
 	annotation PBI_ResultType = Text
 
+expression GetSWUTourneys =
+		(tourney as number) =>
+		let
+		    Source = Json.Document(
+		        Web.Contents(
+		            "https://swustats.net/TCGEngine/APIs/GetMeleeTournament.php?id=" & Number.ToText(tourney)
+		        )
+		    ),
+		    Decks = Source[decks],
+		    DecksTable = if List.Count(Decks) > 0 then
+		        Table.FromRecords(Decks)
+		    else
+		        #table({}, {})
+		in
+		    DecksTable
+	lineageTag: 76f50ea5-4036-4f12-aff2-53eb60f51177
+	queryGroup: Function
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Function
+
