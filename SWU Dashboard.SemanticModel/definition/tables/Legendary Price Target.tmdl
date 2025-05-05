@@ -1,0 +1,26 @@
+table 'Legendary Price Target'
+	lineageTag: d27e170d-edaa-4c88-9e80-26992e8151a6
+
+	measure 'Legendary Price Target Value' = SELECTEDVALUE('Legendary Price Target'[Legendary Price Target], 10)
+		formatString: 0
+		lineageTag: 0c3b17c8-683b-4803-bb6c-e481a7d708f3
+
+	column 'Legendary Price Target'
+		formatString: 0
+		lineageTag: f157f96c-4686-4e11-bc56-89fa3a8fba99
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Legendary Price Target' = calculated
+		mode: import
+		source = GENERATESERIES(0, 100, 1)
+
+	annotation PBI_Id = 75a98ce50daf44c09b195833ab768b41
+

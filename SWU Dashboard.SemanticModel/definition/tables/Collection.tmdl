@@ -1,14 +1,6 @@
 table Collection
 	lineageTag: ec7fc4b2-b3b1-4a40-b396-1e11afe886d3
 
-	column cardUid
-		dataType: string
-		lineageTag: e9fc478b-b4b2-470f-a3d8-65b1602dda46
-		summarizeBy: none
-		sourceColumn: cardUid
-
-		annotation SummarizationSetBy = Automatic
-
 	column cardNumber
 		dataType: int64
 		formatString: 0
@@ -250,6 +242,14 @@ table Collection
 
 		annotation SummarizationSetBy = Automatic
 
+	column cardUid
+		dataType: string
+		lineageTag: 6b44c3ee-3e06-4b4e-8c34-0be6bfd68e7e
+		summarizeBy: none
+		sourceColumn: cardUid
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Collection = m
 		mode: import
 		queryGroup: 'Folder Tables'
@@ -259,9 +259,12 @@ table Collection
 				    cards_Sheet = Source{[name="UserInput",ItemKind="Table"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(cards_Sheet, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"cardUid", type text}, {"cardNumber", Int64.Type}, {"set", type text}, {"owned", Int64.Type}, {"isReprint", type logical}, {"variant", type text}, {"rarity", type text}, {"aspects1", type text}, {"aspects2", type text}, {"title", type text}, {"subtitle", type text}, {"cost", Int64.Type}, {"power", Int64.Type}, {"hp", Int64.Type}, {"upgradePower", Int64.Type}, {"upgradeHp", Int64.Type}, {"arenas", type text}, {"keywords", type text}, {"type", type text}, {"type2", type text}, {"traits", type text}, {"setName", type text}, {"setSort", Int64.Type}, {"reprintId", Int64.Type}, {"cardKey", type text}, {"id", Int64.Type}, {"title - subtitle", type text}, {"standardKey", type text}}),
-				    #"Added Custom" = Table.AddColumn(#"Changed Type", "title - sibtitle - set", each [#"title - subtitle"] & " - " & [set])
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "title - sibtitle - set", each [#"title - subtitle"] & " - " & [set]),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "Custom", each Text.PadStart(Text.From([cardUid]), 10, "0")),
+				    #"Removed Columns" = Table.RemoveColumns(#"Added Custom1",{"cardUid"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"Custom", "cardUid"}})
 				in
-				    #"Added Custom"
+				    #"Renamed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 

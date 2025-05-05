@@ -15497,29 +15497,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "collection.card_uid": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Collection",
-			          "ConceptualProperty": "cardUid"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "card uid": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "cardUid": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        }
-			      ]
-			    },
 			    "collection.card_number": {
 			      "Definition": {
 			        "Binding": {

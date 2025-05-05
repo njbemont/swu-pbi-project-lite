@@ -1,0 +1,26 @@
+table 'Rare Price Target'
+	lineageTag: 7ce56062-aec7-4e02-8ae1-9e639a1402d2
+
+	measure 'Rare Price Target Value' = SELECTEDVALUE('Rare Price Target'[Rare Price Target])
+		formatString: 0
+		lineageTag: 0299b2e5-e652-4e30-941d-1f1a3104f749
+
+	column 'Rare Price Target'
+		formatString: 0
+		lineageTag: 25f150ea-326d-480d-9c7a-76ef5e5753a8
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Rare Price Target' = calculated
+		mode: import
+		source = GENERATESERIES(0, 100, 1)
+
+	annotation PBI_Id = 7c02c21dad04437792c392c5e1ce69e9
+

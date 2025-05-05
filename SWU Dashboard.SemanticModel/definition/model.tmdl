@@ -86,6 +86,8 @@ ref table 'Meta Stats - Deck'
 ref table 'Meta Stats - Card'
 ref table 'Meta Stats - Tournaments'
 ref table 'Meta Stats - Tournament Stats'
+ref table 'Legendary Price Target'
+ref table 'Rare Price Target'
 
 ref cultureInfo en-US
 

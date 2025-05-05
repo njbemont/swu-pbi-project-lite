@@ -347,6 +347,15 @@ table 'Measure Table'
 		lineageTag: 49a8956a-beb0-41e5-90d2-204984d1036f
 		dataCategory: ImageUrl
 
+	measure 'Price Target' =
+			
+			SWITCH(
+			    TRUE(),
+			    SELECTEDVALUE(Cards[rarity.data.attributes.name]) = "Legendary" && SELECTEDVALUE(Pricing[marketPrice]) <= 'Legendary Price Target'[Legendary Price Target Value], "#34d14b",
+			    SELECTEDVALUE(Cards[rarity.data.attributes.name]) = "Rare" && SELECTEDVALUE(Pricing[marketPrice]) <= 'Rare Price Target'[Rare Price Target Value], "#34d14b"
+			)
+		lineageTag: 18b73e25-4909-42f2-9a28-762b860214fd
+
 	column Column
 		isHidden
 		formatString: 0
