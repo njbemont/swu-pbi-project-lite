@@ -119,3 +119,11 @@ relationship AutoDetected_5102de49-f233-4d9e-b8f0-b3dfe373a43d
 	fromColumn: 'Pricing Bridge'.cardUid
 	toColumn: Collection.cardUid
 
+relationship 5be4ca9e-5f3a-6040-904e-39e8caf73b31
+	fromColumn: 'Meta Stats - Tournament Stats'.'base.uuid'
+	toColumn: 'Meta Stats - Bases'.cardUid
+
+relationship cecc6b29-12b3-fe25-a596-e746f1149079
+	fromColumn: 'Meta Stats - Tournament Stats'.'leader.uuid'
+	toColumn: 'Meta Stats - Leaders'.cardUid
+

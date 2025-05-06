@@ -1,6 +1,10 @@
 table 'Meta Stats - Tournament Stats'
 	lineageTag: 7af5d070-a974-4cb6-b151-760d76844cd7
 
+	measure 'Number of Rounds' = MAX('Meta Stats - Tournament Stats'[Matches Played]) - 3
+		formatString: 0
+		lineageTag: 20c5aa0e-2d80-4938-b990-b00e88179a49
+
 	column tourney
 		dataType: int64
 		formatString: 0
@@ -24,22 +28,6 @@ table 'Meta Stats - Tournament Stats'
 		lineageTag: 2a4f9287-567d-426c-a77f-6b5689adf991
 		summarizeBy: none
 		sourceColumn: player
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'leader.name'
-		dataType: string
-		lineageTag: e65051f2-4e43-4166-a5af-51b4ff488ff9
-		summarizeBy: none
-		sourceColumn: leader.name
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'base.name'
-		dataType: string
-		lineageTag: 08b857eb-514b-4615-98a0-617225bfea40
-		summarizeBy: none
-		sourceColumn: base.name
 
 		annotation SummarizationSetBy = Automatic
 
@@ -89,13 +77,12 @@ table 'Meta Stats - Tournament Stats'
 
 	column match_win_rate
 		dataType: double
+		formatString: 0.00
 		lineageTag: 71dfe2b1-41e6-4550-a8ad-5ccafb0f86a2
-		summarizeBy: sum
+		summarizeBy: average
 		sourceColumn: match_win_rate
 
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation SummarizationSetBy = User
 
 	column game_record
 		dataType: string
@@ -134,13 +121,12 @@ table 'Meta Stats - Tournament Stats'
 
 	column game_win_rate
 		dataType: double
+		formatString: 0.00
 		lineageTag: fb2b3b8b-ce7a-4ea7-a56a-a0c2823ecbb5
-		summarizeBy: sum
+		summarizeBy: average
 		sourceColumn: game_win_rate
 
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation SummarizationSetBy = User
 
 	column points
 		dataType: int64
@@ -181,6 +167,38 @@ table 'Meta Stats - Tournament Stats'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column 'leader.uuid'
+		dataType: string
+		lineageTag: a447cde5-c333-4487-90a6-990ad5e1c47c
+		summarizeBy: none
+		sourceColumn: leader.uuid
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'base.uuid'
+		dataType: string
+		lineageTag: 6303aba6-edfa-4422-9a9e-01aacb62dd15
+		summarizeBy: none
+		sourceColumn: base.uuid
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Matches Played' = 'Meta Stats - Tournament Stats'[match_draws] + 'Meta Stats - Tournament Stats'[match_losses] + 'Meta Stats - Tournament Stats'[match_wins]
+		formatString: 0
+		lineageTag: e68fc3fa-6678-4d20-9daf-0bff8b02ebdf
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'All Rounds Played' = ```
+			IF('Meta Stats - Tournament Stats'[Matches Played] >= [Number of Rounds], 1, 0) 
+			```
+		formatString: 0
+		lineageTag: a0765dfe-140b-47a7-9ece-d3dcdf96104a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'Meta Stats - Tournament Stats' = m
 		mode: import
 		queryGroup: 'SWU Stats Tables'
@@ -202,11 +220,15 @@ table 'Meta Stats - Tournament Stats'
 				    #"Converted to Table" = Table.FromList(results, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
 				    #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"tourney", "data"}, {"tourney", "data"}),
 				    #"Expanded data" = Table.ExpandTableColumn(#"Expanded Column1", "data", {"id", "player", "leader", "base", "rank", "standings", "points", "tiebreakers"}, {"id", "player", "leader", "base", "rank", "standings", "points", "tiebreakers"}),
-				    #"Expanded leader" = Table.ExpandRecordColumn(#"Expanded data", "leader", {"name"}, {"leader.name"}),
-				    #"Expanded base" = Table.ExpandRecordColumn(#"Expanded leader", "base", {"name"}, {"base.name"}),
+				    #"Expanded leader" = Table.ExpandRecordColumn(#"Expanded data", "leader", {"uuid"}, {"leader.uuid"}),
+				    #"Expanded base" = Table.ExpandRecordColumn(#"Expanded leader", "base", {"uuid"}, {"base.uuid"}),
 				    #"Expanded standings" = Table.ExpandRecordColumn(#"Expanded base", "standings", {"match_record", "match_wins", "match_losses", "match_draws", "match_win_rate", "game_record", "game_wins", "game_losses", "game_draws", "game_win_rate"}, {"match_record", "match_wins", "match_losses", "match_draws", "match_win_rate", "game_record", "game_wins", "game_losses", "game_draws", "game_win_rate"}),
 				    #"Expanded tiebreakers" = Table.ExpandRecordColumn(#"Expanded standings", "tiebreakers", {"omwp", "tgwp", "ogwp"}, {"omwp", "tgwp", "ogwp"}),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded tiebreakers",{{"tourney", Int64.Type}, {"id", Int64.Type}, {"player", type text}, {"leader.name", type text}, {"base.name", type text}, {"rank", Int64.Type}, {"match_record", type text}, {"match_wins", Int64.Type}, {"match_losses", Int64.Type}, {"match_draws", Int64.Type}, {"match_win_rate", type number}, {"game_record", type text}, {"game_wins", Int64.Type}, {"game_losses", Int64.Type}, {"game_draws", Int64.Type}, {"game_win_rate", type number}, {"points", Int64.Type}, {"omwp", type number}, {"tgwp", type number}, {"ogwp", type number}})
+				    #"Added Custom" = Table.AddColumn(#"Expanded tiebreakers", "leader.uuid.1", each Text.PadStart(Text.From([leader.uuid]), 10, "0")),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "base.uuid.1", each Text.PadStart(Text.From([base.uuid]), 10, "0")),
+				    #"Removed Columns" = Table.RemoveColumns(#"Added Custom1",{"leader.uuid", "base.uuid"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"leader.uuid.1", "leader.uuid"}, {"base.uuid.1", "base.uuid"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"tourney", Int64.Type}, {"id", Int64.Type}, {"player", type text}, {"rank", Int64.Type}, {"match_record", type text}, {"match_wins", Int64.Type}, {"match_losses", Int64.Type}, {"match_draws", Int64.Type}, {"match_win_rate", type number}, {"game_record", type text}, {"game_wins", Int64.Type}, {"game_losses", Int64.Type}, {"game_draws", Int64.Type}, {"game_win_rate", type number}, {"points", Int64.Type}, {"omwp", type number}, {"tgwp", type number}, {"ogwp", type number}})
 				in
 				    #"Changed Type"
 				```

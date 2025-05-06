@@ -1,0 +1,145 @@
+table 'Meta Stats - Leaders'
+	lineageTag: 8c6e17df-6780-49b7-aa9e-673c6b0b38f2
+
+	column title
+		dataType: string
+		lineageTag: 636a5b13-877b-45ff-a3d7-8fe74b3f17b2
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = Automatic
+
+	column subtitle
+		dataType: string
+		lineageTag: a1285a76-3f9d-4351-8c45-c3926b723713
+		summarizeBy: none
+		sourceColumn: subtitle
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d7e3a7e-7fc0-41dd-a98c-094c2c6d5853
+		summarizeBy: none
+		sourceColumn: cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column hp
+		dataType: int64
+		formatString: 0
+		lineageTag: 5b2272c1-0710-4847-a08d-e3282178d4dc
+		summarizeBy: none
+		sourceColumn: hp
+
+		annotation SummarizationSetBy = Automatic
+
+	column power
+		dataType: int64
+		formatString: 0
+		lineageTag: dd90f131-294f-46a5-bdec-4672e18dc978
+		summarizeBy: none
+		sourceColumn: power
+
+		annotation SummarizationSetBy = Automatic
+
+	column cardUid
+		dataType: string
+		lineageTag: 8036c159-7a3d-4be5-9288-cf62dbbe7bb5
+		summarizeBy: none
+		sourceColumn: cardUid
+
+		annotation SummarizationSetBy = Automatic
+
+	column upgradeHp
+		dataType: string
+		lineageTag: 099bb444-d860-4fdf-8595-a9b1b0132206
+		summarizeBy: none
+		sourceColumn: upgradeHp
+
+		annotation SummarizationSetBy = Automatic
+
+	column upgradePower
+		dataType: string
+		lineageTag: 069895b8-63d4-48e6-b17e-a73c65bd4955
+		summarizeBy: none
+		sourceColumn: upgradePower
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'artFront.data.attributes.url'
+		dataType: string
+		lineageTag: 09e73dfb-2aed-4425-98c0-f4b06e73d8dc
+		summarizeBy: none
+		sourceColumn: artFront.data.attributes.url
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'artBack.data.attributes.url'
+		dataType: string
+		lineageTag: 9090c43b-8081-42cf-8e9d-d84be47e5fac
+		summarizeBy: none
+		sourceColumn: artBack.data.attributes.url
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'type.data.attributes.name'
+		dataType: string
+		lineageTag: c567a81c-7b26-45e1-b71e-f56c447a28af
+		summarizeBy: none
+		sourceColumn: type.data.attributes.name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'type2.data.attributes.name'
+		dataType: string
+		lineageTag: 99d5e8d0-a215-46b9-8e68-37edf7b8f499
+		summarizeBy: none
+		sourceColumn: type2.data.attributes.name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'rarity.data.attributes.name'
+		dataType: string
+		lineageTag: ec624e62-4f9a-4f6b-96a6-3d571d35565e
+		summarizeBy: none
+		sourceColumn: rarity.data.attributes.name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'title - subtitle' = 'Meta Stats - Leaders'[title] & " - " & 'Meta Stats - Leaders'[subtitle]
+		lineageTag: 31d7d72d-acb8-41d6-9529-a4ccc1ec5d88
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Meta Stats - Leaders' = m
+		mode: import
+		queryGroup: 'API Tables'
+		source =
+				let
+				    Source = Base,
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([type.data.attributes.name] = "Leader")),
+				    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"textStyled", "deployBoxStyled", "epicActionStyled", "linkHtml", "localizations", "aspects", "traits", "arenas", "keywords", "variantTypes", "variantOf", "validationId", "cardId", "aspectDuplicates", "rulesStyled", "rules", "id", "cardNumber", "cardCount", "artist", "artFrontHorizontal", "artBackHorizontal", "hasFoil", "text", "deployBox", "epicAction", "createdAt", "updatedAt", "publishedAt", "locale", "hyperspace", "unique", "showcase", "serialCode", "artThumbnail", "expansion", "reprintOf"}),
+				    #"Expanded artFront" = Table.ExpandRecordColumn(#"Removed Columns", "artFront", {"data"}, {"artFront.data"}),
+				    #"Expanded artFront.data" = Table.ExpandRecordColumn(#"Expanded artFront", "artFront.data", {"attributes"}, {"artFront.data.attributes"}),
+				    #"Expanded artFront.data.attributes" = Table.ExpandRecordColumn(#"Expanded artFront.data", "artFront.data.attributes", {"url"}, {"artFront.data.attributes.url"}),
+				    #"Expanded artBack" = Table.ExpandRecordColumn(#"Expanded artFront.data.attributes", "artBack", {"data"}, {"artBack.data"}),
+				    #"Expanded artBack.data" = Table.ExpandRecordColumn(#"Expanded artBack", "artBack.data", {"attributes"}, {"artBack.data.attributes"}),
+				    #"Expanded artBack.data.attributes" = Table.ExpandRecordColumn(#"Expanded artBack.data", "artBack.data.attributes", {"url"}, {"artBack.data.attributes.url"}),
+				    #"Expanded type2" = Table.ExpandRecordColumn(#"Expanded artBack.data.attributes", "type2", {"data"}, {"type2.data"}),
+				    #"Expanded type2.data" = Table.ExpandRecordColumn(#"Expanded type2", "type2.data", {"attributes"}, {"type2.data.attributes"}),
+				    #"Expanded type2.data.attributes" = Table.ExpandRecordColumn(#"Expanded type2.data", "type2.data.attributes", {"name"}, {"type2.data.attributes.name"}),
+				    #"Expanded rarity" = Table.ExpandRecordColumn(#"Expanded type2.data.attributes", "rarity", {"data"}, {"rarity.data"}),
+				    #"Expanded rarity.data" = Table.ExpandRecordColumn(#"Expanded rarity", "rarity.data", {"attributes"}, {"rarity.data.attributes"}),
+				    #"Expanded rarity.data.attributes" = Table.ExpandRecordColumn(#"Expanded rarity.data", "rarity.data.attributes", {"name"}, {"rarity.data.attributes.name"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded rarity.data.attributes",{ {"cost", Int64.Type}, {"hp", Int64.Type}, {"power", Int64.Type}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Changed Type")
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

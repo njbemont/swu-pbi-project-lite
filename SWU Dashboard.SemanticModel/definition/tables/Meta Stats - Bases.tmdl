@@ -1,0 +1,89 @@
+table 'Meta Stats - Bases'
+	lineageTag: 59d5c72c-4265-4c80-ac21-98903ed0c189
+
+	column title
+		dataType: string
+		lineageTag: b584a3d9-9677-4f03-90a3-b26b0dcd0aa8
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = Automatic
+
+	column hp
+		dataType: int64
+		formatString: 0
+		lineageTag: 296aeaca-71fd-411b-b8ee-673fc676496f
+		summarizeBy: none
+		sourceColumn: hp
+
+		annotation SummarizationSetBy = Automatic
+
+	column text
+		dataType: string
+		lineageTag: 20b0d8fb-3e9d-402c-835b-fc7699e5d542
+		summarizeBy: none
+		sourceColumn: text
+
+		annotation SummarizationSetBy = Automatic
+
+	column cardUid
+		dataType: string
+		lineageTag: cf929910-cee1-49a4-bf64-d7b6e443c10d
+		summarizeBy: none
+		sourceColumn: cardUid
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'rarity.data.attributes.name'
+		dataType: string
+		lineageTag: 687eaff9-61b2-463a-8abf-bd49834f4b32
+		summarizeBy: none
+		sourceColumn: rarity.data.attributes.name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'aspects.data.attributes.name'
+		dataType: string
+		lineageTag: 5d1f7c2e-756a-4613-af13-920d60e688ed
+		summarizeBy: none
+		sourceColumn: aspects.data.attributes.name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Base Group' = ```
+			
+			IF(
+			    'Meta Stats - Bases'[hp] = 30, 
+			    'Meta Stats - Bases'[aspects.data.attributes.name] & " 30", 
+			    'Meta Stats - Bases'[title]
+			)
+			```
+		lineageTag: 9364069f-a3db-444c-a867-f829bcd2f685
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Meta Stats - Bases' = m
+		mode: import
+		queryGroup: 'API Tables'
+		source =
+				let
+				    Source = Base,
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([type.data.attributes.name] = "Base") and ([hyperspace] = false)),
+				    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"artFront", "textStyled", "deployBoxStyled", "epicActionStyled", "linkHtml", "localizations", "traits", "arenas", "keywords", "variantOf", "validationId", "cardId", "aspectDuplicates", "rulesStyled", "rules", "subtitle", "cardCount", "artFrontHorizontal", "artBackHorizontal", "cost", "power", "deployBox", "epicAction", "locale", "unique", "showcase", "upgradeHp", "upgradePower", "artBack", "type2", "id", "cardNumber", "artist", "hasFoil", "createdAt", "updatedAt", "publishedAt", "hyperspace", "serialCode", "artThumbnail", "type.data.attributes.name", "expansion", "variantTypes", "reprintOf"}),
+				    #"Expanded aspects" = Table.ExpandRecordColumn(#"Removed Columns", "aspects", {"data"}, {"aspects.data"}),
+				    #"Expanded aspects.data" = Table.ExpandListColumn(#"Expanded aspects", "aspects.data"),
+				    #"Expanded aspects.data1" = Table.ExpandRecordColumn(#"Expanded aspects.data", "aspects.data", {"attributes"}, {"aspects.data.attributes"}),
+				    #"Expanded aspects.data.attributes" = Table.ExpandRecordColumn(#"Expanded aspects.data1", "aspects.data.attributes", {"name"}, {"aspects.data.attributes.name"}),
+				    #"Expanded rarity" = Table.ExpandRecordColumn(#"Expanded aspects.data.attributes", "rarity", {"data"}, {"rarity.data"}),
+				    #"Expanded rarity.data" = Table.ExpandRecordColumn(#"Expanded rarity", "rarity.data", {"attributes"}, {"rarity.data.attributes"}),
+				    #"Expanded rarity.data.attributes" = Table.ExpandRecordColumn(#"Expanded rarity.data", "rarity.data.attributes", {"name"}, {"rarity.data.attributes.name"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded rarity.data.attributes",{{"hp", Int64.Type}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Changed Type")
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

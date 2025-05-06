@@ -360,6 +360,24 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Meta Stats - Bases",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Meta Stats - Leaders",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",
@@ -372,7 +390,7 @@
     {
       "ordinal": 1,
       "scrollPosition": {
-        "x": 0,
+        "x": 745,
         "y": 0
       },
       "nodes": [
