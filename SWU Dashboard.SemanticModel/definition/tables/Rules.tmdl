@@ -1,5 +1,4 @@
 table Rules
-	excludeFromModelRefresh
 	lineageTag: 19c40b99-5df2-4016-9d0d-38fabceb7826
 
 	column cardUid

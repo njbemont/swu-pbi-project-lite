@@ -1,5 +1,4 @@
 table Arenas
-	excludeFromModelRefresh
 	lineageTag: 9037a05c-ebe6-475b-bad8-9e49d80b01be
 
 	column id

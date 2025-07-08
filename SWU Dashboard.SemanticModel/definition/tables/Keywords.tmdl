@@ -1,5 +1,4 @@
 table Keywords
-	excludeFromModelRefresh
 	lineageTag: 22626e72-4b4b-49a6-ba5f-7ea9b0854e20
 
 	column id

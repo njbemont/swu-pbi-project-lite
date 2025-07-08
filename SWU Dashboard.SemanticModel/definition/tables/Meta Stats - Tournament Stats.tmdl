@@ -1,9 +1,38 @@
 table 'Meta Stats - Tournament Stats'
 	lineageTag: 7af5d070-a974-4cb6-b151-760d76844cd7
 
-	measure 'Number of Rounds' = MAX('Meta Stats - Tournament Stats'[Matches Played]) - 3
+	measure 'Number of Rounds' =
+			
+			VAR CurrentTournament = SELECTEDVALUE('Meta Stats - Tournament Stats'[tourney])
+			
+			RETURN
+			CALCULATE(
+			    MAX('Meta Stats - Tournament Stats'[Matches Played]),
+			    ALL('Meta Stats - Tournament Stats'),
+			    'Meta Stats - Tournament Stats'[tourney] = CurrentTournament
+			)
 		formatString: 0
 		lineageTag: 20c5aa0e-2d80-4938-b990-b00e88179a49
+
+	measure 'Top 8 Conversions' =
+			
+			CALCULATE(
+			    COUNTROWS('Meta Stats - Tournament Stats'),
+			    FILTER(
+			        'Meta Stats - Tournament Stats',
+			        'Meta Stats - Tournament Stats'[Matches Played] > [Number of Swiss Rounds]
+			    )
+			)
+		formatString: 0
+		lineageTag: ed51fcb9-1dc0-4be7-9bd9-a7e0ac7d5c7c
+
+	measure 'Number of Swiss Rounds' = IF(ISBLANK([Number of Rounds]), BLANK(), [Number of Rounds] - 3)
+		formatString: 0
+		lineageTag: 0357058e-5e3e-46fb-a526-e2441173dc53
+
+	measure 'Top 8 Conversion Rate' = [Top 8 Conversions] / COUNT('Meta Stats - Tournament Stats'[player])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 30227950-4cb6-41ed-a857-a92b137e3380
 
 	column tourney
 		dataType: int64

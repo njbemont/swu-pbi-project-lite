@@ -1,21 +1,11 @@
 table Collection
 	lineageTag: ec7fc4b2-b3b1-4a40-b396-1e11afe886d3
 
-	column cardNumber
-		dataType: int64
-		formatString: 0
-		lineageTag: cdfcbb11-9c77-4f35-9a8b-64d9c0d5124c
-		summarizeBy: sum
-		sourceColumn: cardNumber
-
-		annotation SummarizationSetBy = Automatic
-
 	column set
 		dataType: string
 		lineageTag: c42a76c4-7de6-449e-a547-9e90ef2234fa
 		summarizeBy: none
 		sourceColumn: set
-		sortByColumn: setSort
 
 		changedProperty = SortByColumn
 
@@ -30,191 +20,11 @@ table Collection
 
 		annotation SummarizationSetBy = Automatic
 
-	column isReprint
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: 0ecef1aa-e2ca-44d5-b656-bd4e22a5e169
-		summarizeBy: none
-		sourceColumn: isReprint
-
-		annotation SummarizationSetBy = Automatic
-
 	column variant
 		dataType: string
 		lineageTag: af0edb5e-ab24-4e65-8448-5ef8cbdd1094
 		summarizeBy: none
 		sourceColumn: variant
-
-		annotation SummarizationSetBy = Automatic
-
-	column rarity
-		dataType: string
-		lineageTag: e05a7021-52ee-4551-9e4d-4cc7554f45cf
-		summarizeBy: none
-		sourceColumn: rarity
-
-		annotation SummarizationSetBy = Automatic
-
-	column aspects1
-		dataType: string
-		lineageTag: 81bb02ed-7b29-42d7-a2e3-9c4bf2616ce0
-		summarizeBy: none
-		sourceColumn: aspects1
-
-		annotation SummarizationSetBy = Automatic
-
-	column aspects2
-		dataType: string
-		lineageTag: 5658c2f7-fc7e-4e94-bee5-79cd6c3cbf98
-		summarizeBy: none
-		sourceColumn: aspects2
-
-		annotation SummarizationSetBy = Automatic
-
-	column title
-		dataType: string
-		lineageTag: 7cadf084-e443-4666-b8e3-08f0ce2521d5
-		summarizeBy: none
-		sourceColumn: title
-
-		annotation SummarizationSetBy = Automatic
-
-	column subtitle
-		dataType: string
-		lineageTag: ced1cace-80a3-4700-a9db-c3632f06517e
-		summarizeBy: none
-		sourceColumn: subtitle
-
-		annotation SummarizationSetBy = Automatic
-
-	column cost
-		dataType: int64
-		formatString: 0
-		lineageTag: dab88d38-0b6b-44db-8388-f06b7ce10603
-		summarizeBy: sum
-		sourceColumn: cost
-
-		annotation SummarizationSetBy = Automatic
-
-	column power
-		dataType: int64
-		formatString: 0
-		lineageTag: b3c4ae8a-34a5-44db-80a4-1b0f9e53b90b
-		summarizeBy: sum
-		sourceColumn: power
-
-		annotation SummarizationSetBy = Automatic
-
-	column hp
-		dataType: int64
-		formatString: 0
-		lineageTag: 57e10e17-eb4a-46be-8f5c-ca39663b2774
-		summarizeBy: sum
-		sourceColumn: hp
-
-		annotation SummarizationSetBy = Automatic
-
-	column upgradePower
-		dataType: int64
-		formatString: 0
-		lineageTag: 4062eeaa-41e2-4cc7-8835-f727bb6d75bc
-		summarizeBy: sum
-		sourceColumn: upgradePower
-
-		annotation SummarizationSetBy = Automatic
-
-	column upgradeHp
-		dataType: int64
-		formatString: 0
-		lineageTag: ccae86bd-4cb0-4f29-b5e4-1164a5710a17
-		summarizeBy: sum
-		sourceColumn: upgradeHp
-
-		annotation SummarizationSetBy = Automatic
-
-	column arenas
-		dataType: string
-		lineageTag: 78608776-b9fc-4ee8-92e1-34c0e63bf7f8
-		summarizeBy: none
-		sourceColumn: arenas
-
-		annotation SummarizationSetBy = Automatic
-
-	column keywords
-		dataType: string
-		lineageTag: 083ee90d-7ce5-4b9d-9094-64cf69ff238a
-		summarizeBy: none
-		sourceColumn: keywords
-
-		annotation SummarizationSetBy = Automatic
-
-	column type
-		dataType: string
-		lineageTag: 3a7129d2-e5a6-4ed6-a281-3ae5ab20cf90
-		summarizeBy: none
-		sourceColumn: type
-
-		annotation SummarizationSetBy = Automatic
-
-	column type2
-		dataType: string
-		lineageTag: 86c0e43c-e701-44bd-afb8-5329f4787121
-		summarizeBy: none
-		sourceColumn: type2
-
-		annotation SummarizationSetBy = Automatic
-
-	column traits
-		dataType: string
-		lineageTag: a06b8e30-69b0-43f5-96cf-a7fe625a97b8
-		summarizeBy: none
-		sourceColumn: traits
-
-		annotation SummarizationSetBy = Automatic
-
-	column setName
-		dataType: string
-		lineageTag: 8aec360b-1fb6-479c-80ae-a3ab919a0c7d
-		summarizeBy: none
-		sourceColumn: setName
-		sortByColumn: setSort
-
-		changedProperty = SortByColumn
-
-		annotation SummarizationSetBy = Automatic
-
-	column setSort
-		dataType: int64
-		formatString: 0
-		lineageTag: f009dce0-7dfb-43f8-ac43-7f58564149e3
-		summarizeBy: sum
-		sourceColumn: setSort
-
-		annotation SummarizationSetBy = Automatic
-
-	column reprintId
-		dataType: int64
-		formatString: 0
-		lineageTag: a6fe0a8a-7124-48c3-9d07-d7c6378c8315
-		summarizeBy: count
-		sourceColumn: reprintId
-
-		annotation SummarizationSetBy = Automatic
-
-	column cardKey
-		dataType: string
-		lineageTag: ba924d9e-b0b2-448e-a783-5a5ecc3a94fa
-		summarizeBy: none
-		sourceColumn: cardKey
-
-		annotation SummarizationSetBy = Automatic
-
-	column id
-		dataType: int64
-		formatString: 0
-		lineageTag: dde738f5-b6a7-4199-981a-4c3b8dfd5444
-		summarizeBy: sum
-		sourceColumn: id
 
 		annotation SummarizationSetBy = Automatic
 
@@ -250,15 +60,39 @@ table Collection
 
 		annotation SummarizationSetBy = Automatic
 
+	column aspect1
+		dataType: string
+		lineageTag: 30fa293f-2c15-4235-9b01-04a931fc04b9
+		summarizeBy: none
+		sourceColumn: aspect1
+
+		annotation SummarizationSetBy = Automatic
+
+	column aspect2
+		dataType: string
+		lineageTag: 6e63db4a-f797-43af-9015-243c1f0a9733
+		summarizeBy: none
+		sourceColumn: aspect2
+
+		annotation SummarizationSetBy = Automatic
+
+	column type
+		dataType: string
+		lineageTag: 381120dd-8d95-4160-8064-df86cf9f5459
+		summarizeBy: none
+		sourceColumn: type
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Collection = m
 		mode: import
 		queryGroup: 'Folder Tables'
 		source =
 				let
 				    Source = GoogleSheets.Contents("https://docs.google.com/spreadsheets/d/1ymASHx_Tr96ny7D32RozMHar14Bde2wRLNIRAaOMiv8/edit?gid=1884736088#gid=1884736088"),
-				    cards_Sheet = Source{[name="UserInput",ItemKind="Table"]}[Data],
+				    cards_Sheet = Source{[name="PBIOutput",ItemKind="Table"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(cards_Sheet, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"cardUid", type text}, {"cardNumber", Int64.Type}, {"set", type text}, {"owned", Int64.Type}, {"isReprint", type logical}, {"variant", type text}, {"rarity", type text}, {"aspects1", type text}, {"aspects2", type text}, {"title", type text}, {"subtitle", type text}, {"cost", Int64.Type}, {"power", Int64.Type}, {"hp", Int64.Type}, {"upgradePower", Int64.Type}, {"upgradeHp", Int64.Type}, {"arenas", type text}, {"keywords", type text}, {"type", type text}, {"type2", type text}, {"traits", type text}, {"setName", type text}, {"setSort", Int64.Type}, {"reprintId", Int64.Type}, {"cardKey", type text}, {"id", Int64.Type}, {"title - subtitle", type text}, {"standardKey", type text}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"title - subtitle", type text}, {"cardUid", type text}, {"variant", type text}, {"standardKey", type text}, {"owned", Int64.Type}, {"aspect1", type text}, {"aspect2", type text}, {"type", type text}}),
 				    #"Added Custom" = Table.AddColumn(#"Changed Type", "title - sibtitle - set", each [#"title - subtitle"] & " - " & [set]),
 				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "Custom", each Text.PadStart(Text.From([cardUid]), 10, "0")),
 				    #"Removed Columns" = Table.RemoveColumns(#"Added Custom1",{"cardUid"}),
