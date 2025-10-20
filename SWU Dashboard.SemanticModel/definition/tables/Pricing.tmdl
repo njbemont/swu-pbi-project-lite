@@ -170,20 +170,48 @@ table Pricing
 
 		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
-	column priceKey = ```
+	column priceKey =
 			
-			Pricing[abbreviation] 
-			& "_" & 
+			VAR CardNum = RIGHT(REPT("0", 4) & LEFT(Pricing[cardNumber], SEARCH("/", Pricing[cardNumber], 1, LEN(Pricing[cardNumber]) + 1) - 1), 4)
+			VAR IsLaunchSet = Pricing[abbreviation] IN {"SOR", "SOR-WPP", "SHD", "SHD-WPP", "TWI", "TWI-WPP"}
+			VAR IsWeeklyPlay = Pricing[productId] IN {"643589", "643570", "643571", "643572", "643573", "643574", "643575", "643576", "643577", "643578", "643579", "643580", "643581", "643582", "643583", "643584", "643585", "643586", "643587", "643588"}
+			VAR IsWeeklyPlayFoil = Pricing[productId] IN {"643590", "641415", "641416", "641417", "641418", "641419", "641420", "641421", "641422", "641423", "641424", "641425", "641426", "641427", "641428", "641429", "641430", "641431", "641432", "641433"}
+			VAR IsSN1 = Pricing[abbreviation] = "SN1"
+			RETURN
+			//Prefix
 			SWITCH(
 			    TRUE(),
-			    Pricing[productId] IN {"594176", "594177", "594178", "594179"}, "2/2" & "_" & Pricing[name],
-			    Pricing[productId] = "615629", "201/262",
-			    AND(Pricing[abbreviation] IN {"SOR", "SHD", "TWI"}, Pricing[subTypeName] = "Normal"), Pricing[cardNumber] & "_Standard", 
-			    Pricing[abbreviation] IN {"SOR", "SHD", "TWI"}, Pricing[cardNumber] & "_" & Pricing[subTypeName],
-			    Pricing[abbreviation] IN {"JDG", "SSP", "PRE"}, Pricing[cardNumber] & "_" & Pricing[name],
-			    Pricing[cardNumber]
+			    Pricing[setName] = "Gamegenic Promos", "GG",
+			    IsWeeklyPlay || IsWeeklyPlayFoil, "LOF-WPP",
+			    IsSN1, "OPP",
+			    Pricing[abbreviation]
 			)
-			```
+			& "_" &
+			//Card Number
+			SWITCH(
+			    TRUE(),
+			    Pricing[productId] = "639985", "288 // T01",
+			    CONTAINSSTRING(Pricing[cardNumber], "T"), Pricing[cardNumber],
+			    Pricing[productId] = "646496", "0073",
+			    Pricing[productId] = "646497", "0074",
+			    Pricing[productId] = "647587", "0114",
+			    Pricing[productId] = "647588", "0115",
+			    Pricing[productId] = "647589", "0116",
+			    Pricing[productId] = "657086", "0174",
+			    Pricing[productId] = "657085", "0175",
+			    Pricing[productId] = "657084", "0176",
+			    Pricing[productId] = "657083", "0177",
+			    CardNum
+			)
+			//Suffix
+			&
+			SWITCH(
+			    TRUE(),
+			    IsLaunchSet && Pricing[subTypeName] = "Normal",  "_Standard",
+			    IsLaunchSet, "_" & Pricing[subTypeName],
+			    IsWeeklyPlay || IsWeeklyPlayFoil, "",
+			    Pricing[abbreviation] IN {"JDG", "OPP", "PRE", "SN1"}, "_" & Pricing[name]
+			)
 		lineageTag: 7139b3a3-663d-439b-ba86-e033c9556c8a
 		summarizeBy: none
 

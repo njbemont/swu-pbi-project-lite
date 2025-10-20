@@ -64,12 +64,6 @@ relationship AutoDetected_3771f371-1cac-48e7-9a67-eab995558773
 	fromColumn: 'Pricing Bridge'.cardUid
 	toColumn: Cards.cardUid
 
-relationship 6f54767f-bace-c213-0e7e-54536b44a11c
-	crossFilteringBehavior: bothDirections
-	toCardinality: many
-	fromColumn: 'Pricing Bridge'.priceKey
-	toColumn: Pricing.priceKey
-
 relationship e890205a-f631-3275-0c1e-18921e198510
 	crossFilteringBehavior: bothDirections
 	toCardinality: many
@@ -126,4 +120,10 @@ relationship 5be4ca9e-5f3a-6040-904e-39e8caf73b31
 relationship cecc6b29-12b3-fe25-a596-e746f1149079
 	fromColumn: 'Meta Stats - Tournament Stats'.'leader.uuid'
 	toColumn: 'Meta Stats - Leaders'.cardUid
+
+relationship e3ef6e43-7374-a1ac-197e-984e2115c4f6
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Pricing.priceKey
+	toColumn: 'Pricing Bridge'.priceKey
 

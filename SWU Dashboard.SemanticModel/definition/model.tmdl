@@ -45,8 +45,6 @@ queryGroup 'SWU Stats Tables'
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBIDesktopVersion = 2.144.1378.0 (25.06)+cba1e61f16ea36d44901f06fa446299040122394
-
 annotation PBI_QueryOrder = ["Google Sheets Link","File Path","Page","Rows","GetSWUAPIPages","Base","Cards Fact","Cards","Arenas","Aspects","Keywords","Rules","Traits","Variants","Homepage Links","Resource Links","Events","Judge Program Links","Rules Clarifications","Sets","Groups","GetGroupProducts","GetGroupPrices","Products","Prices","Pricing","Pricing Bridge","Collection","Maindeck","Sample File","Parameter1","Transform Sample File","Transform File","Sideboards","Decks","Meta Stats - Deck","Meta Stats - Card","Meta Stats - Tournaments","Meta Stats - Tournament Stats","GetSWUTourneys","Meta Stats - Bases","Meta Stats - Leaders"]
 
 annotation PBI_ProTooling = ["DaxQueryView_Desktop","DevMode"]
