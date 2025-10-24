@@ -33,7 +33,7 @@ table TradeSideA
 				    Cards,
 				    "Title", Cards[Title],
 				    "Subtitle", Cards[Subtitle],
-				    "Variant", RELATED(Collection[variant])
+				    "Variant", RELATED('Pricing Bridge'[variantTypes.data.attributes.name])
 				)
 
 	annotation PBI_Id = 124f006d06f14f5eab7a5f763e01d49e

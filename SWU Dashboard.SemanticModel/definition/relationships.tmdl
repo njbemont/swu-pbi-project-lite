@@ -64,63 +64,6 @@ relationship AutoDetected_3771f371-1cac-48e7-9a67-eab995558773
 	fromColumn: 'Pricing Bridge'.cardUid
 	toColumn: Cards.cardUid
 
-relationship e890205a-f631-3275-0c1e-18921e198510
-	crossFilteringBehavior: bothDirections
-	toCardinality: many
-	fromColumn: Decks.'Card ID'
-	toColumn: Collection.standardKey
-
-relationship e2443436-dd5f-4149-b34e-bfbba40a17b1
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Events.'Start Date'
-	toColumn: LocalDateTable_bdbaf0b7-865b-460d-b053-b9f43b7585aa.Date
-
-relationship 6e7bcf04-67fe-4603-b476-873927378140
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Events.'End Date'
-	toColumn: LocalDateTable_a92661d0-1ad3-469b-b83a-76d14999c427.Date
-
-relationship d7cd6e5c-3b0a-52b8-bc57-d587e0eb4cdf
-	crossFilteringBehavior: bothDirections
-	fromCardinality: one
-	fromColumn: 'Meta Stats - Card'.cardUID2
-	toColumn: Cards.cardUid
-
-relationship 593da1e4-f74a-8736-6deb-4effaa4ec733
-	fromColumn: 'Meta Stats - Tournament Stats'.tourney
-	toColumn: 'Meta Stats - Tournaments'.id
-
-relationship AutoDetected_5f5326fd-bb35-49bb-bdf6-8cc0aa1e38b4
-	crossFilteringBehavior: bothDirections
-	fromCardinality: one
-	fromColumn: Cards.cardUid
-	toColumn: Collection.cardUid
-
-relationship AutoDetected_e647f704-3d69-493e-ad25-7331a1f89a65
-	isActive: false
-	fromColumn: 'Cards Fact'.cardUid
-	toColumn: Collection.cardUid
-
-relationship AutoDetected_29c4f98e-f847-42be-84f9-c3c0f179afab
-	isActive: false
-	fromColumn: Rules.cardUid
-	toColumn: Collection.cardUid
-
-relationship AutoDetected_5102de49-f233-4d9e-b8f0-b3dfe373a43d
-	isActive: false
-	crossFilteringBehavior: bothDirections
-	fromCardinality: one
-	fromColumn: 'Pricing Bridge'.cardUid
-	toColumn: Collection.cardUid
-
-relationship 5be4ca9e-5f3a-6040-904e-39e8caf73b31
-	fromColumn: 'Meta Stats - Tournament Stats'.'base.uuid'
-	toColumn: 'Meta Stats - Bases'.cardUid
-
-relationship cecc6b29-12b3-fe25-a596-e746f1149079
-	fromColumn: 'Meta Stats - Tournament Stats'.'leader.uuid'
-	toColumn: 'Meta Stats - Leaders'.cardUid
-
 relationship e3ef6e43-7374-a1ac-197e-984e2115c4f6
 	crossFilteringBehavior: bothDirections
 	fromCardinality: one

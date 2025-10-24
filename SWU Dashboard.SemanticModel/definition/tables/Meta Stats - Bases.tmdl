@@ -13,7 +13,7 @@ table 'Meta Stats - Bases'
 		dataType: int64
 		formatString: 0
 		lineageTag: 296aeaca-71fd-411b-b8ee-673fc676496f
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: hp
 
 		annotation SummarizationSetBy = Automatic

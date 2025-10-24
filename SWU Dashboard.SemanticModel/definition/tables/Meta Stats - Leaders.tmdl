@@ -21,7 +21,7 @@ table 'Meta Stats - Leaders'
 		dataType: int64
 		formatString: 0
 		lineageTag: 1d7e3a7e-7fc0-41dd-a98c-094c2c6d5853
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: cost
 
 		annotation SummarizationSetBy = Automatic
@@ -30,7 +30,7 @@ table 'Meta Stats - Leaders'
 		dataType: int64
 		formatString: 0
 		lineageTag: 5b2272c1-0710-4847-a08d-e3282178d4dc
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: hp
 
 		annotation SummarizationSetBy = Automatic
@@ -39,7 +39,7 @@ table 'Meta Stats - Leaders'
 		dataType: int64
 		formatString: 0
 		lineageTag: dd90f131-294f-46a5-bdec-4672e18dc978
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: power
 
 		annotation SummarizationSetBy = Automatic
