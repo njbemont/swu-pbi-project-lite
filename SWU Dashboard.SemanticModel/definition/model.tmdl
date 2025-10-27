@@ -33,7 +33,7 @@ queryGroup 'SWU Stats Tables'
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["Google Sheets Link","File Path","Page","Rows","GetSWUAPIPages","Base","Cards Fact","Cards","Arenas","Aspects","Keywords","Rules","Traits","Variants","Homepage Links","Resource Links","Judge Program Links","Rules Clarifications","Sets","Groups","GetGroupProducts","GetGroupPrices","Products","Prices","Pricing","Pricing Bridge","GetSWUTourneys","Meta Stats - Bases","Meta Stats - Leaders"]
+annotation PBI_QueryOrder = ["Google Sheets Link","File Path","Page","Rows","Base","Cards Fact","Cards","Arenas","Aspects","Keywords","Rules","Traits","Variants","Homepage Links","Resource Links","Judge Program Links","Rules Clarifications","Sets","Groups","GetGroupProducts","GetGroupPrices","Products","Prices","Pricing","Pricing Bridge","GetSWUTourneys","Meta Stats - Bases","Meta Stats - Leaders"]
 
 annotation PBI_ProTooling = ["DaxQueryView_Desktop","DevMode"]
 
@@ -62,7 +62,6 @@ ref table 'Trade %'
 ref table TradeSideA
 ref table TradeSideB
 ref table 'Reserved for Collection'
-ref table 'Deck Break By'
 ref table 'Legendary Price Target'
 ref table 'Rare Price Target'
 ref table 'Meta Stats - Bases'

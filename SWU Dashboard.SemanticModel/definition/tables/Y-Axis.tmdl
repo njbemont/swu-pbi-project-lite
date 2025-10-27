@@ -47,7 +47,7 @@ table Y-Axis
 				    ("Set", NAMEOF(Sets[name]), 4),
 				    ("Traits", NAMEOF('Traits'[name]), 5),
 				    ("Type", NAMEOF(Cards[type.data.attributes.name]), 6),
-				    ("Variants", NAMEOF('Variants'[name]), 7)
+				    ("Variants", NAMEOF('Variants'[group]), 7)
 				}
 
 	annotation PBI_Id = d55996e7c89b4a0b81cff85abc0726d7

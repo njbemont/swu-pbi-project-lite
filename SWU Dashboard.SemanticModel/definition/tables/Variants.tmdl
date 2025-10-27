@@ -28,6 +28,26 @@ table Variants
 
 		annotation SummarizationSetBy = Automatic
 
+	column group
+		dataType: string
+		lineageTag: 7bd7cc95-aeca-4193-a841-b0de6d5e8742
+		summarizeBy: none
+		sourceColumn: group
+		sortByColumn: groupSort
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column groupSort
+		dataType: int64
+		formatString: 0
+		lineageTag: 44b1f6e0-4e78-4628-a7d6-f6df4584549d
+		summarizeBy: none
+		sourceColumn: groupSort
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Variants = m
 		mode: import
 		queryGroup: 'API Tables'
@@ -40,9 +60,12 @@ table Variants
 				    #"Expanded data1" = Table.ExpandRecordColumn(#"Expanded data", "data", {"id", "attributes"}, {"id", "attributes"}),
 				    #"Filtered Rows" = Table.SelectRows(#"Expanded data1", each [id] <> null and [id] <> ""),
 				    #"Expanded attributes" = Table.ExpandRecordColumn(#"Filtered Rows", "attributes", {"name", "sortValue"}, {"name", "sortValue"}),
-				    #"Removed Duplicates" = Table.Distinct(#"Expanded attributes", {"id"})
+				    #"Removed Duplicates" = Table.Distinct(#"Expanded attributes", {"id"}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Removed Duplicates", "group", each if Text.StartsWith([name], "SS") then "Store Showdown" else if Text.StartsWith([name], "PQ") then "Planetary Qualifier" else if Text.StartsWith([name], "SQ") then "Sector Qualifier" else if Text.StartsWith([name], "RQ") then "Regional Championship" else if Text.StartsWith([name], "GC") then "Galactic Championship" else if Text.Contains([name], "Judge") then "Judge Promo" else [name]),
+				    #"Added Conditional Column1" = Table.AddColumn(#"Added Conditional Column", "groupSort", each if [group] = "Standard" then 1 else if [group] = "Standard Foil" then 2 else if [group] = "Hyperspace" then 3 else if [group] = "Hyperspace Foil" then 4 else if [group] = "Showcase" then 5 else if [group] = "Standard Prestige" then 6 else if [group] = "Foil Prestige" then 7 else if [group] = "Serialized Prestige" then 8 else if [group] = "Weekly Play" then 9 else if [group] = "Weekly Play Foil" then 10 else if [group] = "Prerelease Promo" then 11 else if [group] = "Store Showdown" then 12 else if [group] = "Planetary Qualifier" then 13 else if [group] = "Sector Qualifier" then 14 else if [group] = "Regional Championship" then 15 else if [group] = "Galactic Championship" then 16 else if [group] = "Judge Promo" then 17 else if [group] = "Event Exclusive" then 18 else if [group] = "Convention Exclusive" then 19 else null),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Conditional Column1",{{"groupSort", Int64.Type}})
 				in
-				    #"Removed Duplicates"
+				    #"Changed Type"
 
 	annotation PBI_NavigationStepName = Navigation
 

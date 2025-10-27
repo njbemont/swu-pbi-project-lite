@@ -46,7 +46,7 @@ table Legend
 				    ("Keywords", NAMEOF('Keywords'[name]), 3),
 				    ("Set", NAMEOF(Sets[name]), 4),
 				    ("Type", NAMEOF(Cards[type.data.attributes.name]), 5),
-				    ("Variants", NAMEOF('Variants'[name]), 6)
+				    ("Variants", NAMEOF('Variants'[group]), 6)
 				}
 
 	annotation PBI_Id = 1e0fd2da3ddc405fb31b1e03662ef379

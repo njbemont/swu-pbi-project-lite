@@ -213,32 +213,6 @@
         },
         {
           "location": {
-            "x": 4328.3830500146942,
-            "y": 38.869555357432148
-          },
-          "nodeIndex": "Collection",
-          "nodeLineageTag": "ec7fc4b2-b3b1-4a40-b396-1e11afe886d3",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 4562.3830500146942,
-            "y": 40.1459521686773
-          },
-          "nodeIndex": "Decks",
-          "nodeLineageTag": "2a4d3154-213d-47f6-9381-704ff364ab0d",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
             "x": 4796.3830500146942,
             "y": 78.784150574299872
           },
@@ -276,67 +250,10 @@
         },
         {
           "location": {},
-          "nodeIndex": "Events",
-          "nodeLineageTag": "e13f9928-8543-4f4e-876e-c983cca8566b",
-          "size": {
-            "height": 248,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {},
           "nodeIndex": "Reserved for Collection",
           "nodeLineageTag": "f8909f8c-2ce2-4ef8-8e7c-dc2c3da5efec",
           "size": {
             "height": 224,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {},
-          "nodeIndex": "Deck Break By",
-          "size": {
-            "height": 152,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {},
-          "nodeIndex": "Meta Stats - Deck",
-          "size": {
-            "height": 272,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {},
-          "nodeIndex": "Meta Stats - Card",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {},
-          "nodeIndex": "Meta Stats - Tournament Stats",
-          "nodeLineageTag": "7af5d070-a974-4cb6-b151-760d76844cd7",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {},
-          "nodeIndex": "Meta Stats - Tournaments",
-          "nodeLineageTag": "40e8105a-d121-4448-b6ef-cae740476b8a",
-          "size": {
-            "height": 200,
             "width": 234
           },
           "zIndex": 0
@@ -390,23 +307,10 @@
     {
       "ordinal": 1,
       "scrollPosition": {
-        "x": 529,
+        "x": 0,
         "y": 0
       },
       "nodes": [
-        {
-          "location": {
-            "x": 137,
-            "y": 251
-          },
-          "nodeIndex": "Collection",
-          "nodeLineageTag": "ec7fc4b2-b3b1-4a40-b396-1e11afe886d3",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 0
-        },
         {
           "location": {
             "x": 1447,
@@ -429,19 +333,6 @@
           "nodeLineageTag": "a85fec7b-8021-4460-a95f-07a38fb8c114",
           "size": {
             "height": 296,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 744,
-            "y": 0
-          },
-          "nodeIndex": "Decks",
-          "nodeLineageTag": "2a4d3154-213d-47f6-9381-704ff364ab0d",
-          "size": {
-            "height": 248,
             "width": 234
           },
           "zIndex": 0

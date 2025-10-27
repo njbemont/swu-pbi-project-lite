@@ -14,20 +14,6 @@ expression Rows = 25 meta [IsParameterQuery=true, Type="Any", IsParameterQueryRe
 
 	annotation PBI_ResultType = Number
 
-expression GetSWUAPIPages =
-		(page as number) =>
-		let
-		     Source = Json.Document(Web.Contents("https://admin.starwarsunlimited.com/api/card-list?locale=en&pagination[page]=" & Number.ToText(page) & "&pagination[pageSize]=" & Number.ToText(#"Rows") & "")),
-		     data = Source[data]
-		in
-		     data
-	lineageTag: f3500b2c-bc7b-43ed-ad35-60ef15409c00
-	queryGroup: Function
-
-	annotation PBI_NavigationStepName = Navigation
-
-	annotation PBI_ResultType = Function
-
 expression 'Homepage Links' =
 		let
 		    #"HTML Code" = Web.BrowserContents("https://nexus.cascadegames.com/"),
@@ -72,12 +58,26 @@ expression 'Resource Links' =
 
 expression Groups =
 		let
-		     Source = Json.Document(Web.Contents("https://tcgcsv.com/tcgplayer/79/groups")),
-		     data = Source[results],
-		    #"Converted to Table" = Table.FromList(data, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
-		    #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"groupId", "name", "abbreviation", "isSupplemental", "publishedOn", "modifiedOn", "categoryId"}, {"groupId", "name", "abbreviation", "isSupplemental", "publishedOn", "modifiedOn", "categoryId"})
+		    Raw =
+		        Json.Document(
+		            Web.Contents(
+		                "https://tcgcsv.com",
+		                [
+		                    RelativePath = "tcgplayer/79/groups"
+		                ]
+		            )
+		        ),
+		    data = Raw[results],
+		    ToTable = Table.FromList(data, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+		    Expanded =
+		        Table.ExpandRecordColumn(
+		            ToTable,
+		            "Column1",
+		            {"groupId", "name", "abbreviation", "isSupplemental", "publishedOn", "modifiedOn", "categoryId"},
+		            {"groupId", "name", "abbreviation", "isSupplemental", "publishedOn", "modifiedOn", "categoryId"}
+		        )
 		in
-		    #"Expanded Column1"
+		    Expanded
 	lineageTag: 878ef626-98c7-4118-a732-40c82bbeafa8
 	queryGroup: 'TCGPlayer Pricing'
 
@@ -129,40 +129,148 @@ expression GetGroupPrices = ```
 
 	annotation PBI_ResultType = Function
 
-expression Products = ```
+expression Products =
 		let
-		    // Reference your Groups table
+		    // pull group list first
 		    groupTable = Groups,
-		
-		    // Get just the groupId column as a list
 		    groupIds = groupTable[groupId],
 		
-		    // Call the function for each groupId
-		    results = List.Transform(groupIds, each 
-		        [ 
-		            group = _, 
-		            data = try GetGroupProducts(_) otherwise null
-		        ]
-		    ),
+		    // local helper: fetch products for ONE group id
+		    GetGroupProducts = (g as number) =>
+		        let
+		            Raw =
+		                Json.Document(
+		                    Web.Contents(
+		                        "https://tcgcsv.com",
+		                        [
+		                            // example final URL:
+		                            // https://tcgcsv.com/tcgplayer/79/<groupId>/products
+		                            RelativePath = "tcgplayer/79/" & Text.From(g) & "/products"
+		                        ]
+		                    )
+		                ),
+		            data = Raw[results]   // this is a LIST of product records
+		        in
+		            data,
 		
-		    // Remove any nulls (failed API calls)
+		    // call API for every group and capture both the groupId and its data
+		    results =
+		        List.Transform(
+		            groupIds,
+		            each [
+		                group = _,
+		                data = try GetGroupProducts(_) otherwise null
+		            ]
+		        ),
+		
+		    // drop any nulls (failed calls etc.)
 		    cleanResults = List.Select(results, each [data] <> null),
-		    #"Converted to Table" = Table.FromList(cleanResults, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
-		    #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"group", "data"}, {"group", "data"}),
-		    #"Expanded data" = Table.ExpandListColumn(#"Expanded Column1", "data"),
-		    #"Expanded data1" = Table.ExpandRecordColumn(#"Expanded data", "data", {"productId", "name", "cleanName", "imageUrl", "categoryId", "groupId", "url", "modifiedOn", "imageCount", "presaleInfo", "extendedData"}, {"productId", "name", "cleanName", "imageUrl", "categoryId", "groupId", "url", "modifiedOn", "imageCount", "presaleInfo", "extendedData"}),
-		    #"Expanded extendedData" = Table.ExpandListColumn(#"Expanded data1", "extendedData"),
-		    #"Expanded extendedData1" = Table.ExpandRecordColumn(#"Expanded extendedData", "extendedData", {"name", "displayName", "value"}, {"name.1", "displayName", "value"}),
-		    #"Filtered Rows" = Table.SelectRows(#"Expanded extendedData1", each ([name.1] = "Number")),
-		    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"name.1", "displayName", "presaleInfo"}),
-		    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"value", "cardNumber"}}),
-		    #"Merged Queries" = Table.NestedJoin(#"Renamed Columns", {"group"}, Groups, {"groupId"}, "Groups", JoinKind.LeftOuter),
-		    #"Expanded Groups" = Table.ExpandTableColumn(#"Merged Queries", "Groups", {"name", "abbreviation"}, {"name.1", "abbreviation"}),
-		    #"Renamed Columns1" = Table.RenameColumns(#"Expanded Groups",{{"name.1", "setName"}}),
-		    #"Reordered Columns" = Table.ReorderColumns(#"Renamed Columns1",{"group", "productId", "name", "cleanName", "imageUrl", "categoryId", "groupId", "url", "modifiedOn", "imageCount", "cardNumber", "abbreviation", "setName"})
+		
+		    // turn into a table so we can expand
+		    ConvertedToTable = Table.FromList(cleanResults, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+		    ExpandedColumn1 =
+		        Table.ExpandRecordColumn(
+		            ConvertedToTable,
+		            "Column1",
+		            {"group", "data"},
+		            {"group", "data"}
+		        ),
+		
+		    // expand the list of product records into rows
+		    ExpandedData = Table.ExpandListColumn(ExpandedColumn1, "data"),
+		
+		    // expand each product record into columns
+		    ExpandedData1 =
+		        Table.ExpandRecordColumn(
+		            ExpandedData,
+		            "data",
+		            {
+		                "productId",
+		                "name",
+		                "cleanName",
+		                "imageUrl",
+		                "categoryId",
+		                "groupId",
+		                "url",
+		                "modifiedOn",
+		                "imageCount",
+		                "presaleInfo",
+		                "extendedData"
+		            },
+		            {
+		                "productId",
+		                "name",
+		                "cleanName",
+		                "imageUrl",
+		                "categoryId",
+		                "groupId",
+		                "url",
+		                "modifiedOn",
+		                "imageCount",
+		                "presaleInfo",
+		                "extendedData"
+		            }
+		        ),
+		
+		    // extendedData is itself a list; explode it
+		    ExpandedExtendedData = Table.ExpandListColumn(ExpandedData1, "extendedData"),
+		
+		    // now expand extendedData rows (things like card number metadata)
+		    ExpandedExtendedData1 =
+		        Table.ExpandRecordColumn(
+		            ExpandedExtendedData,
+		            "extendedData",
+		            {"name", "displayName", "value"},
+		            {"name.1", "displayName", "value"}
+		        ),
+		
+		    // keep only the extendedData rows where name = "Number"
+		    FilteredRows = Table.SelectRows(ExpandedExtendedData1, each ([name.1] = "Number")),
+		
+		    // clean up columns
+		    RemovedColumns = Table.RemoveColumns(FilteredRows, {"name.1", "displayName", "presaleInfo"}),
+		    RenamedColumns = Table.RenameColumns(RemovedColumns, {{"value", "cardNumber"}}),
+		
+		    // join back to Groups to get set info (set name, abbreviation)
+		    MergedQueries =
+		        Table.NestedJoin(
+		            RenamedColumns,
+		            {"group"},
+		            groupTable,
+		            {"groupId"},
+		            "Groups",
+		            JoinKind.LeftOuter
+		        ),
+		    ExpandedGroups =
+		        Table.ExpandTableColumn(
+		            MergedQueries,
+		            "Groups",
+		            {"name", "abbreviation"},
+		            {"name.1", "abbreviation"}
+		        ),
+		    RenamedColumns1 = Table.RenameColumns(ExpandedGroups, {{"name.1", "setName"}}),
+		
+		    ReorderedColumns =
+		        Table.ReorderColumns(
+		            RenamedColumns1,
+		            {
+		                "group",
+		                "productId",
+		                "name",
+		                "cleanName",
+		                "imageUrl",
+		                "categoryId",
+		                "groupId",
+		                "url",
+		                "modifiedOn",
+		                "imageCount",
+		                "cardNumber",
+		                "abbreviation",
+		                "setName"
+		            }
+		        )
 		in
-		    #"Reordered Columns"
-		```
+		    ReorderedColumns
 	lineageTag: bc50e7e4-6317-4fd0-8909-14e74f798e7f
 	queryGroup: 'TCGPlayer Pricing'
 
@@ -170,32 +278,89 @@ expression Products = ```
 
 	annotation PBI_ResultType = Table
 
-expression Prices = ```
+expression Prices =
 		let
-		    // Reference your Groups table
+		    // pull group list first
 		    groupTable = Groups,
-		
-		    // Get just the groupId column as a list
 		    groupIds = groupTable[groupId],
 		
-		    // Call the function for each groupId
-		    results = List.Transform(groupIds, each 
-		        [ 
-		            group = _, 
-		            data = try GetGroupPrices(_) otherwise null
-		        ]
-		    ),
+		    // local helper: fetch PRICES for a single group
+		    GetGroupPrices = (g as number) =>
+		        let
+		            Raw =
+		                Json.Document(
+		                    Web.Contents(
+		                        "https://tcgcsv.com",
+		                        [
+		                            // expected final URL:
+		                            // https://tcgcsv.com/tcgplayer/79/<groupId>/prices
+		                            RelativePath = "tcgplayer/79/" & Text.From(g) & "/prices"
+		                        ]
+		                    )
+		                ),
+		            data = Raw[results]   // list of price records
+		        in
+		            data,
 		
-		    // Remove any nulls (failed API calls)
+		    // call API for each group id
+		    results =
+		        List.Transform(
+		            groupIds,
+		            each [
+		                group = _,
+		                data = try GetGroupPrices(_) otherwise null
+		            ]
+		        ),
+		
+		    // remove nulls
 		    cleanResults = List.Select(results, each [data] <> null),
-		    #"Converted to Table" = Table.FromList(cleanResults, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
-		    #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"group", "data"}, {"group", "data"}),
-		    #"Expanded data" = Table.ExpandListColumn(#"Expanded Column1", "data"),
-		    #"Expanded data1" = Table.ExpandRecordColumn(#"Expanded data", "data", {"productId", "lowPrice", "midPrice", "highPrice", "marketPrice", "directLowPrice", "subTypeName"}, {"productId", "lowPrice", "midPrice", "highPrice", "marketPrice", "directLowPrice", "subTypeName"}),
-		    #"Filtered Rows" = Table.SelectRows(#"Expanded data1", each [productId] <> null and [productId] <> "")
+		
+		    // shape into a table
+		    ConvertedToTable = Table.FromList(cleanResults, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+		    ExpandedColumn1 =
+		        Table.ExpandRecordColumn(
+		            ConvertedToTable,
+		            "Column1",
+		            {"group", "data"},
+		            {"group", "data"}
+		        ),
+		
+		    // expand each group's list of price rows
+		    ExpandedData = Table.ExpandListColumn(ExpandedColumn1, "data"),
+		
+		    // expand each price record
+		    ExpandedData1 =
+		        Table.ExpandRecordColumn(
+		            ExpandedData,
+		            "data",
+		            {
+		                "productId",
+		                "lowPrice",
+		                "midPrice",
+		                "highPrice",
+		                "marketPrice",
+		                "directLowPrice",
+		                "subTypeName"
+		            },
+		            {
+		                "productId",
+		                "lowPrice",
+		                "midPrice",
+		                "highPrice",
+		                "marketPrice",
+		                "directLowPrice",
+		                "subTypeName"
+		            }
+		        ),
+		
+		    // drop junk / empties
+		    FilteredRows =
+		        Table.SelectRows(
+		            ExpandedData1,
+		            each [productId] <> null and [productId] <> ""
+		        )
 		in
-		    #"Filtered Rows"
-		```
+		    FilteredRows
 	lineageTag: 0bb00db4-f673-4919-a97d-898f34c83a0a
 	queryGroup: 'TCGPlayer Pricing'
 
@@ -304,15 +469,55 @@ expression 'Rules Clarifications' =
 
 expression Base =
 		let
-		    Source = List.Generate(
-		        () => [Result = try GetSWUAPIPages(1) otherwise null, pagenumber=1],
-		        each List.IsEmpty([Result]) = false,
-		        each [Result = try GetSWUAPIPages(pagenumber) otherwise null, pagenumber = [pagenumber] + 1],
-		        each [Result]),
-		    #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
-		    #"Expanded Column1" = Table.ExpandListColumn(#"Converted to Table", "Column1"),
-		    #"Expanded Column2" = Table.ExpandRecordColumn(#"Expanded Column1", "Column1", {"id", "attributes"}, {"id", "attributes"}),
-		    #"Expanded attributes" = Table.ExpandRecordColumn(#"Expanded Column2", "attributes", {"title", "subtitle", "cardNumber", "cardCount", "artist", "artFrontHorizontal", "artBackHorizontal", "hasFoil", "cost", "hp", "power", "text", "textStyled", "deployBox", "deployBoxStyled", "epicAction", "epicActionStyled", "linkHtml", "cardId", "createdAt", "updatedAt", "publishedAt", "locale", "hyperspace", "unique", "showcase", "cardUid", "rules", "rulesStyled", "serialCode", "upgradeHp", "upgradePower", "artFront", "artBack", "artThumbnail", "localizations", "aspects", "aspectDuplicates", "type", "type2", "traits", "arenas", "keywords", "rarity", "expansion", "variantTypes", "variantOf", "reprintOf", "validationId"}, {"title", "subtitle", "cardNumber", "cardCount", "artist", "artFrontHorizontal", "artBackHorizontal", "hasFoil", "cost", "hp", "power", "text", "textStyled", "deployBox", "deployBoxStyled", "epicAction", "epicActionStyled", "linkHtml", "cardId", "createdAt", "updatedAt", "publishedAt", "locale", "hyperspace", "unique", "showcase", "cardUid", "rules", "rulesStyled", "serialCode", "upgradeHp", "upgradePower", "artFront", "artBack", "artThumbnail", "localizations", "aspects", "aspectDuplicates", "type", "type2", "traits", "arenas", "keywords", "rarity", "expansion", "variantTypes", "variantOf", "reprintOf", "validationId"}),
+		    // Use your parameter for page size
+		    PageSize = #"Rows",
+		
+		    // Fetch ONE page of results and return it as a table
+		    GetPage = (p as number) as table =>
+		        let
+		            Raw =
+		                Json.Document(
+		                    Web.Contents(
+		                        "https://admin.starwarsunlimited.com",
+		                        [
+		                            RelativePath = "api/card-list",
+		                            Query = [
+		                                #"locale" = "en",
+		                                #"pagination[page]" = Text.From(p),
+		                                #"pagination[pageSize]" = Text.From(PageSize)
+		                            ]
+		                        ]
+		                    )
+		                ),
+		
+		            // This is the 'data' field from the JSON. It's coming back as a LIST.
+		            DataList = Raw[data],
+		
+		            // Convert list of records → table
+		            // If DataList is {} (empty list), this returns an empty table (0 rows), which is what we want.
+		            DataTable = Table.FromRecords(DataList)
+		        in
+		            DataTable,
+		
+		    // Generate each page until we get an empty table
+		    PageList =
+		        List.Generate(
+		            // initializer
+		            () => [Page = 1, Result = GetPage(1)],
+		
+		            // condition to keep iterating
+		            each [Result] <> null and Table.RowCount([Result]) > 0,
+		
+		            // next record
+		            each [Page = [Page] + 1, Result = GetPage([Page] + 1)],
+		
+		            // what to collect into the list
+		            each [Result]
+		        ),
+		
+		    // Combine all pages (list of tables) into one final table
+		    AllPages = Table.Combine(PageList),
+		    #"Expanded attributes" = Table.ExpandRecordColumn(AllPages, "attributes", {"title", "subtitle", "cardNumber", "cardCount", "artist", "artFrontHorizontal", "artBackHorizontal", "hasFoil", "cost", "hp", "power", "text", "textStyled", "deployBox", "deployBoxStyled", "epicAction", "epicActionStyled", "linkHtml", "cardId", "createdAt", "updatedAt", "publishedAt", "locale", "hyperspace", "unique", "showcase", "cardUid", "rules", "rulesStyled", "serialCode", "upgradeHp", "upgradePower", "artFront", "artBack", "artThumbnail", "localizations", "aspects", "aspectDuplicates", "type", "type2", "traits", "arenas", "keywords", "rarity", "expansion", "variantTypes", "variantOf", "reprintOf", "validationId"}, {"title", "subtitle", "cardNumber", "cardCount", "artist", "artFrontHorizontal", "artBackHorizontal", "hasFoil", "cost", "hp", "power", "text", "textStyled", "deployBox", "deployBoxStyled", "epicAction", "epicActionStyled", "linkHtml", "cardId", "createdAt", "updatedAt", "publishedAt", "locale", "hyperspace", "unique", "showcase", "cardUid", "rules", "rulesStyled", "serialCode", "upgradeHp", "upgradePower", "artFront", "artBack", "artThumbnail", "localizations", "aspects", "aspectDuplicates", "type", "type2", "traits", "arenas", "keywords", "rarity", "expansion", "variantTypes", "variantOf", "reprintOf", "validationId"}),
 		    #"Expanded type" = Table.ExpandRecordColumn(#"Expanded attributes", "type", {"data"}, {"type.data"}),
 		    #"Expanded type.data" = Table.ExpandRecordColumn(#"Expanded type", "type.data", {"attributes"}, {"type.data.attributes"}),
 		    #"Expanded type.data.attributes" = Table.ExpandRecordColumn(#"Expanded type.data", "type.data.attributes", {"name"}, {"type.data.attributes.name"}),
